@@ -1,0 +1,13 @@
+# TeX tmp files
+*.dtx 
+*.ins 
+*.toc 
+*.blg 
+*.bbl
+*.aux 
+thsis.pdf 
+*.log
+
+# OS X files
+.DS_Store
+

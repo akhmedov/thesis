@@ -1,0 +1,75 @@
+\documentclass{vakthesis}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian,ukrainian]{babel}
+
+\usepackage[intlimits]{amsmath}
+\allowdisplaybreaks
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+% Таблиці зі стовпчиками, що розтягуються
+\usepackage{tabularx}
+
+\usepackage{geometry}
+\geometry{hmargin={30mm,15mm},lines=29,vcentering}
+
+\usepackage{eqparbox} 
+\usepackage[x11names]{xcolor} 
+
+% нумкрация теорем/лемм
+\theoremstyle{plain}
+\newtheorem{theorem}{Теорема}[chapter]
+\newtheorem{lemma}{Лема}[chapter]
+\newtheorem{corollary}{Наслідок}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Означення}[chapter]
+\newtheorem{example}{Приклад}[chapter]
+\theoremstyle{remark}
+\newtheorem{remark}{Зауваження}[chapter]
+
+\include{alias} % Локальние определения
+
+\includeonly{ch1,bib,app1}
+
+% информация о подключенных пакетах в логах
+%\listfiles
+
+\begin{document}
+
+\title{Випромінювання нестаціонарних полів 
+	та їх розповсюдження в нелінійному просторі}
+
+\author{Ахмедов Ролан Джавадович}
+
+\supervisor{Думін Олександр Миколайович}
+	{кандидат фізико-математичних наук, доцент}
+
+\speciality{01.04.03}
+
+\udc{511.72} % Індекс за УДК
+
+\institution
+{Харкивській національний університет імені В. Н. Каразіна}
+{Харків}
+
+\date{2017}
+
+
+\maketitle % титулка
+
+\tableofcontents % содержание
+
+\include{intro}
+\include{ch1}	% Метод эволюционных уравнений
+\include{ch2}	% Излучение плоскаго диска
+
+\include{concl}
+\include{bib}
+
+\appendix
+\include{app1}	% Свойства функции Бесселя
+\include{app2}	% Свойства функции Ломмеля
+
+\end{document}

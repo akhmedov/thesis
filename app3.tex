@@ -1,0 +1,96 @@
+\chapter{Властивості добудків векторів}
+\label{ch:vector}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Скалярний добуток}
+
+Визначення:
+
+\begin{equation*}
+\dotprod{\vect{A}}{\vect{B}} = \sum_{i} A_i B_i
+\end{equation*}
+
+Комутативність скалярного добуду:
+
+\begin{equation*}
+\dotprod{\vect{A}}{\vect{B}} = \dotprod{\vect{B}}{\vect{A}}
+\end{equation*}
+
+Асоціативність множення на скаляр:
+
+\begin{equation*}
+\dotprod{c \vect{A}}{\vect{B}} = \dotprod{\vect{A}}{ c \vect{B}} =
+c \dotprod{\vect{A}}{\vect{B}}
+\end{equation*}
+
+Дистрибутивність додавання:
+
+\begin{equation*}
+\dotprod{\vect{A}}{\left( \vect{B} + \vect{C} \right)} = 
+\dotprod{\vect{A}}{\vect{B}} + \dotprod{\vect{A}}{\vect{C}} 
+\end{equation*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Змішаний добуток}
+
+Визначення:
+
+\begin{equation*}
+\triple{\vect{A}}{\vect{B}}{\vect{C}} = 
+\dotprod{\vect{A}}{\crossprod{\vect{B}}{\vect{C}}} =
+\dotprod{\crossprod{\vect{A}}{\vect{B}}}{\vect{C}}
+\end{equation*}
+
+Властивість кососиметричності:
+
+\begin{equation*}
+- \triple{\vect{A}}{\vect{B}}{\vect{C}} = 
+\triple{\vect{A}}{\vect{C}}{\vect{B}} =
+\triple{\vect{B}}{\vect{A}}{\vect{C}} = 
+\triple{\vect{C}}{\vect{B}}{\vect{A}}
+\end{equation*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Векторний добуток}
+
+Властивість самомноження:
+
+\begin{equation*} 
+\crossprod{\vect{A}}{\vect{A}} = 0
+\end{equation*}
+
+Антікомутативність векторного добуду:
+
+\begin{equation*} 
+- \crossprod{\vect{A}}{\vect{B}} = \crossprod{\vect{B}}{\vect{A}}
+\end{equation*}
+
+Асоціативність множення на константу:
+
+\begin{equation*} 
+\crossprod{c \vect{A}}{\vect{B}} = \crossprod{\vect{A}}{c \vect{B}} =
+c \crossprod{\vect{A}}{\vect{B}}
+\end{equation*}
+
+Дистрибутивність додавання:
+
+\begin{equation*} 
+\crossprod{\vect{A}}{ \left( \vect{B} + \vect{C} \right) } = 
+\crossprod{\vect{A}}{\vect{B}} + \crossprod{\vect{A}}{\vect{C}}
+\end{equation*}
+
+Тотожність Лагранжа:
+
+\begin{equation*}
+\crossprod{\vect{A}}{\crossprod{\vect{B}}{\vect{C}}} =
+\dotprod{\vect{B}}{\dotprod{\vect{A}}{\vect{C}}} - 
+\dotprod{\vect{C}}{\dotprod{\vect{A}}{\vect{B}}}
+\end{equation*}
+
+Тотожність Якобі:
+
+\begin{equation*}
+\crossprod{\vect{A}}{\crossprod{\vect{B}}{\vect{C}}} =
+\crossprod{\vect{B}}{\crossprod{\vect{A}}{\vect{C}}} +
+\crossprod{\crossprod{\vect{A}}{\vect{B}}}{\vect{C}} 
+\end{equation*}

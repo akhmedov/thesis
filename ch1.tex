@@ -126,7 +126,8 @@ $ \vect{J} $ та $ \vect{I} $ магнітній струми таким чин
 \vect{E} + \left( \epsilon - 1 \right) \vect{E} \right] + 
 \partder{\vect{P^\prime}}{t} + \vect{J^\sigma} + \vect{J^e}= \\
 = \epsilon_0 \partder{}{t} \left( \epsilon \vect{E} \right) +
-\partder{\vect{P^\prime}}{t} + \vect{J^\sigma} + \vect{J^e} = \epsilon_0 \left( \partder{\epsilon}{t} 
+\partder{\vect{P^\prime}}{t} + \vect{J^\sigma} + \vect{J^e} = 
+\epsilon_0 \left( \partder{\epsilon}{t} 
 \vect{E} + \epsilon \partder{\vect{E}}{t} \right) + 
 \partder{\vect{P^\prime}}{t} + \vect{J^\sigma} + \vect{J^e}
 \end{aligned} \end{equation*} }
@@ -173,7 +174,7 @@ g = \rho^h - \mu_0 \dotprod{\nabla}{\vect{M^\prime}}
 \end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Відокремлення поздовжних компонент поля}
+\subsection{Виключення поздовжних компонент поля}
 
 Диференціальні рівняння першого порядку \eqref{eq:divE}, \eqref{eq:divH} та 
 векторні другого \eqref{eq:rotHfromE}, \eqref{eq:rotEfromH} формують систему 
@@ -203,40 +204,253 @@ $ \vect{H} $.
 поздовжна просторова координата розповсюдження, а $ c = 2,998 \cdot 10^8 $ м/с 
 -- фундаментальна константа, швидкість світла в вакуумі.
 
-В рівнянні \eqref{eq:rotHfromE} відокремимо векторну компоненту 
-$ \vect{z_0} $. Користуючись визначенням векторного добутку лінійної 
-комбінації векторів отримаємо два незалежні рівняння.
+З рівнянь Максвела відокремимо векторну компоненту 
+$ \vect{z_0} $ для всіх величин. Як відомо, буль-який вектор можна розписати, 
+як суму добутків ортів та відповідних проекцій: так оператор $ \nabla $ можна 
+записати як $ \nabla_\perp + \vect{z_0} \partder{}{z} $, а довільний вектор
+$ \vect{A} $, як $ \vect{A_\perp} + \vect{z_0} A_z $. Користуючись визначенням 
+векторного добутку лінійної комбінації векторів, з \eqref{eq:rotHfromE} 
+отримаємо два незалежні рівняння.
 
 \textcolor{lightgray}{ \begin{equation*} \begin{aligned}
 \rot{\vect{A}} = \crossprod{\nabla}{\vect{A}} = \crossprod
 {\left( \nabla_\perp + \vect{z_0} \partder{}{z} \right)}
 {\left( \vect{A_\perp} + \vect{z_0} A_z \right)} = \\
-\crossprod{\nabla_\perp}{\vect{A_\perp}} + 
-\crossprod{\nabla_\perp}{\vect{z_0} A_z}} +
+= \crossprod{\nabla_\perp}{\vect{A_\perp}} + 
+\crossprod{\nabla_\perp}{\vect{z_0} A_z} +
 \crossprod{\vect{z_0} \partder{}{z}}{\vect{A_\perp}} +
-\crossprod{\vect{z_0} \partder{}{z}}{\vect{z_0} A_z}}
+\crossprod{ \vect{z_0} \partder{}{z} }{ \vect{z_0} A_z } = \\
+= \crossprod{\nabla_\perp}{\vect{A_\perp}} + 
+\crossprod{\nabla_\perp}{\vect{z_0}} A_z +
+\partder{}{z} \crossprod{\vect{z_0}}{\vect{A_\perp}}
+\end{aligned} \end{equation*} }
 
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+\crossprod{\nabla}{\vect{H}} = 
+\crossprod{\nabla_\perp}{\vect{H_\perp}} + 
+\crossprod{\nabla_\perp}{\vect{z_0}} H_z +
+\partder{}{z} \crossprod{\vect{z_0}}{\vect{H_\perp}} = \\
+= \epsilon_0 \partder{}{t} \left( \epsilon  \vect{E_\perp} + 
+\epsilon \vect{z_0} E_z \right) + \vect{J_\perp} + \vect{z_0} J_z
+\end{aligned} \end{equation*} }
+
+\begin{equation} \label{eq:rotHt} 
+\crossprod{\nabla_\perp}{\vect{z_0}} H_z +
+\partder{}{z} \crossprod{\vect{z_0}}{\vect{H_\perp}} =
+\epsilon_0 \partder{}{t} \left( \epsilon  \vect{E_\perp} \right) + 
+\vect{J_\perp}
+\end{equation}
+
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+\dotprod{\vect{z_0}}{\crossprod{\nabla_\perp}{\vect{H_\perp}}} =
+\triple{\vect{z_0}}{\nabla_\perp}{\vect{H_\perp}}
+\end{aligned} \end{equation*} }
+
+\begin{equation} \label{eq:rotHz}
+\triple{\vect{z_0}}{\nabla_\perp}{\vect{H_\perp}} = 
+\epsilon_0 \partder{}{t} \left( \epsilon  E_z \right) + J_z 
+\end{equation}
+
+Аналогічні міркування можна провести по відношенню до закону індукції Фарадея 
+записаного по формі \eqref{eq:rotEfromH}.
+
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+- \crossprod{\nabla}{\vect{E}} = 
+- \crossprod{\nabla_\perp}{\vect{E_\perp}} - 
+\crossprod{\nabla_\perp}{\vect{z_0}} E_z -
+\partder{}{z} \crossprod{\vect{z_0}}{\vect{E_\perp}} = \\
+= \mu_0 \partder{}{t} \left( \mu  \vect{H_\perp} + \mu \vect{z_0} H_z \right) + 
+\vect{I_\perp} + \vect{z_0} I_z
 \end{aligned} \end{equation*} }
 
 \begin{equation} \label{eq:rotEt} 
-a + b = 1
+- \crossprod{\nabla_\perp}{\vect{z_0}} E_z -
+\partder{}{z} \crossprod{\vect{z_0}}{\vect{E_\perp}} = 
+\mu_0 \partder{}{t} \left( \mu  \vect{H_\perp} \right) + \vect{I_\perp}
 \end{equation}
+
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+- \dotprod{\vect{z_0}}{\crossprod{\nabla_\perp}{\vect{E_\perp}}} = 
+- \triple{\vect{z_0}}{\nabla_\perp}{\vect{E_\perp}}
+\end{aligned} \end{equation*} }
 
 \begin{equation} \label{eq:rotEz}
-a - b = 1
+- \triple{\vect{z_0}}{\nabla_\perp}{\vect{E_\perp}} =
+\mu_0 \partder{}{t} \left(\mu H_z \right) + I_z
 \end{equation}
 
- 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Уравнения Максвелла в матричной форме}
+З теореми Гауса \eqref{eq:divE} та її інтерпретації до магнітного поля 
+\eqref{eq:divH} також виключимо $ \vect{z_0} $ компоненту, тепер, користуючись 
+комутативними та асоціативними властивостями скалярного добутку векторів.
+
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+\dotprod{\nabla}{\vect{A}} = \dotprod
+{\left( \nabla_\perp + \vect{z_0} \partder{}{z} \right)}
+{\left( \vect{A_\perp} + \vect{z_0} A_z \right)} = \\
+= \dotprod{\nabla_\perp}{\vect{A_\perp}} + 
+\dotprod{\nabla_\perp}{\vect{z_0} A_z}  +
+\dotprod{\vect{z_0} \partder{}{z}}{\vect{A_\perp}} +
+\dotprod{\vect{z_0} \partder{}{z}}{\vect{z_0} A_z} = \\
+= \dotprod{\nabla_\perp}{\vect{A_\perp}} +
+\dotprod{\nabla_\perp}{\vect{z_0}} A_z +
+\dotprod{\vect{z_0}}{\partder{\vect{A_\perp}}{z}} +
+\dotprod{\vect{z_0}}{\vect{z_0}} \partder{A_z}{z} = \\
+= \dotprod{\nabla_\perp}{\vect{A_\perp}} + \partder{A_z}{z}
+\end{aligned} \end{equation*} }
+
+\begin{equation} \label{eq:divEt} 
+\epsilon_0 \partder{}{z} \left( \epsilon E_z \right) = 
+\varrho - \epsilon_0 \epsilon \dotprod{\nabla_\perp}{\vect{E_\perp}}
+\end{equation}
+
+\begin{equation} \label{eq:divHt}
+\mu_0 \partder{}{z} \left( \mu H_z \right) = 
+g - \mu_0 \mu \dotprod{\nabla_\perp}{\vect{H_\perp}}
+\end{equation}
+
+Як зазначалось раніше, в данні роботі розглядається пошаровонеоднорідне 
+середовище, а отже $ \epsilon = \epsilon(z,t) $ и $ \mu = \mu(z,t) $. Тому
+маємо змогу винести показники проникності середовища з під оператора у 
+від'ємнику.
+
+Як видно з рівнянь \eqref{eq:rotHt} -- \eqref{eq:divHt}, поздовжні компоненти 
+поля однозначно розділились, але саме поле залишилось електромагнітним, що типово
+для нестаціонарних задач. Для стаціонарних задач в просторовому та 
+електродинамічному планах поле розділилось б на чисто електричне та чисто
+магнітне за рахунок нульових похідних від часу.
+
+Випишемо в окрему систему тільки ті рівняння, що містять $ H_z $ та виразимо з 
+них саму цю компоненту. Тепер, діючи на рівняння \eqref{eq:rotHt} операторами 
+$ \mu_0 \partder{}{t} \mu $ і $ \mu_0 \partder{}{z} \mu $ виключимо поздовжну 
+магнітну компоненту з рівнянь Максвелла, підставивши, відповідно, 
+\eqref{eq:divHt} та \eqref{eq:rotEz}. В результаті маємо систему не з трьох 
+рівнянь, а вже з двох відносно поперечних компонент поля. Результат зашипимо не 
+в вигляді системи, а як чотиривимірне векторне рівняння.
+
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+\begin{cases} 
+\crossprod{\nabla_\perp}{\vect{z_0}} H_z =
+\epsilon_0 \partder{}{t} \left( \epsilon \vect{E_\perp} \right) -
+\partder{}{z} \crossprod{\vect{z_0}}{\vect{H_\perp}} + \vect{J_\perp} \\
+- \triple{\vect{z_0}}{\nabla_\perp}{\vect{E_\perp}} =
+\mu_0 \partder{}{t} \left(\mu H_z \right) + I_z \\ 
+\mu_0 \partder{}{z} \left( \mu H_z \right) = 
+g - \mu_0 \mu \dotprod{\nabla_\perp}{\vect{H_\perp}}
+\end{cases}
+\end{aligned} \end{equation*} }
+
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+\begin{cases} 
+\left. \crossprod{\nabla_\perp}{\vect{z_0}} H_z = \vect{F_H} 
+\right| \cdot \mu_0 \partder{}{z} \mu \\
+\left. \crossprod{\nabla_\perp}{\vect{z_0}} H_z = \vect{F_H} 
+\right| \cdot \mu_0 \partder{}{t} \mu \\
+\mu_0 \partder{}{z} \left( \mu H_z \right) = 
+g - \mu_0 \mu \dotprod{\nabla_\perp}{\vect{H_\perp}} \\
+\mu_0 \partder{}{t} \left(\mu H_z \right) =
+\triple{\nabla_\perp}{\vect{z_0}}{\vect{E_\perp}} - I_z
+\end{cases}
+\end{aligned} \end{equation*} }
+
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+\begin{cases} 
+\crossprod{\nabla_\perp}{\vect{z_0}} \left(
+g - \mu_0 \mu \dotprod{\nabla_\perp}{\vect{H_\perp}} \right) =
+\mu_0 \partder{}{z} \left( \mu \vect{F_H} \right) \\
+\crossprod{\nabla_\perp}{\vect{z_0}} \left(
+\triple{\nabla_\perp}{\vect{z_0}}{\vect{E_\perp}} - I_z \right) = 
+\mu_0 \partder{}{t} \left( \mu \vect{F_H} \right)
+\end{cases}
+\end{aligned} \end{equation*} }
+
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+\begin{cases} 
+- \mu_0 \mu \dotprod{\crossprod{\nabla_\perp}{\vect{z_0}} \nabla_\perp}
+{\vect{H_\perp}} = \mu_0 \partder{}{z} \left( \mu \vect{F_H} \right) -
+\crossprod{\nabla_\perp}{\vect{z_0}} g \\
+\left. \crossprod{\nabla_\perp 
+\triple{\nabla_\perp}{\vect{z_0}}{\vect{E_\perp}}
+}{\vect{z_0}} = \mu_0 \partder{}{t} \left( \mu \vect{F_H} \right) +
+\crossprod{\nabla_\perp}{\vect{z_0}} I_z \right| \times \vect{z_0}
+\end{cases}
+\end{aligned} \end{equation*} }
+
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+\crossprod{ \crossprod
+{\nabla_\perp \triple{\nabla_\perp}{\vect{z_0}}{\vect{E_\perp}}}
+{\vect{z_0}} }{ \vect{z_0} } = \crossprod{ \crossprod{\nabla_\perp \phi}
+{\vect{z_0}} }{\vect{z_0}} = \\ = - \crossprod{ \vect{z_0} }{ 
+\crossprod{\nabla_\perp \phi}{\vect{z_0}} } = - \dotprod{\nabla_\perp \phi}
+{ \dotprod{\vect{z_0}}{\vect{z_0}} } + \dotprod{\vect{z_0}}
+{ \dotprod{\vect{z_0}}{\nabla_\perp \phi} } = \\ = - \nabla_\perp \phi = 
+- \nabla_\perp \dotprod{\crossprod{\nabla_\perp}{\vect{z_0}}}{\vect{E_\perp}} = 
+\dotprod{\nabla_\perp \crossprod{\vect{z_0}}{\nabla_\perp}}{\vect{E_\perp}}
+\end{aligned} \end{equation*} }
+
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+\crossprod {\crossprod{\nabla_\perp}{\vect{z_0}} I_z}{\vect{z_0}} = 
+- \crossprod {\vect{z_0}}{\crossprod{\nabla_\perp}{\vect{z_0}} I_z} = \\
+= - \dotprod{{\nabla_\perp}}{\dotprod{\vect{z_0}}{\vect{z_0}}} I_z + 
+\dotprod{\vect{z_0}}{\dotprod{\vect{z_0}}{{\nabla_\perp}}} I_z = 
+- \nabla_\perp I_z 
+\end{aligned} \end{equation*} }
+
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+\begin{cases} 
+\dotprod{\crossprod{\vect{z_0}}{\nabla_\perp} \nabla_\perp} {\vect{H_\perp}} = 
+\mu^{-1} \partder{}{z} \left( \mu \vect{F_H} \right) +
+\left( \mu_0 \mu \right)^{-1} \crossprod{\vect{z_0}}{\nabla_\perp} g \\
+\dotprod{\nabla_\perp \crossprod{\vect{z_0}}{\nabla_\perp}}{\vect{E_\perp}}
+= - \mu_0 \partder{}{t} \left( \mu \crossprod{\vect{z_0}}{\vect{F_H}} \right) -
+\nabla_\perp I_z 
+\end{cases}
+\end{aligned} \end{equation*} }
+
+\begin{equation}
+\left( \begin{array}{c} 
+\dotprod{\crossprod{\vect{z_0}}{\nabla_\perp} \nabla_\perp} {\vect{H_\perp}} \\
+\dotprod{\nabla_\perp \crossprod{\vect{z_0}}{\nabla_\perp}}{\vect{E_\perp}}} \\
+\end{array} \right) = \left( \begin{array}{c} 
+\frac{1}{\mu} \partder{}{z} \left( \mu \vect{F_H} \right) +
+\frac{1}{\mu_0 \mu} \crossprod{\vect{z_0}}{\nabla_\perp} g \\
+- \mu_0 \partder{}{t} \left( \mu \crossprod{\vect{z_0}}{\vect{F_H}} \right) -
+\nabla_\perp I_z 
+\end{array} \right)
+\end{equation}
+
+\begin{equation*}
+\vect{F_H} = \epsilon_0 \partder{}{t} \left( \epsilon \vect{E_\perp} \right) - 
+\partder{}{z} \crossprod{\vect{z_0}}{\vect{H_\perp}} + \vect{J_\perp}
+\end{equation*}
+
+Переозначення $ \vect{F_H} $ не несе фізичного змісту, а введено лише для 
+спрощення виду формул. Аналогічним чином виключимо компоненту $ E_z $. Отримане 
+векторне рівняння матиме наступний вид.
+
+\begin{equation}
+\left( \begin{array}{c} 
+\dotprod{\nabla_\perp \crossprod{\vect{z_0}}{\nabla_\perp}} {\vect{H_\perp}} \\
+\dotprod{\crossprod{\vect{z_0}}{\nabla_\perp} \nabla_\perp}{\vect{E_\perp}}} \\
+\end{array} \right) = \left( \begin{array}{c} 
+- \epsilon_0 \partder{}{t} \left( \epsilon \crossprod{\vect{F_E}}{\vect{z_0}} 
+\right) - \nabla_\perp J_z \\
+\frac{1}{\epsilon} \partder{}{z} \left( \epsilon \vect{F_E} \right) +
+\frac{1}{\epsilon_0 \epsilon} \crossprod{\nabla_\perp \varrho}{\vect{z_0}}
+\end{array} \right)
+\end{equation}
+
+\begin{equation*}
+\vect{F_E} = \mu_0 \partder{}{t} \left( \mu  \vect{H_\perp} \right) +
+\partder{}{z} \crossprod{\vect{z_0}}{\vect{E_\perp}} + \vect{I_\perp}
+\end{equation*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Построение модового базиса}
+\section{Побудова модового базису}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Эволюционные уравнения}
+\section{Еволюційні рівняння}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Итеративный учет слабой нелинейности}
+\section{Ітеративний підхід до врахування нелінійності}

@@ -1,12 +1,15 @@
 COMPILER = pdflatex --interaction nonstopmode
 BIBEL = bibtex
 
-.PHONY: clean install
+.PHONY: clean log
 
-default: *.tex my.bib import.bib
+default: *.tex *.bib
 	$(COMPILER) thesis.tex; \
 	$(BIBEL) thesis.aux; \
 	$(COMPILER) thesis.tex
+
+log:
+	git log --oneline --decorate --graph
 
 clean:
 	@rm -f *.dtx *.ins 

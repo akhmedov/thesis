@@ -1,6 +1,7 @@
 \chapter{Властивості функції Бесселя першого роду}
 \label{ch:bessel}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Визначення на лінійні властивості}
 
 \begin{equation}
@@ -12,8 +13,16 @@ J_{n+1} \left( z \right) + J_{n-1} \left( z \right) =
 \frac{2n}{z} J_n \left( z \right)
 \end{equation}
 
-\section{Інтегропохідні властивості}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Асимптотичні властивості}
+%
+\begin{equation} \label{eq:limJ1toZ}
+\lim_{z \to 0} \left. \frac{J_1 \left( z \right)}{z} \right. = \frac{1}{2}
+\end{equation}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Інтегропохідні властивості}
+%
 \begin{equation}
 2 \derivat{}{z} J_n \left( z \right) = 
 J_{n-1} \left( z \right) - J_{n+1} \left( z \right) 
@@ -39,13 +48,14 @@ J_{n-1} \left( z \right) - \frac{n}{z} J_{n} \left( z \right)
 z^n J_{n-1} \left( z \right)
 \end{equation}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Інтеграл 1}
-
-\begin{equation*}
+%
+\begin{equation} \label{eq:int1start}
 I_1 = \int\limits_{0}^{\infty} \frac{d\nu}{\nu} 
 J_1 \left( \nu R \right) J_1 \left( \nu \rho \right) 
 J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right)
-\end{equation*}
+\end{equation}
 
 Інтеграли такого виду зустрічаються в \cite[ст. 398]{Watson1922}.
 \begin{equation} \begin{aligned} \label{eq:intJJJtable}
@@ -367,6 +377,36 @@ I_1 \left( 0 < \rho < R \right) =
 \left. I_1 \left( \rho > R \right) \right|_{\rho = R}
 \end{aligned} \end{equation*}
 
+Для того щоб отримати значення інтегралу на осі аплікат повернемось до 
+початкового виду $ I_1 $ з \eqref{eq:int1start}. Користуючись асимптотичною 
+властивістю функції Бесселя \eqref{eq:limJ1toZ} побачимо що інтеграл 
+зведеться до випадку \eqref{eq:intJJtable}.
+%
+\textcolor{lightgray} {\begin{equation*} \begin{aligned}
+I_1 \left( \rho = 0 \right) = \rho \int\limits_{0}^{\infty} d \nu
+J_1 \left( \nu R \right) \frac{J_1 \left( \nu \rho \right) }{\nu \rho}
+J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right) = \\
+= \frac{\rho}{2} \int\limits_{0}^{\infty} d \nu
+J_1 \left( \nu R \right) J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right) = 
+\frac{\rho}{2} I_2 \left( \rho = 0 \right)
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray} {\begin{equation*}
+\left. \frac{I_1}{\rho} \right|_{\rho = 0} = \frac{1}{2} \begin{cases}
+0, 0 < R < \sqrt{c^2t^2 - z^2} \\
+\frac{1}{2} \left( c^2t^2 - z^2 \right)^{-1/2}, 0 < R = \sqrt{c^2t^2 - z^2} \\ 
+1/R, 0 < \sqrt{c^2t^2 - z^2} < R 
+\end{cases}
+\end{equation*} }
+%
+\begin{equation}
+\left. \frac{I_1}{\rho} \right|_{\rho = 0} = \frac{1}{2} \begin{cases}
+0, 0 < R < \sqrt{c^2t^2 - z^2} \\
+1/2R, 0 < R = \sqrt{c^2t^2 - z^2} \\ 
+1/R, 0 < \sqrt{c^2t^2 - z^2} < R 
+\end{cases}
+\end{equation}
+
 На останок, спростимо тригонометричні вирази, що містять $ \psi $. Розглянемо 
 $ \psi = \arccos f(r,t) $, де $ f(r,t) $ задовільна функція координат. 
 Тоді $ f(r,t) = \cos \psi $. Зазначимо, що з означення відомо, що 
@@ -401,6 +441,12 @@ $ \psi \in \left[ 0, \pi \right] $, тому $ \sin \psi \geq 0 $. Таким ч
 \left( \frac{\rho^2 - R^2 }{c^2 t^2 - z^2} \right)^2 - 1}
 \end{aligned} \end{equation*} }
 %
+\begin{equation*} \begin{aligned}
+\sin \psi = \frac{c^2 t^2 - z^2}{2 \rho R} 
+\sqrt{2 \frac{\rho^2 + R^2 }{c^2 t^2 - z^2} - 
+\left( \frac{\rho^2 - R^2 }{c^2 t^2 - z^2} \right)^2 - 1}
+\end{aligned} \end{equation*}
+%
 \textcolor{lightgray}{ \begin{equation*} \begin{aligned}
 \tan \frac{\psi}{2} = \pm \sqrt{ \frac{1 - \cos \psi}{1 + \cos \psi} } = 
 \sqrt{ \frac{1- \frac{\rho^2 + R^2}{2 \rho R} + \frac{c^2 t^2 - z^2}{2 \rho R}}
@@ -408,5 +454,68 @@ $ \psi \in \left[ 0, \pi \right] $, тому $ \sin \psi \geq 0 $. Таким ч
 \sqrt{ \frac{c^2t^2 - z^2 - \left( \rho - R \right)^2}
 {\left( \rho + R \right)^2 - \left( c^2t^2 - z^2 \right)} }
 \end{aligned} \end{equation*} }
+%
+\begin{equation*} \begin{aligned}
+\tan \frac{\psi}{2} = 
+\sqrt{ \frac{c^2t^2 - z^2 - \left( \rho - R \right)^2}
+{\left( \rho + R \right)^2 - \left( c^2t^2 - z^2 \right)} }
+\end{aligned} \end{equation*} }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Інтеграл 2}
+%
+\begin{equation} \label{eq:int2start}
+I_2 = \int \limits_{0}^{\infty} d \nu J_1 \left( \nu R \right)   
+J_0 \left( \nu \sqrt{c^2t^2 - z^2} \right) J_0 \left( \nu \rho \right)
+\end{equation}
+
+Це табличний інтеграл, що може бути знайдений в \cite[ст. 228]{SpecFunc1983}.
+%
+\begin{equation} \begin{aligned} \label{eq:intJ0J0J1tabel}
+\int \limits_{0}^{\infty} d x J_0 \left( ax \right) 
+J_0 \left( bx \right) J_1 \left( cx \right) = \begin{cases}
+0, 0 < c < | a - b | \\ 
+1/c, c > a + b
+\end{cases} a, b > 0 \\
+= \frac{1}{\pi c} \arccos \frac{a^2 + b^2 - c^2}{2ab},
+| a - b | < c < a + b; a,b > 0
+\end{aligned} \end{equation}
+
+Фізичні властивості змінних в \eqref{eq:int2start} відповідають умові 
+$ a,b,c > 0 $. Запишемо значення інтегралу відносно інших умов.
+%
+\begin{equation}
+I_2 = \begin{cases}
+0, 0 < R < | f_{-} \left( r, t \right) | \\
+\frac{1}{\pi R} \arccos \frac{c^2t^2 - z^2 + \rho^2 - R^2}
+{2 \rho \sqrt{c^2t^2 - z^2}}, | f_{-} \left( r, t \right) | < R < 
+f_{+} \left( r, t \right) \\ 1/R, f_{+} \left( r, t \right) < R \\
+\end{cases}
+\end{equation}
+
+Тут для спрощення введено наступні переозначення:
+%
+\begin{equation*} \begin{aligned}
+f_{-} \left( r, t \right) = \rho - \sqrt{c^2t^2 - z^2} \\
+f_{+} \left( r, t \right) = \rho + \sqrt{c^2t^2 - z^2}
+\end{aligned} \end{equation*}
+
+Якщо $ \rho = 0 $, то область визначення інтегралу $ I_2 $ по формулі 
+\eqref{eq:int2start} схропується і інтеграл стає невизначеним. У цьому випадку 
+розглянемо інтеграл за допомогою формули \eqref{eq:intJJtable}.
+%
+\textcolor{lightgray}{ \begin{equation*}
+I_2 \left( \rho = 0 \right) = \begin{cases}
+0, 0 < R < \sqrt{c^2t^2 - z^2} \\
+\frac{1}{2} \left( c^2t^2 - z^2 \right)^{-1/2}, 0 < R = \sqrt{c^2t^2 - z^2} \\ 
+1/R, 0 < \sqrt{c^2t^2 - z^2} < R 
+\end{cases}
+\end{equation*} }
+%
+\begin{equation}
+I_2 \left( \rho = 0 \right) = \begin{cases}
+0, 0 < R < \sqrt{c^2t^2 - z^2} \\
+1/2R, 0 < R = \sqrt{c^2t^2 - z^2} \\ 
+1/R, 0 < \sqrt{c^2t^2 - z^2} < R 
+\end{cases}
+\end{equation}

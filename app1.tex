@@ -1,13 +1,13 @@
-\chapter{Властивості функції Бесселя першого роду}
+\chapter{Циліндрична функція Бесселя першого роду}
 \label{ch:bessel}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Визначення на лінійні властивості}
-
+%
 \begin{equation}
 J_{-n} \left( z \right) = \left( -1 \right)^n J_n \left( z \right)
 \end{equation}
-
+%
 \begin{equation}
 J_{n+1} \left( z \right) + J_{n-1} \left( z \right) = 
 \frac{2n}{z} J_n \left( z \right)
@@ -21,28 +21,28 @@ J_{n+1} \left( z \right) + J_{n-1} \left( z \right) =
 \end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Інтегропохідні властивості}
+\section{Інтегродиференціальні властивості}
 %
 \begin{equation}
 2 \derivat{}{z} J_n \left( z \right) = 
 J_{n-1} \left( z \right) - J_{n+1} \left( z \right) 
 \end{equation}
-
+%
 \begin{equation}
 \derivat{}{z} J_n \left( z \right) = 
 J_{n-1} \left( z \right) - \frac{n}{z} J_{n} \left( z \right) 
 \end{equation}
-
+%
 \begin{equation}
 \derivat{}{z} J_n \left( z \right) = 
 \frac{n}{z} J_{n} \left( z \right) - J_{n+1} \left( z \right) 
 \end{equation}
-
+%
 \begin{equation}
 \derivat{}{z} \frac{ J_n \left( z \right) }{ z^n }  = 
 - \frac{ J_{n+1} \left( z \right) }{ z^n }
 \end{equation}
-
+%
 \begin{equation}
 \derivat{}{z} \left( z^n J_n \left( z \right) \right)  = 
 z^n J_{n-1} \left( z \right)
@@ -145,8 +145,6 @@ R^2 + \rho^2 - 2 \rho R \cos \phi \geq c^2 t^2 - z^2 \\
 просторових координат а часу. Користуючись областю значень 
 $ -1 \leq \cos \phi \leq 1 $, запишемо систему що визначає світловий конус 
 \cite[ст. 22]{LandauII} для компоненти поля, що мітить даний інтеграл. 
-\textcolor{red}{ Так як значення інтегралу при від'ємних значеннях $ \cos \phi $ 
-рівні нулю. Обмежимо область значень знизу: $ 0 \leq \cos \phi \leq 1 $ }. 
 %
 \textcolor{lightgray}{ \begin{equation*} \begin{aligned}
 \begin{cases}
@@ -165,10 +163,6 @@ $ -1 \leq \cos \phi \leq 1 $, запишемо систему що визнач�
 \left( \rho + R \right)^2 \geq c^2 t^2 - z^2 \geq 0
 \end{cases} 
 \end{aligned} \end{equation*} }
-%
-\textcolor{red}{ \begin{equation*} \begin{aligned}
-\rho^2 + R^2 \geq c^2 t^2 - z^2 \geq \left( \rho - R \right)^2
-\end{aligned}  \end{equation*} }
 %
 \begin{equation*}
 \left( \rho + R \right)^2 \geq c^2 t^2 - z^2 \geq \left( \rho - R \right)^2
@@ -413,7 +407,7 @@ $ \psi = \arccos f(r,t) $, де $ f(r,t) $ задовільна функція �
 $ \psi \in \left[ 0, \pi \right] $, тому $ \sin \psi \geq 0 $. Таким чином:
 %
 \begin{equation*} \begin{aligned}
-\sin \psi = \sqrt{1 - \cos^2{\psi}} = \sqrt{1 - f^2(r,t)}
+\sin \psi = \sqrt{1 - \cos^2 \psi } = \sqrt{1 - f^2(r,t)}
 \end{aligned} \end{equation*}
 
 Згадуючи введене означення для $ \psi $ зашипимо, що
@@ -426,8 +420,8 @@ $ \psi \in \left[ 0, \pi \right] $, тому $ \sin \psi \geq 0 $. Таким ч
 \textcolor{lightgray}{ \begin{equation*} \begin{aligned}
 \sin \psi = \sqrt{1 - \left( \frac{\rho^2 + R^2}{2 \rho R} - 
 \frac{c^2 t^2 - z^2}{2 \rho R} \right)^2} = 
-\sqrt{1 - \frac{\left( \rho^2 + R^2 - c^2 t^2 + z^2 \right)^2}{4 \rho^2 R^2} } = \\
-= \sqrt{\frac{4 \rho^2 R^2}{4 \rho^2 R^2} - 
+\sqrt{1 - \frac{\left( \rho^2 + R^2 - c^2 t^2 + z^2 \right)^2}
+{4 \rho^2 R^2} } = \\ = \sqrt{\frac{4 \rho^2 R^2}{4 \rho^2 R^2} - 
 \frac{\left( \rho^2 + R^2 - c^2 t^2 + z^2 \right)^2}{4 \rho^2 R^2} } =
 \sqrt{\frac{4 \rho^2 R^2 - \left( \rho^2 + R^2 - c^2 t^2 + z^2 \right)^2}
 {4 \rho^2 R^2}} = \\
@@ -459,7 +453,7 @@ $ \psi \in \left[ 0, \pi \right] $, тому $ \sin \psi \geq 0 $. Таким ч
 \tan \frac{\psi}{2} = 
 \sqrt{ \frac{c^2t^2 - z^2 - \left( \rho - R \right)^2}
 {\left( \rho + R \right)^2 - \left( c^2t^2 - z^2 \right)} }
-\end{aligned} \end{equation*} }
+\end{aligned} \end{equation*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Інтеграл 2}

@@ -1,2 +1,149 @@
-\chapter{Свойства функции Ломмеля}
+\chapter{Властивості функції Ломмеля двох змінних}
 \label{ch:lommel}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Визначення та лінійні властивості}
+
+В \cite{Boersma1961} приводиться визначення через функцію Бесселя.
+%
+\begin{equation}
+U_n \left[ W, Z \right] = \sum \limits_{m = 0}^{\infty} (-1)^m
+\left( \frac{W}{Z} \right)^{n + 2m} J_{n + 2m} (Z)
+\end{equation}
+
+В \cite{Boersma1961} також можна знайти наступну властивість.
+%
+\begin{equation}
+U_n \left[ W, Z \right] + U_{n+2} \left[ W, Z \right] = 
+\left( \frac{W}{Z} \right)^n J_n (Z)
+\end{equation}
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+W_\pm = \pm i (\nu ct - \nu z) \\
+Z = \sqrt{\nu^2 c^2t^2 - \nu^2 z^2}
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+U_0[W_-, Z] - U_2[W_-, Z] = \\ = \sum \limits_{m = 0}^{\infty} (-1)^m
+\left[ \left( \frac{W_-}{Z} \right)^{2m} J_{2m} (Z) -
+\left( \frac{W_-}{Z} \right)^{2m+2} J_{2m+2} (Z) \right] = \\
+= \sum \limits_{m = 0}^{\infty} (-1)^m \left( \frac{W_-}{Z} \right)^{2m}
+\left[ J_{2m} (Z) - \frac{W_-^2}{Z^2} J_{2m+2} (Z) \right] = \\
+= \sum \limits_{m = 0}^{\infty} (-1)^m (-i)^{2m} 
+\left( \frac{ct-z}{ct+z} \right)^m
+\left[ J_{2m}(Z) - (-i)^2 \frac{ct-z}{ct+z} J_{2m+2}(Z) \right] = \\
+= \sum \limits_{m = 0}^{\infty} \left( \frac{ct-z}{ct+z} \right)^m
+\left[ J_{2m}(Z) + \frac{ct-z}{ct+z} J_{2m+2}(Z) \right]
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+J_{2m+2}(Z) = 2 (2m+1) \frac{J_{2m+1}(Z)}{Z} - J_{2m}(Z)
+\end{aligned} \end{equation*} }
+%
+\begin{equation} 
+U_0[W_-, Z] - U_2[W_-, Z] = 
+\sum \limits_{m = 0}^{\infty} \left( \frac{ct-z}{ct+z} \right)^m
+\left[ J_{2m}(Z) + \frac{ct-z}{ct+z} J_{2m+2}(Z) \right]
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Інтегродиференціальні властивості}
+
+Функція Ломмеля типова для нестаціонарних задач. В \cite[ст. 41]{Borisov1991} 
+приведено корисні інтегродиференціальні.
+%
+\begin{equation} \begin{aligned}
+\int \limits_{\xi}^{\tau} ds e^{-i \gamma s} J_0(\sqrt{s^2 - \xi^2 }) = 
+\frac{e^{-i \gamma \tau}}{\sqrt{\gamma^2 - 1}} \left( U_1(W_+,Z) + \right. \\ 
+\left. + i U_2(W_+,Z) - U_1(W_-,Z) - i U_2(W_-,Z) \right)
+\end{aligned} \end{equation}
+
+Тут $ W_\pm = (\gamma \pm \sqrt{\gamma^2 - 1}) (\tau - \xi) $ a 
+$ Z = \sqrt{\tau^2 - \xi^2} $. Також для використання цієї формули повинна
+виконуватись умова $ \tau - \xi > 0 $.
+%
+\textcolor{red}{ \begin{equation}
+\left. \begin{array}{c}
+U_{2n} (W_+, Z) = U_{2n} (W_-, Z) \\
+U_{2n+1} (W_+, Z) = - U_{2n+1} (W_-, Z)
+\end{array} \right| n \in \Z
+\end{equation} }
+%
+\begin{equation} 
+\partder{}{Z} U_n (W,Z) = - \frac{Z}{W} U_{n+1} (W,Z)
+\end{equation}
+%
+\begin{equation}
+2 \partder{}{W} U_n (W,Z) = U_{n-1} (W,Z) + 
+\left( \frac{Z}{W} \right)^2 U_{n+1} (W,Z)
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Інтеграл 3}
+
+\begin{equation}
+I_3 = \int \limits_{0}^{\infty} \frac{d \nu}{\nu} J_1(\nu \rho) J_1(\nu R) 
+(U_0[ W_-, Z ] - U_2[ W_-, Z ])
+\end{equation}
+%
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+I_3 =  \sum \limits_{m = 0}^{\infty} \left( \frac{ct-z}{ct+z} \right)^m 
+\int_{0}^{\infty} \frac{d \nu}{\nu} J_1(\nu \rho) J_1(\nu R) 
+J_{2m} \left (\nu \sqrt{c^2t^2-z^2} \right) + \\ + \sum \limits_{m = 0}^{\infty} 
+\left( \frac{ct-z}{ct+z} \right)^{m+1} \int_{0}^{\infty}
+\frac{d \nu}{\nu} J_1(\nu \rho) J_1(\nu R) 
+J_{2m+2} \left (\nu \sqrt{c^2t^2-z^2} \right)
+\end{aligned} \end{equation*} }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Інтеграл 4}
+
+\begin{equation}
+I_4 = \int \limits_{0}^{\infty} d \nu J_0(\nu \rho) J_1(\nu R) 
+(U_0[ W_-, Z ] - U_2[ W_-, Z ])
+\end{equation}
+%
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+I_4 =  \sum_{m = 0}^{\infty} \left( \frac{ct-z}{ct+z} \right)^m 
+\int_{0}^{\infty} d \nu J_0(\nu \rho) J_1(\nu R) 
+J_{2m} \left (\nu \sqrt{c^2t^2-z^2} \right) + \\ + \sum \limits_{m = 0}^{\infty} 
+\left( \frac{ct-z}{ct+z} \right)^{m+1} \int_{0}^{\infty}
+d \nu J_0(\nu \rho) J_1(\nu R) J_{2m+2} \left (\nu \sqrt{c^2t^2-z^2} \right)
+\end{aligned} \end{equation*} }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Інтеграл 5}
+
+\begin{equation}
+I_5 = i \int \limits_{0}^{\infty} d \nu J_1 \left( \nu R \right) 
+J_1 \left( \nu \rho \right)
+U_1 \left[ i \nu \left( ct - z \right), \nu \sqrt{c^2t^2 - z^2} \right]
+\end{equation}
+%
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+U_1[W_+, Z] = \sum \limits_{m = 0}^{\infty} i^{2m+1} (-1)^m 
+\left( \frac{ct-z}{\sqrt{c^2t^2-z^2}} \right)^{2m + 1} J_{2m + 1} (Z) = \\
+= - i \sum \limits_{m = 0}^{\infty} (-1)^m  (-1)^m 
+\left( \sqrt{\frac{ct-z}{ct+z}} \right)^{2m + 1}
+J_{2m + 1} \left( \nu \sqrt{c^2t^2-z^2} \right) = \\
+= - i \sqrt{\frac{ct-z}{ct+z}} \sum \limits_{m = 0}^{\infty}
+\left( \frac{ct-z}{ct+z} \right)^m 
+J_{2m + 1} \left( \nu \sqrt{c^2t^2-z^2} \right)
+\end{aligned} \end{equation*} }
+%
+\begin{equation} 
+U_1[W_+, Z] = - i \sqrt{\frac{ct-z}{ct+z}} \sum \limits_{m = 0}^{\infty}
+\left( \frac{ct-z}{ct+z} \right)^m J_{2m + 1} \left(  \nu \sqrt{c^2t^2-z^2} \right)
+\end{equation}
+%
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+I_5 = \sqrt{\frac{ct-z}{ct+z}} \sum_{m = 0}^{\infty} 
+\left( \frac{ct-z}{ct+z} \right)^m \int_{0}^{\infty} d \nu J_1(\nu R) 
+J_1 (\nu \rho) J_{2m + 1} \left(  \nu \sqrt{c^2t^2-z^2} \right)
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+J_{2m + 2} \left( \nu \sqrt{c^2t^2-z^2} \right) = (4m+2) 
+\frac{J_{2m+1} \left( \nu \sqrt{c^2t^2-z^2} \right)}{\nu \sqrt{c^2t^2-z^2}} -
+J_{2m} \left( \nu \sqrt{c^2t^2-z^2} \right)
+\end{aligned} \end{equation*} }

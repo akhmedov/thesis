@@ -11,9 +11,12 @@
 
 % Таблиці зі стовпчиками, що розтягуються
 \usepackage{tabularx}
-
 \usepackage{geometry}
 \geometry{hmargin={30mm,15mm},lines=29,vcentering}
+
+% експорт зображень
+\usepackage{graphicx}
+\graphicspath{ {Application/} }
 
 \usepackage{eqparbox} 
 \usepackage[x11names]{xcolor} 
@@ -38,8 +41,8 @@
 
 \begin{document}
 
-\title{Випромінювання нестаціонарних полів та їх розповсюдження в нелінійному 
-просторі}
+\title{Випромінювання нестаціонарних полів та їх розповсюдження в 
+нелінійному просторі}
 
 \author{Ахмедов Ролан Джавадович}
 
@@ -48,7 +51,7 @@
 
 \speciality{01.04.03}
 
-\udc{XXXXX.XXXX} % Індекс за УДК
+\udc{XXXXX.XXXX}
 
 \institution
 {Харкивській національний університет імені В. Н. Каразіна}
@@ -56,20 +59,21 @@
 
 \date{2017}
 
-\maketitle % титулка
+\maketitle
 
-\tableofcontents % содержание
+\tableofcontents
 
 %\include{intro}
-\include{ch1}	% Метод эволюционных уравнений
-\include{ch2}	% Излучение плоскаго диска
+\include{evolutionary}
+\include{plane_disk}
 
 \include{concl}
 \include{bib}
 
 \appendix
-\include{app3}	% Властивості векторних операторів
-\include{app1}	% Властивості функциії Бесселя
-\include{app2}	% Властивості функциії Ломмеля
+\include{trigonometric}
+\include{vector}
+\include{bessel}
+\include{lommel}
 
 \end{document}

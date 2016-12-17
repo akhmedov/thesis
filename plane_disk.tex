@@ -5,9 +5,17 @@
 \section{Постановка задачі}
 %
 \begin{equation}
-\vect{j_0} \left( r, t \right) = \vect{J} = \vect{x_0} H(t) \delta(z) 
+\vect{j_0} \left( r, t \right) = \vect{J} = \vect{x_0} A_0 H(t) \delta(z) 
 \left(  H(\rho) - H(\rho - R) \right)
 \end{equation}
+%
+\begin{figure}[htbp] \begin{center}
+\includegraphics[scale=0.55]{PlaneDisk}
+\caption{Геометрія випромінювача} \label{fig:pdisk}
+\end{center} \end{figure}
+%
+% \caption{Геометрія випромінювача} \label{fig:pdisk}
+% \end{figure}
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
 \begin{cases}
@@ -36,6 +44,9 @@ j_m \left( r, t; \nu \right) = \frac{\sqrt{\mu_0}}{2\pi}
 \crossprod{ \nabla_\perp \Psi_m^* }{ \vect{z_0} } = 
 - \sqrt{\nu} e^{-im\varphi} \left( 
 \vect{\varphi_0} \frac{J_{m-1} (\nu \rho) - J_{m+1} (\nu \rho)}{2} + 
+\right. \\ + \left. i m \vect{\rho_0} \frac{J_m (\nu \rho)}
+{\rho \nu} \right) = - \sqrt{\nu} e^{-im\varphi} \left( 
+\vect{\varphi_0} \frac{J_{m-1} (\nu \rho) - J_{m+1} (\nu \rho)}{2} + 
 \right. \\ + \left. i \vect{\rho_0} \frac{J_{m-1} (\nu \rho) + 
 J_{m+1} (\nu \rho)}{2} \right)
 \end{aligned} \end{equation*} }
@@ -58,6 +69,7 @@ j_m = \frac{\sqrt{\mu_0}}{2\pi} \sqrt{\nu} \delta(z) H(t) \cdot \\
 ( \cos m \varphi - i \sin m \varphi) \int \limits_{0}^{R} 
 \frac{J_{m-1} (\nu \rho) + J_{m+1} (\nu \rho)}{2} \rho d \rho \Big)
 \end{aligned} \end{equation*} }
+%
 \textcolor{red}{Викладки для отримання інтегралів по $ \varphi $ відсутні. 
 Перенести вивід з файлу thesis-debug-02.}
 %
@@ -117,7 +129,7 @@ J_2 (\nu \rho) \right) \rho d \rho = \\
 \end{aligned} \end{equation*} }
 %
 \begin{equation} 
-j_m (z, t; \nu) = - i R \frac{\sqrt{\mu_0}}{2} \delta(z) H(t) 
+j_m (z, t; \nu) = - i R A_0 \frac{\sqrt{\mu_0}}{2} \delta(z) H(t) 
 \frac{\delta_{m,1} + \delta_{m,-1}}{\sqrt{\nu}} J_1 (\nu R)
 \end{equation}
 
@@ -130,117 +142,167 @@ j_m (z, t; \nu) = - i R \frac{\sqrt{\mu_0}}{2} \delta(z) H(t)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Лінійні коефіцієнти}
 
-\textcolor{red}{Функція Рімана}
+\begin{equation} \begin{aligned}
+V_m^h  = - \mu \partial_{ct} (h_m)
+\end{aligned} \end{equation}
 %
-\begin{equation}
-G(t,t',z,z') = \frac{c}{2} H \left(  c (t-t') - (z-z') \right)
-J_0 \left( \nu \sqrt{c^2 (t-t')^2 - (z-z')^2} \right)
-\end{equation}
+\begin{equation} \begin{aligned}
+I_m^h  = \partial_z (h_m)
+\end{aligned} \end{equation}
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+- \epsilon \partial_{ct} (V_m^h) - \partial_z I_m^h + \nu^2 h_m = 
+\frac{\sqrt{\mu_0}}{2 \pi} \int_0^{2\pi} d \varphi 
+\int_0^{\infty} \rho d \rho \crossprod{\vect{z_0}}{\vect{J_\perp}}
+\nabla_\perp \Psi_m^* (\nu) 
+\end{aligned} \end{equation*} }
+%
+\textcolor{red} { \begin{equation*} \begin{aligned}
+\crossprod{\vect{z_0}}{\vect{J_\perp}} \nabla_\perp \Psi_m^* (\nu) =
+\vect{J_\perp} \crossprod{\nabla_\perp \Psi_m^* (\nu)}{\vect{z_0}}
+\end{aligned} \end{equation*} }
+%
+\begin{equation*} \begin{aligned}
+\epsilon \partial_{ct} \left( \mu \partial_{ct} h_m \right) -
+\mu^{-1} \partial_z \left( \mu  \partial_z h_m \right) + 
+\nu^2 h_m = j_m (z,t,\nu) \\
+\partial_{ct} =  \frac{1}{c} \partder{}{t}; 
+\epsilon = \epsilon (z,t);
+\mu = \mu (z,t)
+\end{aligned} \end{equation*}
+%
+\begin{equation} \begin{aligned}
+\left( \frac{\sqrt{\epsilon \mu}}{c} \right)^2 
+\frac{\partial^2 h_m}{\partial t^2} - 
+\frac{\partial^2 h_m}{\partial z^2} + \nu^2 h_m = j_m (z,t,\nu)
+\end{aligned} \end{equation}
+%
+\begin{equation} \begin{aligned}
+\mathit{V} = \frac{c}{\sqrt{\epsilon \mu}} 
+\end{aligned} \end{equation}
+%
+\textcolor{red}{Функція Рімана: перевірити принцип причинності}
+%
+\begin{equation*}
+G(t,t',z,z') = \frac{\mathit{V}}{2} H \left( \mathit{V} (t-t') - (z-z') \right)
+J_0 \left( \nu \sqrt{\mathit{V}^2 (t-t')^2 - (z-z')^2} \right)
+\end{equation*}
 %
 \begin{equation}
 h_m (z, t; \nu) = \iint_S j_m (t',z') G(t,t',z,z') dt' dz'
 \end{equation}
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
-h_m (z, t; \nu) = - i c R \frac{\sqrt{\mu_0}}{4} 
+h_m (z, t; \nu) = - i \mathit{V} R \frac{\sqrt{\mu_0}}{4} 
 \frac{\delta_{m,1} + \delta_{m,-1}}{\sqrt{\nu}} J_1 (\nu R)
 \int \limits_{0}^{\infty} \delta(z) \cdot \\ \cdot
-\int \limits_{0}^{t - \frac{z}{c}} 
-J_0 \left( \nu \sqrt{c^2 (t-t')^2 - (z-z')^2} \right) dt'  dz'
+\int \limits_{t - \frac{z}{\mathit{V}}}^{0} 
+J_0 \left( \nu \sqrt{\mathit{V}^2 (t-t')^2 - (z-z')^2} \right) dt' dz' = 
+i \mathit{V} R \frac{\sqrt{\mu_0}}{4} 
+\frac{\delta_{m,1} + \delta_{m,-1}}{\sqrt{\nu}} J_1 (\nu R)
+\cdot \\ \cdot \int \limits_{0}^{\infty} \delta(z)
+\int \limits_{0}^{t - \frac{z}{\mathit{V}}} 
+J_0 \left( \nu \sqrt{\mathit{V}^2 (t-t')^2 - (z-z')^2} \right) dt' dz
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
-h_m (z, t; \nu) = - i c R \frac{\sqrt{\mu_0}}{4} 
+h_m (z, t; \nu) = i \mathit{V} R \frac{\sqrt{\mu_0}}{4} 
 \frac{\delta_{m,1} + \delta_{m,-1}}{\sqrt{\nu}} J_1 (\nu R)
-\int \limits_{0}^{t - \frac{z}{c}} 
-J_0 \left( \nu \sqrt{c^2 (t-t')^2 - z^2} \right) dt'
+\int \limits_{0}^{t - \frac{z}{\mathit{V}}} 
+J_0 \left( \nu \sqrt{\mathit{V}^2 (t-t')^2 - z^2} \right) dt'
 \end{aligned} \end{equation*} }
 %
+\textcolor{red}{Перевірити вірність наступної нотожності
+%
 \begin{equation}
-h_m (z, t; \nu) = - \frac{iR}{4} \frac{\delta_{m,1} + \delta_{m,-1}}
-{\sqrt{\epsilon_0 \nu}} J_1 (\nu R) \int \limits_{0}^{t - \frac{z}{c}} 
-J_0 \left( \nu \sqrt{c^2 (t-t')^2 - z^2} \right) dt'
-\end{equation}
+h_m = \frac{i R A_0}{4} \frac{\delta_{m,1} + \delta_{m,-1}}
+{\sqrt{\nu} \sqrt{\epsilon_0 \epsilon \mu}} J_1 (\nu R) 
+\int \limits_{0}^{t - \frac{z}{\mathit{V}}} 
+J_0 \left( \nu \sqrt{\mathit{V}^2 (t-t')^2 - z^2} \right) dt'
+\end{equation} }
 %
 \textcolor{red} { \begin{equation*} \begin{aligned}
-\partder{}{t} \int \limits_{0}^{t - \frac{z}{c}} 
-J_0 \left( \nu \sqrt{c^2 (t-t')^2 - z^2} \right) dt' =
-J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right)
+\partder{}{t} \int \limits_{0}^{t - \frac{z}{\mathit{V}}} 
+J_0 \left( \nu \sqrt{\mathit{V}^2 (t-t')^2 - z^2} \right) dt' =
+J_0 \left( \nu \sqrt{\mathit{V}^2 t^2 - z^2} \right)
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
 V_m^h = - \frac{\mu}{c} \partder{h_m}{t} = 
-\sqrt{\mu_0} \mu \frac{iR}{4} 
+\sqrt{\mu_0} \sqrt{\frac{\mu}{\epsilon}} \frac{iR A_0}{4} 
 \frac{\delta_{m,1} + \delta_{m,-1}}{\sqrt{\nu}} J_1 (\nu R)
-J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right)
+J_0 \left( \nu \sqrt{\mathit{V}^2 t^2 - z^2} \right)
 \end{aligned} \end{equation*} }
 %
 \begin{equation}
-V_m^h (z, t; \nu) = \sqrt{\mu_0} \mu \frac{iR}{4} 
+V_m^h (z, t; \nu) = - \frac{iR A_0}{4} \sqrt{\frac{\mu_0 \mu}{\epsilon}} 
 \frac{\delta_{m,1} + \delta_{m,-1}}{\sqrt{\nu}} J_1 (\nu R)
-J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right)
+J_0 \left( \nu \sqrt{\mathit{V}^2 t^2 - z^2} \right)
 \end{equation}
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
-\int \limits_{0}^{t - \frac{z}{c}} J_0 \left( \nu \sqrt{c^2 (t-t')^2 - z^2} 
+\int \limits_{0}^{t - \frac{z}{\mathit{V}}} 
+J_0 \left( \nu \sqrt{\mathit{V}^2 (t-t')^2 - z^2} 
 \right) dt' = \left[ \begin{array}{cc} 
-\nu c (t-t') = s & t' = t - \frac{ds}{\nu c} \\
-dt' = -\frac{ds}{\nu c} & \\
-s(0) = \nu c t & s \left( t - \frac{z}{c} \right) = \nu z
-\end{array} \right] = \\ = - \frac{1}{\nu c} \int \limits_{\nu ct}^{\nu z} ds 
-J_0 (\sqrt{s^2 - \nu^2 z^2}) = \frac{1}{\nu c} \int \limits_{\nu z}^{\nu ct} ds
+\nu \mathit{V} (t-t') = s & t' = t - \frac{ds}{\nu \mathit{V}} \\
+dt' = -\frac{ds}{\nu \mathit{V}} & \\
+s(0) = \nu \mathit{V} t & s \left( t - \frac{z}{\mathit{V}} \right) = \nu z
+\end{array} \right] = \\ = - \frac{1}{\nu \mathit{V}} 
+\int_{\nu \mathit{V} t}^{\nu z} ds 
+J_0 (\sqrt{s^2 - \nu^2 z^2}) = \frac{1}{\nu \mathit{V}} 
+\int_{\nu z}^{\nu \mathit{V} t} ds
 J_0 (\sqrt{s^2 - \nu^2 z^2})
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
-\int \limits_{\nu z}^{\nu ct} ds e^{-i0s} J_0 (\sqrt{s^2 - \nu^2 z^2}) = \\ 
+\int_{\nu z}^{\nu \mathit{V} t} ds e^{-i0s} J_0 (\sqrt{s^2 - \nu^2 z^2}) = \\ 
 = \frac{1}{i} (U_1[W_+,Z] + i U_2[W_+,Z] - U_1[W_-,Z] - i U_2[W_-,Z]) = \\
 = \frac{1}{i} (-U_1[W_-,Z] + i U_2[W_+,Z] - U_1[W_-,Z] - i U_2[W_+,Z]) = \\
-= \left[ \begin{array}{c} W_\pm = \pm i (\nu ct - \nu z) \\
-Z = \sqrt{\nu^2 c^2t^2 - \nu^2 z^2} \end{array} \right] = 
-2i U_1 \left[ -i \nu (ct-z), \nu \sqrt{c^2t^2-z^2} \right]
+= \left[ \begin{array}{c} W_\pm = \pm i (\nu \mathit{V} t - \nu z) \\
+Z = \sqrt{\nu^2 \mathit{V}^2 t^2 - \nu^2 z^2} \end{array} \right] = 
+2i U_1 \left[ -i \nu (\mathit{V}t-z), \nu \sqrt{\mathit{V}^2 t^2-z^2} \right]
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
-\int \limits_{0}^{t - \frac{z}{c}} J_0 \left( \nu \sqrt{c^2 (t-t')^2 - z^2} 
-\right) dt' = \frac{2i}{\nu c} U_1 
-\left[ -i \nu (ct-z), \nu \sqrt{c^2t^2-z^2} \right]
+\int \limits_{0}^{t - \frac{z}{\mathit{V}}} 
+J_0 \left( \nu \sqrt{\mathit{V}^2 (t-t')^2 - z^2} 
+\right) dt' = \frac{2i}{\nu \mathit{V}} U_1 
+\left[ -i \nu (\mathit{V}t-z), \nu \sqrt{\mathit{V}^2t^2-z^2} \right]
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
-h_m (z, t; \nu) = - \frac{iR}{4} \frac{\delta_{m,1} + \delta_{m,-1}}
-{\sqrt{\epsilon_0 \nu}} J_1 (\nu R) \frac{2i}{\nu c} U_1 
-\left[ -i \nu (ct-z), \nu \sqrt{c^2t^2-z^2} \right]
+h_m (z, t; \nu) = \mathit{V} \sqrt{\mu_0} \frac{iR A_0}{4} 
+\frac{\delta_{m,1} + \delta_{m,-1}} {\sqrt{\nu}} J_1 (\nu R) 
+\frac{2i}{\nu \mathit{V}} U_1 \left[ W_-, Z \right]
 \end{aligned} \end{equation*} }
 %
 \begin{equation}
-h_m (z, t; \nu) = \sqrt{\mu_0} \frac{R}{2} 
+h_m (z, t; \nu) = - \sqrt{\mu_0} \frac{R A_0}{2} 
 \frac{\delta_{m,1} + \delta_{m,-1}}
-{\nu^{3/2}} J_1 (\nu R) U_1 
-\left[ -i \nu (ct-z), \nu \sqrt{c^2t^2-z^2} \right]
+{\nu^{3/2}} J_1 (\nu R) U_1 \left[ W_-, Z \right]
 \end{equation}
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
 I_{m}^{h} = \partder{h_m}{z} = 
-\sqrt{\mu_0} \frac{R}{2} 
+- \sqrt{\mu_0} \frac{R A_0}{2} 
 \frac{\delta_{m,1} + \delta_{m,-1}}
-{\nu^{3/2}} J_1 (\nu R) \partder{}{z} U_1 
-\left[ -i \nu (ct-z), \nu \sqrt{c^2t^2-z^2} \right]
+{\nu^{3/2}} J_1 (\nu R) \partder{}{z} U_1 [ W_-, Z ]
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
 \begin{array}{lcr}
 \derivat{W_-}{z} = i \nu & &
-\derivat{Z}{z} = \frac{\nu}{2 \sqrt{c^2t^2 - z^2}} (-2z) = 
-- \frac{\nu z}{\sqrt{c^2t^2 - z^2}} \\
+\derivat{Z}{z} = \frac{\nu}{2 \sqrt{\mathit{V}^2 t^2 - z^2}} (-2z) = 
+- \frac{\nu z}{\sqrt{\mathit{V}^2 t^2 - z^2}} \\
 \end{array}
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
 \left( \frac{Z}{W} \right)^2 = 
-\left( - \frac{ \sqrt{c^2t^2-z^2}}{i(ct-z)} \right)^2 =
-\left( \frac{ i \sqrt{c^2t^2-z^2}}{ct-z} \right)^2 =
-- \frac{c^2t^2-z^2}{(ct-z)^2} = - \frac{ct+z}{ct-z}
+\left( - \frac{ \sqrt{\mathit{V}^2 t^2-z^2}}{i(\mathit{V} t-z)} \right)^2 =
+\left( \frac{ i \sqrt{\mathit{V}^2 t^2-z^2}}{\mathit{V}t-z} \right)^2 =
+- \frac{\mathit{V}^2 t^2-z^2}{(\mathit{V} t-z)^2} = 
+- \frac{\mathit{V}t+z}{\mathit{V}t-z}
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray} { \begin{equation*} 
@@ -266,7 +328,7 @@ I_{m}^{h} = \partder{h_m}{z} =
 \end{aligned} \end{equation*} }
 %
 \begin{equation}
-I_{m}^{h} = \sqrt{\mu_0} \frac{iR}{4} 
+I_{m}^{h} = - \sqrt{\mu_0} \frac{iR A_0}{4} 
 \frac{\delta_{m,1} + \delta_{m,-1}}{\sqrt{\nu}} 
 J_1 (\nu R) \left( U_0 [ W_-, Z ] - U_2 [ W_-, Z ] \right)
 \end{equation}
@@ -290,18 +352,18 @@ i m \vect{\rho_0} \frac{J_m (\nu \rho)}{ \rho \sqrt{\nu}} \right)
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
-\vect{E_\perp} = \frac{1}{\sqrt{\epsilon_0}} \int \limits_{0}^{\infty} 
+\vect{E_\perp} = \frac{1}{\sqrt{\epsilon_0}} \int_{0}^{\infty} 
 V_{-1}^h \crossprod{ \nabla_\perp \Psi_{-1}  }{ \vect{z_0} } +
 \frac{1}{\sqrt{\epsilon_0}} \int \limits_{0}^{\infty} 
 V_{1}^h \crossprod{ \nabla_\perp \Psi_{1} }{ \vect{z_0} } = \\
-= - \mu \frac{i R}{4} \sqrt{\frac{\mu_0}{\epsilon_0}}  e^{- i \varphi} 
-\int \limits_{0}^{\infty} \frac{J_1 (\nu R)}{\sqrt{\nu}} 
+= \frac{i R A_0}{4} \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}} 
+e^{- i \varphi} \int_{0}^{\infty} \frac{J_1 (\nu R)}{\sqrt{\nu}} 
 J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right) \cdot \\
 \cdot \left( \vect{\varphi_0} \sqrt{\nu} 
-\frac{J_2 (\nu \rho) - J_0 (\nu \rho)}{2} - 
+\frac{J_2 (\nu \rho) - J_0 (\nu \rho)}{2} +
 i \vect{\rho_0} \frac{J_1 (\nu \rho)}{ \rho \sqrt{\nu}} \right) - \\
-- \mu \frac{i R}{4} \sqrt{\frac{\mu_0}{\epsilon_0}}  e^{i \varphi}
-\int \limits_{0}^{\infty} \frac{J_1 (\nu R)}{ \sqrt{\nu}}
++ \frac{i R A_0}{4} \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}}
+e^{i \varphi} \int \limits_{0}^{\infty} \frac{J_1 (\nu R)}{ \sqrt{\nu}}
 J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right) \cdot \\
 \cdot \left( \vect{\varphi_0} \sqrt{\nu}
 \frac{J_0 (\nu \rho) - J_2 (\nu \rho)}{2} - 
@@ -309,26 +371,26 @@ i \vect{\rho_0} \frac{J_1 (\nu \rho)}{ \rho \sqrt{\nu}} \right)
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
-E_\varphi = - \mu \frac{i R}{8} \sqrt{\frac{\mu_0}{\epsilon_0}} e^{-i \varphi}
-\int \limits_{0}^{\infty} J_1 (\nu R)
+E_\varphi = \frac{i R A_0}{8} \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}} 
+e^{-i \varphi} \int \limits_{0}^{\infty} J_1 (\nu R)
 J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right)
-\left( J_2 (\nu \rho) - J_0 (\nu \rho) \right) - \\
-- \mu \frac{i R}{8} \sqrt{\frac{\mu_0}{\epsilon_0}} e^{i \varphi}
-\int \limits_{0}^{\infty} J_1 (\nu R)
+\left( J_2 (\nu \rho) - J_0 (\nu \rho) \right) + \\
++ \frac{i R A_0}{8} \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}} 
+e^{i \varphi} \int \limits_{0}^{\infty} J_1 (\nu R)
 J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right)
 \left( J_0 (\nu \rho) - J_2 (\nu \rho) \right) = \\
-= \mu \frac{i R}{4} \sqrt{\frac{\mu_0}{\epsilon_0}} 
+= \frac{i R A_0}{4} \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}}
 \frac{e^{i \varphi} - e^{-i \varphi} }{2} \int \limits_{0}^{\infty} 
 J_1 (\nu R) J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right) 
 \left( J_0 (\nu \rho) - J_2 (\nu \rho) \right) =
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
-= \mu \frac{R}{4} \sqrt{\frac{\mu_0}{\epsilon_0}} 
+= \frac{R A_0}{4} \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}} 
 \frac{e^{i \varphi} - e^{-i \varphi} }{2i} \int \limits_{0}^{\infty} 
 J_1 (\nu R) J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right) 
 \left( J_2 (\nu \rho) - J_0 (\nu \rho) \right) = \\
-= \mu \frac{R}{4} \sqrt{\frac{\mu_0}{\epsilon_0}} \sin \varphi 
+= \frac{R A_0}{4} \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}} \sin \varphi 
 \int \limits_{0}^{\infty} J_1 (\nu R) 
 J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right) 
 \left( J_2 (\nu \rho) - J_0 (\nu \rho) \right)
@@ -340,37 +402,88 @@ J_2 (\nu \rho) - J_0 (\nu \rho) = \frac{2}{\nu \rho} J_1 (\nu \rho) -
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
-E_\varphi = \mu \frac{R}{2} \sqrt{\frac{\mu_0}{\epsilon_0}} \sin \varphi 
-\int \limits_{0}^{\infty} J_1 (\nu R) 
+E_\varphi = \frac{R A_0}{2} \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}}
+\sin \varphi \int \limits_{0}^{\infty} J_1 (\nu R) 
 J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right) 
 \left( \frac{J_1 (\nu \rho)}{\nu \rho} - J_0 (\nu \rho) \right)
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
-E_\rho = - \mu \frac{i R}{4} \sqrt{\frac{\mu_0}{\epsilon_0}}  e^{- i \varphi} 
-\int \limits_{0}^{\infty} \frac{J_1 (\nu R)}{\sqrt{\nu}} 
+E_\rho = \frac{i R A_0}{4} \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}}  
+e^{- i \varphi} \int \limits_{0}^{\infty} \frac{J_1 (\nu R)}{\sqrt{\nu}} 
 J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right) 
-\left( - i \frac{J_1 (\nu \rho)}{\rho \sqrt{\nu}} \right) - \\
-- \mu \frac{i R}{4} \sqrt{\frac{\mu_0}{\epsilon_0}}  e^{i \varphi}
+\left( - i \frac{J_1 (\nu \rho)}{\rho \sqrt{\nu}} \right) + \\
++ \mu \frac{i R A_0}{4} \sqrt{\frac{\mu_0}{\epsilon_0}}  e^{i \varphi}
 \int \limits_{0}^{\infty} \frac{J_1 (\nu R)}{\sqrt{\nu}}
 J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right) 
 \left( - i \frac{J_1 (\nu \rho)}{ \rho \sqrt{\nu}} \right) = \\
-= - \mu \frac{R}{2} \sqrt{\frac{\mu_0}{\epsilon_0}}  
+= \mu \frac{R A_0}{2} \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}} 
 \frac{e^{i \varphi} + e^{-i \varphi}}{2}
 \int \limits_{0}^{\infty} \frac{J_1 (\nu R)}{\sqrt{\nu}}
 J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right) 
 \frac{J_1 (\nu \rho)}{ \rho \sqrt{\nu}} = \\
-= - \mu \frac{R}{2} \sqrt{\frac{\mu_0}{\epsilon_0}} \cos \varphi
-\int \limits_{0}^{\infty} \frac{d \rho}{\nu \rho} J_1 (\nu \rho) J_1 (\nu R)
-J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right)
+= \mu \frac{R A_0}{2} \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}} 
+\cos \varphi \int \limits_{0}^{\infty} \frac{d \rho}{\nu \rho} 
+J_1 (\nu \rho) J_1 (\nu R) J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right)
 \end{aligned} \end{equation*} }
 %
 \begin{equation}
-\vect{E} \left( r, t \right) = \mu \sqrt{\frac{\mu_0}{\epsilon_0}}
-\frac{R}{2} \left( \vect{ \varphi_0 } 
-\left( \frac{I_1}{\rho} - I_2 \right) \sin \varphi - 
-\vect{\rho_0} \frac{I_1}{\rho} \cos \varphi \right)
+\vect{E} \left( r, t \right) = \frac{A_0}{2} 
+\sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}}
+\Big( \vect{\rho_0} I_1 \cos \varphi - 
+\vect{ \varphi_0 } \left( I_2 - I_1 \right) \sin \varphi \Big)
 \end{equation}
+%
+\begin{equation*}
+I_1 = R \int \limits_{0}^{\infty} \frac{d \rho}{\nu \rho} J_1 (\nu \rho) 
+J_1 (\nu R) J_0 \left( \nu \sqrt{\frac{c^2 t^2}{\epsilon \mu} - z^2} \right)
+\end{equation*}
+%
+\begin{equation*}
+I_2 = R \int_{0}^{\infty} d \rho J_1 (\nu R) 
+J_0 (\nu \rho) J_0 \left( \nu \sqrt{\frac{c^2 t^2}{\epsilon \mu} - z^2} \right)
+\end{equation*}
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+\mathbf{A} = \left( \begin{array}{cc}
+\cos \varphi & \sin \varphi \\
+- \sin \varphi & \cos \varphi
+\end{array} \right) \begin{array}{ccc}
+	& \det A = 1 		&	\\
+	& A^{-1} = A^{T}	&
+\end{array} 
+\mathbf{A^{-1}} = \left( \begin{array}{cc}
+\cos \varphi & - \sin \varphi \\
+\sin \varphi & \cos \varphi
+\end{array} \right) 
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+\vect{E} = 
+\mathbf{A^{-1}} \vect{E} \left( \vect{\rho_0}, \vect{\varphi_0} \right) = 
+\frac{A_0}{2} \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}}
+\left( \begin{array}{cc} \cos \varphi & - \sin \varphi \\
+\sin \varphi & \cos \varphi \end{array} \right)
+\left( \begin{array}{c} I_1 \cos \varphi \\
+- (I_2 - I_1) \sin \varphi \end{array} \right) = \\
+= \frac{A_0}{2} \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}}
+\left( \begin{array}{c} I_1 \cos^2 \varphi + (I_2 - I_1) \sin^2 \varphi \\
+I_1 \sin \varphi \cos \varphi - (I_2 - I_1) 
+\sin \varphi \cos \varphi \end{array} \right)
+\end{aligned} \end{equation*} }
+%
+\begin{equation*} \begin{aligned}
+\vect{E} \left( \vect{x_0}, \vect{y_0} \right) = \frac{A_0}{2} 
+\sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}} \left( \begin{array}{c} 
+I_1 \cos^2 \varphi + (I_2 - I_1) \sin^2 \varphi \\
+I_1 \sin \varphi \cos \varphi - (I_2 - I_1) 
+\sin \varphi \cos \varphi \end{array} \right)
+\end{aligned} \end{equation*}
+%
+\begin{figure}[h] \begin{center}
+\includegraphics[scale=0.7]{LinearElectric}
+\caption{Ефект електромагнітного снаряду} \label{fig:emmissile}
+\end{center} \end{figure}
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
 \vect{H_\perp} = \frac{1}{\sqrt{\mu_0}} \left( 
@@ -390,14 +503,14 @@ i m \vect{\varphi_0} \frac{J_m(\nu \rho)}{\sqrt{\nu} \rho} \right)
 \vect{H_\perp} = \frac{1}{\sqrt{\mu_0}} \left( 
 \int \limits_{0}^{\infty} d \nu I_{-1}^h \nabla_\perp \Psi_{-1} +
 \int \limits_{0}^{\infty} d \nu I_1^h \nabla_\perp \Psi_1 \right) = \\
-= \frac{1}{\sqrt{\mu_0}} \int \limits_{0}^{\infty} d \nu
+= - \frac{A_0}{\sqrt{\mu_0}} \int \limits_{0}^{\infty} d \nu
 \sqrt{\mu_0} \frac{iR}{4} J_1 (\nu R)
-\frac{ U_0 [ W_-, Z ] - U_2 [ W_-, Z ]  }{\sqrt{\nu}}  
+\frac{ U_0 [ W_-, Z ] - U_2 [ W_-, Z ] }{\sqrt{\nu}}  
 e^{- i \varphi} \cdot \\ \cdot \left( \vect{\rho_0} 
 \sqrt{\nu} \frac{ J_{2}(\nu \rho) - J_{0}(\nu \rho) }{2} +
-i \vect{\varphi_0} \frac{J_1(\nu \rho)}{\sqrt{\nu} \rho} \right) +
-\frac{1}{\sqrt{\mu_0}} \int \limits_{0}^{\infty} d \nu 
-\frac{\sqrt{\mu_0}}{\mu} \frac{iR}{4} J_1 (\nu R) \cdot \\
+i \vect{\varphi_0} \frac{J_1(\nu \rho)}{\sqrt{\nu} \rho} \right) -
+\frac{A_0}{\sqrt{\mu_0}} \int \limits_{0}^{\infty} d \nu 
+\sqrt{\mu_0} \frac{iR}{4} J_1 (\nu R) \cdot \\
 \cdot \frac{ U_0 [ W_-, Z ] - U_2 [ W_-, Z ] }{\sqrt{\nu}} 
 e^{i \varphi} \left( \vect{\rho_0} 
 \sqrt{\nu} \frac{ J_{0}(\nu \rho) - J_{2}(\nu \rho) }{2} +
@@ -405,30 +518,27 @@ i \vect{\varphi_0} \frac{J_1(\nu \rho)}{\sqrt{\nu} \rho} \right)
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
-H_\varphi = - \frac{R}{4} 
+H_\varphi = \frac{R A_0}{4} 
 \frac{e^{i \varphi} + e^{- i \varphi}}{\rho} \int \limits_{0}^{\infty} 
 \frac{d\nu}{\nu} (U_0[ W_-, Z ] - U_2[ W_-, Z ]) J_1(\nu R) J_1(\nu \rho) = \\
-= - \frac{R}{2} \cos \varphi \int \limits_{0}^{\infty}
+= \frac{R}{2} \cos \varphi \int \limits_{0}^{\infty}
 \frac{d\nu}{\nu \rho} (U_0[ W_-, Z ] - U_2[ W_-, Z ]) 
 J_1(\nu R) J_1(\nu \rho)
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
-H_\rho = - \frac{R}{4} \frac{e^{i \varphi} - e^{- i \varphi}}{2i}
+H_\rho = \frac{R A_0}{4} \frac{e^{i \varphi} - e^{- i \varphi}}{2i}
 \int \limits_{0}^{\infty} d \nu (J_{0}(\nu \rho) - J_{2}(\nu \rho))
 J_1(\nu R) (U_0[ W_-, Z ] - U_2[ W_-, Z ]) = \\
-= - \frac{R}{2} \sin \varphi \int \limits_{0}^{\infty} d \nu 
+= \frac{R}{2} \sin \varphi \int \limits_{0}^{\infty} d \nu 
 (J_0(\nu \rho) - \frac{J_1(\nu \rho)}{\nu \rho})
 J_1(\nu R) (U_0[ W_-, Z ] - U_2[ W_-, Z ]) = \\
-= \frac{R}{2} \sin \varphi \int \limits_{0}^{\infty} d \nu 
-(\frac{J_1(\nu \rho)}{\nu \rho} - J_0(\nu \rho))
-J_1(\nu R) (U_0[ W_-, Z ] - U_2[ W_-, Z ])
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
-\vect{H_\perp} \left( r, t \right) = \frac{R}{2} \left( 
-\vect{\rho_0} \left(\frac{I_3}{\rho} - I_4 \right) \sin \varphi -
-\vect{\varphi_0} \frac{I_3}{\rho} \cos \varphi  \right)
+\vect{H_\perp} \left( r, t \right) = \frac{A_0}{2} \left( 
+\vect{\rho_0} \left( I_4 - I_3 \right) \sin \varphi +
+\vect{\varphi_0} I_3 \cos \varphi  \right)
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
@@ -440,12 +550,6 @@ H_z (r,t) = \frac{1}{\sqrt{\mu_0}} \sum \limits_{m=-\infty}^{\infty}
 \Psi_m (\nu) = \frac{J_m(\nu \rho)}{\sqrt{\nu}} e^{im \varphi} 
 \end{aligned} \end{equation*} }
 %
-\textcolor{lightgray} { \begin{equation*}
-h_m (z, t; \nu) = \sqrt{\mu_0} \frac{R}{2} 
-\frac{\delta_{m,1} + \delta_{m,-1}}{ \nu^{3/2}} J_1 (\nu R) 
-U_1 \left[ -i \nu (ct-z), \nu \sqrt{c^2t^2-z^2} \right]
-\end{equation*} }
-%
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
 H_z (r,t) = 
 \frac{1}{\sqrt{\mu_0}} \int \limits_0^\infty \nu^2 d \nu h_{1} \Psi_{1} +
@@ -453,30 +557,46 @@ H_z (r,t) =
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
-H_z (r,t) = R \frac{e^{im \varphi}-e^{-im \varphi}}{2} \int \limits_0^\infty 
+H_z (r,t) = R A_0 \frac{e^{im \varphi}-e^{-im \varphi}}{2} \int_0^\infty 
 d \nu J_1(\nu \rho) J_1 (\nu R)
 U_1 \left[ -i \nu (ct-z), \nu \sqrt{c^2t^2-z^2} \right]
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
-H_z (r,t) = - R \sin \varphi \int \limits_0^\infty 
-d \nu J_1(\nu \rho) J_1 (\nu R)
-U_1 \left[ -i \nu (ct-z), \nu \sqrt{c^2t^2-z^2} \right] = \\
-= i R \sin \varphi \int \limits_{0}^{\infty} J_1 \left( \nu R \right)
-J_1 \left( \nu \rho \right)
-U_1 \left[ i \nu \left( ct - z \right), \nu \sqrt{c^2t^2 - z^2} \right]
+H_z (r,t) = - R A_0 \sin \varphi \int_0^\infty 
+d \nu J_1(\nu \rho) J_1 (\nu R) U_1 [ W_-, Z ] = \\
+= - i R A_0 \sin \varphi \int_{0}^{\infty} J_1 \left( \nu R \right)
+J_1 \left( \nu \rho \right) U_1 [ W_-, Z ]
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
-H_z \left( r, t \right) = R I_5 \sin \varphi
+H_z \left( r, t \right) = - A_0 I_5 \sin \varphi
 \end{aligned} \end{equation*} }
 %
 \begin{equation}
-\vect{H} (r, t) = \frac{R}{2} \left( 
-\vect{\rho_0} \left(\frac{I_3}{\rho} - I_4 \right) \sin \varphi -
-\vect{\varphi_0} \frac{I_3}{\rho} \cos \varphi +
-2 \vect{z_0} I_5 \sin \varphi \right)
+\vect{H} (r, t) = \frac{A_0}{2} \Big( 
+\vect{\rho_0} \left( I_4 - I_3 \right) \sin \varphi +
+\vect{\varphi_0} I_3 \cos \varphi -
+2 \vect{z_0} I_5 \sin \varphi \Big)
 \end{equation}
+%
+\begin{equation*}
+I_3 = R \int \limits_{0}^{\infty}
+\frac{d\nu}{\nu \rho} J_1(\nu R) J_1(\nu \rho)
+\Big( U_0[ W_-, Z ] - U_2[ W_-, Z ] \Big) 
+\end{equation*}
+%
+\begin{equation*}
+I_4 = R \int \limits_{0}^{\infty} d\nu J_1(\nu R) J_0(\nu \rho)
+\Big( U_0[ W_-, Z ] - U_2[ W_-, Z ] \Big) 
+\end{equation*}
+%
+\begin{equation*}
+I_5 = i R \int \limits_0^\infty 
+d \nu J_1(\nu \rho) J_1 (\nu R)
+U_1 \left[ -i \nu \left( \frac{ct}{\sqrt{\epsilon \mu}} - z \right), 
+\nu \sqrt{\frac{c^2t^2}{\epsilon \mu}-z^2} \right]
+\end{equation*}
 
 За визначенням дальньої зони - це область простору, де $ E_\varphi = H_\rho $ та
 $ H_\varphi = E_\rho $. Дня лінійного поля плаского диску ці умови виконується, 
@@ -485,7 +605,7 @@ $ H_\varphi = E_\rho $. Дня лінійного поля плаского ди
 %
 \begin{equation} \label{eq:FraunhoferDistance}
 \left. \lim_{z \to \infty} \left( \frac{ct-z}{ct+z} \right)^m 
-\right| \limits_{m > 1} = 0
+\right|_{m > 1} = 0
 \end{equation}
 
 Остання тотожність є умовою дальньої зони для антени що породжує 

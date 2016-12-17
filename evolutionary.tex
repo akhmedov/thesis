@@ -504,7 +504,8 @@ E_z (r,t) = \frac{1}{\sqrt{\epsilon_0}} \sum \limits_{n=-\infty}^{\infty}
 \textcolor{lightgray} { \begin{equation*}
 \partial_{ct} (\epsilon V_n^h) + \partial_z I_n^h = 
 - \frac{\sqrt{\mu_0}}{2 \pi} \int_0^{2\pi} d \varphi 
-\int_0^{\infty} \rho d \rho \dotprod{\vect{J_\perp}}{\Phi_n^* (\chi)}
+\int_0^{\infty} \rho d \rho 
+\dotprod {\vect{J_\perp}} {\nabla_\perp \Phi_n^* (\chi)}
 \end{equation*} }
 %
 \begin{equation}
@@ -527,10 +528,12 @@ E_z (r,t) = \frac{1}{\sqrt{\epsilon_0}} \sum \limits_{n=-\infty}^{\infty}
 \end{equation}
 %
 \textcolor{lightgray} { \begin{equation*}
-- \partial_{ct}(\mu I_m^e) + \partial_z V_m^e = - 
+\partial_{ct}(\mu I_m^e) + \partial_z V_m^e = - 
 \frac{\sqrt{\epsilon_0}}{2 \pi} \int_0^{2\pi} d \varphi 
-\int_0^{\infty} \rho d \rho \dotprod{\vect{I_\perp}}
-{\nabla_\perp \Psi_m^* (\nu)}
+\int_0^{\infty} \rho d \rho 
+% \dotprod {\vect{I_\perp}} {\nabla_\perp \Phi_m^* (\nu)}
+\dotprod {\crossprod {\vect{I_\perp}} {\vect{z_0}} } 
+{ \nabla_\perp \Phi_m^* (\nu) }
 \end{equation*} }
 
 

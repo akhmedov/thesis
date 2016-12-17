@@ -1,4 +1,4 @@
-\chapter{Властивості функції Ломмеля двох змінних}
+\chapter{Комплексі функції Ломмеля двох змінних}
 \label{ch:lommel}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -82,16 +82,17 @@ U_{2n+1} (W_+, Z) = - U_{2n+1} (W_-, Z)
 \section{Інтеграл 3}
 
 \begin{equation}
-I_3 = \int \limits_{0}^{\infty} \frac{d \nu}{\nu} J_1(\nu \rho) J_1(\nu R) 
-(U_0[ W_-, Z ] - U_2[ W_-, Z ])
+I_3 = R \int \limits_{0}^{\infty} \frac{d \nu}{\rho \nu} 
+J_1(\nu \rho) J_1(\nu R) (U_0[ W_-, Z ] - U_2[ W_-, Z ])
 \end{equation}
 %
 \textcolor{lightgray}{ \begin{equation*} \begin{aligned}
-I_3 =  \sum \limits_{m = 0}^{\infty} \left( \frac{ct-z}{ct+z} \right)^m 
-\int_{0}^{\infty} \frac{d \nu}{\nu} J_1(\nu \rho) J_1(\nu R) 
-J_{2m} \left (\nu \sqrt{c^2t^2-z^2} \right) + \\ + \sum \limits_{m = 0}^{\infty} 
+I_3 = R \sum \limits_{m = 0}^{\infty} \left( \frac{ct-z}{ct+z} \right)^m 
+\int_{0}^{\infty} \frac{d \nu}{ \rho \nu} J_1(\nu \rho) J_1(\nu R) 
+J_{2m} \left (\nu \sqrt{c^2t^2-z^2} \right) + \\ 
++ R \sum \limits_{m = 0}^{\infty} 
 \left( \frac{ct-z}{ct+z} \right)^{m+1} \int_{0}^{\infty}
-\frac{d \nu}{\nu} J_1(\nu \rho) J_1(\nu R) 
+\frac{d \nu}{\rho \nu} J_1(\nu \rho) J_1(\nu R) 
 J_{2m+2} \left (\nu \sqrt{c^2t^2-z^2} \right)
 \end{aligned} \end{equation*} }
 
@@ -99,14 +100,15 @@ J_{2m+2} \left (\nu \sqrt{c^2t^2-z^2} \right)
 \section{Інтеграл 4}
 
 \begin{equation}
-I_4 = \int \limits_{0}^{\infty} d \nu J_0(\nu \rho) J_1(\nu R) 
+I_4 = R \int \limits_{0}^{\infty} d \nu J_0(\nu \rho) J_1(\nu R) 
 (U_0[ W_-, Z ] - U_2[ W_-, Z ])
 \end{equation}
 %
 \textcolor{lightgray}{ \begin{equation*} \begin{aligned}
-I_4 =  \sum_{m = 0}^{\infty} \left( \frac{ct-z}{ct+z} \right)^m 
+I_4 = R \sum_{m = 0}^{\infty} \left( \frac{ct-z}{ct+z} \right)^m 
 \int_{0}^{\infty} d \nu J_0(\nu \rho) J_1(\nu R) 
-J_{2m} \left (\nu \sqrt{c^2t^2-z^2} \right) + \\ + \sum \limits_{m = 0}^{\infty} 
+J_{2m} \left (\nu \sqrt{c^2t^2-z^2} \right) + \\ 
++ R \sum \limits_{m = 0}^{\infty} 
 \left( \frac{ct-z}{ct+z} \right)^{m+1} \int_{0}^{\infty}
 d \nu J_0(\nu \rho) J_1(\nu R) J_{2m+2} \left (\nu \sqrt{c^2t^2-z^2} \right)
 \end{aligned} \end{equation*} }
@@ -115,35 +117,36 @@ d \nu J_0(\nu \rho) J_1(\nu R) J_{2m+2} \left (\nu \sqrt{c^2t^2-z^2} \right)
 \section{Інтеграл 5}
 
 \begin{equation}
-I_5 = i \int \limits_{0}^{\infty} d \nu J_1 \left( \nu R \right) 
+I_5 = i R \int \limits_{0}^{\infty} d \nu J_1 \left( \nu R \right) 
 J_1 \left( \nu \rho \right)
-U_1 \left[ i \nu \left( ct - z \right), \nu \sqrt{c^2t^2 - z^2} \right]
+U_1 \left[ - i \nu \left( ct - z \right), \nu \sqrt{c^2t^2 - z^2} \right]
 \end{equation}
 %
-\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
-U_1[W_+, Z] = \sum \limits_{m = 0}^{\infty} i^{2m+1} (-1)^m 
-\left( \frac{ct-z}{\sqrt{c^2t^2-z^2}} \right)^{2m + 1} J_{2m + 1} (Z) = \\
-= - i \sum \limits_{m = 0}^{\infty} (-1)^m  (-1)^m 
-\left( \sqrt{\frac{ct-z}{ct+z}} \right)^{2m + 1}
-J_{2m + 1} \left( \nu \sqrt{c^2t^2-z^2} \right) = \\
-= - i \sqrt{\frac{ct-z}{ct+z}} \sum \limits_{m = 0}^{\infty}
-\left( \frac{ct-z}{ct+z} \right)^m 
-J_{2m + 1} \left( \nu \sqrt{c^2t^2-z^2} \right)
-\end{aligned} \end{equation*} }
-%
-\begin{equation} 
-U_1[W_+, Z] = - i \sqrt{\frac{ct-z}{ct+z}} \sum \limits_{m = 0}^{\infty}
-\left( \frac{ct-z}{ct+z} \right)^m J_{2m + 1} \left(  \nu \sqrt{c^2t^2-z^2} \right)
-\end{equation}
-%
-\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
-I_5 = \sqrt{\frac{ct-z}{ct+z}} \sum_{m = 0}^{\infty} 
-\left( \frac{ct-z}{ct+z} \right)^m \int_{0}^{\infty} d \nu J_1(\nu R) 
-J_1 (\nu \rho) J_{2m + 1} \left(  \nu \sqrt{c^2t^2-z^2} \right)
-\end{aligned} \end{equation*} }
-%
-\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
-J_{2m + 2} \left( \nu \sqrt{c^2t^2-z^2} \right) = (4m+2) 
-\frac{J_{2m+1} \left( \nu \sqrt{c^2t^2-z^2} \right)}{\nu \sqrt{c^2t^2-z^2}} -
-J_{2m} \left( \nu \sqrt{c^2t^2-z^2} \right)
-\end{aligned} \end{equation*} }
+% \textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+% U_1[W_-, Z] = \sum \limits_{m = 0}^{\infty} i^{2m+1} (-1)^m 
+% \left( \frac{ct-z}{\sqrt{c^2t^2-z^2}} \right)^{2m + 1} J_{2m + 1} (Z) = \\
+% = - i \sum \limits_{m = 0}^{\infty} (-1)^m  (-1)^m 
+% \left( \sqrt{\frac{ct-z}{ct+z}} \right)^{2m + 1}
+% J_{2m + 1} \left( \nu \sqrt{c^2t^2-z^2} \right) = \\
+% = - i \sqrt{\frac{ct-z}{ct+z}} \sum \limits_{m = 0}^{\infty}
+% \left( \frac{ct-z}{ct+z} \right)^m 
+% J_{2m + 1} \left( \nu \sqrt{c^2t^2-z^2} \right)
+% \end{aligned} \end{equation*} }
+% %
+% \begin{equation} 
+% U_1[W_+, Z] = - i \sqrt{\frac{ct-z}{ct+z}} 
+% \sum \limits_{m = 0}^{\infty} \left( \frac{ct-z}{ct+z} \right)^m 
+% J_{2m + 1} \left(  \nu \sqrt{c^2t^2-z^2} \right)
+% \end{equation}
+% %
+% \textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+% I_5 = R \sqrt{\frac{ct-z}{ct+z}} \sum_{m = 0}^{\infty} 
+% \left( \frac{ct-z}{ct+z} \right)^m \int_{0}^{\infty} d \nu J_1(\nu R) 
+% J_1 (\nu \rho) J_{2m + 1} \left(  \nu \sqrt{c^2t^2-z^2} \right)
+% \end{aligned} \end{equation*} }
+% %
+% \textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+% J_{2m + 2} \left( \nu \sqrt{c^2t^2-z^2} \right) = (4m+2) 
+% \frac{J_{2m+1} \left( \nu \sqrt{c^2t^2-z^2} \right)}{\nu \sqrt{c^2t^2-z^2}} -
+% J_{2m} \left( \nu \sqrt{c^2t^2-z^2} \right)
+% \end{aligned} \end{equation*} }

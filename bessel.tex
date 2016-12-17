@@ -52,7 +52,7 @@ z^n J_{n-1} \left( z \right)
 \section{Інтеграл 1}
 %
 \begin{equation} \label{eq:int1start}
-I_1 = \int\limits_{0}^{\infty} \frac{d\nu}{\nu} 
+I_1 = R \int\limits_{0}^{\infty} \frac{d\nu}{\rho \nu} 
 J_1 \left( \nu R \right) J_1 \left( \nu \rho \right) 
 J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right)
 \end{equation}
@@ -77,7 +77,7 @@ a = \sqrt{c^2 t^2 - z^2}; b = R; c = \rho; \lambda = 0 \\
 \int\limits_{0}^{\infty} \frac{d\nu}{\nu} 
 J_1 \left( \nu R \right) J_1 \left( \nu \rho \right) 
 J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right) = 
-\frac{\rho R}{ 2 \Gamma \left( 3/2 \right) \Gamma \left( 1/2 \right) } \cdot \\
+\frac{R^2}{ 2 \Gamma \left( 3/2 \right) \Gamma \left( 1/2 \right) } \cdot \\
 \int\limits_{0}^{\pi} 
 \frac{\sin^2{\phi}}{\sqrt{R^2 + \rho^2 - 2 \rho R \cos \phi}}
 \int\limits_{0}^{\infty} d \nu J_1 \left( \nu \omega \right) 
@@ -90,7 +90,7 @@ J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right) d \phi
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray}{ \begin{equation*} \begin{aligned}
-I_1 = \frac{\rho R}{\pi} \int\limits_{0}^{\pi} 
+I_1 = \frac{R^2}{\pi} \int\limits_{0}^{\pi} 
 \frac{\sin^2{\phi}}{\sqrt{R^2 + \rho^2 - 2 \rho R \cos \phi}}
 \int\limits_{0}^{\infty} d \nu J_1 \left( \nu \omega \right) 
 J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right) d \phi
@@ -117,34 +117,19 @@ J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right) = \begin{cases}
 0 , 0 < a < b
 \end{cases} 
 \end{aligned} \end{equation*} }
-
-Згідно з умовами інтегрування з \eqref{eq:intJJtable}, повинно виконуватись 
-співвідношення $ 0 < b \leq a $ для того, щоб значення інтегралу $ I_1 $ 
-існувало та було б відмінне від нуля. Застосовуючи цю умову в рамках поставленої 
-задачі бачимо її фізичність: відсутність протиріч з принципом причинності. 
-Доцільно виписати діапазон значень $ \phi $ користуючись областю значень 
-інтегралу з \eqref{eq:intJJJtable} та умови інтегрування \eqref{eq:intJJtable}.
 %
 \textcolor{lightgray}{ \begin{equation*} \begin{aligned}
-\sqrt{R^2 + \rho^2 - 2 \rho R \cos \phi} \geq \sqrt{c^2 t^2 - z^2} \\
-R^2 + \rho^2 - 2 \rho R \cos \phi \geq c^2 t^2 - z^2 \\
-\cos \phi \leq \frac{R^2 + \rho^2}{2 \rho R} - \frac{c^2 t^2 - z^2}{2 \rho R} \\
-\phi \leq \arccos \left( \frac{\rho^2 + R^2}{2 \rho R} - 
+\sqrt{R^2 + \rho^2 - 2 \rho R \cos \phi} > \sqrt{c^2 t^2 - z^2} \\
+R^2 + \rho^2 - 2 \rho R \cos \phi > c^2 t^2 - z^2 \\
+\cos \phi < \frac{R^2 + \rho^2}{2 \rho R} - \frac{c^2 t^2 - z^2}{2 \rho R} \\
+\phi > \arccos \left( \frac{\rho^2 + R^2}{2 \rho R} - 
 \frac{c^2 t^2 - z^2}{2 \rho R} \right), 0 \leq \phi \leq \pi
 \end{aligned} \end{equation*} }
 %
-\textcolor{red}{ \begin{equation*}
-0 \leq \phi \leq \arccos \left( \frac{\rho^2 + R^2}{2 \rho R} - 
+\textcolor{lightgray}{ \begin{equation*}
+\phi > \arccos \left( \frac{\rho^2 + R^2}{2 \rho R} - 
 \frac{c^2 t^2 - z^2}{2 \rho R} \right)
 \end{equation*} }
-
-Зазначимо, що тригонометрична функція $ \arccos $ завжди менша за $ \pi $,
-тому остання нерівність не протирічить тому, що $ \phi \leq \pi $.
-
-Очевидно що застосування \eqref{eq:intJJtable} накладає умови на співвідношення
-просторових координат а часу. Користуючись областю значень 
-$ -1 \leq \cos \phi \leq 1 $, запишемо систему що визначає світловий конус 
-\cite[ст. 22]{LandauII} для компоненти поля, що мітить даний інтеграл. 
 %
 \textcolor{lightgray}{ \begin{equation*} \begin{aligned}
 \begin{cases}
@@ -154,49 +139,62 @@ $ -1 \leq \cos \phi \leq 1 $, запишемо систему що визнач�
 \begin{cases}
 \rho^2 + R^2 - c^2 t^2 + z^2 \leq 2 \rho R \\
 \rho^2 + R^2 - c^2 t^2 + z^2 \geq - 2 \rho R
-\end{cases} 
+\end{cases}
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray}{ \begin{equation*} \begin{aligned}
 \begin{cases}
-0 \leq \left( \rho - R \right)^2 \leq c^2 t^2 - z^2 \\ 
+0 \leq \left( R - \rho \right)^2 \leq c^2 t^2 - z^2 \\ 
 \left( \rho + R \right)^2 \geq c^2 t^2 - z^2 \geq 0
+\end{cases}
+\begin{cases}
+0 \leq R \leq \rho + \sqrt{c^2 t^2 - z^2} \\
+R \geq \left| \rho - \sqrt{c^2 t^2 - z^2} \right| \geq 0
+\end{cases}
+\begin{cases}
+R \leq f_+(r,t) \\
+R \geq \left| f_-(r,t) \right|
 \end{cases} 
 \end{aligned} \end{equation*} }
 %
-\begin{equation*}
-\left( \rho + R \right)^2 \geq c^2 t^2 - z^2 \geq \left( \rho - R \right)^2
-\end{equation*}
+\begin{equation*} \begin{aligned}
+I_1 \in \begin{cases}
+S_1: \{ 0 \leq \phi \leq \psi \}, 0 < R < 
+\left| \rho - \sqrt{c^2 t^2 - z^2} \right| \\
+S_2: \{ \psi \leq \phi \leq \pi \}, \left| \rho - \sqrt{c^2 t^2 - z^2} \right| \leq 
+R \leq \rho + \sqrt{c^2 t^2 - z^2} \\
+S_3: \{ 0 \leq \phi \leq \pi \}, R > \rho + \sqrt{c^2 t^2 - z^2}
+\end{cases} 
+\end{aligned} \end{equation*}
+%
+\begin{equation*} \begin{aligned}
+I_1 \{ S_1 \} = 0
+\end{aligned} \end{equation*}
 %
 \textcolor{lightgray}{ \begin{equation*} \begin{aligned}
-I_1 = \frac{\rho R}{\pi} \int\limits_{0}^{\pi} 
+I_1 = \frac{R^2}{\pi} \int\limits_{0}^{\pi} 
 \frac{\sin^2{\phi}}{\sqrt{R^2 + \rho^2 - 2 \rho R \cos \phi}}
 \int\limits_{0}^{\infty} d \nu J_1 \left( \nu \omega \right) 
 J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right) d \phi = \\
-= \frac{\rho R}{\pi} \int\limits_{0}^{\psi} 
+= \frac{R^2}{\pi} \int_{\psi}^{\pi}
 \frac{\sin^2{\phi}}{\sqrt{R^2 + \rho^2 - 2 \rho R \cos \phi}}
 \frac{1}{\sqrt{R^2 + \rho^2 - 2 \rho R \cos \phi}} d \phi = \\
-= \frac{\rho R}{\pi} \int\limits_{0}^{\psi}
+= \frac{R^2}{\pi} \int_{\psi}^{\pi}
 \frac{\sin^2{\phi}}{R^2 + \rho^2 - 2 \rho R \cos \phi} d \phi = 
-\frac{\rho}{\pi R} \int\limits_{0}^{\psi}
+\frac{1}{\pi} \int_{\psi}^{\pi}
 \frac{\sin^2{\phi}}{1 + \frac{\rho^2}{R^2} - \frac{2 \rho}{R} \cos \phi} d \phi
 \end{aligned} \end{equation*} }
 
-Застосовуючи формули \eqref{eq:intJJtable} і \eqref{eq:intJJJtable} приведемо 
-початкову форму $ I_1 $ до наступного виду.
+\textcolor{red} {Але, згідно властивостей інтегралів Рімана, значення інтегралу 
+в одній точці не впливає на значення означеного інтегралу}
 %
 \begin{equation*} \begin{aligned}
-I_1 = \frac{\rho}{\pi R} \int\limits_{0}^{\psi}
+I_1 = \frac{1}{\pi} \int_{\psi}^{\pi}
 \frac{\sin^2{\phi}}{1 + \frac{\rho^2}{R^2} - 
 \frac{2 \rho}{R} \cos \phi} d \phi \\
 \psi = \arccos \left( \frac{\rho^2 + R^2}{2 \rho R} - 
 \frac{c^2 t^2 - z^2}{2 \rho R} \right)
 \end{aligned} \end{equation*}
-
-\textcolor{red} {Зауважимо, що для $ \psi = 0 $ підінтегральна функція не 
-відповідає \eqref{eq:intJJtable} та і значення інтегралу в цій точці виходить не 
-визначене. Але, згідно властивостей інтегралів Рімана, значення інтегралу в одній 
-точці не впливає на значення означеного інтегралу}
 %
 \textcolor{lightgray}{ \begin{equation*} \begin{aligned}
 \int \frac{\sin^2{\phi}}{a + b \cos \phi} d \phi = 
@@ -207,7 +205,7 @@ I_1 = \frac{\rho}{\pi R} \int\limits_{0}^{\psi}
 \int \frac{\cos^2{\phi}}{a + b \cos \phi} d \phi -
 \frac{a}{b} \int \frac{\cos \phi}{a + b \cos \phi} d \phi + \\
 + \frac{a}{b} \int \frac{\cos \phi}{a + b \cos \phi} d \phi = 
-\int \frac{d \phi}{a - b \cos \phi} +
+\int \frac{d \phi}{a + b \cos \phi} +
 \frac{a}{b} \int \frac{\cos \phi}{a + b \cos \phi} d \phi - \\
 - \int \frac{\cos^2{\phi} + \frac{a}{b} \cos \phi} {a + b \cos \phi} d \phi =
 \int \frac{d \phi}{a + b \cos \phi} + 
@@ -225,34 +223,33 @@ I_1 = \frac{\rho}{\pi R} \int\limits_{0}^{\psi}
 \frac{a}{b^2} \int \frac{a + b \cos \phi}{a + b \cos \phi} d \phi - \\ 
 - \frac{a^2}{b^2} \int \frac{d \phi}{a + b \cos \phi} = 
 \left( 1 - \frac{a^2}{b^2} \right) \int\frac{d \phi}{a + b \cos \phi} - 
-\frac{1}{b} \int \cos \phi d \phi + \frac{a}{b^2} \int \phi =
+\frac{1}{b} \int \cos \phi d \phi + \frac{a}{b^2} \int d \phi
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+\int_{\psi}^{\pi} \frac{\sin^2{\phi}}{a + b \cos \phi} d \phi =  
+\left( 1 - \frac{a^2}{b^2} \right)
+\int_{\psi}^{\pi} \frac{d \phi}{a + b \cos \phi} -
+\frac{\sin \pi - \sin \psi}{b} + \frac{a}{b^2} (\pi - \psi) = \\
 = \left( 1 - \frac{a^2}{b^2} \right)
-\int\limits_{0}^{\psi} \frac{d \phi}{a + b \cos \phi} -
-\frac{\sin \psi - \sin 0}{b} + a \frac{\psi}{b^2} = \\
-= \left( 1 - \frac{a^2}{b^2} \right)
-\int\limits_{0}^{\psi} \frac{d \phi}{a + b \cos \phi} +
-\frac{\sin \psi}{b} + a \frac{\psi}{b^2}
+\int_{\psi}^{\pi} \frac{d \phi}{a + b \cos \phi} +
+\frac{\sin \psi}{b} + \frac{a}{b^2} (\pi - \psi)
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray}{ \begin{equation*} \begin{aligned}
 a = 1 + \frac{\rho^2}{R^2}; b = - \frac{2 \rho}{ R } \\
 \frac{\pi R}{\rho} I_1 = \left( 1 - \frac{a^2}{b^2} \right)
-\int\limits_{0}^{\psi} \frac{d \phi}{a + b \cos \phi} +
-\frac{\sin \psi}{b} + a \frac{\psi}{b^2} = \\
+\int_{\psi}^{\pi} \frac{d \phi}{a + b \cos \phi} +
+\frac{\sin \psi}{b} + \frac{a}{b^2} (\pi - \psi) = \\
 = \left( 1 - \left( \frac{1 + \frac{\rho^2}{R^2}} 
 { \frac{2 \rho}{R} } \right)^2 \right) 
-\int \limits_{0}^{\psi} \frac{d \phi}{1 + \frac{\rho^2}{R^2} -  
+\int_{\psi}^{\pi} \frac{d \phi}{1 + \frac{\rho^2}{R^2} -  
 \frac{2 \rho}{R} \cos \phi} -
 \frac{\sin \psi}{\frac{2 \rho}{ R }} + \left( 1 + \frac{\rho^2}{R^2} \right) 
-\frac{\psi}{\left( \frac{\rho^2}{R^2} \right)^2} = \\
-= \left( R^2 - \left( \frac{R^2 + \rho^2} 
-{2 \rho} \right)^2 \right) 
-\int \limits_{0}^{\psi} \frac{d \phi}{R^2 + \rho^2 - 2 \rho R \cos \phi} -
-\frac{R}{2 \rho} \sin \psi + \frac{R^2}{\rho^2} 
-\left( \frac{R^2}{\rho^2} + 1 \right) \psi  
+\frac{\pi - \psi}{\frac{4 \rho^2}{R^2}} = \\
+\left( R^2 - \left( \frac{R^2 + \rho^2}{2 \rho} \right)^2 \right) 
+\int_{\psi}^{\pi} \frac{d \phi}{R^2 + \rho^2 - 2 \rho R \cos \phi} -
+\frac{R}{2 \rho} \sin \psi + \frac{\rho^2 + R^2}{4 \rho^2} (\pi - \psi)  
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray}{ \begin{equation*} \begin{aligned}
@@ -262,21 +259,35 @@ a = 1 + \frac{\rho^2}{R^2}; b = - \frac{2 \rho}{ R } \\
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray}{ \begin{equation*} \begin{aligned}
-\frac{\pi R}{\rho} I_1 = 
-- \frac{\left( \rho^2 - R^2 \right)^2}{4 \rho^2} 
-\int \limits_{0}^{\psi} \frac{d \phi}{R^2 + \rho^2 - 2 \rho R \cos \phi} - \\
-- \frac{R}{2 \rho} \sin \psi + \frac{R^2}{\rho^2} 
-\left( \frac{R^2}{\rho^2} + 1 \right) \psi 
+\pi I_1 (S_2) = - \frac{\left( \rho^2 - R^2 \right)^2}{4 \rho^2} 
+\int_{\psi}^{\pi} \frac{d \phi}{R^2 + \rho^2 - 2 \rho R \cos \phi} - \\
+- \frac{R}{2 \rho} \sin \psi + \frac{\rho^2 + R^2}{4 \rho^2}  (\pi - \psi)
 \end{aligned} \end{equation*} }
 
 Тригонометричними перетвореннями зведемо поточний вид $ I_1 $ до табличного 
 інтегралу.
 %
 \begin{equation*} \begin{aligned}
-I_1 = - \frac{\left( \rho^2 - R^2 \right)^2}{4 \pi \rho R} 
-\int \limits_{0}^{\psi} \frac{d \phi}{R^2 + \rho^2 - 2 \rho R \cos \phi} - 
-\frac{\sin \psi}{2 \pi} + \frac{R}{\rho} 
-\left( \frac{R^2}{\rho^2} + 1 \right) \frac{\psi}{\pi}
+I_{1} \{ S_2 \} = - \frac{\left( \rho^2 - R^2 \right)^2}{4 \pi \rho^2} 
+\int_{\psi}^{\pi} \frac{d \phi}{R^2 + \rho^2 - 2 \rho R \cos \phi} - 
+\frac{R}{\rho} \frac{\sin \psi}{2 \pi} +  
+\frac{\rho^2 + R^2}{4 \rho^2} \frac{\pi - \psi}{\pi}
+\end{aligned} \end{equation*}
+%
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+\int_{0}^{\pi} \frac{\sin^2{\phi}}{a + b \cos \phi} d \phi =  
+\left( 1 - \frac{a^2}{b^2} \right)
+\int_{0}^{\pi} \frac{d \phi}{a + b \cos \phi} -
+\frac{\sin \pi - \sin 0}{b} + \frac{a}{b^2} (\pi - 0) = \\
+= \left( 1 - \frac{a^2}{b^2} \right)
+\int_{0}^{\pi} \frac{d \phi}{a + b \cos \phi} +
+\frac{a}{b^2} \pi
+\end{aligned} \end{equation*} }
+%
+\begin{equation*} \begin{aligned}
+I_{1} \{ S_3 \} = - \frac{\left( \rho^2 - R^2 \right)^2}{4 \pi \rho^2} 
+\int_{0}^{\pi} \frac{d \phi}{R^2 + \rho^2 - 2 \rho R \cos \phi} + 
+\frac{\rho^2 + R^2}{4 \rho^2}
 \end{aligned} \end{equation*}
 
 Таблична формула для неозначеного випадку інтегралу може буде знайдена в 
@@ -292,17 +303,14 @@ I_1 = - \frac{\left( \rho^2 - R^2 \right)^2}{4 \pi \rho R}
 \end{cases}
 \end{equation}
 
-Помітимо, що застосування формули змушує нас розглядати поле прожекторної зони
-($ \rho < R $) окремо від поля в іншому простору ($ \rho > R $), через умову 
-співвідношення $ a $ та $ b $. Отримаємо значення інтегралу $ I_1 $ для 
-\textcolor{red}{області Френеля} в явному вигляді.
+Помітимо, що випадок $ a^2 > b^2 $ відповідає області $ \rho > R $, a 
+$ a^2 < b^2 $, навпаки, для прожекторної зони випромінювання.
 %
 \textcolor{lightgray}{ \begin{equation*} \begin{aligned}
 a^2 > b^2  \Rightarrow  
 \left( R^2 + \rho^2 \right)^2 > 4 \rho^2 R^2 \\
 R^4 + 2 \rho^2 R^2 + \rho^4 - 4 \rho^2 R^2 > 0 \Rightarrow 
-\left( \rho^2 - R^2 \right)^2 > 0 \\
-\rho > R
+\left( \rho^2 - R^2 \right)^2 > 0
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray}{ Далі знадобиться: }
@@ -311,93 +319,72 @@ R^4 + 2 \rho^2 R^2 + \rho^4 - 4 \rho^2 R^2 > 0 \Rightarrow
 a^2 - b^2 = - \left( b^2 - a^2 \right) = 
 R^4 + 2 \rho^2 R^2 + \rho^4 - 4 \rho^2 R^2 = \left( \rho^2 - R^2 \right)^2 \\
 \lim_{\alpha \to 0} \tan{\alpha} = 0 \Rightarrow
-\lim_{\alpha \to 0} \arctan \left( a \tan{\alpha} \right) = 0
+\lim_{\alpha \to 0} \arctan \left( a \tan{\alpha} \right) = 0 \\ 
+\lim_{\alpha \to \pi/2} \tan{\alpha} = \infty \Rightarrow
+\lim_{\alpha \to \pi/2} \arctan \left( a \tan{\alpha} \right) = \frac{\pi}{2}
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray}{ \begin{equation*} \begin{aligned}
-\int \limits_{0}^{\psi} \frac{d \phi}{R^2 + \rho^2 - 2 \rho R \cos \phi} =
-\left. \begin{cases}
-\frac{2}{\rho^2 - R^2} \arctan \left( \frac{\rho^2 - R^2}
-{\left( \rho - R \right)^2} \tan \frac{\phi}{2} \right), \rho > R \\
-- \frac{1}{\rho^2 - R^2} \ln
-\frac{- \left( \rho^2 - R^2 \right) \tan \frac{\phi}{2} + \left( \rho - R \right)^2}
-{- \left( \rho^2 - R^2 \right) \tan \frac{\phi}{2} - \left( \rho - R \right)^2}
-, \rho < R
-\end{cases} \right|_{0}^{\psi} = \\
-= \frac{1}{\rho^2 - R^2} \left. \begin{cases} 
-2 \arctan \left( \frac{\rho + R}{\rho - R} \tan \frac{\phi}{2} \right) \\
-- \ln \left| \frac{\tan \frac{\phi}{2} - \frac{\rho - R}{\rho + R}} 
-{\tan \frac{\phi}{2} + \frac{\rho - R}{\rho + R}} \right|
-\end{cases} \right|_{0}^{\psi} = 
-\frac{1}{\rho^2 - R^2} \begin{cases} 
-2 \arctan \left( \frac{\rho + R}{\rho - R} \tan \frac{\psi}{2} \right) \\
-- 0 + \ln \left| \frac{\tan \frac{\psi}{2} - \frac{\rho - R}{\rho + R}}
-{\tan \frac{\psi}{2} + \frac{\rho - R}{\rho + R}} \right|
-\end{cases}
+\int_{\psi}^{\pi} \frac{d \phi}{R^2 + \rho^2 - 2 \rho R \cos \phi} =
+\left. \frac{2}{ |\rho^2 - R^2| } \arctan \left( \frac{ |\rho^2 - R^2| }
+{\left( \rho - R \right)^2} \tan \frac{\phi}{2} \right)
+\right|_{\psi}^{\pi} = \\ = \frac{2}{ |\rho^2 - R^2| } \left.
+\arctan \left( \frac{\rho + R}{ |\rho - R| } \tan \frac{\phi}{2} \right)
+\right|_{\psi}^{\pi} = \\ = \frac{2}{ |\rho^2 - R^2| } \left( \frac{\pi}{2} -
+\arctan \left( \frac{\rho + R}{ |\rho - R| } \tan \frac{\psi}{2} \right) \right)
 \end{aligned} \end{equation*} }
 %
 \begin{equation*} \begin{aligned}
-I_1 \left( \rho > R \right) = 
-\frac{R^2}{\rho^2} \frac{\rho^2 + R^2}{\pi \rho R} \psi - 
-\frac{\sin \psi}{2 \pi} - \frac{\rho^2 - R^2}{2 \pi \rho R} 
-\arctan \left( \frac{\rho + R}{\rho - R} \tan \frac{\psi}{2} \right)
+I_1 \{ S_2 \} = \frac{ | \rho^2 - R^2 | }{2 \pi \rho^2} \left(
+\arctan \left( \frac{\rho + R}{ | \rho - R | } \tan \frac{\psi}{2} \right) -  
+\frac{\pi}{2} \right) - \frac{R}{\rho} \frac{\sin \psi}{2 \pi} + 
+\frac{\rho^2 + R^2}{4 \rho^2} \frac{\pi - \psi}{\pi}
 \end{aligned} \end{equation*}
-
-\textcolor{red}{ Застосуємо \eqref{eq:caseTableIntegral} для наявних лімітів 
-користуючись формулою Ньютона та побачимо, що при аргументі $ \phi = 0 $ інтеграл 
-стає неозначеним. Це наслідок неправильного використання формули 
-\eqref{eq:intJJtable}. Прирівнявши $ \cos \phi $ до нуля побачимо, що рівняння 
-світлового конуса починає описувати область просторово подібних інтервалів. Це 
-пояснює чому інтеграл дає ірраціональні значення: це просторово подібний інтервал в 
-термінології СТВ. Для того щоб нейтралізувати помилку внесену застосуванням 
-інтеграла \eqref{eq:intJJtable} розглянемо $ \ln |f(r,t)| $ замість 
-$ \ln f(r,t) $.} Тепер випишемо функціональну залежність $ I_1 $ для прожекторної 
-зони.
+%
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+\int_{0}^{\pi} \frac{d \phi}{R^2 + \rho^2 - 2 \rho R \cos \phi} =
+\left. \frac{2}{ | \rho^2 - R^2 | } \arctan \left( \frac{ | \rho^2 - R^2 | }
+{\left( \rho - R \right)^2} \tan \frac{\phi}{2} \right)
+\right|_{0}^{\pi} = \\ = \frac{2}{ | \rho^2 - R^2 | } \left.
+\arctan \left( \frac{\rho + R}{ | \rho - R | } \tan \frac{\phi}{2} \right)
+\right|_{0}^{\pi} = \frac{2}{ | \rho^2 - R^2 | } \frac{\pi}{2}
+\end{aligned} \end{equation*} }
 %
 \begin{equation*} \begin{aligned}
-I_1 \left( 0 < \rho < R \right) = 
-\frac{R^2}{\rho^2} \frac{\rho^2 + R^2}{\pi \rho R} \psi - 
-\frac{\sin \psi}{2 \pi} - \frac{\rho^2 - R^2}{4 \pi \rho R} 
-\ln \left| \frac{\tan \frac{\psi}{2} - \frac{\rho - R}{\rho + R}}
-{\tan \frac{\psi}{2} + \frac{\rho - R}{\rho + R}} \right|
+I_1 \{ S_3 \} = \frac{\rho^2 + R^2}{4 \rho^2} - 
+\frac{ |\rho^2 - R^2| }{4 \rho^2} = \begin{cases}
+1/2 , \rho < R \\
+R^2 / 2 \rho^2, \rho > R
+\end{cases}
 \end{aligned} \end{equation*}
-
-Що стосовно поля при $ \rho = R $, тобто $ a^2 = b^2 $, то очевидно, що обидва 
-випадки однаково підходять.
 %
-\begin{equation*} \begin{aligned}
-\left. I_1 \right|_{\rho = R} = 
-\left. I_1 \left(0 < \rho < R \right) \right|_{\rho = R} =
-\left. I_1 \left( \rho > R \right) \right|_{\rho = R}
-\end{aligned} \end{equation*}
-
 Для того щоб отримати значення інтегралу на осі аплікат повернемось до 
 початкового виду $ I_1 $ з \eqref{eq:int1start}. Користуючись асимптотичною 
 властивістю функції Бесселя \eqref{eq:limJ1toZ} побачимо що інтеграл 
 зведеться до випадку \eqref{eq:intJJtable}.
 %
 \textcolor{lightgray} {\begin{equation*} \begin{aligned}
-I_1 \left( \rho = 0 \right) = \rho \int\limits_{0}^{\infty} d \nu
+\left. I_1 \right|_{\rho = 0} = R \int\limits_{0}^{\infty} d \nu
 J_1 \left( \nu R \right) \frac{J_1 \left( \nu \rho \right) }{\nu \rho}
 J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right) = \\
-= \frac{\rho}{2} \int\limits_{0}^{\infty} d \nu
+= \frac{R}{2} \int\limits_{0}^{\infty} d \nu
 J_1 \left( \nu R \right) J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right) = 
-\frac{\rho}{2} I_2 \left( \rho = 0 \right)
+\left. \frac{I_2}{2} \right|_{\rho = 0}
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray} {\begin{equation*}
-\left. \frac{I_1}{\rho} \right|_{\rho = 0} = \frac{1}{2} \begin{cases}
+\left. I_1 \right|_{\rho = 0} = \frac{1}{2} \begin{cases}
 0, 0 < R < \sqrt{c^2t^2 - z^2} \\
-\frac{1}{2} \left( c^2t^2 - z^2 \right)^{-1/2}, 0 < R = \sqrt{c^2t^2 - z^2} \\ 
-1/R, 0 < \sqrt{c^2t^2 - z^2} < R 
+\frac{R}{2} \left( c^2t^2 - z^2 \right)^{-1/2}, 0 < R = \sqrt{c^2t^2 - z^2} \\ 
+1, 0 < \sqrt{c^2t^2 - z^2} < R 
 \end{cases}
 \end{equation*} }
 %
 \begin{equation}
-\left. \frac{I_1}{\rho} \right|_{\rho = 0} = \frac{1}{2} \begin{cases}
+\left. I_1 \right|_{\rho = 0} = \frac{1}{2} \begin{cases}
 0, 0 < R < \sqrt{c^2t^2 - z^2} \\
-1/2R, 0 < R = \sqrt{c^2t^2 - z^2} \\ 
-1/R, 0 < \sqrt{c^2t^2 - z^2} < R 
+1/2, 0 < R = \sqrt{c^2t^2 - z^2} \\ 
+1, 0 < \sqrt{c^2t^2 - z^2} < R 
 \end{cases}
 \end{equation}
 
@@ -454,12 +441,29 @@ $ \psi \in \left[ 0, \pi \right] $, тому $ \sin \psi \geq 0 $. Таким ч
 \sqrt{ \frac{c^2t^2 - z^2 - \left( \rho - R \right)^2}
 {\left( \rho + R \right)^2 - \left( c^2t^2 - z^2 \right)} }
 \end{aligned} \end{equation*}
+%
+\begin{equation*} \begin{aligned}
+\arctan \left( \frac{\rho + R}{\rho - R} \tan \frac{\psi}{2} \right) = 
+\arctan \sqrt{ \frac{ \frac{c^2t^2 - z^2}{\left( \rho - R \right)^2} - 1}
+{ 1 - \frac{c^2t^2 - z^2}{\left( \rho + R \right)^2} } }
+\end{aligned} \end{equation*}
+%
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+I_1 \{ S_2 \} = \frac{\rho^2 - R^2}{4 \pi \rho R} \left(
+2 \arctan \sqrt{ \frac{ \frac{c^2t^2 - z^2}{\left( \rho - R \right)^2} - 1}
+{ 1 - \frac{c^2t^2 - z^2}{\left( \rho + R \right)^2} } } - 
+\pi \right) - \\ - \frac{c^2 t^2 - z^2}{4 \pi \rho R} 
+\sqrt{2 \frac{\rho^2 + R^2 }{c^2 t^2 - z^2} - 
+\left( \frac{\rho^2 - R^2 }{c^2 t^2 - z^2} \right)^2 - 1} + \\
++ \frac{\rho^2 + R^2}{4 \pi \rho R} \frac{R^2}{\rho^2} 
+\left( \pi - \arccos \frac{\rho^2 + R^2 - (c^2 t^2 - z^2)}{2 \rho R} \right)
+\end{aligned} \end{equation*} }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Інтеграл 2}
 %
 \begin{equation} \label{eq:int2start}
-I_2 = \int \limits_{0}^{\infty} d \nu J_1 \left( \nu R \right)   
+I_2 = R \int \limits_{0}^{\infty} d \nu J_1 \left( \nu R \right)   
 J_0 \left( \nu \sqrt{c^2t^2 - z^2} \right) J_0 \left( \nu \rho \right)
 \end{equation}
 
@@ -481,9 +485,9 @@ $ a,b,c > 0 $. Запишемо значення інтегралу віднос
 \begin{equation}
 I_2 = \begin{cases}
 0, 0 < R < | f_{-} \left( r, t \right) | \\
-\frac{1}{\pi R} \arccos \frac{c^2t^2 - z^2 + \rho^2 - R^2}
+\frac{1}{\pi} \arccos \frac{c^2t^2 - z^2 + \rho^2 - R^2}
 {2 \rho \sqrt{c^2t^2 - z^2}}, | f_{-} \left( r, t \right) | < R < 
-f_{+} \left( r, t \right) \\ 1/R, f_{+} \left( r, t \right) < R \\
+f_{+} \left( r, t \right) \\ 1, f_{+} \left( r, t \right) < R \\
 \end{cases}
 \end{equation}
 
@@ -501,15 +505,15 @@ f_{+} \left( r, t \right) = \rho + \sqrt{c^2t^2 - z^2}
 \textcolor{lightgray}{ \begin{equation*}
 I_2 \left( \rho = 0 \right) = \begin{cases}
 0, 0 < R < \sqrt{c^2t^2 - z^2} \\
-\frac{1}{2} \left( c^2t^2 - z^2 \right)^{-1/2}, 0 < R = \sqrt{c^2t^2 - z^2} \\ 
-1/R, 0 < \sqrt{c^2t^2 - z^2} < R 
+\frac{R}{2} \left( c^2t^2 - z^2 \right)^{-1/2}, 0 < R = \sqrt{c^2t^2 - z^2} \\ 
+1, 0 < \sqrt{c^2t^2 - z^2} < R 
 \end{cases}
 \end{equation*} }
 %
 \begin{equation}
 I_2 \left( \rho = 0 \right) = \begin{cases}
 0, 0 < R < \sqrt{c^2t^2 - z^2} \\
-1/2R, 0 < R = \sqrt{c^2t^2 - z^2} \\ 
-1/R, 0 < \sqrt{c^2t^2 - z^2} < R 
+1/2, 0 < R = \sqrt{c^2t^2 - z^2} \\ 
+1, 0 < \sqrt{c^2t^2 - z^2} < R 
 \end{cases}
 \end{equation}

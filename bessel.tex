@@ -57,7 +57,7 @@ J_1 \left( \nu R \right) J_1 \left( \nu \rho \right)
 J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right)
 \end{equation}
 
-Інтеграли такого виду зустрічаються в \cite[ст. 398]{Watson1922}.
+Інтеграли такого виду зустрічаються в \cite[ст. 398]{imp:Watson1922}.
 \begin{equation} \begin{aligned} \label{eq:intJJJtable}
 \int\limits_{0}^{\infty} \frac{d t}{t^{\lambda + \nu}} 
 J_\mu \left( at \right) J_\nu \left( bt \right) J_\nu \left( ct \right) =
@@ -98,7 +98,7 @@ J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right) d \phi
 
 Використання формули \eqref{eq:intJJJtable} дозволяє спростити $ I_1 $ до 
 інтегралу по двом функціям Бесселя в ядрі замість трьох. Використаємо наступну 
-формулу з \cite{Golubovic2013} для пошуку рішення нового інтегралу. 
+формулу з \cite{imp:Golubovic2013} для пошуку рішення нового інтегралу. 
 %
 \begin{equation} \begin{aligned} \label{eq:intJJtable}
 \int\limits_{0}^{\infty} d \nu
@@ -291,7 +291,7 @@ I_{1} \{ S_3 \} = - \frac{\left( \rho^2 - R^2 \right)^2}{4 \pi \rho^2}
 \end{aligned} \end{equation*}
 
 Таблична формула для неозначеного випадку інтегралу може буде знайдена в 
-\cite[ст. 181]{ElementFunc1983}.
+\cite[ст. 181]{imp:ElementFunc1983}.
 %
 \begin{equation} \label{eq:caseTableIntegral}
 \int \frac{d x}{a + b \cos{x}} = \begin{cases}
@@ -422,10 +422,19 @@ $ \psi \in \left[ 0, \pi \right] $, тому $ \sin \psi \geq 0 $. Таким ч
 \left( \frac{\rho^2 - R^2 }{c^2 t^2 - z^2} \right)^2 - 1}
 \end{aligned} \end{equation*} }
 %
+\textcolor{red}{ \begin{equation*} \begin{aligned}
+4 \rho^2 R^2 - (\rho^2 + R^2 - c^2 t^2 + z^2)^2 = \\
+= 4 \rho^2 R^2 - (\rho^2 + R^2)^2 - (c^2 t^2 - z^2)^2 + 
+2 (\rho^2 + R^2) (c^2 t^2 - z^2) = \\
+= - (\rho^2 - R^2)^2 - (c^2 t^2 - z^2)^2 \pm 
+2 R^2 (c^2 t^2 - z^2) + 2 (\rho^2 + R^2) (c^2 t^2 - z^2) = \\
+= 4 R^2 (c^2 t^2 - z^2) - (\rho^2 - R^2)^2 - (c^2 t^2 - z^2)^2 +
+2 (\rho^2 - R^2) (c^2 t^2 - z^2) = ?
+\end{aligned} \end{equation*} }
+%
 \begin{equation*} \begin{aligned}
-\sin \psi = \frac{c^2 t^2 - z^2}{2 \rho R} 
-\sqrt{2 \frac{\rho^2 + R^2 }{c^2 t^2 - z^2} - 
-\left( \frac{\rho^2 - R^2 }{c^2 t^2 - z^2} \right)^2 - 1}
+\frac{R}{\rho} \frac{\sin \psi}{2 \pi} = 
+\frac{\sqrt{4 \rho^2 R^2 - (\rho^2 + R^2 - c^2t^2 + z^2)^2}}{4 \pi \rho^2}
 \end{aligned} \end{equation*}
 %
 \textcolor{lightgray}{ \begin{equation*} \begin{aligned}
@@ -436,38 +445,49 @@ $ \psi \in \left[ 0, \pi \right] $, тому $ \sin \psi \geq 0 $. Таким ч
 {\left( \rho + R \right)^2 - \left( c^2t^2 - z^2 \right)} }
 \end{aligned} \end{equation*} }
 %
-\begin{equation*} \begin{aligned}
-\tan \frac{\psi}{2} = 
-\sqrt{ \frac{c^2t^2 - z^2 - \left( \rho - R \right)^2}
-{\left( \rho + R \right)^2 - \left( c^2t^2 - z^2 \right)} }
-\end{aligned} \end{equation*}
-%
-\begin{equation*} \begin{aligned}
-\arctan \left( \frac{\rho + R}{\rho - R} \tan \frac{\psi}{2} \right) = 
-\arctan \sqrt{ \frac{ \frac{c^2t^2 - z^2}{\left( \rho - R \right)^2} - 1}
-{ 1 - \frac{c^2t^2 - z^2}{\left( \rho + R \right)^2} } }
-\end{aligned} \end{equation*}
-%
 \textcolor{lightgray}{ \begin{equation*} \begin{aligned}
-I_1 \{ S_2 \} = \frac{\rho^2 - R^2}{4 \pi \rho R} \left(
-2 \arctan \sqrt{ \frac{ \frac{c^2t^2 - z^2}{\left( \rho - R \right)^2} - 1}
-{ 1 - \frac{c^2t^2 - z^2}{\left( \rho + R \right)^2} } } - 
-\pi \right) - \\ - \frac{c^2 t^2 - z^2}{4 \pi \rho R} 
-\sqrt{2 \frac{\rho^2 + R^2 }{c^2 t^2 - z^2} - 
-\left( \frac{\rho^2 - R^2 }{c^2 t^2 - z^2} \right)^2 - 1} + \\
-+ \frac{\rho^2 + R^2}{4 \pi \rho R} \frac{R^2}{\rho^2} 
-\left( \pi - \arccos \frac{\rho^2 + R^2 - (c^2 t^2 - z^2)}{2 \rho R} \right)
+\frac{\rho + R}{ |\rho - R| } \tan \frac{\psi}{2} = 
+\sqrt{ \frac{ \frac{c^2t^2 - z^2}{\left( \rho - R \right)^2} - 1}
+{ 1 - \frac{c^2t^2 - z^2}{\left( \rho + R \right)^2} } } = 
+\sqrt{ \left( \frac{\rho + R}{\rho - R} \right)^2
+\frac{c^2t^2 - z^2 - \left( \rho - R \right)^2}
+{\left( \rho + R \right)^2 - \left( c^2t^2 - z^2 \right)} }
 \end{aligned} \end{equation*} }
+%
+\begin{equation*} \begin{aligned}
+\arctan \left( \frac{\rho + R}{ |\rho - R| } \tan \frac{\psi}{2} \right) - 
+\frac{\pi}{2} = - \arctan \sqrt{ \left( \frac{\rho - R}{\rho + R} \right)^2
+\frac{\left( \rho + R \right)^2 - \left( c^2t^2 - z^2 \right)} 
+{\left( c^2t^2 - z^2 \right) - \left( \rho - R \right)^2} }
+\end{aligned} \end{equation*}
+%
+\begin{equation*} \begin{aligned}
+\pi - \psi = \arccos \left( \frac{c^2 t^2 - z^2 - \rho^2 - R^2}{2 \rho R} \right)
+\end{aligned} \end{equation*}
+%
+Користуючись такими спрощеннями, можемо записати вираз в явному вигляді для 
+області $ S_2 $
+%
+\begin{equation*} \begin{aligned}
+I_1 \{ S_2 \} = \frac{\rho^2 + R^2}{4 \pi \rho^2} \arccos 
+\left( \frac{c^2 t^2 - z^2 - \rho^2 - R^2}{2 \rho R} \right) - \\
+- \frac{\sqrt{4 \rho^2 R^2 - (\rho^2 + R^2 - c^2t^2 + z^2)^2}}{4 \pi \rho^2} - \\
+- \frac{ |\rho^2 - R^2| }{2 \pi \rho^2} 
+\arctan \sqrt{ \frac{(\rho - R)^2}{(\rho + R)^2} \cdot
+\frac{\left( \rho + R \right)^2 - \left( c^2t^2 - z^2 \right)} 
+{\left( c^2t^2 - z^2 \right) - \left( \rho - R \right)^2} }
+\end{aligned} \end{equation*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Інтеграл 2}
 %
 \begin{equation} \label{eq:int2start}
-I_2 = R \int \limits_{0}^{\infty} d \nu J_1 \left( \nu R \right)   
-J_0 \left( \nu \sqrt{c^2t^2 - z^2} \right) J_0 \left( \nu \rho \right)
+I_2 = R \int \limits_{0}^{\infty} d \nu J_1 \left( \nu R \right) 
+J_0 \left( \nu \rho \right) J_0 \left( \nu \sqrt{c^2t^2 - z^2} \right)
 \end{equation}
 
-Це табличний інтеграл, що може бути знайдений в \cite[ст. 228]{SpecFunc1983}.
+Це табличний інтеграл, що може бути знайдений в 
+\cite[ст. 228]{imp:SpecFunc1983}.
 %
 \begin{equation} \begin{aligned} \label{eq:intJ0J0J1tabel}
 \int \limits_{0}^{\infty} d x J_0 \left( ax \right) 

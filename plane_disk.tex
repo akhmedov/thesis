@@ -60,6 +60,8 @@ i \frac{J_{m-1} (\nu \rho) + J_{m+1} (\nu \rho)}{2} \cos \varphi
 \right)
 \end{aligned} \end{equation*} }
 %
+\textcolor{red}{ Среда распространения и начальные условия }
+%
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
 j_m = \frac{\sqrt{\mu_0}}{2\pi} \sqrt{\nu} \delta(z) H(t) \cdot \\
 \cdot \Big( \int \limits_{0}^{2\pi} d \varphi \sin \varphi 
@@ -70,15 +72,12 @@ j_m = \frac{\sqrt{\mu_0}}{2\pi} \sqrt{\nu} \delta(z) H(t) \cdot \\
 \frac{J_{m-1} (\nu \rho) + J_{m+1} (\nu \rho)}{2} \rho d \rho \Big)
 \end{aligned} \end{equation*} }
 %
-\textcolor{red}{Викладки для отримання інтегралів по $ \varphi $ відсутні. 
-Перенести вивід з файлу thesis-debug-02.}
-%
-\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+\textcolor{red} { \begin{equation*} \begin{aligned}
 \int \limits_{0}^{2\pi} d \varphi \sin \varphi 
 ( \cos m \varphi - i \sin m \varphi) = i\pi ( \delta_{m,-1} - \delta_{m,1} )
 \end{aligned} \end{equation*} }
 %
-\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+\textcolor{red} { \begin{equation*} \begin{aligned}
 \int \limits_{0}^{2\pi} d \varphi \cos \varphi 
 ( \cos m \varphi - i \sin m \varphi) = \pi ( \delta_{m,-1} + \delta_{m,1} )
 \end{aligned} \end{equation*} }
@@ -132,12 +131,6 @@ J_2 (\nu \rho) \right) \rho d \rho = \\
 j_m (z, t; \nu) = - i R A_0 \frac{\sqrt{\mu_0}}{2} \delta(z) H(t) 
 \frac{\delta_{m,1} + \delta_{m,-1}}{\sqrt{\nu}} J_1 (\nu R)
 \end{equation}
-
-\textcolor{red}{ \begin{itemize}
-\item Среда распространения и начальные условия
-\item Эффект Керра
-\item Геометрия источника поля
-\end{itemize} }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Лінійні коефіцієнти}
@@ -482,7 +475,18 @@ I_1 \sin \varphi \cos \varphi - (I_2 - I_1)
 %
 \begin{figure}[h] \begin{center}
 \includegraphics[scale=0.7]{LinearElectric}
-\caption{Ефект електромагнітного снаряду} \label{fig:emmissile}
+\caption{Ефект електромагнітного снаряду ($ z = 2 $ м)} \label{fig:emp_rho}
+\end{center} \end{figure}
+%
+\begin{figure}[h] \begin{center}
+\includegraphics[scale=0.7]{LinearElectric2}
+\caption{Ефект електромагнітного снаряду ($ \rho = 0.2 $ м)} \label{fig:emp_z}
+\end{center} \end{figure}
+%
+\begin{figure}[h] \begin{center}
+\includegraphics[scale=0.7]{LinearPulsShape}
+\caption{Кутова залежнысть формы імпульсу ($ \rho = R/2 .. 2R $ м)} 
+\label{fig:emp_shape}
 \end{center} \end{figure}
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
@@ -597,6 +601,11 @@ d \nu J_1(\nu \rho) J_1 (\nu R)
 U_1 \left[ -i \nu \left( \frac{ct}{\sqrt{\epsilon \mu}} - z \right), 
 \nu \sqrt{\frac{c^2t^2}{\epsilon \mu}-z^2} \right]
 \end{equation*}
+%
+\begin{figure}[h] \begin{center}
+\includegraphics[scale=0.7]{LinearMagnetic}
+\caption{Магнітно-статичне поле ($ z = 2 $ м)} \label{fig:emp_h_rho}
+\end{center} \end{figure}
 
 За визначенням дальньої зони - це область простору, де $ E_\varphi = H_\rho $ та
 $ H_\varphi = E_\rho $. Дня лінійного поля плаского диску ці умови виконується, 

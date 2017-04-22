@@ -4,14 +4,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Визначення та лінійні властивості}
 
-В \cite{Boersma1961} приводиться визначення через функцію Бесселя.
+В \cite{imp:Boersma1961} приводиться визначення через функцію Бесселя.
 %
 \begin{equation}
 U_n \left[ W, Z \right] = \sum \limits_{m = 0}^{\infty} (-1)^m
 \left( \frac{W}{Z} \right)^{n + 2m} J_{n + 2m} (Z)
 \end{equation}
 
-В \cite{Boersma1961} також можна знайти наступну властивість.
+В \cite{imp:Boersma1961} також можна знайти наступну властивість.
 %
 \begin{equation}
 U_n \left[ W, Z \right] + U_{n+2} \left[ W, Z \right] = 
@@ -69,7 +69,7 @@ U_0 [W, Z] - U_2 [W, Z] = J_0(Z) + 2 \sum_{m=1}^{\infty} \left(
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Інтегродиференціальні властивості}
 
-Функція Ломмеля типова для нестаціонарних задач. В \cite[ст. 41]{Borisov1991} 
+Функція Ломмеля типова для нестаціонарних задач. В \cite[ст. 41]{imp:Borisov1991} 
 приведено корисні інтегродиференціальні.
 %
 \begin{equation} \begin{aligned}
@@ -128,122 +128,51 @@ I_3 = I_1 + R \sum_{m=1}^{\infty} \left( \frac{ct - z}{ct + z} \right)^m
 \int_{0}^{\infty} d \nu J_1(\nu R) J_{2m} (\nu \sqrt{c^2t^2 + z^2})
 \end{aligned} \end{equation*}
 %
-За допомогою табличного інтегралу 2.12.31.1 з 
-\cite[ст. 209]{SpecFunc1983}, що має вид:
+За допомогою табличного інтегралу 6.512.4 з 
+\cite[ст. 681]{imp:GradshtejnInt}, що має вид
 %
 \begin{equation*} \begin{aligned}
-\int_0^\infty J_\mu (bx) J_\nu (cx) dx = A_{\mu,\nu}^1
+\int_0^\infty J_{\nu+2n+1} (ax) J_\nu (bx) dx = 
+\begin{cases} \frac{b^\nu}{a^{\nu+1}}
+P_n^{(\nu,0)} \left( 1 - \frac{2b^2}{a^2} \right) , 0 < b < a \\
+0, 0 < a < b \end{cases}
 \end{aligned} \end{equation*}
 %
-\begin{equation*} \begin{aligned}
-A_{\mu,\nu}^1 \left( 0 < c < b \right) = b^{-\nu-1} c^{\nu} 
-\Gamma \left[ \begin{array}{l} 
-(\nu+\mu+1)/2 \\ (\mu-\nu-1)/2 + 1, \nu + 1 \end{array} \right] \cdot
-\\ \cdot F \left(  \frac{\nu+\mu+1}{2}, \frac{\nu-\mu+1}{2}; 
-\nu+1; \frac{c^2}{b^2} \right)
-\end{aligned} \end{equation*}
+знайдемо значення $ I_3 $ в явному виді. Параметри мають задовольняти умові  
+$ \Re \nu > - 1 - n $, яка виконується для інтегралу \eqref{eq:intergal3}. 
+Через $ P_n^{(\nu,0)} (x) $ означено поліном Якобі:
 %
 \begin{equation*} \begin{aligned}
-A_{\mu,\nu}^1 \left( 0 < b < c \right) = b^{\mu} c^{-\mu-1} 
-\Gamma \left[ \begin{array}{l} 
-(\nu+\mu+1)/2 \\ (\nu-\mu-1)/2 + 1, \mu + 1 \end{array} \right] \cdot
-\\ \cdot F \left(  \frac{1+\mu+\nu}{2}, \frac{1+\mu-\nu}{2}; 
-\mu+1; \frac{b^2}{c^2} \right)
+P_n^{(\nu,0)} (x) = \frac{1}{2^n} \sum_{m=0}^{n} C_{n+\nu}^{m} C_{n}^{n-m} 
+\left( x - 1 \right)^{n-m} \left( x + 1 \right)^m 
 \end{aligned} \end{equation*}
+%
+Таким чином, для всіх подій $ R > \sqrt{c^2 t^2 - z^2} $ тобто області 
+електромагнитного снаряду на осі симетрії випромінювача 
+$ \left. I_3 \right|_{\rho = 0}^{R > \sqrt{c^2 t^2 - z^2}} = 1/2 $. Розглянемо 
+значення $ I_3 $ на осі випромінювання для $ R < \sqrt{c^2 t^2 - z^2} $.
 %
 \textcolor{lightgray}{ \begin{equation*} \begin{aligned}
-\begin{array}{lr} \forall a,k \in \Z: &
-(a)_k = \frac{\Gamma(a+k)}{\Gamma(a)} = \frac{(a+k-1)!}{(a-1)!} \end{array}
-\end{aligned} \end{equation*} }
-%
-Тут через $ F $ означено гіпергеометричну функцію Гаусса.
-%
-\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
-F (a_1, a_2; b_1; z) = \sum_{k=0}^\infty 
-\frac{(a_1)_k (a_2)_k}{(b_1)_k} \frac{z^k}{k!} 
+\left. I_3 \right|_{\rho = 0}^{R < \sqrt{c^2 t^2 - z^2}} = 
+\frac{R^2}{c^2 t^2 - z^2} \sum_{m=1}^{\infty} 
+\left( \frac{ct - z}{ct + z} \right)^m P_{m-1}^{(1,0)} 
+\left( 1 - \frac{2R^2}{c^2 t^2 - z^2} \right)
 \end{aligned} \end{equation*} }
 %
 \begin{equation*} \begin{aligned}
-F (a_1, a_2; b_1; z) = \sum_{k=0}^\infty 
-\frac{\Gamma(a_1+k) \Gamma(a_2+k) \Gamma(b_1)}
-{\Gamma(a_1) \Gamma(a_2) \Gamma(b_1+k)} \frac{z^k}{k!}
+\left. I_3 \right|_{\rho = 0}^{R < \sqrt{c^2 t^2 - z^2}} = 
+\frac{R^2}{c^2 t^2 - z^2} \sum_{m=0}^{\infty} 
+\left( \frac{ct - z}{ct + z} \right)^{m+1} P_{m}^{(1,0)} 
+\left( 1 - \frac{2R^2}{c^2 t^2 - z^2} \right)
 \end{aligned} \end{equation*}
-%
-Таким чином, $ I_3 $ можна записати в явному виді для $ \rho = 0 $.
-%
-\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
-b = R, c = \sqrt{c^2t^2-z^2} \\
-\mu = 1, \nu = \{ 2m \}_{m=1}^{\infty}
-\end{aligned} \end{equation*} }
-%
-\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
-\left. A_{1,2m}^1 \right|^{\tau < R} =
-\frac{(c^2t^2-z^2)^m}{R^{2m+1}}
-\Gamma \left[ \begin{array}{l} 1+m \\ 1-m, 2m + 1 \end{array} \right]
-F \left( m+1, m; 2m+1; \frac{c^2t^2-z^2}{R^2} \right)
-\end{aligned} \end{equation*} }
-%
-\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
-\left. A_{1,2m}^1 \right|^{\tau < R} = \frac{(c^2t^2-z^2)^m}{R^{2m+1}}
-\frac{\Gamma(1+m)}{\Gamma(1-m) \Gamma(2m+1)}
-F \left( m+1, m; 2m+1; \frac{c^2t^2-z^2}{R^2} \right)
-\end{aligned} \end{equation*} }
-%
-\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
-\left. A_{1,2m}^1 \right|^{\tau < R} = \frac{1}{R}
-\frac{\Gamma(1+m)}{\Gamma(1-m) \Gamma(2m+1)} \cdot \\
-\cdot \sum_{k=0}^\infty \frac{1}{k!} 
-\frac{ \Gamma(m+k+1) \Gamma(m+k) \Gamma(2m+1) }
-{ \Gamma(m+1) \Gamma(m) \Gamma(2m+k+1) }
-\left( \frac{c^2t^2-z^2}{R^2} \right)^{k+m}
-\end{aligned} \end{equation*} }
 %
 \begin{equation*} \begin{aligned}
-\left. A_{1,2m}^1 \right|^{c^2t^2 - z^2 < R} \simeq
-\frac{1}{ \Gamma(1-m) \Gamma(m) } = 
-\frac{\sin(m \pi)}{\pi} = 0, \forall m \in \Z
+\left. I_3 \right|^{\rho = 0} = \begin{cases} 1/2, R^2 > c^2 t^2 - z^2 \\
+\frac{R^2}{c^2 t^2 - z^2} \sum_{m=0}^{\infty} 
+\left( \frac{ct - z}{ct + z} \right)^{m+1} P_{m}^{(1,0)} 
+\left( 1 - \frac{2R^2}{c^2 t^2 - z^2} \right), 
+R^2 < c^2 t^2 - z^2 \end{cases}
 \end{aligned} \end{equation*}
-%
-\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
-\left. A_{1,2m}^1 \right|^{\tau > R} = \frac{R}{c^2t^2-z^2}
-\Gamma \left[ \begin{array}{l} m+1 \\ m, 2 \end{array} \right]
-F \left( 1+m, 1-m; 2; \frac{R^2}{c^2t^2-z^2} \right)
-\end{aligned} \end{equation*} }
-%
-\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
-\left. A_{1,2m}^1 \right|^{\tau > R} = \frac{R}{c^2t^2-z^2}
-\frac{\Gamma(m+1)}{\Gamma(m) \Gamma(2)}
-F \left( 1+m, 1-m; 2; \frac{R^2}{c^2t^2-z^2} \right)
-\end{aligned} \end{equation*} }
-%
-\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
-\left. A_{1,2m}^1 \right|^{\tau > R} = \frac{mR}{c^2t^2-z^2}
-\sum_{k=0}^\infty  \frac{\left( 1-m^2 \right)^k}{2^k k!} 
-\left( \frac{R^2}{c^2t^2-z^2} \right)^{k}
-\end{aligned} \end{equation*} }
-%
-\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
-\left. A_{1,2m}^1 \right|^{\tau > R} = \frac{m}{R}
-\sum_{k=0}^\infty  \frac{\left( 1-m^2 \right)^k}{2^k k!} 
-\left( \frac{R^2}{c^2t^2-z^2} \right)^{k+1}
-\end{aligned} \end{equation*} }
-%
-\begin{equation}
-\left. I_3 \right|^{\rho=0} = \left. I_1 \right|^{\rho=0} +
-\sum_{m=1}^{\infty} \left( \frac{ct - z}{ct + z} \right)^m A_{1,2m}^1
-\end{equation}
-%
-\begin{equation}
-\left. A_{1,2m}^1 \right|^{\tau > R} = m
-\sum_{k=0}^\infty  \frac{\left( 1-m^2 \right)^k}{2^k k!} 
-\left( \frac{R^2}{c^2t^2-z^2} \right)^{k+1}
-\end{equation}
-%
-\begin{equation} 
-\left. A_{1,2m}^1 \right|^{\tau < R} = \frac{C_{2m-1}^{m-1}}{2}
-\sum_{k=0}^\infty \frac{1}{k!} \left( \frac{m^2+m}{2m+1} \right)^k
-\left( \frac{c^2t^2-z^2}{R^2} \right)^{k+m}
-\end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Інтеграл 4}
@@ -254,32 +183,29 @@ I_4 = R \int \limits_{0}^{\infty} d \nu J_0(\nu \rho) J_1(\nu R)
 \end{equation}
 %
 \begin{equation}
-I_4 = I_2 - 2 R \int \limits_{0}^{\infty} d \nu 
-J_0(\nu \rho) J_1(\nu R) U_2[ W_-, Z ]
+I_4 = I_2 + 2 R \sum_{m=1}^{\infty} \left( \frac{ct - z}{ct + z} \right)^m 
+\int_{0}^{\infty} d \nu J_1(\nu R) J_{2m} (\nu \sqrt{c^2t^2 + z^2})
 \end{equation}
 %
 По аналогії з \eqref{eq:intergal3}, використаємо формулу 2.12.31.1 з 
-\cite[ст. 209]{SpecFunc1983} для пошуку значення інтегралу при $ \rho = 0 $.
+\cite[ст. 209]{imp:SpecFunc1983} для пошуку значення інтегралу при $ \rho = 0 $.
 %
-\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
-I_4 = I_2 - 2 R \int \limits_{0}^{\infty} d \nu J_1(\nu R) U_2[ W_-, Z ]
-\end{aligned} \end{equation*} }
+\begin{equation*} \begin{aligned}
+\left. I_4 \right|_{\rho = 0}^{R < \sqrt{c^2 t^2 - z^2}} = 
+\frac{2 R^2}{c^2 t^2 - z^2} \sum_{m=0}^{\infty} 
+\left( \frac{ct - z}{ct + z} \right)^{m+1} P_{m}^{(1,0)} 
+\left( 1 - \frac{2R^2}{c^2 t^2 - z^2} \right)
+\end{aligned} \end{equation*}
 %
-\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
-I_4 = I_2 - 2 R \sum_{m=1}^{\infty} \left( \frac{ct - z}{ct + z} \right)^m 
-\int_{0}^{\infty} d \nu J_1(\nu R) J_{2m} (\nu \sqrt{c^2t^2 + z^2})
-\end{aligned} \end{equation*} }
-%
-\begin{equation}
-\left. I_4 \right|^{\rho=0} = \left. I_2 \right|^{\rho=0} -
-2 \sum_{m=1}^{\infty} \left( \frac{ct - z}{ct + z} \right)^m A_{1,2m}^1
-\end{equation}
+\begin{equation} \begin{aligned}
+\left. I_4 \right|^{\rho = 0} = 2 \left. I_3 \right|^{\rho = 0}
+\end{aligned} \end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Інтеграл 5}
 
 \begin{equation}
-I_5 = i R \int \limits_{0}^{\infty} d \nu J_1 \left( \nu R \right) 
-J_1 \left( \nu \rho \right)
+I_5 = i R \int \limits_{0}^{\infty} d \nu 
+J_1 \left( \nu R \right) J_1 \left( \nu \rho \right)
 U_1 \left[ - i \nu \left( ct - z \right), \nu \sqrt{c^2t^2 - z^2} \right]
 \end{equation}

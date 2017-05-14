@@ -437,6 +437,8 @@ I_2 = R \int_{0}^{\infty} d \rho J_1 (\nu R)
 J_0 (\nu \rho) J_0 \left( \nu \sqrt{\frac{c^2 t^2}{\epsilon \mu} - z^2} \right)
 \end{equation*}
 %
+\textcolor{red} { Правильній перехід до декартових векторних кординат? } 
+%
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
 \mathbf{A} = \left( \begin{array}{cc}
 \cos \varphi & \sin \varphi \\
@@ -629,30 +631,533 @@ $ H_\varphi = E_\rho $. Дня лінійного поля плаского ди
 таке джерело вторинним. Випадки коли вторинним джерелом можна знехтувати, за 
 рахунок його незначного вливу порівняно з первинним джерелом, називається 
 лінійною задачею випромінювання. Прикладами такого поля є 
-\eqref{eq:linear_h_cyl} та \eqref{eq:linear_e_cyl}.
+\eqref{eq:linear_h_cyl} та \eqref{eq:linear_e_cyl}. Тепер розглянемо 
+середовище, де вплив самодії все ще незначний порівнянно з лінійним полем, але
+викликає розбіжності в емпіричних показниках та данних теоретичної моделі. 
+Таке середовище називають слабним нелінійним середовищем. Вторинне джерело 
+поля в такому середовищі є функцією амплатуди поля. В якості такого джерела 
+розглянемо вторинній електричний струм
+%
+\begin{equation*} 
+\vect{J^\prime} = \partder{}{t} \vect{P^\prime} \left( \vect{E} \right) +
+\sigma \vect{E}
+\end{equation*}
 
+Остання рівність складається з двох додаків. Перший додаток відповідає саме 
+нелінійним властивостям поля. Останній додаток описує провідникові властивості 
+середи розповлюдження, які теж мжуть бути описані вторинним джерелом. 
+%
+\begin{equation*} 
+\vect{J^\prime} = \vect{\rho_0} \left( \partder{}{t}
+P_\rho^\prime \left( \vect{E} \right) + \sigma E_\rho \right) + 
+\vect{\varphi_0} \left( \partder{}{t} P_\varphi^\prime \left( \vect{E} \right) + 
+\sigma E_\varphi \right) + \vect{z_0} \partder{}{t} P_z^\prime 
+\left( \vect{E} \right) 
+\end{equation*}
+%
+\textcolor{lightgray}{ \begin{equation*} \label{eq:linear_e_cyl}
+\vect{E} \left( r, t \right) = \frac{A_0}{2} 
+\sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}}
+\Big( \vect{\rho_0} I_1 \cos \varphi - 
+\vect{ \varphi_0 } \left( I_2 - I_1 \right) \sin \varphi \Big)
+\end{equation*} }
+%
+\textcolor{lightgray}{ \begin{equation*}
+I_1 = \begin{cases}
+0, 0 < R < | f_{-} \left( r, t \right) | \\
+f_1, | f_{-} \left( r, t \right) | < R < f_{+} \left( r, t \right) \\ 
+1/2, f_{+} \left( r, t \right) < R
+\end{cases}
+\end{equation*} }
+%
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+f_1 = \frac{\rho^2 + R^2}{4 \pi \rho^2} \arccos 
+\frac{c^2 t^2 - z^2 - \rho^2 - R^2}{2 \rho R}  -
+\frac{\sqrt{4 \rho^2 R^2 - (\rho^2 + R^2 - c^2t^2 + z^2)^2}}{4 \pi \rho^2} - \\
+- \frac{ |\rho^2 - R^2| }{2 \pi \rho^2} 
+\arctan \sqrt{ \frac{(\rho - R)^2}{(\rho + R)^2} \cdot
+\frac{\left( \rho + R \right)^2 - \left( c^2t^2 - z^2 \right)} 
+{\left( c^2t^2 - z^2 \right) - \left( \rho - R \right)^2} }
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray}{ \begin{equation*}
+I_2 = \begin{cases}
+0, 0 < R < | f_{-} \left( r, t \right) | \\
+\frac{1}{\pi} \arccos \frac{c^2t^2 - z^2 + \rho^2 - R^2}
+{2 \rho \sqrt{c^2t^2 - z^2}}, | f_{-} \left( r, t \right) | < R < 
+f_{+} \left( r, t \right) \\ 1, f_{+} \left( r, t \right) < R
+\end{cases}
+\end{equation*} }
+%
+Струм для області $ S_1 $, яка відповідає області статичного поля.
+%
+\begin{equation*} \begin{aligned}
+\vect{J^\prime} \left\{ S_1 \right\} = 
+\vect{\rho_0} \partder{}{t} P_\rho^\prime \left( \Theta \right) + 
+\vect{\varphi_0} \partder{}{t} P_\varphi^\prime \left( \Theta \right) + 
+\vect{z_0} \partder{}{t} P_z^\prime \left( \Theta \right)
+\end{aligned} \end{equation*}
+%
+\textcolor{red}{ Згідно з неоднозначностю векторного потенціалу 
+\cite[ст. 77]{imp:LandauII} $ \vect{J^\prime} \left\{ S_1 \right\}  = 0 $. }
+%
+\begin{equation*} \begin{aligned}
+\vect{J^\prime} \left\{ S_2 \right\} = \vect{\rho_0} \left( \partder{}{t}
+P_\rho^\prime \left( \vect{E} \right) + \frac{\sigma A_0 I_1}{2} 
+\sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}} \cos \varphi \right) + \\
++ \vect{\varphi_0} \left( \partder{}{t} 
+P_\varphi^\prime \left( \vect{E} \right) + \frac{\sigma A_0 (I_2 - I_1)}{2} 
+\sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}} \sin \varphi \right) + 
+\vect{z_0} \partder{}{t} P_z^\prime \left( \vect{E} \right)
+\end{aligned} \end{equation*}
+%
+\begin{equation*} \begin{aligned}
+\vect{J^\prime} \left\{ S_3 \right\} = \vect{\rho_0} \left( \partder{}{t}
+P_\rho^\prime \left( \vect{E} \right) + \frac{\sigma A_0}{4} 
+\sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}} \cos \varphi \right) + \\
++ \vect{\varphi_0} \left( \partder{}{t} 
+P_\varphi^\prime \left( \vect{E} \right) + \frac{\sigma A_0}{4} 
+\sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}} \sin \varphi \right) + 
+\vect{z_0} \partder{}{t} P_z^\prime \left( \vect{E} \right)
+\end{aligned} \end{equation*}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Нелінійність Керра}
+%
+\textcolor{red}{ Чи правильно, що нелінійна ппроникність поля залежеть від 
+амплтуди джерела? }
+%
+\begin{equation*}
+\vect{P^\prime} \left( \vect{E} \right) = 
+\chi_3^e \left( A_0 \right) \vect{E}^3 
+\left( A_0, R, \epsilon, \mu, vt, \vect{r} \right)
+\end{equation*}
+%
+\begin{equation*}
+\vect{P^\prime} \left( \vect{E} \right) = 
+\chi_3^e \left( A_0 \right)  
+\dotprod{ \crossprod{ \vect{E} }{ \vect{E} } }{ \vect{E} }
+\end{equation*}
+%
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+\vect{P^\prime} \left( \vect{E} \right) = 
+\frac{ {A_0}^3 \chi_3^e }{ 8 } \left( \frac{\mu_0 \mu}
+{\epsilon_0 \epsilon} \right)^{3/2} \left( {I_1}^2 \cos^2 \varphi + 
+\left( I_2 - I_1 \right)^2 \sin^2 \varphi \right) \cdot \\ 
+\cdot \Big( \vect{\rho_0} I_1 \cos \varphi - 
+\vect{ \varphi_0 } \left( I_2 - I_1 \right) \sin \varphi \Big)
+\end{aligned} \end{equation*} }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Нелінійні коефіцієнти}
-
+%
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+f_1 = \frac{\rho^2 + R^2}{4 \pi \rho^2} \arccos 
+\frac{c^2 t^2 - z^2 - \rho^2 - R^2}{2 \rho R}  -
+\frac{\sqrt{4 \rho^2 R^2 - (\rho^2 + R^2 - c^2t^2 + z^2)^2}}{4 \pi \rho^2} - \\
+- \frac{ |\rho^2 - R^2| }{2 \pi \rho^2} 
+\arctan \sqrt{ \frac{(\rho - R)^2}{(\rho + R)^2} \cdot
+\frac{\left( \rho + R \right)^2 - \left( c^2t^2 - z^2 \right)} 
+{\left( c^2t^2 - z^2 \right) - \left( \rho - R \right)^2} }
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+\partder{I_1 \left\{ S_2 \right\}}{t} = \frac{\rho^2 + R^2}{4 \pi \rho^2}
+\partder{}{t} \arccos \frac{c^2 t^2 - z^2 - \rho^2 - R^2}{2 \rho R} - \\
+- \partder{}{t} \frac{\sqrt{4 \rho^2 R^2 - (\rho^2 + R^2 - c^2t^2 + z^2)^2}}
+{4 \pi \rho^2} - \\ - \frac{ |\rho^2 - R^2| }{2 \pi \rho^2} \partder{}{t} 
+\arctan \sqrt{ \frac{(\rho - R)^2}{(\rho + R)^2} \cdot
+\frac{\left( \rho + R \right)^2 - \left( c^2t^2 - z^2 \right)} 
+{\left( c^2t^2 - z^2 \right) - \left( \rho - R \right)^2} }
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+\partder{}{t} \arccos \frac{c^2 t^2 - z^2 - \rho^2 - R^2}{2 \rho R} = 
+- \frac{2 c^2 t}
+{ \sqrt{4 \rho^2 R^2 - \left(c^2 t^2 - z^2 - \rho^2 - R^2 \right)^2} }
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+\partder{}{t} \frac{\sqrt{4 \rho^2 R^2 - (\rho^2 + R^2 - c^2t^2 + z^2)^2}}
+{4 \pi \rho^2} = \frac{1}{8 \pi \rho^2} 
+\frac{ 4 c^2 t (\rho^2 + R^2 - c^2 t^2 + z^2) }
+{ \sqrt{4 \rho^2 R^2 - (\rho^2 + R^2 - c^2t^2 + z^2)^2} } = \\
+= \frac{c^2 t}{2 \pi \rho^2} \frac{\rho^2 + R^2 - c^2 t^2 + z^2}
+{ \sqrt{4 \rho^2 R^2 - (\rho^2 + R^2 - c^2t^2 + z^2)^2} }
+\end{aligned} \end{equation*} }
+%
+\textcolor{red}{ \begin{equation*} \begin{aligned}
+\partder{}{t} \arctan \sqrt{ \frac{(\rho - R)^2}{(\rho + R)^2}
+\frac{\left( \rho + R \right)^2 - \left( c^2t^2 - z^2 \right)} 
+{\left( c^2t^2 - z^2 \right) - \left( \rho - R \right)^2} } = 
+\frac{ \partder{}{t} \sqrt{ \frac{(\rho - R)^2}{(\rho + R)^2} \frac
+{\left( \rho + R \right)^2 - \left( c^2t^2 - z^2 \right)} 
+{\left( c^2t^2 - z^2 \right) - \left( \rho - R \right)^2}} }
+{1 + \frac{(\rho - R)^2}{(\rho + R)^2}
+\frac{\left( \rho + R \right)^2 - \left( c^2t^2 - z^2 \right)} 
+{\left( c^2t^2 - z^2 \right) - \left( \rho - R \right)^2} } = \\
+% = \frac{1}{2} \frac{ \sqrt{ \frac{(\rho - R)^2}{(\rho + R)^2} \frac 
+% {\left( c^2t^2 - z^2 \right) - \left( \rho - R \right)^2}
+% {\left( \rho + R \right)^2 - \left( c^2t^2 - z^2 \right)} } }
+% {1 + \frac{(\rho - R)^2}{(\rho + R)^2}
+% \frac{\left( \rho + R \right)^2 - \left( c^2t^2 - z^2 \right)} 
+% {\left( c^2t^2 - z^2 \right) - \left( \rho - R \right)^2} } 
+% \frac{(\rho - R)^2}{(\rho + R)^2} \partder{}{t} \frac
+% {\left( \rho + R \right)^2 - \left( c^2t^2 - z^2 \right)} 
+% {\left( c^2t^2 - z^2 \right) - \left( \rho - R \right)^2}} = \\
+= \frac{1}{2} \frac{(\rho - R)^2}{(\rho + R)^2}
+\frac{ - 2 c^2 t \left( (c^2 t^2 - z^2) - (\rho - R)^2 \right) -
+2 c^2 t \left( (\rho + R)^2 - (c^2 t^2 - z^2) \right) }
+{\left( (c^2 t^2 - z^2) - (\rho - R)^2 \right)^2} \frac{?}{?} = \\
+= c^2 t \frac{(\rho - R)^2}{(\rho + R)^2} \frac
+{ \left( \rho + R \right)^2 - \left( \rho - R \right)^2 }
+{ \left( (c^2t^2 - z^2) - (\rho - R)^2 \right)^2 }
+\frac{ \sqrt{ \frac{(\rho - R)^2}{(\rho + R)^2} \frac 
+{\left( c^2t^2 - z^2 \right) - \left( \rho - R \right)^2}
+{\left( \rho + R \right)^2 - \left( c^2t^2 - z^2 \right)} } }
+{1 + \frac{(\rho - R)^2}{(\rho + R)^2}
+\frac{\left( \rho + R \right)^2 - \left( c^2t^2 - z^2 \right)} 
+{\left( c^2t^2 - z^2 \right) - \left( \rho - R \right)^2} } = \\
+= \frac{(\rho - R)^2}{(\rho + R)^2} \frac
+{ 4 c^2 t \rho R }{ \left( (c^2t^2 - z^2) - (\rho - R)^2 \right)^2 }
+\frac{ \sqrt{ \frac{(\rho - R)^2}{(\rho + R)^2} \frac 
+{\left( c^2t^2 - z^2 \right) - \left( \rho - R \right)^2}
+{\left( \rho + R \right)^2 - \left( c^2t^2 - z^2 \right)} } }
+{1 + \frac{(\rho - R)^2}{(\rho + R)^2}
+\frac{\left( \rho + R \right)^2 - \left( c^2t^2 - z^2 \right)} 
+{\left( c^2t^2 - z^2 \right) - \left( \rho - R \right)^2} }
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+\partder{}{t} \arctan \sqrt{ \frac{(\rho - R)^2}{(\rho + R)^2}
+\frac{\left( \rho + R \right)^2 - \left( c^2t^2 - z^2 \right)} 
+{\left( c^2t^2 - z^2 \right) - \left( \rho - R \right)^2} } = 
+\partder{}{t} \arctan \sqrt{ \frac
+{1 - \frac{c^2t^2 - z^2}{\left( \rho + R \right)^2} } 
+{ \frac{c^2t^2 - z^2}{ \left( \rho - R \right)^2 } - 1} } = \\
+= \frac{1}{1 + \frac{1 - \frac{c^2t^2 - z^2}{\left( \rho + R \right)^2} } 
+{ \frac{c^2t^2 - z^2}{ \left( \rho - R \right)^2 } - 1} } \frac{1}{2}
+\sqrt{ \frac{ \frac{c^2t^2 - z^2}{ \left( \rho - R \right)^2 } - 1 }
+{1 - \frac{c^2t^2 - z^2}{\left( \rho + R \right)^2} } } 
+\frac{ - \frac{2 c^2 t}{\left( \rho + R \right)^2} 
+\left( \frac{c^2t^2 - z^2}{ \left( \rho - R \right)^2} - 1 \right) - 
+\frac{ 2 c^2 t }{ \left( \rho - R \right)^2 } 
+\left( 1 - \frac{c^2t^2 - z^2}{\left( \rho + R \right)^2} \right) }
+{\left( \frac{c^2t^2 - z^2}{ \left( \rho - R \right)^2 } - 1 \right)^2} = \\
+= - c^2 t \frac{ \frac{c^2t^2-z^2}{(\rho-R)^2} - 1 }
+{ \frac{c^2t^2-z^2}{(\rho-R)^2} - 1 + 1 - 
+\frac{c^2t^2 - z^2}{\left( \rho + R \right)^2} }
+\sqrt{ \frac{ \frac{c^2t^2 - z^2}{ \left( \rho - R \right)^2 } - 1}
+{1 - \frac{c^2t^2 - z^2}{\left( \rho + R \right)^2} } } \frac
+{ \frac{c^2t^2 - z^2}{ \left( \rho^2 - R^2 \right)^2 } - \frac{1}{(\rho+R)^2} + 
+\frac{1}{(\rho-R)^2} - \frac{ c^2t^2 - z^2 }{ \left( \rho^2 - R^2 \right)^2 } }
+{ \left( \frac{c^2t^2 - z^2}{ \left( \rho - R \right)^2} - 1 \right)^2 } = \\
+= - \frac{4 \rho R c^2 t}{ \left( \rho^2 - R^2 \right)^2 } 
+\frac{ 1 }{ \frac{c^2t^2-z^2}{(\rho-R)^2} - 
+\frac{c^2t^2 - z^2}{\left( \rho + R \right)^2} }
+\sqrt{ \frac{ \frac{c^2t^2 - z^2}{ \left( \rho - R \right)^2 } - 1}
+{1 - \frac{c^2t^2 - z^2}{\left( \rho + R \right)^2} } } \frac
+{ 1 }{ \frac{c^2t^2 - z^2}{ \left( \rho - R \right)^2} - 1 } = \\
+= - \frac{c^2 t}{ c^2 t^2 - z^2 } \frac{1} { 
+\sqrt{ 1 - \frac{c^2t^2 - z^2}{(\rho + R)^2 } } 
+\sqrt{ \frac{c^2t^2 - z^2}{ (\rho - R)^2 } - 1} }
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+\partder{ I_1 \{ S_2 \} }{t} = - \frac{c^2 t}{2 \pi \rho^2}
+\frac{\rho^2 + R^2}
+{ \sqrt{4 \rho^2 R^2 - \left(c^2 t^2 - z^2 - \rho^2 - R^2 \right)^2} } - \\
+- \frac{c^2 t}{2 \pi \rho^2} \frac{\rho^2 + R^2 - c^2 t^2 + z^2}
+{ \sqrt{4 \rho^2 R^2 - (\rho^2 + R^2 - c^2t^2 + z^2)^2} } + \\ 
++ \frac{ c^2 t }{2 \pi \rho^2} \frac{|\rho^2 - R^2|}{ c^2 t^2 - z^2 } \frac{1} 
+{ \sqrt{ 1 - \frac{c^2t^2 - z^2}{(\rho + R)^2 } } 
+\sqrt{ \frac{c^2t^2 - z^2}{ (\rho - R)^2 } - 1} }
+\end{aligned} \end{equation*} }
+%
+\begin{equation*} \begin{aligned}
+\partder{ I_1 \{ S_2 \} }{t} = 
+\frac{ c^2 t }{2 \pi \rho^2} \frac{|\rho^2 - R^2|}{ c^2 t^2 - z^2 } \frac{1} 
+{ \sqrt{ 1 - \frac{c^2t^2 - z^2}{(\rho + R)^2 } } 
+\sqrt{ \frac{c^2t^2 - z^2}{ (\rho - R)^2 } - 1} } - \\
+- \frac{c^2 t}{2 \pi \rho^2} \frac{\rho^2 + R^2}
+{ \sqrt{4 \rho^2 R^2 - \left(c^2 t^2 - z^2 - \rho^2 - R^2 \right)^2} } - \\
+- \frac{c^2 t}{2 \pi \rho^2} \frac{\rho^2 + R^2 - c^2 t^2 + z^2}
+{ \sqrt{4 \rho^2 R^2 - (\rho^2 + R^2 - c^2t^2 + z^2)^2} }
+\end{aligned} \end{equation*}
+%
+\begin{equation*} \begin{aligned}
+\partder{ I_1 \{ S_{1,3} \} }{t} = 0
+\end{aligned} \end{equation*}
+%
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+\partder{ I_2 \{ S_2 \} }{t} = \frac{1}{\pi} \partder{}{t} \arccos 
+\frac{c^2t^2 - z^2 + \rho^2 - R^2}{2 \rho \sqrt{c^2t^2 - z^2}} = \\
+= - \frac{1}{\pi} \frac{1} { \sqrt{ 1 - \frac{ (c^2t^2 - z^2 + \rho^2 - R^2)^2 }
+{4 \rho^2 (c^2t^2 - z^2)^2} } } \partder{}{t} \frac{c^2t^2 - z^2 + \rho^2 - R^2}
+{2 \rho \sqrt{c^2t^2 - z^2}} = \\
+= - \frac{1}{\pi} \frac{1} { \sqrt{ 1 - \frac{ (c^2t^2 - z^2 + \rho^2 - R^2)^2 }
+{4 \rho^2 (c^2t^2 - z^2)^2} } } 
+\frac{2c^2t 2 \rho \sqrt{c^2t^2 - z^2} - 
+\frac{2c^2t \rho}{\sqrt{c^2t^2 - z^2}} (c^2t^2 - z^2 + \rho^2 - R^2) }
+{4 \rho^2 (c^2t^2 - z^2)} = \\
+= - \frac{2 c^2 t \rho}{\pi} \frac{1} 
+{ \sqrt{ 1 - \frac{ (c^2t^2 - z^2 + \rho^2 - R^2)^2 }
+{4 \rho^2 (c^2t^2 - z^2)} } } 
+\frac{2 \sqrt{c^2t^2 - z^2} - 
+\frac{c^2t^2 - z^2 + \rho^2 - R^2}{\sqrt{c^2t^2 - z^2}} }
+{4 \rho^2 (c^2t^2 - z^2)} = \\
+= - \frac{c^2 t}{2 \pi \rho (c^2t^2 - z^2)} 
+\frac{ 2 \sqrt{c^2t^2 - z^2} - 
+\frac{c^2t^2 - z^2 + \rho^2 - R^2}{\sqrt{c^2t^2 - z^2}} } 
+{ \sqrt{ 1 - \frac{ (c^2t^2 - z^2 + \rho^2 - R^2)^2 }
+{4 \rho^2 (c^2t^2 - z^2)^2} } } = \\
+= - \frac{c^2 t}{\pi \sqrt{c^2t^2 - z^2} } 
+\frac{ 2 (c^2t^2 - z^2) - (c^2t^2 - z^2 + \rho^2 - R^2) } 
+{ \sqrt{ 4 \rho^2 (c^2t^2 - z^2)^2 - (c^2t^2 - z^2 + \rho^2 - R^2)^2 } } = \\
+= - \frac{c^2 t}{\pi \sqrt{c^2t^2 - z^2} } \frac{ c^2t^2 - z^2 -  \rho^2 + R^2 } 
+{ \sqrt{ 4 \rho^2 (c^2t^2 - z^2)^2 - (c^2t^2 - z^2 + \rho^2 - R^2)^2 } }
+\end{aligned} \end{equation*} }
+%
+\begin{equation*} \begin{aligned}
+\partder{ I_2 \{ S_2 \} }{t} = 
+- \frac{c^2 t}{\pi \sqrt{c^2t^2 - z^2} } \frac{ c^2t^2 - z^2 -  \rho^2 + R^2 } 
+{ \sqrt{ 4 \rho^2 (c^2t^2 - z^2)^2 - (c^2t^2 - z^2 + \rho^2 - R^2)^2 } }
+\end{aligned} \end{equation*}
+%
+\begin{equation*} \begin{aligned}
+\partder{ I_2 \{ S_{1,3} \} }{t} = 0
+\end{aligned} \end{equation*}
+%
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+\partder{I_1 \left\{ S_2 \right\}}{t} = \frac{\rho^2 + R^2}{4 \pi \rho^2}
+\partder{}{t} \arccos \frac{c^2 t^2 - z^2 - \rho^2 - R^2}{2 \rho R} - \\
+- \partder{}{t} \frac{\sqrt{4 \rho^2 R^2 - (\rho^2 + R^2 - c^2t^2 + z^2)^2}}
+{4 \pi \rho^2} - \\ - \frac{ |\rho^2 - R^2| }{2 \pi \rho^2} \partder{}{t} 
+\arctan \sqrt{ \frac{(\rho - R)^2}{(\rho + R)^2} \cdot
+\frac{\left( \rho + R \right)^2 - \left( c^2t^2 - z^2 \right)} 
+{\left( c^2t^2 - z^2 \right) - \left( \rho - R \right)^2} }
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+\vect{P^\prime} \left( \vect{E} \right) = 
+\frac{ {A_0}^3 \chi_3^e }{ 8 } \left( \frac{\mu_0 \mu}
+{\epsilon_0 \epsilon} \right)^{3/2} \left( {I_1}^2 \cos^2 \varphi + 
+\left( I_2 - I_1 \right)^2 \sin^2 \varphi \right) \cdot \\ 
+\cdot \Big( \vect{\rho_0} I_1 \cos \varphi - 
+\vect{ \varphi_0 } \left( I_2 - I_1 \right) \sin \varphi \Big)
+\end{aligned} \end{equation*} }
+%
+\begin{equation*} \begin{aligned}
+P_z^\prime \left( \vect{E} \right) = 0
+\end{aligned} \end{equation*}
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+\partder{P_\rho^\prime}{t}   = \frac{ {A_0}^3 \chi_3^e }{ 8 } 
+\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} \left(
+\left( {I_1}^2 \cos^2 \varphi + ( I_2 - I_1 )^2 \sin^2 \varphi \right)
+\partder{I_1}{t} \cos \varphi + \right. \\
+\left. + I_1 \cos \varphi \left( 2 I_1 \partder{I_1}{t} \cos^2 \varphi + 
+2 ( I_2 - I_1 ) \left( \partder{I_2}{t} - \partder{I_1}{t} \right) 
+\sin^2 \varphi \right) \right) = \\ = \frac{ {A_0}^3 \chi_3^e }{ 8 } 
+\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} \left(
+\partder{I_1}{t} {I_1}^2 \cos^3 \varphi + \partder{I_1}{t} ( I_2 - I_1 )^2 
+\cos \varphi \sin^2 \varphi + \right. \\
+\left. + 2 {I_1}^2 \partder{I_1}{t} \cos^3 \varphi + 
+2 I_1 ( I_2 - I_1 ) \left( \partder{I_2}{t} - \partder{I_1}{t} \right) 
+\cos \varphi \sin^2 \varphi \right) = \\ = \frac{ {A_0}^3 \chi_3^e }{ 8 } 
+\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} \left(
+\partder{I_1}{t} {I_1}^2 \cos^3 \varphi + \partder{I_1}{t} ( I_2 - I_1 )^2 
+\cos \varphi \sin^2 \varphi + \right. \\
+\left. + 2 {I_1}^2 \partder{I_1}{t} \cos^3 \varphi + 
+2 I_1 ( I_2 - I_1 ) \left( \partder{I_2}{t} - \partder{I_1}{t} \right) 
+\cos \varphi \sin^2 \varphi \right) 
+\end{aligned} \end{equation*} }
+%
+\begin{equation*} \begin{aligned}
+\partder{P_\rho^\prime}{t} = \frac{ {A_0}^3 \chi_3^e }{ 8 } 
+\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} \left(
+3 {I_1}^2 \partder{I_1}{t} \cos^3 \varphi + \right. \\
++ \left. ( I_2 - I_1 ) \cos \varphi \sin^2 \varphi \left( 
+\partder{I_1}{t} ( I_2 - I_1 ) + 2 I_1 \left( \partder{I_2}{t} - 
+\partder{I_1}{t} \right) \right) \right)
+\end{aligned} \end{equation*}
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+\partder{P_\varphi^\prime}{t}   = - \frac{ {A_0}^3 \chi_3^e }{ 8 } 
+\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} \left(
+\left( {I_1}^2 \cos^2 \varphi + ( I_2 - I_1 )^2 \sin^2 \varphi \right)
+\left( \partder{I_2}{t} - \partder{I_1}{t} \right) \sin \varphi + \right. \\
+\left. + (I_2 - I_1) \sin \varphi \left( 2 I_1 \partder{I_1}{t} \cos^2 \varphi + 
+2 ( I_2 - I_1 ) \left( \partder{I_2}{t} - \partder{I_1}{t} \right) 
+\sin^2 \varphi \right) \right) = \\ = - \frac{ {A_0}^3 \chi_3^e }{ 8 } 
+\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} \left(
+{I_1}^2 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) 
+\sin \varphi \cos^2 \varphi + \right. \\ \left. 
++ ( I_2 - I_1 )^2 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) 
+\sin^3 \varphi + 2 I_1 \partder{I_1}{t} (I_2 - I_1) 
+\sin \varphi \cos^2 \varphi + \right. \\ 
++ \left. 2 ( I_2 - I_1 )^2 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) 
+\sin^3 \varphi \right)
+\end{aligned} \end{equation*} }
+%
+\begin{equation*} \begin{aligned}
+\partder{P_\varphi^\prime}{t} = - \frac{ {A_0}^3 \chi_3^e }{ 8 } 
+\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} \left(
+3 ( I_2 - I_1 )^2 \left( \partder{I_2}{t} - \partder{I_1}{t} \right)
+\sin^3 \varphi \right. + \\
++ \left. I_1 \sin \varphi \cos^2 \varphi \left( 
+I_1 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) + 
+2 \partder{I_1}{t} (I_2 - I_1) \right) \right)
+\end{aligned} \end{equation*}
+%
+\textcolor{lightgray} { \begin{equation*}
+j_m \left( r, t; \nu \right) = \frac{\sqrt{\mu_0}}{2\pi} 
+\int \limits_{0}^{2\pi} d \varphi \int \limits_{0}^{\infty} \rho d \rho 
+\vect{j_0} \crossprod{ \nabla_\perp \Psi_m^* }{ \vect{z_0} }
+\end{equation*} }
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+\vect{J^\prime} \left\{ S_2 \right\} = \vect{\rho_0} \left( \partder{}{t}
+P_\rho^\prime \left( \vect{E} \right) + \frac{\sigma A_0 I_1}{2} 
+\sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}} \cos \varphi \right) + \\
++ \vect{\varphi_0} \left( \partder{}{t} 
+P_\varphi^\prime \left( \vect{E} \right) + \frac{\sigma A_0 (I_2 - I_1)}{2} 
+\sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}} \sin \varphi \right)
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+\crossprod{ \nabla_\perp \Psi_m^* }{ \vect{z_0} } =
+- \sqrt{\nu} e^{-im\varphi} \left( \vect{\varphi_0} \frac{J_{m-1} (\nu \rho) - 
+J_{m+1} (\nu \rho)}{2} + i m \vect{\rho_0} \frac{J_m (\nu \rho)}
+{\rho \nu} \right) = \\ 
+= - \sqrt{\nu} e^{-im\varphi} \left( \vect{\varphi_0} \frac{J_{m-1} (\nu \rho) - 
+J_{m+1} (\nu \rho)}{2} + i \vect{\rho_0} \frac{J_{m-1} (\nu \rho) + 
+J_{m+1} (\nu \rho)}{2} \right)
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+\vect{j_0} \crossprod{ \nabla_\perp \Psi_m^* }{ \vect{z_0} } = 
+- i e^{-im\varphi} m \frac{J_m (\nu \rho)}{\rho \sqrt{\nu}}
+\left( \partder{}{t} P_\rho^\prime \left( \vect{E} \right) + 
+\frac{\sigma A_0 I_1}{2} \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}} 
+\cos \varphi \right) - \\
+- \sqrt{\nu} e^{-im\varphi} \frac{J_{m-1} (\nu \rho) - J_{m+1} (\nu \rho)}{2}
+\left( \partder{}{t} P_\varphi^\prime \left( \vect{E} \right) + 
+\frac{\sigma A_0 (I_2 - I_1)}{2} \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}} 
+\sin \varphi \right)
+\end{aligned} \end{equation*} }
+%
+\begin{equation*} \begin{aligned}
+j_m = - \frac{\sqrt{\mu_0}}{2\pi} 
+\int_{0}^{2\pi} d \varphi \int \limits_{0}^{\infty} \rho d \rho 
+\left( i e^{-im\varphi} m \frac{J_m (\nu \rho)}{\rho \sqrt{\nu}}
+\left( \partder{}{t} P_\rho^\prime \left( \vect{E} \right) + 
+\frac{\sigma A_0 I_1}{2} \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}} 
+\cos \varphi \right) \right. + \\
++ \left. \sqrt{\nu} e^{-im\varphi} 
+\frac{J_{m-1} (\nu \rho) - J_{m+1} (\nu \rho)}{2}
+\left( \partder{}{t} P_\varphi^\prime \left( \vect{E} \right) + 
+\frac{\sigma A_0 (I_2 - I_1)}{2} \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}} 
+\sin \varphi \right) \right)
+\end{aligned} \end{equation*}
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+\int_{0}^{2 \pi} d \varphi e^{-im \varphi} \partder{P_\rho^\prime}{t} = 
+\frac{ {A_0}^3 \chi_3^e }{ 8 } \int_{0}^{2\pi} d \varphi
+e^{-im\varphi} \left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} 
+\left( 3 {I_1}^2 \partder{I_1}{t} \cos^3 \varphi + \right. \\
++ \left. ( I_2 - I_1 ) \cos \varphi \sin^2 \varphi \left( 
+\partder{I_1}{t} ( I_2 - I_1 ) + 2 I_1 \left( \partder{I_2}{t} - 
+\partder{I_1}{t} \right) \right) \right) = \\
+= \frac{ {A_0}^3 \chi_3^e }{ 8 } 
+\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2}
+\left( \frac{3 \pi}{4} {I_1}^2 \partder{I_1}{t} \left( \delta_{m,-3} - 
+\delta_{m,3} + 3 \delta_{m,-1} + 3 \delta_{m,1} \right) + \right. \\
++ \frac{\pi }{4} \left. ( I_2 - I_1 ) \left( \delta_{m,1} - 
+\delta_{m,-3} + \delta_{m,-1} - \delta_{m,3} \right) \left( 
+\partder{I_1}{t} ( I_2 - I_1 ) + 2 I_1 \left( \partder{I_2}{t} - 
+\partder{I_1}{t} \right) \right) \right)
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+\int_{0}^{2\pi} e^{-i m \varphi} \cos^3 \varphi d \varphi = 
+\frac{\pi}{4} \delta_{m,-3} - \frac{\pi}{4} \delta_{m,3} + 
+\frac{3 \pi}{4} \delta_{m,-1} + \frac{3 \pi}{4} \delta_{m,1}
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+\int_{0}^{2\pi} e^{-i m \varphi} \cos \varphi \sin^2 \varphi d \varphi = 
+\frac{\pi \delta_{m,1} }{4} - \frac{\pi \delta_{m,-3} }{4} + 
+\frac{\pi \delta_{m,-1} }{4} - \frac{\pi \delta_{m,3} }{4}
+\end{aligned} \end{equation*} }
+%
+\begin{equation*} \begin{aligned}
+\int_{0}^{2\pi} d \varphi e^{-im \varphi} \partder{P_\rho^\prime}{t} = 
+\frac{ {A_0}^3 \chi_3^e }{ 8 } 
+\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2}
+\left( \frac{3 \pi}{4} {I_1}^2 \partder{I_1}{t} \left( \delta_{m,-3} - 
+\delta_{m,3} + 3 \delta_{m,-1} + 3 \delta_{m,1} \right) + \right. \\
++ \frac{\pi }{4} \left. ( I_2 - I_1 ) \left( \delta_{m,1} - 
+\delta_{m,-3} + \delta_{m,-1} - \delta_{m,3} \right) \left( 
+\partder{I_1}{t} ( I_2 - I_1 ) + 2 I_1 \left( \partder{I_2}{t} - 
+\partder{I_1}{t} \right) \right) \right)
+\end{aligned} \end{equation*}
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+\int_{0}^{2\pi} e^{-i m \varphi} \sin^3 \varphi d \varphi = 
+\frac{3 \pi i}{4} \delta_{m,-1} - \frac{3 \pi i}{4} \delta_{m,1} - 
+\frac{\pi i}{4} \delta_{m,-3} - \frac{\pi i}{4} \delta_{m,3}
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+\int_{0}^{2\pi} e^{-i m \varphi} \sin \varphi \cos^2 \varphi d \varphi = 
+\frac{\pi i }{4} \delta_{m,-3} - \frac{\pi i }{4} \delta_{m,1} + 
+\frac{\pi i }{4} \delta_{m,3} + \frac{\pi i }{4} \delta_{m,-1}
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+\int_{0}^{2 \pi} d \varphi e^{-im \varphi} \partder{P_\varphi^\prime}{t} = \\
+= - \frac{ {A_0}^3 \chi_3^e }{ 8 } \int_{0}^{2 \pi} d \varphi e^{-im \varphi}
+\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} \left(
+3 ( I_2 - I_1 )^2 \left( \partder{I_2}{t} - \partder{I_1}{t} \right)
+\sin^3 \varphi \right. + \\
++ \left. I_1 \sin \varphi \cos^2 \varphi \left( 
+I_1 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) + 
+2 \partder{I_1}{t} (I_2 - I_1) \right) \right) = 
+- \frac{ {A_0}^3 \chi_3^e }{ 8 } \codt \\ 
+\cdot \left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} \left(
+\frac{3 \pi i}{4} ( I_2 - I_1 )^2 \left( \partder{I_2}{t} - 
+\partder{I_1}{t} \right) \left( 3 \delta_{m,-1} - 3 \delta_{m,1} - 
+\delta_{m,-3} - \delta_{m,3} \right) \right. + \\
++ \left. \frac{\pi i}{4} I_1 \left(  \delta_{m,-3} - \delta_{m,1} + 
+\delta_{m,3} + \delta_{m,-1} \right) \left( 
+I_1 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) + 
+2 \partder{I_1}{t} (I_2 - I_1) \right) \right)
+\end{aligned} \end{equation*} }
+%
+\begin{equation*} \begin{aligned}
+\int_{0}^{2 \pi} d \varphi e^{-im \varphi} \partder{P_\varphi^\prime}{t} = 
+- \frac{ {A_0}^3 \chi_3^e }{ 8 }
+\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} \cdot \\ 
+\cdot \left( \frac{3 \pi i}{4} ( I_2 - I_1 )^2 \left( \partder{I_2}{t} - 
+\partder{I_1}{t} \right) \left( 3 \delta_{m,-1} - 3 \delta_{m,1} - 
+\delta_{m,-3} - \delta_{m,3} \right) \right. + \\
++ \left. \frac{\pi i}{4} I_1 \left(  \delta_{m,-3} - \delta_{m,1} + 
+\delta_{m,3} + \delta_{m,-1} \right) \left( 
+I_1 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) + 
+2 \partder{I_1}{t} (I_2 - I_1) \right) \right)
+\end{aligned} \end{equation*}
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+\int \limits_{0}^{2\pi} d \varphi \sin \varphi 
+\left( \cos m \varphi - i \sin m \varphi \right) = 
+i \pi \left( \delta_{m,-1} - \delta_{m,1} \right)
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+\int \limits_{0}^{2\pi} d \varphi \cos \varphi 
+( \cos m \varphi - i \sin m \varphi) = \pi ( \delta_{m,-1} + \delta_{m,1} )
+\end{aligned} \end{equation*} }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Нелінійна поправка}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

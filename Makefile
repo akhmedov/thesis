@@ -8,6 +8,11 @@ default: *.tex *.bib
 	$(BIBEL) thesis.aux; \
 	$(COMPILER) thesis.tex
 
+bibpdf: *.tex *.bib
+	$(COMPILER) make_bib.tex; \
+	$(BIBEL) make_bib.aux; \
+	$(COMPILER) make_bib.tex
+
 log:
 	git log --oneline --decorate --graph
 

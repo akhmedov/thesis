@@ -209,3 +209,38 @@ I_5 = i R \int \limits_{0}^{\infty} d \nu
 J_1 \left( \nu R \right) J_1 \left( \nu \rho \right)
 U_1 \left[ - i \nu \left( ct - z \right), \nu \sqrt{c^2t^2 - z^2} \right]
 \end{equation}
+
+\begin{equation*}
+\left. I_5 \right|^{\rho=0} = 0
+\end{equation*}
+
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+\left. I_5 \right|^{\rho=R} = 
+2 i R \int_{0}^{\infty} d \nu J_1 \left( \nu R \right)
+U_1 \left[ - i \nu \left( ct - z \right), \nu \sqrt{c^2t^2 - z^2} \right] = \\
+= 2 i R \int_{0}^{\infty} d \nu J_1 \left( \nu R \right)
+\sum_{m=0}^{\infty} \left( -1 \right)^{m}
+\left( \frac{- i (ct-z)}{c^2t^2-z^2} \right)^{2m+1} 
+J_{2m+1} \left( \nu \sqrt{c^2t^2 - z^2} \right)
+\end{aligned} \end{equation*} }
+
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+\left( -1 \right)^{m} \left( -i \right)^{2m+2} = 
+\left( -1 \right)^{m} \left( -1 \right)^{m+1} = 
+-1 \left( -1 \right)^{m} \left( -1 \right)^{m} = -1
+\end{aligned} \end{equation*} }
+
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+\left. I_5 \right|^{\rho=R} = - 2 R \sum_{m=0}^{\infty} 
+\left( \frac{ct-z}{c^2t^2-z^2} \right)^{2m+1}
+\int_{0}^{\infty} d \nu J_1 \left( \nu R \right)  
+J_{2m+1} \left( \nu \sqrt{c^2t^2 - z^2} \right)
+\end{aligned} \end{equation*} }
+
+\textcolor{lightgray} { \begin{equation*} 
+\left. I_5 \right|^{\rho=R} = \begin{cases}
+- 2 R \sum_{m=0}^{\infty} \left( \frac{ct-z}{c^2t^2-z^2} \right)^{2m+1} 
+... , c^2t^2-z^2 < R^2 \\
+0, c^2t^2-z^2 < R^2
+\end{cases}
+\end{equation*} }

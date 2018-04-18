@@ -705,10 +705,16 @@ $ H_\varphi = E_\rho $. Дня лінійного поля плаского ди
 \left. \lim_{z \to \infty} \left( \frac{ct-z}{ct+z} \right)^m 
 \right|_{m > 1} = 0
 \end{equation}
-
+%
 Остання тотожність є умовою дальньої зони для антени що породжує 
 нестаціонарне поле. Варто зазначити, що при рості $ z $ росте і $ t $, 
 відповідно до принципу причинності, тобто умова $ ct - z > 0 $ виконується.
+%
+\begin{figure}[h] \begin{center}
+\includegraphics[scale=0.5]{SingulatiyFactorization}
+\caption{Розклад сингулярності джерела} \label{fig:singulatiy_factorization}
+\end{center} \end{figure}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Вторинне джерело поля в слабкому нелінійному середовищі. 
@@ -729,6 +735,15 @@ $ H_\varphi = E_\rho $. Дня лінійного поля плаского ди
 \begin{equation*} 
 \vect{J^\prime} = \partder{}{t} \vect{P^\prime} \left( \vect{E} \right)
 \end{equation*}
+%
+\begin{figure}
+    \centering
+    \subfloat[A0=1 A/m]{{\includegraphics[width=5cm]{Jperp_A1} }}%
+    \qquad
+    \subfloat[A0=2 A/m]{{\includegraphics[width=5cm]{Jperp_A2} }}%
+    \caption{Нелінійність амплітуди вторинного джерела}
+    \label{fig:example}%
+\end{figure}
 
 Остання рівність складається з двох додаків. Перший додаток відповідає саме 
 нелінійним властивостям поля. Останній додаток описує провідникові властивості 
@@ -951,6 +966,31 @@ I_1 \left\{ S_2 \right\} = \frac{\rho^2 + R^2}{4 \pi \rho^2} \arccos
 %
 \begin{equation*} \begin{aligned}
 \frac{1}{c} \partder{ I_2 \{ S_{1,3} \} }{t} = 0
+\end{aligned} \end{equation*}
+%
+Як було показано раніше, область значень $ I_1 $ та $ I_2 $ визначається 
+просторовими змінними та часом, отже похідні $ \partder{I_1}{t} $ та 
+$ \partder{I_1}{t} $ треба брати з урахуванням областей $ S_1 $, $ S_2 $ та
+$ S_3 $.
+%
+\begin{equation*} \begin{aligned}
+\partder{I_\alpha}{\tau} = \partder{ I_k \{ S_{2} \} }{\tau} \Big( 
+H \left( \tau^2 - z^2 - (\rho - R)^2 \right)  - 
+H \left( \tau^2 - z^2 - (\rho + R)^2 \right) \Big) + \\
++ 2 \tau I_\alpha \{ S_{2} \} \Big( 
+\delta \left( \tau^2 - z^2 - (\rho - R)^2 \right)  - 
+\delta \left( \tau^2 - z^2 - (\rho + R)^2 \right) \Big) + \\
++ \frac{2 \tau}{\alpha} \delta \left( \tau^2 - z^2 - (\rho + R)^2 \right)
+\end{aligned} \end{equation*}
+%
+Підставляючи $ I_\alpha \{ S_{2} \} $ до останього виразу бачимо, що другий доданок знакає.
+%
+\begin{equation*} \begin{aligned}
+\partder{I_\alpha}{\tau} = \frac{2 \tau}{\alpha} 
+\delta \left( \tau^2 - z^2 - (\rho + R)^2 \right) + \\
++ \partder{ I_k \{ S_{2} \} }{\tau} \Big( 
+H \left( \tau^2 - z^2 - (\rho - R)^2 \right)  - 
+H \left( \tau^2 - z^2 - (\rho + R)^2 \right) \Big)
 \end{aligned} \end{equation*}
 %
 Тепер запишемо компоненти електричного струму, який є вторинним джерелом
@@ -1209,6 +1249,27 @@ N_1 (m) =  3 m J_m (\nu \rho') {I_1}^2 \partder{I_1}{t'}
 \end{aligned} \end{equation*}
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
+N_1 (m) =  3 m J_m (\nu \rho') \begin{cases}
+0^2 \cdot 2 \tau' \delta_+ \\
+{f_1}^2 \left( \partder{f_1}{t'} + 2 \tau' \delta_+ \right) \\
+1^2 \cdot 2 \tau' \delta_+
+\end{cases} \end{aligned} \end{equation*} }
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+N_1 (m) =  3 m J_m (\nu \rho') \begin{cases} 0 \\
+2 \tau' \delta_+ {f_1}^2 + \partder{f_1}{t'} {f_1}^2 \\
+2 \tau' \delta_+
+\end{cases} \end{aligned} \end{equation*} }
+%
+\begin{equation*} \begin{aligned}
+N_1^\delta (m) = 3 m {I_1}^2 J_m (\nu \rho')
+\end{aligned} \end{equation*}
+%
+\begin{equation*} \begin{aligned}
+N_1^* (m) =  3 m J_m (\nu \rho') {I_1}^2 \partder{I_1}{t'}
+\end{aligned} \end{equation*}
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
 N_2 (m) = \frac{m {A_0}^3 \xi_3 \sqrt{\mu_0}}{64 \sqrt{\nu}} \frac{\pi}{\pi}
 \left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} 
 \int_{0}^{\infty} d \rho \\
@@ -1223,6 +1284,31 @@ N_2 (m) = m J_m (\nu \rho) (I_2 - I_1) \left( \partder{I_1}{t} (I_2 - I_1) +
 %
 \begin{equation*} \begin{aligned}
 N_2 (m) = m J_m (\nu \rho') (I_2 - I_1) \left( \partder{I_1}{t'} (I_2 - I_1) + 
+2 I_1 \left( \partder{I_2}{t'} - \partder{I_1}{t'} \right) \right)
+\end{aligned} \end{equation*}
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+N_2 (m) = m J_m (\nu \rho') \begin{cases}
+2 \tau' \delta_+ (0 - 0)^2 + 0 (0 - 0) (2 \tau' \delta_+ - 2 \tau' \delta_+) \\
+(f_2 - f_1)^2 (\partder{f_1}{t'} + 2 \tau' \delta_+) + 2 f_1 (f_2 - f_1) \left( 
+\partder{f_2}{t'} - \partder{f_1}{t'} \right) \\
+2 \tau' \delta_+ (0.5 - 1)^2 + 1 (0.5 - 1) (2 \tau' \delta_+ - 2 \tau' \delta_+)
+\end{cases} \end{aligned} \end{equation*} }
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+N_2 (m) = m J_m (\nu \rho') \begin{cases} 0 \\
+2 \tau' \delta_+ (f_2 - f_1)^2 + (f_2 - f_1) 
+\left( 2 f_1 \left( \partder{f_2}{t'} - \partder{f_1}{t'} \right) +
+(f_2 - f_1) \partder{f_1}{t'} \right) \\
+\tau' \delta_+ / 2
+\end{cases} \end{aligned} \end{equation*} }
+%
+\begin{equation*} \begin{aligned}
+N_2^\delta (m) = m J_m (\nu \rho') (I_2 - I_1)^2 
+\end{aligned} \end{equation*}
+%
+\begin{equation*} \begin{aligned}
+N_2^* (m) = m J_m (\nu \rho') (I_2 - I_1) \left( \partder{I_1}{t'} (I_2 - I_1) + 
 2 I_1 \left( \partder{I_2}{t'} - \partder{I_1}{t'} \right) \right)
 \end{aligned} \end{equation*}
 %
@@ -1244,6 +1330,36 @@ N_3 (m) = - 3 \nu \rho
 N_3 (m) = - 3 \nu \rho'
 \frac{J_{m-1} (\nu \rho') - J_{m+1} (\nu \rho')}{2}
 (I_2 - I_1)^2 \left( \partder{I_2}{t'} - \partder{I_1}{t'} \right)
+\end{aligned} \end{equation*}
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+N_3 (m) = - 3 \nu \rho'
+\frac{J_{m-1} (\nu \rho') - J_{m+1} (\nu \rho')}{2} \begin{cases}
+(0-0)^2 (0 + 2 \tau' \delta_+ - 0 - 2 \tau' \delta_+) \\
+(f_2 - f_1)^2 \left( \partder{f_2}{t'} - \partder{f_1}{t'} \right) \\
+(0.5 - 1)^2 (0 + 2 \tau' \delta_+ - 0 - 2 \tau' \delta_+)
+\end{cases} \end{aligned} \end{equation*} }
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+N_3 (m) = - 3 \nu \rho'
+\frac{J_{m-1} (\nu \rho') - J_{m+1} (\nu \rho')}{2} \begin{cases} 0 \\
+(f_2 - f_1)^2 \left( \partder{f_2}{t'} - \partder{f_1}{t'} \right) \\ 0
+\end{cases} \end{aligned} \end{equation*} }
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+N_3 (m) = - 3 \nu \rho'
+\frac{J_{m-1} (\nu \rho') - J_{m+1} (\nu \rho')}{2} \begin{cases} 0 \\
+(f_2 - f_1)^2 \left( \partder{f_2}{t'} - \partder{f_1}{t'} \right) \\ 0
+\end{cases} \end{aligned} \end{equation*} }
+%
+\begin{equation*} \begin{aligned}
+N_3^\delta (m) = - 3 \nu \rho'
+\frac{J_{m-1} (\nu \rho') - J_{m+1} (\nu \rho')}{2}
+(I_2 - I_1)^2 \left( \partder{I_2}{t'} - \partder{I_1}{t'} \right)
+\end{aligned} \end{equation*}
+%
+\begin{equation*} \begin{aligned}
+N_3^* (m) = 0
 \end{aligned} \end{equation*}
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
@@ -1269,42 +1385,80 @@ N_4 (m) = - \nu \rho'
 2 \partder{I_1}{t'} \left( I_2 - I_1 \right) \right)
 \end{aligned} \end{equation*}
 %
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+N_4 (m) \{ S_2 \} = {f_1}^2 
+\left( \partder{f_2}{t'} - \partder{f_1}{t'} \right) + 
+2 f_1 \left( \partder{f_1}{t'} + 2 \tau' \delta_+ \right) 
+\left( f_2 - f_1 \right) = \\
+= f_1^2 \left( \partder{f_2}{t'} - 3 \partder{f_1}{t'} \right) 
++ 2 f_1 f_2 \partder{f_1}{t'} + 4 \tau' \delta_+ \left( f_2 - f_1 \right)
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+N_4 (m) = - \nu \rho'
+\frac{J_{m-1} (\nu \rho') - J_{m+1} (\nu \rho')}{2} \begin{cases} 0 \\ 
+{f_1}^2 \left( \partder{f_2}{t'} - 3 \partder{f_1}{t'} \right) 
++ 2 f_1 f_2 \partder{f_1}{t'} + 4 \tau' \delta_+ \left( f_2 - f_1 \right) \\
+- 2 \tau' \delta_+
+\end{cases} \end{aligned} \end{equation*} }
+%
+\begin{equation*} \begin{aligned}
+N_4^\delta (m) = - 2 \nu \rho' \left( I_2 - I_1 \right)
+\frac{J_{m-1} (\nu \rho') - J_{m+1} (\nu \rho')}{2}
+\end{aligned} \end{equation*}
+%
+\begin{equation*} \begin{aligned}
+N_4^* (m) = - \nu \rho'
+\frac{J_{m-1} (\nu \rho') - J_{m+1} (\nu \rho')}{2} {I_1}^2
+\left( \partder{I_2}{t'} - 3 \partder{I_1}{t'} \right) + 
+2 I_1 I_2 \partder{I_1}{t'}
+\end{aligned} \end{equation*}
+%
 Тоді їх сумми для кожної з кутових мод матимуть наступний вигляд. 
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
-N_{-1}^{sum} =  i \delta_{m,-1} \left( 3 N_1 (m) + N_2 (m) + 
+S_{-1} = i \delta_{m,-1} \left( 3 N_1 (m) + N_2 (m) + 
 3 N_3 (m) + N_4 (m) \right)
 \end{aligned} \end{equation*} }
 %
-\begin{equation*} \begin{aligned}
-N_{-1}^{sum} = 3 N_1 (-1) + N_2 (-1) + 3 N_3 (-1) + N_4 (-1)
-\end{aligned} \end{equation*}
+\begin{equation} \begin{aligned} \label{eq:nm1sum}
+S_{-1} = 3 N_1 (-1) + N_2 (-1) + 3 N_3 (-1) + N_4 (-1)
+\end{aligned} \end{equation}
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
-N_{1}^{sum} =  i \delta_{m,1} \left( 3 N_1 (m) + N_2 (m) - 
+S_{1} = i \delta_{m,1} \left( 3 N_1 (m) + N_2 (m) - 
 3 N_3 (m) - N_4 (m) ) \right)
 \end{aligned} \end{equation*} }
 %
-\begin{equation*} \begin{aligned}
-N_{1}^{sum} = 3 N_1 (1) + N_2 (1) - 3 N_3 (1) - N_4 (1)
-\end{aligned} \end{equation*}
+\begin{equation} \begin{aligned} \label{eq:np1sum}
+S_{1} = 3 N_1 (1) + N_2 (1) - 3 N_3 (1) - N_4 (1)
+\end{aligned} \end{equation}
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
-N_{-3}^{sum} =  i \delta_{m,-3} \left( N_1 (m) - N_2 (m) - 
+S_{-3} = i \delta_{m,-3} \left( N_1 (m) - N_2 (m) - 
 N_3 (m) + N_4 (m) \right)
 \end{aligned} \end{equation*} }
 %
-\begin{equation*} \begin{aligned}
-N_{-3}^{sum} = N_1 (-3) - N_2 (-3) - N_3 (-3) + N_4 (-3)
-\end{aligned} \end{equation*}
+\begin{equation} \begin{aligned} \label{eq:nm3sum}
+S_{-3} = N_1 (-3) - N_2 (-3) - N_3 (-3) + N_4 (-3)
+\end{aligned} \end{equation}
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
-N_{3}^{sum} =  i \delta_{m,3} \left( - N_1 (m) - N_2 (m) - 
+S_{3} = i \delta_{m,3} \left( - N_1 (m) - N_2 (m) - 
 N_3 (m) + N_4 (m) \right)
 \end{aligned} \end{equation*} }
 %
+\begin{equation} \begin{aligned} \label{eq:np3sum}
+S_{3} = - N_1 (3) - N_2 (3) - N_3 (3) + N_4 (3)
+\end{aligned} \end{equation}
+%
+Також можна представити $ S_m $ через $ S_m^* $ та $ S_m^\delta $, 
+згрупувавши доданки за дельта-функцією. Це потрібно, щоб надалі 
+підготувати підінтегральну функцію для чисельного інтегрування.
+%
 \begin{equation*} \begin{aligned}
-N_{3}^{sum} = - N_1 (3) - N_2 (3) - N_3 (3) + N_4 (3)
+S_m = S_m^* + 2 \tau' \delta 
+\left( {\tau'}^2 - {z'}^2 - (\rho' + R)^2 \right) S_m^\delta
 \end{aligned} \end{equation*}
 %
 Тепер запишимо модовий струм в нових зменних.
@@ -1312,20 +1466,26 @@ N_{3}^{sum} = - N_1 (3) - N_2 (3) - N_3 (3) + N_4 (3)
 \begin{equation*} \begin{aligned}
 j'_m (t',z') = - \frac{i \xi_3 A_0^3 \sqrt{\mu_0}}{64 \sqrt{\nu}}
 \left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2}
-\int_{0}^{\infty} N_{m}^{sum} (\rho',t',z') d \rho'
+\int_{0}^{\infty} S_{m} (\rho',t',z') d \rho'
 \end{aligned} \end{equation*}
 %
 Помічаємо деякі властивості нових змінних $ N_i(m) $
 %
-\textcolor{red} { \begin{equation*} \begin{aligned}
-N_{-m} = N_{m}
-\end{aligned} \end{equation*}  }
+\begin{equation*} \begin{aligned}
+N_{1} (-m) = N_{1} (m)
+\end{aligned} \end{equation*}
 %
-А також та $ N_i^{sum} $
+\begin{equation*} \begin{aligned}
+N_{2} (-m) = N_{2} (m)
+\end{aligned} \end{equation*}
 %
-\textcolor{red} { \begin{equation*} \begin{aligned}
-N_{-m}^{sum} = N_{m}^{sum}
-\end{aligned} \end{equation*}  }
+\begin{equation*} \begin{aligned}
+N_{3} (-m) = - N_{3} (m)
+\end{aligned} \end{equation*}
+%
+\begin{equation*} \begin{aligned}
+N_{4} (-m) = - N_{4} (m)
+\end{aligned} \end{equation*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Нелінійна поправка}
@@ -1593,7 +1753,7 @@ J_0 \left( \nu \sqrt{(\Delta \tau^2 - \Delta z^2} \right) \right)
 \textcolor{lightgray} {  \begin{equation*} \begin{aligned} 
 j'_m (\tau',z') = - \frac{i \xi_3 A_0^3 \sqrt{\mu}}{64 \sqrt{\nu}}
 \left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2}
-\int_0^\infty N_{m}^{sum} (\rho',t',z') d \rho'
+\int_0^\infty S_m (\rho',t',z') d \rho'
 \end{aligned} \end{equation*} }
 %
 \textcolor{lightgray} {  \begin{equation*} \begin{aligned}
@@ -1602,7 +1762,7 @@ E'_\rho = \frac{\xi_3 A_0^3}{128}
 \sum_{m=-\infty}^\infty i^2 m e^{im\varphi} \int_0^\infty d \nu 
 \frac{J_m(\nu \rho)}{\nu \rho} \int_0^\infty dz' 
 \int_0^\infty d \tau' \int_0^\infty d \rho' \cdot \\
-\cdot N_{m}^{sum} (\rho',t',z') \partder{}{\tau} \left( H(\Delta \tau - \Delta z) 
+\cdot S_m (\rho',t',z') \partder{}{\tau} \left( H(\Delta \tau - \Delta z) 
 J_0 \left( \nu \sqrt{(\Delta \tau^2 - \Delta z^2} \right) \right)
 \end{aligned} \end{equation*} }
 %
@@ -1617,7 +1777,7 @@ E'_\rho = - \frac{\xi_3 A_0^3}{128}
 \cdot \left[ H(\Delta \tau - \Delta z) 
 J_0 \left( \nu \sqrt{(\Delta \tau^2 - \Delta z^2} \right) \right]'_\tau
  \sum_{m=-\infty}^\infty m \frac{J_m(\nu \rho)}{\nu \rho} 
-N_{m}^{sum} (\rho',t',z') \cos m \varphi
+S_m (\rho',t',z') \cos m \varphi
 \end{aligned} \end{equation*}
 %
 Функції Ріммана не залежить від номкру кутової моди $ m $, а отже її похідну 
@@ -1670,7 +1830,7 @@ J_0 \left( \nu \sqrt{\Delta \tau^2 - \Delta z^2} \right) -
 E'_\rho = - \frac{\xi_3 A_0^3}{4^3}
 \left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^2
 E_4 \Big[ \sum_{m=-\infty}^\infty m \cos m \varphi 
-N_m^{sum} (r') \frac{J_m(\nu \rho)}{\rho \nu} \Big]
+S_m (r') \frac{J_m(\nu \rho)}{\rho \nu} \Big]
 \end{aligned} \end{equation*}
 %
 В останьому множнику помічаємо сингулярність, розкриємо її користуючись
@@ -1680,7 +1840,7 @@ N_m^{sum} (r') \frac{J_m(\nu \rho)}{\rho \nu} \Big]
 E'_\rho = - \frac{\xi_3 A_0^3}{4^3}
 \left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^2
 E_4 \Big[ \sum_{m=-\infty}^\infty \cos m \varphi 
-N_m^{sum} (r') \frac{J_{m-1}(\nu \rho) + J_{m+1}(\nu \rho)}{2} \Big]
+S_m (r') \frac{J_{m-1}(\nu \rho) + J_{m+1}(\nu \rho)}{2} \Big]
 \end{aligned} \end{equation*}
 %
 Аналогічно до компоненти $ E'_\rho $ запишимо формулу для $ E'_\varphi $
@@ -1701,14 +1861,14 @@ H \left( \tau - \tau' - z + z' \right) \cdot \\
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
 j'_m (t',z') =  - \frac{i \xi_3 A_0^3 \sqrt{\mu_0}}{64 \sqrt{\nu}}
 \left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2}
-\int_{0}^{\infty} N_{m}^{sum} (\rho',t',z') d \rho'
+\int_{0}^{\infty} S_m (\rho',t',z') d \rho'
 \end{aligned} \end{equation*} }
 %
 \begin{equation*} \begin{aligned}
 E'_\varphi = \frac{\xi_3 A_0^3}{4^3}
 \left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^2
 E_4 \Big[ \sum_{m=-\infty}^\infty 
-\sin m \varphi N_m^{sum}(r')
+\sin m \varphi S_m (r')
 \frac{J_{m-1}(\nu \rho) - J_{m+1}(\nu \rho)}{2} \Big]
 \end{aligned} \end{equation*}
 %
@@ -1727,7 +1887,17 @@ E_4 \left[ \sum_{m=-\infty}^\infty
 \big( J_{m-1}(\nu \rho) + J_{m+1}(\nu \rho) \big) \Big. \right. + \\
 + \left. \Big. \sin \varphi \sin m \varphi 
 \big( J_{m-1}(\nu \rho) - J_{m+1}(\nu \rho) \big) \Big) 
-N_m^{sum}(\nu | r') \right]
+S_m (\nu | r') \right]
+\end{aligned} \end{equation*}
+%
+\begin{equation*} \begin{aligned}
+E'_x = - \frac{\xi_3 A_0^3}{2 \cdot 4^3} \left(
+\frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^2
+\left( E_4 \left[ \sum_{m=-\infty}^\infty 
+e_m^x (\nu | r) S_m^* (\nu | r') \right] \right. + \\
++ \left. E_4 \left[ \sum_{m=-\infty}^\infty 
+e_m^x (\nu | r) 2 \tau' \delta \left( {\tau'}^2 - {z'}^2 - (\rho'+R)^2 \right) 
+S_m^\delta (\nu | r') \right] \right)
 \end{aligned} \end{equation*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1816,6 +1986,9 @@ J_0 \left( \nu \sqrt{(\Delta \tau^2 - \Delta z^2} \right)
 \sum_{m=-\infty}^\infty f_m (\beta) d \tau' \right) dz' d \rho' d \nu
 \end{aligned} \end{equation*}
 %
+де набір параметрив $ \alpha = \{ \nu | \tau-z+z', z', \rho' \} $ та 
+$ \beta = \{ \nu | \tau', z', \rho' \} $
+%
 \begin{equation*} \begin{aligned}
 \frac{J_1 \left( \nu \sqrt{\Delta \tau^2 - \Delta z^2} \right)}
 {\nu \sqrt{\Delta \tau^2 - \Delta z^2}} =
@@ -1836,3 +2009,232 @@ e^{\pm i \left( \nu - \frac{m\pi}{2} - \frac{\pi}{4} \right)}
 4 & Принцип причинності для проміжних подій      & $ vt - vt' - z + z' > 0 $ \\ \hline
 5 & Наслідок з 4 та 1                            & $ vt - z + z' > vt' > 0 $ \\ \hline
 \end{tabular}
+
+Дослідимо вплив інтегрльного опреатора $ E_4 $ на добуток  дельта-функції 
+з агрументом $ {\tau'}^2 - {z'}^2 - (\rho'+R)^2 $ на довільну функцію 
+відповідних аргументів. Користуючись властивістю дельта-функції звільнемось 
+від одного інтегралу. Простіше за все вибрати інтеграл по $ \rho' $. 
+Спочатку скористоємось властивістю симетрії дельта-функції.
+%
+\begin{equation*} \begin{aligned}
+\delta \left( a - x \right) = \delta \left( - (x - a) \right) = 
+\delta \left( x - a \right)
+\end{aligned} \end{equation*}
+%
+Далі скористаємось методом заміни змінної, як показано далі.
+%
+\begin{equation*} \begin{aligned}
+\int_0^\infty f(x) \delta \left( (x-a)^2 - b \right) dx = 
+\left[ \begin{array}{l}
+u = (x-a)^2 \\
+du = 2 (x-a) dx \\
+x = \pm \sqrt{u} + a
+\end{array} \right] = \\  
+= \int_0^\infty \frac{f(\pm \sqrt{u}+a)}{2 \sqrt{u}} 
+\delta \left( u - b \right) du = 
+\frac{f(\pm \sqrt{b}+a)}{2 \sqrt{b}}
+\end{aligned} \end{equation*}
+%
+З огляду на фізику задачі $ \pm $ в останій формулі зникає, так як 
+$ 0 \leq \pm \sqrt{b}+a $ та $ 0 < a $. Тоді, оператор $ E_4 $
+спрощується 
+%
+\begin{equation*} \begin{aligned}
+2 E_4 \left[ f(\nu,\tau',\rho',z') \delta 
+\left( {\tau'}^2 - {z'}^2 - (\rho'+R)^2 \right) \right] = \\
+= \int_0^\infty \int_0^\infty \int_0^\infty
+\left( \frac{f (\gamma)}{\sqrt{{\tau'}^2 - {z'}^2}} - 
+\int_0^{\tau - z + z'} \nu^2 \Delta \tau 
+\frac{J_1 \left( \nu \sqrt{\Delta \tau^2 - \Delta z^2} \right)}
+{\nu \sqrt{\Delta \tau^2 - \Delta z^2}} 
+\frac{f (\lambda)}{\sqrt{{\tau'}^2 - {z'}^2}} 
+d \tau' \right) dz' d \rho' d \nu
+\end{aligned} \end{equation*}
+%
+де набір параматрів 
+$ \gamma = \{\nu, \tau-z+z', \sqrt{(\tau-z+z')^2 - {z'}^2} + R, z'\} $ та
+$ \lambda = \{\nu, \tau', \sqrt{{\tau'}^2 - {z'}^2} + R, z'\} $ 
+%
+Тепер запишимо остаточний вираз для чисельного розрахунку.
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+E'_x = - \frac{\xi_3 A_0^3}{2 \cdot 4^3} \left(
+\frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^2
+\left( E_4 \left[ \sum_{m=-\infty}^\infty 
+e_m^x (\nu | r) S_m^* (\nu | r') \right] \right. + \\
++ \left. E_4 \left[ \sum_{m=-\infty}^\infty 
+e_m^x (\nu | r) 2 \tau' \delta \left( {\tau'}^2 - {z'}^2 - (\rho'+R)^2 \right) 
+S_m^\delta (\nu | r') \right] \right) = \\
+= - \frac{\xi_3 A_0^3}{2 \cdot 4^3} \left(
+\frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^2
+\int_0^\infty \int_0^\infty \left( \sum_{m=-\infty}^\infty f_m (\gamma) - 
+\int_0^{\tau - z + z'} g(\Delta \tau, \Delta z)
+\sum_{m=-\infty}^\infty f_m (\lambda) d \tau' + \right. \\ 
+\left. + \int_0^\infty \left( \sum_{m=-\infty}^\infty f_m (\alpha) - 
+\int_0^{\tau - z + z'} g(\Delta \tau, \Delta z)
+\sum_{m=-\infty}^\infty f_m (\beta) d \tau' \right) d \rho' \right) dz' d \nu
+\end{aligned} \end{equation*} }
+%
+де
+%
+\begin{equation*} \begin{aligned}
+g(\tau, \tau', z, z') = \nu^2 (\tau - \tau') 
+\frac{J_1 \left( \nu \sqrt{(\tau - \tau')^2 - (z - z')^2} \right)}
+{\nu \sqrt{(\tau - \tau')^2 - (z - z')^2}}
+\end{aligned} \end{equation*}
+%
+\begin{equation*} \begin{aligned}
+f_m (\alpha) = e_m^x (\tau,\rho,\varphi,z) S_m^* (\tau-z+z',\rho',z')
+\end{aligned} \end{equation*}
+%
+\begin{equation*} \begin{aligned}
+f_m (\beta) = e_m^x (\tau,\rho,\varphi,z) S_m^* (\tau',\rho',z')
+\end{aligned} \end{equation*}
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+f_m (\gamma) = \frac{\tau'}{\sqrt{{\tau'}^2 - {z'}^2}} 
+e_m^x (\tau,\rho,\varphi,z) S_m^\delta 
+\left( \tau-z+z',\sqrt{(\tau-\Delta z)^2 - {z'}^2}+R,z' \right)
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+f_m (\lambda) = \frac{\tau'}{\sqrt{{\tau'}^2 - {z'}^2}}
+e_m^x (\tau,\rho,\varphi,z) S_m^\delta 
+\left( \tau',\sqrt{(\tau-\Delta z)^2 - {z'}^2}+R,z' \right)
+\end{aligned} \end{equation*} }
+
+Для чисельного розрахунку краще перейти до власних інтегралів, обмежевши
+вкрхню межу інтегруваня кінцевим значенням. Також необхідно визначитись з 
+мінімально не обхідною кількістю вузлів для квадратурного чисельного методу.
+
+Верхню межу для просторових інтегралів вибрати просто. На графічних 
+зображеннях електричного поля видно, що на віддалені від диску амплітуда
+імпульсу затухає швидше ніж в близу до нього, що впливає на збудження 
+вториннго джерела нелінійного електричного струму. Користуючись цим фізичним
+обмеженням обмежимо просторові інтеграли межою в $ 2R $. 
+
+Кількість точнок для $ z $ та $ \rho $ необхідно вибрати відповідно до поведінки 
+функції $ I_\alpha I_\beta {I_\alpha}' $.
+
+З інтегралом по безперервному спектральному параметру $ \nu $ складніще.
+Нема фізичних передумов, що дозволяють обмежити його верхньої межі, але сам 
+інтеграл сходиться, що дозволяє обмежити його область визначення відповідно 
+до необхідної тоності. Оцінемо осцелятивні властивості через аналіз 
+асимптотики частини підінтегральної функції, що залежить від $ \nu $.
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+f_m (\nu) = J_1 \left( \nu \sqrt{\Delta t^2 - \Delta z^2} \right) \cdot \\ 
+\cdot \Big( J_{m-1} (\nu \rho) \pm J_{m+1} (\nu \rho) \Big) 
+\Big( J_{m-1} (\nu \rho') \pm J_{m+1} (\nu \rho') \Big)
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+f_1 (\nu) = J_1 \left( \nu \sqrt{\Delta t^2 - \Delta z^2} \right) \cdot \\ 
+\cdot \Big( J_{0} (\nu \rho) \pm J_{2} (\nu \rho) \Big) 
+\Big( J_{0} (\nu \rho') \pm J_{2} (\nu \rho') \Big)
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+f_3 (\nu) = J_1 \left( \nu \sqrt{\Delta t^2 - \Delta z^2} \right) \cdot \\ 
+\cdot \Big( J_{2} (\nu \rho) \pm J_{4} (\nu \rho) \Big) 
+\Big( J_{2} (\nu \rho') \pm J_{4} (\nu \rho') \Big)
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+\cos \left( \nu \rho - \frac{3 \pi}{4} \right)
+\cos \left( \nu \rho' - \frac{3 \pi}{4} \right)
+\cos \left( \nu \sqrt{\Delta t^2 - \Delta z^2} - \frac{3\pi}{4} \right)
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+\cos \left( \nu \rho - \frac{3 \pi}{4} \right)
+\cos \left( \nu \rho' - \frac{5 \pi}{4} \right)
+\cos \left( \nu \sqrt{\Delta t^2 - \Delta z^2} - \frac{3\pi}{4} \right)
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+\cos \left( \nu \rho - \frac{5 \pi}{4} \right)
+\cos \left( \nu \rho' - \frac{5 \pi}{4} \right)
+\cos \left( \nu \sqrt{\Delta t^2 - \Delta z^2} - \frac{3\pi}{4} \right)
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+\cos \left( \nu \rho - \frac{5 \pi}{4} \right)
+\cos \left( \nu \rho' - \frac{9 \pi}{4} \right)
+\cos \left( \nu \sqrt{\Delta t^2 - \Delta z^2} - \frac{3\pi}{4} \right)
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+\cos \left( \nu \rho - \frac{9 \pi}{4} \right)
+\cos \left( \nu \rho' - \frac{9 \pi}{4} \right)
+\cos \left( \nu \sqrt{\Delta t^2 - \Delta z^2} - \frac{3\pi}{4} \right)
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+f (\nu) \sim \cos \left( \nu \rho \right) \cos \left( \nu \rho' \right)
+\cos \left( \nu \sqrt{\Delta t^2 - \Delta z^2} \right)
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+f (\nu) \sim \cos \left( \nu \sqrt{\Delta t^2 - \Delta z^2} \right) \Big( 
+\cos \left( \nu \left( \rho - \rho' \right) \right) +
+\cos \left( \nu \left( \rho + \rho' \right) \right) \Big) \sim \\
+\sim \cos \left( \nu \left( \rho - \rho' - 
+\sqrt{\Delta t^2 - \Delta z^2} \right) \right) + 
+\cos \left( \nu \left( \rho - \rho' + 
+\sqrt{\Delta t^2 - \Delta z^2} \right) \right) + \\
++ \cos \left( \nu \left( \rho + \rho' - 
+\sqrt{\Delta t^2 - \Delta z^2} \right) \right) +
+\cos \left( \nu \left( \rho - \rho' + 
+\sqrt{\Delta t^2 - \Delta z^2} \right) \right)
+\end{aligned} \end{equation*} }
+%
+\begin{equation*} \begin{aligned}
+f (\nu) \sim \sum_i \alpha_i (\nu) 
+\cos \big( \left| \omega_i \right| \nu \big)
+\end{aligned} \end{equation*}
+%
+Підінтегральна функція $ f(\nu) $ пропорцяйна до деякої лінійної комбінації
+парних тригонометричних функцій. Частоти осциляцій $ \omega_i $ залежать, 
+як від змінних інтегрування, так і від кординат токи спостереження.
+%
+\begin{equation*} \begin{aligned}
+\omega_1 = \rho - \rho' - \sqrt{(\tau-\tau')^2 - (z-z')^2}
+\end{aligned} \end{equation*}
+%
+\begin{equation*} \begin{aligned}
+\omega_2 = \rho - \rho' + \sqrt{(\tau-\tau')^2 - (z-z')^2}
+\end{aligned} \end{equation*}
+%
+\begin{equation*} \begin{aligned}
+\omega_3 = \rho + \rho' - \sqrt{(\tau-\tau')^2 - (z-z')^2}
+\end{aligned} \end{equation*}
+%
+\begin{equation*} \begin{aligned}
+\omega_4 = \rho + \rho' + \sqrt{(\tau-\tau')^2 - (z-z')^2}
+\end{aligned} \end{equation*}
+%
+Найменше значення частоти визначає період зміни підінтегральної функції.
+Для $ \rho = 0 $ найменше значення періоду є $ \omega_1 $ чи $ \omega_2 $.
+Для чисельного інтегрування візьмемо деяку кількісь таких періодів, що 
+забеспечить фіксовану точність. Найбільше значення частоти $ \omega_4 $ вкаже 
+на необхідну кількість вузлів на період при необхідній точності.
+%
+\begin{equation*} \begin{aligned}
+E'_x = - \frac{\xi_3 A_0^3}{2 \cdot 4^3} \left(
+\frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^2
+\int_0^{2R} \int_0^{2R}
+\left( \int_0^{N_\alpha} \sum_{m=-\infty}^\infty f_m (\alpha) d \nu \right. - \\ 
+\left. - \int_0^{\tau - z + z'} \int_0^{N_\beta} g(\Delta \tau, \Delta z)
+\sum_{m=-\infty}^\infty f_m (\beta) d \nu d \tau' \right) d \rho' dz'
+\end{aligned} \end{equation*}
+%
+\begin{equation*} \begin{aligned}
+N_\alpha = \left| \rho - \rho' \right|
+\end{aligned} \end{equation*}
+%
+\begin{equation*} \begin{aligned}
+N_\beta = \left| \rho - \rho' + \sqrt{(\tau-\tau')^2 - (z-z')^2 \right|
+\end{aligned} \end{equation*}
+
+

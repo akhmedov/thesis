@@ -2341,10 +2341,68 @@ S_{13}: 0 < v^2 (t-\tau)^2 - z^2 < \left( \rho - R \right)^2 <
 
 Користуючитсь інтегралом Дюамеля \cite[ст. 40]{imp:Kharkevich1950} можно 
 отримати випромінювання...
-
+%
+\begin{equation}
+\vect{E} = \int_{0}^{t} f(\tau) \vect{E_0} (t - \tau) d \tau,
+\end{equation}
+%
+де $ \vect{E_0} $ - імпльсна характеристика антенни, а $ f(\tau) $ - 
+плавна функція часу довільного виду. Користуючись переставною властивістью 
+інтегралу цю формулу
+%
 Чим більше кінець відгуку схожий на початок тим ближче точка спостереження
 до осі випромінювання. Це справедливо для будьякої антенни та довільної форми
 імпульсу.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Енергія імпульсного випромінювання}
+
+Побудова класичної енергетичної діаграми спрямованості мало інформативна 
+для імпульсного випромінювання. Будуватимемо поперечні зрізи значень енергій
+для різних довжин імпульсів та для різних відстаней від джерела.
+Для збереженя кутового розміру зрізів візьмемо йщго $ z + 2 \cdot R $.
+%
+\begin{equation}
+W = \int_{0}^{\infty} \vect{E}^2 (t) dt
+\end{equation}
+%
+\textcolor{lightgray} { \begin{equation}
+W = \int_{0}^{\infty} \left( E_\rho^2 + E_\varphi^2 + E_z^2 \right) dt
+\end{equation} }
+%
+Якщо відомо час приходу імпульсу в точку спостереження та його тривалість, 
+можна обмежити область інтегрування.
+%
+\begin{equation}
+W = \int_{\tau_1}^{\tau_2} \left( E_\rho^2 + E_\varphi^2 + E_z^2 \right) dt
+\end{equation}
+%
+\textcolor{lightgray} { \begin{equation*}
+(\rho-R)^2 > v^2t^2 - z^2
+\end{equation*} }
+%
+\textcolor{lightgray} { \begin{equation*}
+v^2t^2 = (\rho-R)^2 + z^2
+\end{equation*} }
+%
+\textcolor{lightgray} { \begin{equation*}
+vt = \sqrt{(\rho-R)^2 + z^2}
+\end{equation*} }
+%
+\begin{equation*}
+\tau_1 = \sqrt{(\rho-R)^2 + z^2}
+\end{equation*}
+%
+\begin{equation*}
+\tau_2 = \tau + \sqrt{(\rho-R)^2 + z^2}
+\end{equation*}
+%
+Для зручності застосування формули домножимо ліву і праву частину на
+швидкість світла в середовищі $ v $ та згадаємо, що $ E_z = 0 $.
+%
+\begin{equation}
+v W(r) = \int_{\tau_1}^{\tau_2} 
+\Big( E_\rho^2 (vt,r) + E_\varphi^2 (vt,r) \Big) dvt
+\end{equation}
 
 

@@ -11,3 +11,6 @@ thesis.pdf
 # OS X files
 .DS_Store
 
+# Materiels and references
+/References/
+

@@ -205,7 +205,7 @@ I_4 = I_2 + 2 R \sum_{m=1}^{\infty} \left( \frac{ct - z}{ct + z} \right)^m
 \section{Інтеграл 5}
 
 \begin{equation}
-I_5 = i R \int \limits_{0}^{\infty} d \nu 
+I_5 = -2 i R \int \limits_{0}^{\infty} d \nu 
 J_1 \left( \nu R \right) J_1 \left( \nu \rho \right)
 U_1 \left[ - i \nu \left( ct - z \right), \nu \sqrt{c^2t^2 - z^2} \right]
 \end{equation}
@@ -214,33 +214,57 @@ U_1 \left[ - i \nu \left( ct - z \right), \nu \sqrt{c^2t^2 - z^2} \right]
 \left. I_5 \right|^{\rho=0} = 0
 \end{equation*}
 
-\textcolor{lightgray} { \begin{equation*} \begin{aligned}
-\left. I_5 \right|^{\rho=R} = 
-2 i R \int_{0}^{\infty} d \nu J_1 \left( \nu R \right)
-U_1 \left[ - i \nu \left( ct - z \right), \nu \sqrt{c^2t^2 - z^2} \right] = \\
-= 2 i R \int_{0}^{\infty} d \nu J_1 \left( \nu R \right)
-\sum_{m=0}^{\infty} \left( -1 \right)^{m}
-\left( \frac{- i (ct-z)}{c^2t^2-z^2} \right)^{2m+1} 
+\begin{equation*} \begin{aligned}
+I_5 = - 2 i R \sum_{m=0}^{\infty} (-1)^m (-i)^{2m+1}
+\left( \frac{ct-z}{\sqrt{c^2t^2-z^2}} \right)^{2m+1} \cdot \\ 
+\cdot \int_0^\infty d \nu J_1(\nu \rho) J_1(\nu R) 
 J_{2m+1} \left( \nu \sqrt{c^2t^2 - z^2} \right)
-\end{aligned} \end{equation*} }
+\end{aligned}  \end{equation*}
 
-\textcolor{lightgray} { \begin{equation*} \begin{aligned}
-\left( -1 \right)^{m} \left( -i \right)^{2m+2} = 
-\left( -1 \right)^{m} \left( -1 \right)^{m+1} = 
--1 \left( -1 \right)^{m} \left( -1 \right)^{m} = -1
-\end{aligned} \end{equation*} }
+\begin{equation*} \begin{aligned}
+- i \cdot (-i)^{2m+1} \cdot (-1)^m = (-i)^{2m+2} \cdot (-1)^m = 
+\left( \frac{1}{i} \right)^{2m+2} \cdot (-1)^m = \\
+= (-1)^{m+1} \cdot (-1)^m = -1 \cdot (-1)^{m+1} \cdot (-1)^{m+1} = 
+-1 \cdot (1)^{m+1} = -1
+\end{aligned}  \end{equation*}
 
-\textcolor{lightgray} { \begin{equation*} \begin{aligned}
-\left. I_5 \right|^{\rho=R} = - 2 R \sum_{m=0}^{\infty} 
-\left( \frac{ct-z}{c^2t^2-z^2} \right)^{2m+1}
-\int_{0}^{\infty} d \nu J_1 \left( \nu R \right)  
+\begin{equation*} \begin{aligned}
+I_5 = - 2 R \sum_{m=0}^{\infty}
+\left( \frac{ct-z}{\sqrt{c^2t^2-z^2}} \right)^{2m+1}
+\int_0^\infty d \nu J_1(\nu \rho) J_1(\nu R) 
 J_{2m+1} \left( \nu \sqrt{c^2t^2 - z^2} \right)
-\end{aligned} \end{equation*} }
+\end{aligned}  \end{equation*}
 
-\textcolor{lightgray} { \begin{equation*} 
-\left. I_5 \right|^{\rho=R} = \begin{cases}
-- 2 R \sum_{m=0}^{\infty} \left( \frac{ct-z}{c^2t^2-z^2} \right)^{2m+1} 
-... , c^2t^2-z^2 < R^2 \\
-0, c^2t^2-z^2 < R^2
-\end{cases}
-\end{equation*} }
+\begin{equation*} \begin{aligned}
+\left( \frac{ct-z}{\sqrt{c^2t^2-z^2}} \right)^{2m+1} = 
+\left( \frac{ct-z}{ct+z} \right)^{m+1/2}
+\end{aligned}  \end{equation*}
+
+\begin{equation*} \begin{aligned}
+I_5 = - 2 R \sum_{m=0}^{\infty}
+\sqrt[2m+1]{\frac{ct-z}{ct+z}}
+\int_0^\infty d \nu J_1(\nu \rho) J_1(\nu R) 
+J_{2m+1} \left( \nu \sqrt{c^2t^2 - z^2} \right)
+\end{aligned}  \end{equation*}
+
+\begin{equation*} \begin{aligned}
+I_5 = - \frac{R}{\pi}
+\sqrt{\frac{ct-z}{ct+z}}
+\frac{\sqrt{ (c^2t^2 - z^2) - (\rho - R)^2} 
+\sqrt{(\rho + R)^2 - (c^2t^2 - z^2)}}
+{\rho R \sqrt{c^2t^2 - z^2}}
+\end{aligned}  \end{equation*}
+
+\begin{equation*} \begin{aligned}
+I_5 = - \frac{1}{\pi}
+\sqrt{\frac{c^2t^2-z^2}{(ct+z)^2}}
+\frac{\sqrt{ (c^2t^2 - z^2) - (\rho - R)^2} 
+\sqrt{(\rho + R)^2 - (c^2t^2 - z^2)}}
+{\rho \sqrt{c^2t^2 - z^2}}
+\end{aligned}  \end{equation*}
+
+\begin{equation*} \begin{aligned}
+I_5 = - 
+\frac{\sqrt{(c^2t^2 - z^2) - (\rho-R)^2} \sqrt{(\rho+R)^2 - (c^2t^2 - z^2)}}
+{\pi \rho (ct+z)}
+\end{aligned}  \end{equation*}

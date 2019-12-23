@@ -101,7 +101,7 @@ U_{2n+1} (W_+, Z) = - U_{2n+1} (W_-, Z)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Інтеграл 3}
 
-\begin{equation} 
+\begin{equation}
 I_3 = R \int \limits_{0}^{\infty} \frac{d \nu}{\rho \nu} 
 J_1(\nu \rho) J_1(\nu R) (U_0[ W_-, Z ] - U_2[ W_-, Z ])
 \end{equation}
@@ -123,10 +123,10 @@ d \nu J_1(\nu R) J_2 (\nu \sqrt{c^2t^2 + z^2}) + \\
 \int_{0}^{\infty} d \nu J_1(\nu R) J_4 (\nu \sqrt{c^2t^2 + z^2}) + ...
 \end{aligned} \end{equation*} }
 %
-\begin{equation*} \begin{aligned}
+\begin{equation} \begin{aligned} \label{eq:i3_pol_int}
 I_3 = I_1 + R \sum_{m=1}^{\infty} \left( \frac{ct - z}{ct + z} \right)^m 
 \int_{0}^{\infty} d \nu J_1(\nu R) J_{2m} (\nu \sqrt{c^2t^2 + z^2})
-\end{aligned} \end{equation*}
+\end{aligned} \end{equation}
 %
 За допомогою табличного інтегралу 6.512.4 з 
 \cite[ст. 681]{imp:GradshtejnInt}, що має вид
@@ -166,13 +166,13 @@ $ \left. I_3 \right|_{\rho = 0}^{R > \sqrt{c^2 t^2 - z^2}} = 1/2 $. Розгля
 \left( 1 - \frac{2R^2}{c^2 t^2 - z^2} \right)
 \end{aligned} \end{equation*}
 %
-\begin{equation*} \begin{aligned}
+\begin{equation} \begin{aligned} \label{eq:i3onaxis}
 \left. I_3 \right|^{\rho = 0} = \begin{cases} 1/2, R^2 > c^2 t^2 - z^2 \\
 \frac{R^2}{c^2 t^2 - z^2} \sum_{m=0}^{\infty} 
 \left( \frac{ct - z}{ct + z} \right)^{m+1} P_{m}^{(1,0)} 
 \left( 1 - \frac{2R^2}{c^2 t^2 - z^2} \right), 
 R^2 < c^2 t^2 - z^2 \end{cases}
-\end{aligned} \end{equation*}
+\end{aligned} \end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Інтеграл 4}
@@ -182,7 +182,7 @@ I_4 = R \int \limits_{0}^{\infty} d \nu J_0(\nu \rho) J_1(\nu R)
 (U_0[ W_-, Z ] - U_2[ W_-, Z ])
 \end{equation}
 %
-\begin{equation}
+\begin{equation} \label{eq:i4_pol_int}
 I_4 = I_2 + 2 R \sum_{m=1}^{\infty} \left( \frac{ct - z}{ct + z} \right)^m 
 \int_{0}^{\infty} d \nu J_1(\nu R) J_{2m} (\nu \sqrt{c^2t^2 + z^2})
 \end{equation}
@@ -197,7 +197,7 @@ I_4 = I_2 + 2 R \sum_{m=1}^{\infty} \left( \frac{ct - z}{ct + z} \right)^m
 \left( 1 - \frac{2R^2}{c^2 t^2 - z^2} \right)
 \end{aligned} \end{equation*}
 %
-\begin{equation} \begin{aligned}
+\begin{equation} \begin{aligned} \label{eq:i4onaxis}
 \left. I_4 \right|^{\rho = 0} = 2 \left. I_3 \right|^{\rho = 0}
 \end{aligned} \end{equation}
 
@@ -205,66 +205,61 @@ I_4 = I_2 + 2 R \sum_{m=1}^{\infty} \left( \frac{ct - z}{ct + z} \right)^m
 \section{Інтеграл 5}
 
 \begin{equation}
-I_5 = -2 i R \int \limits_{0}^{\infty} d \nu 
+I_5 = 2 i R \int \limits_{0}^{\infty} d \nu 
 J_1 \left( \nu R \right) J_1 \left( \nu \rho \right)
 U_1 \left[ - i \nu \left( ct - z \right), \nu \sqrt{c^2t^2 - z^2} \right]
 \end{equation}
 
-\begin{equation*}
-\left. I_5 \right|^{\rho=0} = 0
-\end{equation*}
-
-\begin{equation*} \begin{aligned}
-I_5 = - 2 i R \sum_{m=0}^{\infty} (-1)^m (-i)^{2m+1}
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+I_5 = 2 i R \sum_{m=0}^{\infty} (-1)^m (-i)^{2m+1}
 \left( \frac{ct-z}{\sqrt{c^2t^2-z^2}} \right)^{2m+1} \cdot \\ 
 \cdot \int_0^\infty d \nu J_1(\nu \rho) J_1(\nu R) 
 J_{2m+1} \left( \nu \sqrt{c^2t^2 - z^2} \right)
-\end{aligned}  \end{equation*}
+\end{aligned}  \end{equation*} }
 
-\begin{equation*} \begin{aligned}
-- i \cdot (-i)^{2m+1} \cdot (-1)^m = (-i)^{2m+2} \cdot (-1)^m = 
-\left( \frac{1}{i} \right)^{2m+2} \cdot (-1)^m = \\
-= (-1)^{m+1} \cdot (-1)^m = -1 \cdot (-1)^{m+1} \cdot (-1)^{m+1} = 
--1 \cdot (1)^{m+1} = -1
-\end{aligned}  \end{equation*}
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+i \cdot (-i)^{2m+1} \cdot (-1)^m = (-1) \cdot (-i)^{2m+2} \cdot (-1)^m = \\
+= \left( \frac{1}{i} \right)^{2m+2} \cdot (-1)^{m+1} = 
+(-1)^{m+1} \cdot (-1)^{m+1} = 1
+\end{aligned}  \end{equation*} }
 
-\begin{equation*} \begin{aligned}
-I_5 = - 2 R \sum_{m=0}^{\infty}
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+I_5 = 2 R \sum_{m=0}^{\infty}
 \left( \frac{ct-z}{\sqrt{c^2t^2-z^2}} \right)^{2m+1}
 \int_0^\infty d \nu J_1(\nu \rho) J_1(\nu R) 
 J_{2m+1} \left( \nu \sqrt{c^2t^2 - z^2} \right)
-\end{aligned}  \end{equation*}
+\end{aligned}  \end{equation*} }
 
-\begin{equation*} \begin{aligned}
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
 \left( \frac{ct-z}{\sqrt{c^2t^2-z^2}} \right)^{2m+1} = 
 \left( \frac{ct-z}{ct+z} \right)^{m+1/2}
-\end{aligned}  \end{equation*}
+\end{aligned}  \end{equation*} }
 
-\begin{equation*} \begin{aligned}
-I_5 = - 2 R \sum_{m=0}^{\infty}
+\begin{equation} \begin{aligned} \label{eq:i5series}
+I_5 = 2 R \sum_{m=0}^{\infty}
 \sqrt[2m+1]{\frac{ct-z}{ct+z}}
 \int_0^\infty d \nu J_1(\nu \rho) J_1(\nu R) 
 J_{2m+1} \left( \nu \sqrt{c^2t^2 - z^2} \right)
-\end{aligned}  \end{equation*}
+\end{aligned}  \end{equation}
 
-\begin{equation*} \begin{aligned}
-I_5 = - \frac{R}{\pi}
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+I_5 = \frac{R}{\pi}
 \sqrt{\frac{ct-z}{ct+z}}
 \frac{\sqrt{ (c^2t^2 - z^2) - (\rho - R)^2} 
 \sqrt{(\rho + R)^2 - (c^2t^2 - z^2)}}
 {\rho R \sqrt{c^2t^2 - z^2}}
-\end{aligned}  \end{equation*}
+\end{aligned}  \end{equation*} }
 
-\begin{equation*} \begin{aligned}
-I_5 = - \frac{1}{\pi}
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+I_5 = \frac{1}{\pi}
 \sqrt{\frac{c^2t^2-z^2}{(ct+z)^2}}
 \frac{\sqrt{ (c^2t^2 - z^2) - (\rho - R)^2} 
 \sqrt{(\rho + R)^2 - (c^2t^2 - z^2)}}
 {\rho \sqrt{c^2t^2 - z^2}}
-\end{aligned}  \end{equation*}
+\end{aligned}  \end{equation*} }
 
-\begin{equation*} \begin{aligned}
-I_5 = - 
-\frac{\sqrt{(c^2t^2 - z^2) - (\rho-R)^2} \sqrt{(\rho+R)^2 - (c^2t^2 - z^2)}}
+\begin{equation} \begin{aligned} \label{eq:i50}
+\left. I_5 \right|^{m=0} = \frac{\sqrt{(c^2t^2 - z^2) - (\rho-R)^2} 
+\sqrt{(\rho+R)^2 - (c^2t^2 - z^2)}}
 {\pi \rho (ct+z)}
-\end{aligned}  \end{equation*}
+\end{aligned}  \end{equation}

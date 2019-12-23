@@ -15,8 +15,5 @@ bibpdf: *.tex *.bib
 	$(COMPILER) make_bib.tex; \
 	cp Build/thesis.pdf Release/thesis.pdf
 
-log:
-	git log --oneline --decorate --graph
-
 clean:
 	@rm -f Build/*

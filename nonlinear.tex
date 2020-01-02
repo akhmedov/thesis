@@ -91,6 +91,9 @@ $ \vect{P} \left( \vect{E} \right) = - \vect{P} \left( - \vect{E} \right) $
 гарну точність до наближення слабкої нелінійності і врахуванням доданків
 вищих порядків нехтують.
 
+\textcolor{red}{ Які нелінійні ефекти спостерігаються в 
+керрівському середовищі?}
+
 Перша складова вектору електричної індукції \eqref{eq:d_kerr} відповідає 
 полю при лінійному наближенні $ \vect{E} $, що породжене деяким 
 струмом $ \vect{J} $, а другий доданок відповідає нелініному Керрівському 
@@ -99,10 +102,27 @@ $ \vect{P} \left( \vect{E} \right) = - \vect{P} \left( - \vect{E} \right) $
 зміщення $ \vect{J}^\prime $ (далі вторинне джерело). Тоді, відповідно до
 аналогії зі струмом зміщення, індукований нелінійний вторинний струм
 
-\begin{equation}
+\begin{equation} \label{eq:j_kerr}
 \vect{J^\prime} = \partder{\vect{P}^\prime}{t} = 
 \epsilon_0 \chi_e^{(3)} \partder{\vect{E}^3}{t}.
 \end{equation}
+
+Згідно описаної моделі, деяке стороннє джерело $ \vect{J} $ породжує 
+імпульсне електромагнітне поле $ \vect{E} $ та $ \vect{H} $ розраховане
+з припущенням лінійності електромагнітної індукції. Це лінійне поле, 
+розповсюджуючись зі втратами крізь середовище, формує струм зміщення 
+$ \vect{J}^\prime $, який в свою чергу є джерелом поля $ \vect{E}^\prime $ 
+та $ \vect{H}^\prime $. Тоді, нелінійна самодія хвилі крізь середовище, 
+згідно принципу суперпозиції $ \vect{E} + \vect{E}^\prime $ та 
+$ \vect{H} + \vect{H}^\prime $.
+
+Вторинне джерело $ \vect{J}^\prime $ забирає енергію породжуючої хвилі та 
+формується частиною енергії втрат $ \vect{E} $, що характеризують середовище.
+
+\textcolor{red}{ Розглянута модель, не пояснює нелінійні ефекти в вакуумі. 
+Можливо, що природа нелінійних ефектів значно глибша і їх ефект впливає на 
+характер енергетичної взаємодії та змінює простір. Відповідно довжина вектора 
+в декартовому сенсі втрачає зміст. }
 
 Вторинне джерело поля не є реальним джерелом, в прямому розумінні. 
 Джерело $ \vect{J^\prime} $ наближено моделює нелінійну природу фізичних 
@@ -110,184 +130,157 @@ $ \vect{P} \left( \vect{E} \right) = - \vect{P} \left( - \vect{E} \right) $
 які були велені при побудові моделі зазначимо властивості середовищ для 
 яких цю модель можна застосовувати... \textcolor{red}{TODO...}
 
-\begin{figure}
-	\centering
-	\subfloat[A0=1 A/m]{{\includegraphics[width=5cm]{Jperp_A1} }}%
-	\qquad
-	\subfloat[A0=2 A/m]{{\includegraphics[width=5cm]{Jperp_A2} }}%
-	\caption{Нелінійність амплітуди вторинного джерела}
-	\label{fig:example}%
-\end{figure}
+Розглянемо в якості породжувальної хвилі $ \vect{E} $ поле породжене 
+пласким диском електричного струму з часовою залежністю у вигляді 
+функції Хевісайда - моментальний стрибок амплітуди струму від нуля до 
+значення $ A_0 $.
 
-Остання рівність складається з двох додаків. Перший додаток відповідає саме 
-нелінійним властивостям поля. Останній додаток описує провідникові властивості 
-середи розповлюдження, які теж мжуть бути описані вторинним джерелом. 
-%
-\begin{equation*} 
+\textcolor{lightgray}{ \begin{equation*} 
 \vect{J^\prime} = 
 \vect{\rho_0}    \partder{}{t} P_\rho^\prime    \left( \vect{E} \right) + 
 \vect{\varphi_0} \partder{}{t} P_\varphi^\prime \left( \vect{E} \right) + 
 \vect{z_0}       \partder{}{t} P_z^\prime       \left( \vect{E} \right) 
-\end{equation*}
+\end{equation*} }
 %
-Вектор поляризвції для середовищі, де спостерігаюсься слабкі нелінійні ефкекти 
-є довільною функцією, але може бути представлено в виді розкладу степеневого 
-ряду Тейлора. 
-%
-\begin{equation*} \begin{aligned}
-\vect{P^\prime} \left( \vect{E} \right) = \sum_{i=2}^{\infty} \xi_i \vect{E}^i
-\end{aligned} \end{equation*}
-%
-Зауважимо, що розклад ведется по степеням вектора напружиності 
-електричного поля, як у задачах оптики \textcolor{red}{[ПОСИЛАННЯ]}. 
-Це створює математичні проблеми у доданках з парними коефіцієнтами.
-вирішити їх можна домноженням на одиничний вектор.
-%
-\begin{equation*} \begin{aligned}
-\vect{P^\prime}_2 \left( \vect{E} \right) = \xi_2 \vect{E}^2 = 
-\xi_2 \vect{E}^2 \left( \vect{\rho_0}  + \vect{\varphi_0} + \vect{z_0} \right)
-\end{aligned} \end{equation*}
-%
-\textcolor{red}{ Згідно з неоднозначностю векторного потенціалу 
-\cite[ст. 77]{imp:LandauII} $ \vect{J^\prime} \left\{ S_1 \right\}  = 0 $. }
-%
-\textcolor{red}{ Чи правильно, що нелінійна ппроникність поля залежеть від 
-амплтуди джерела? }
-%
-Для аналізу виберемо третій доданок неліної поляризації, який активно 
-використовується в імпульсній електроніці \textcolor{red}{[ПОСИЛАННЯ]}.
-%
-\begin{equation*}
-\vect{P^\prime} \left( \vect{E} \right) = 
-\xi_3^e \vect{E}^3 
-\left( A_0, R, \epsilon, \mu, vt, \vect{r} \right)
-\end{equation*}
-%
-Під кубом вектора розуміється сам вектор домноженій на квадрат довжини.
-\textcolor{red}{ Можливо, що природа нелінійних ефектів значно глибша і 
-їх ефект впливає на характер енегетичної взаємодії та змінює простір.
-Відповідно довжина вектора в декартовому сенсі втрачає змаст. }
-%
-\begin{equation*}
-\vect{P^\prime} \left( \vect{E} \right) = 
-\xi_3^e \dotprod{ \vect{E} }{ \vect{E} } \cdot \vect{E} 
-\end{equation*}
-%
-В середовищі, де нелінійні ефекти описуються таким вектором
+\textcolor{lightgray}{ \begin{equation*}
+\vect{P^\prime} \left( \vect{E} \right) = \epsilon_0 \chi_e^{(3)} 
+\dotprod{ \vect{E} }{ \vect{E} } \cdot \vect{E} 
+\end{equation*} }
 %
 \textcolor{lightgray}{ \begin{equation*} \begin{aligned}
 \vect{P^\prime} \left( \vect{E} \right) = 
-\frac{ {A_0}^3 \xi_3^e }{ 8 } \left( \frac{\mu_0 \mu}
+\frac{ {A_0}^3 \epsilon_0 \chi_e^{(3)} }{ 8 } \left( \frac{\mu_0 \mu}
 {\epsilon_0 \epsilon} \right)^{3/2} \left( {I_1}^2 \cos^2 \varphi + 
 \left( I_2 - I_1 \right)^2 \sin^2 \varphi \right) \cdot \\ 
 \cdot \Big( \vect{\rho_0} I_1 \cos \varphi - 
 \vect{ \varphi_0 } \left( I_2 - I_1 \right) \sin \varphi \Big)
 \end{aligned} \end{equation*} }
 %
-\textcolor{red}{ Які нелінійні ефекти спостерігаються в керрівському середовищі?}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Енергетичний розподіл поля плаского диску в лінійному наближенні}
-
-Тепер розглянемо енергетичний розподіл від поля плаского диску при різних
-часових залежностей $ f(t) $ стороннього струму. Побудова класичної 
-енергетичної діаграми спрямованості мало інформативне дослідження нелінійних
-ефектів - в даній роботі важливим є енергетичний розподіл в ближній зоні.
-
-Розглянемо густину енергії електромагнітного поля $ \vect{E} $ та 
-$ \vect{H} $, збудженого пласким диском електричного струму з довільною 
-часовою залежністю $ f(t) $
-
-\begin{equation}
-W \left( \vect{r} \right) = \int_0^\infty \dotprod{\vect{E}}{\vect{H}} dt.
-\end{equation}
-
-Значення напруженостей поля $ \vect{E} $ та $ \vect{H} $ можуть бути 
-враховані чисельно за допомогою інтегралу Дюамеля \eqref{eq:duhamel},
-використовуючи перехідну функцію знайдену в розділі \ref{sec:tranc_resp}.
-Запишемо енергетичний розподіл поля, користуючись шматочним визначенням 
-перехідної функції на області визначення:
-
-\begin{equation}
-W = \int_0^\infty 
-\dotprod{\vect{E}\left\{S_1 \cup S_2\right\}}
-{\vect{H}\left\{S_1 \cup S_2 \right\}} dt + 
-\int_0^\infty \dotprod{\vect{E}\{S_3\}}{\vect{H}\{S_3\}} dt.
-\end{equation}
-
-Так як, $ \vect{E}\left\{S_1 \cup S_2\right\} $ та  
-$ \vect{H}\left\{S_1 \cup S_2 \right\}$ пропорційні, 
-а $ \vect{E}\{S_3\} = 0 $ можемо звільнитись від магнітних компонент 
-поля, що спростить числові розрахунки:
-
-\begin{equation}
-W = \int_0^\infty \dotprod{\vect{E}}{\vect{H}} dt =
-\sqrt{\frac{\epsilon_0 \epsilon}{\mu_0 \mu}} \int_0^\infty \vect{E}^2 dt.
-\end{equation}
-
-Також, користуючись властивостями перехідної функції можемо обмежити
-область інтегрування за часом, а також спростити під-інтегральний вираз
-
-\begin{equation} \label{eq:energy}
-W = \sqrt{\frac{\epsilon_0 \epsilon}{\mu_0 \mu}}
-\int_{ct_1}^{c\tau_0+ct_3} \left( E_\rho^2 + E_\varphi^2 \right) dt
-\end{equation}
-
-Також оцінено енергію перехідної функції, а тобто \ref{eq:energy} при 
-часовій залежності сигналу у вигляді функції Гевісайда $ f(t) = H(t) $:
-
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+\vect{P^\prime} \left( \vect{E} \right) = 
+\frac{ {A_0}^3 \epsilon_0 \chi_e^{(3)} }{ 8 } \left( \frac{\mu_0 \mu}
+{\epsilon_0 \epsilon} \right)^{3/2} \left( {I_1}^2 \cos^2 \varphi + 
+\left( I_2 - I_1 \right)^2 \sin^2 \varphi \right) \cdot \\ 
+\cdot \Big( \vect{\rho_0} I_1 \cos \varphi - 
+\vect{ \varphi_0 } \left( I_2 - I_1 \right) \sin \varphi \Big)
+\end{aligned} \end{equation*} }
+%
+\textcolor{lightgray}{ \begin{equation*}
+\vect{E} = \frac{A_0}{2} \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}}
+\Big( \vect{\rho_0} I_1 \cos \varphi - 
+\vect{ \varphi_0 } \left( I_2 - I_1 \right) \sin \varphi \Big)
+\end{equation*} }
+%
 \textcolor{lightgray}{ \begin{equation*} \begin{aligned}
 \vect{E}^2 = \frac{A_0^2}{4} \frac{\mu_0 \mu}{\epsilon_0 \epsilon}
 \Big( I_1^2 \cos^2 \varphi + \left( I_2 - I_1 \right)^2 \sin^2 \varphi \Big)
 \end{aligned} \end{equation*} }
 %
-\begin{equation} \label{eq:energy_tr}
-W = \frac{A_0^2}{4} \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}}
-\int_{ct_1}^{ct_3}  \Big( I_1^2 \cos^2 \varphi + 
-\left( I_2 - I_1 \right)^2 \sin^2 \varphi \Big) dt.
-\end{equation}
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
+\partder{ \vect{E}^2 }{t} = \frac{A_0^2}{4} 
+\frac{\mu_0 \mu}{\epsilon_0 \epsilon}
+\left( 2 I_1 \partder{I_1}{t} \cos^2 \varphi + 
+2 ( I_2 - I_1 ) \left( \partder{I_2}{t} - \partder{I_1}{t} \right) 
+\sin^2 \varphi \right)
+\end{aligned} \end{equation*} }
 
-Розглядаючи особливий випадок \ref{eq:energy_tr} для $ \rho = 0 $, помічаємо,
-що енергія випромінювання плаского диску, завжди лежить у наступних межах для 
-сигналів з часовою залежністю $ f(t) $ з областю значень 
-$ \left[ -1, 1 \right] $ та тривалістю $ \tau_0 $:
+Користуючись виразом для вторинного струму Керра \eqref{eq:j_kerr} та 
+напруженістю електричного поля \eqref{eq:linear_e_cyl}, запишемо компоненти 
+струму.
 
-\textcolor{lightgray}{ \begin{equation*}
-\left. W \right|^{\rho=0} = 
-\frac{A_0^2}{16} \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}}
-\Big( \sqrt{R^2+z^2} - z \Big)
-\end{equation*} }
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+\partder{P_\rho^\prime}{t}   = \frac{ {A_0}^3 \epsilon_0 \chi_e^{(3)} }{ 8 } 
+\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} \left(
+\left( {I_1}^2 \cos^2 \varphi + ( I_2 - I_1 )^2 \sin^2 \varphi \right)
+\partder{I_1}{t} \cos \varphi + \right. \\
+\left. + I_1 \cos \varphi \left( 2 I_1 \partder{I_1}{t} \cos^2 \varphi + 
+2 ( I_2 - I_1 ) \left( \partder{I_2}{t} - \partder{I_1}{t} \right) 
+\sin^2 \varphi \right) \right) = \\ 
+= \frac{ {A_0}^3 \epsilon_0 \chi_e^{(3)} }{ 8 } 
+\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} \left(
+\partder{I_1}{t} {I_1}^2 \cos^3 \varphi + \partder{I_1}{t} ( I_2 - I_1 )^2 
+\cos \varphi \sin^2 \varphi + \right. \\
+\left. + 2 {I_1}^2 \partder{I_1}{t} \cos^3 \varphi + 
+2 I_1 ( I_2 - I_1 ) \left( \partder{I_2}{t} - \partder{I_1}{t} \right) 
+\cos \varphi \sin^2 \varphi \right)
+\end{aligned} \end{equation*} }
 %
-\textcolor{lightgray}{ \begin{equation*}
-\int_{ct_1}^{c\tau_0+ct_3} 
-\left( \int_0^t f(\tau) d \tau < \tau_0 \right) dt < \tau_0 R
-\end{equation*} }
+\begin{equation*} \begin{aligned}
+\partder{P_\rho^\prime}{t} = \frac{ {A_0}^3 \epsilon_0 \chi_e^{(3)} }{ 8 } 
+\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} \left(
+3 {I_1}^2 \partder{I_1}{t} \cos^3 \varphi + \right. \\
++ \left. ( I_2 - I_1 ) \cos \varphi \sin^2 \varphi \left( 
+\partder{I_1}{t} ( I_2 - I_1 ) + 2 I_1 \left( \partder{I_2}{t} - 
+\partder{I_1}{t} \right) \right) \right)
+\end{aligned} \end{equation*}
 %
-\begin{equation}
-0 \leq W \left( \tau_0, f(t), \vect{r} \right) \leq \frac{\tau_0 R A_0^2}{16} 
-\sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}},
-\end{equation}
+\textcolor{lightgray} { \begin{equation*} \begin{aligned}
+\partder{P_\varphi^\prime}{t}   = 
+- \frac{ {A_0}^3 \epsilon_0 \chi_e^{(3)} }{ 8 } 
+\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} \left(
+\left( {I_1}^2 \cos^2 \varphi + ( I_2 - I_1 )^2 \sin^2 \varphi \right)
+\left( \partder{I_2}{t} - \partder{I_1}{t} \right) \sin \varphi + \right. \\
+\left. + (I_2 - I_1) \sin \varphi \left( 2 I_1 \partder{I_1}{t} \cos^2 \varphi + 
+2 ( I_2 - I_1 ) \left( \partder{I_2}{t} - \partder{I_1}{t} \right) 
+\sin^2 \varphi \right) \right) = \\ 
+= - \frac{ {A_0}^3 \epsilon_0 \chi_e^{(3)} }{ 8 } 
+\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} \left(
+{I_1}^2 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) 
+\sin \varphi \cos^2 \varphi + \right. \\ \left. 
++ ( I_2 - I_1 )^2 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) 
+\sin^3 \varphi + 2 I_1 \partder{I_1}{t} (I_2 - I_1) 
+\sin \varphi \cos^2 \varphi + \right. \\ 
++ \left. 2 ( I_2 - I_1 )^2 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) 
+\sin^3 \varphi \right)
+\end{aligned} \end{equation*} }
 %
-де $ W $ - густина енергії, $ \tau_0 $ - ефективна тривалість імпульсу за 
-визначеною метрикою, $ A_0 $ - максимальна амплітуда сигналу, $ R $ - 
-радіус апертури, а вираз під коренем - імпеданс у середовищі розповсюдження 
-хвилі.
+\begin{equation*} \begin{aligned}
+\partder{P_\varphi^\prime}{t} = 
+- \frac{ {A_0}^3 \epsilon_0 \chi_e^{(3)} }{ 8 } 
+\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} \left(
+3 ( I_2 - I_1 )^2 \left( \partder{I_2}{t} - \partder{I_1}{t} \right)
+\sin^3 \varphi \right. + \\
++ \left. I_1 \sin \varphi \cos^2 \varphi \left( 
+I_1 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) + 
+2 \partder{I_1}{t} (I_2 - I_1) \right) \right)
+\end{aligned} \end{equation*}
 
-Будуватимемо поперечні зрізи значень енергій
-для різних довжин імпульсів та для різних відстаней від джерела.
-Для збереження кутового розміру зрізів візьмемо його $ z + 2R $.
+Так як поздовжня напруженість електричного поля відсутня 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Модовий розподіл поправки до лінійного наближення}
+\begin{equation*} \begin{aligned}
+\partder{P_z^\prime}{t} = 0.
+\end{aligned} \end{equation*}
+
+Вирази для поперечних компонентів поля стають шматочно-визначеними,
+через свої залежності від $ I_1 $ та $ I_2 $, а також від їх похідних в 
+кожному з доданків, згрупованих по залежностях від азимутального кута.
+Область визначення інтегралів $ I_1 $ та $ I_2 $ відома та має вигляд 
+$ S_1 \cup S_2 \cup S_3 $, де кожна з під-областей 
+\eqref{eq:s1zone}-\eqref{eq:s3zone} залежить від часу.
+Тоді, строго виписана похідна міститиме дельта-функції в точках дотику
+часово-просторових областей випромінювання $ S_1 $, $ S_2 $, $ S_3 $.
+Користуючись неоднозначністю векторного потенціалу 
+\cite[ст. 77]{imp:LandauII} звільнимося від дельта-функцій в виразі для 
+похідних від $ I_1 $ та $ I_2 $, тоді
+
+\begin{equation*} \begin{aligned}
+\frac{1}{v} \partder{I_\alpha}{t} = 
+\frac{1}{v} \partder{ I_\alpha \{ S_{2} \} }{t} 
+\Big( H \left( vt^2 - z^2 - (\rho - R)^2 \right)  - 
+H \left( vt^2 - z^2 - (\rho + R)^2 \right) \Big),
+\end{aligned} \end{equation*}
 %
-Для отримання нелінійної поправки до електричного поля спочатку отримаємо
-розкладене по модовому базису вторинне джерело поля. Для цього, 
-\textcolor{red}{згідно принципам віпромінювання}, знадобляться 
-похідні компонентів електричного поля за часом. Часова залежність лінійного
-електричного поля плаского дику міститься тільки в функціях 
-$ I_1(ct,r) $ та $ I_2(ct,r) $. Для збереження безрозмарності розділимо
-похідні на максимальну швидкість розповсюдженя для середовища.
-%
+де $ v = c/\sqrt{\epsilon \mu} $ - швидкість світла в середовищі при 
+лінійному наближенні вектору поляризації. Таким чином область часу-простору,
+де розподілений вторинний струм обмежена лише $ S_2 $, а у всіх точках 
+спостереження, що відповідають співвідношенню
+
+\begin{equation*} \begin{aligned}
+S^\prime \in S_2 \subset (\rho-R)^2 < vt^2 - z^2 < (\rho+R)^2.
+\end{aligned} \end{equation*}
+
+Тоді явні вирази для похідних будуть:
+
 \textcolor{lightgray}{ \begin{equation*} \begin{aligned}
 I_1 \left\{ S_2 \right\} = \frac{\rho^2 + R^2}{4 \pi \rho^2} \arccos 
 \frac{c^2 t^2 - z^2 - \rho^2 - R^2}{2 \rho R}  -
@@ -314,7 +307,7 @@ I_1 \left\{ S_2 \right\} = \frac{\rho^2 + R^2}{4 \pi \rho^2} \arccos
 { \sqrt{4 \rho^2 R^2 - \left(c^2 t^2 - z^2 - \rho^2 - R^2 \right)^2} }
 \end{aligned} \end{equation*} }
 %
-\textcolor{red}{ \begin{equation*} \begin{aligned}
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
 - \partder{}{t} \left( \rho^2 + R^2 - c^2t^2 + z^2 \right)^2 = 
 - 2 (\rho^2 + R^2 -c^2t^2 + z^2) (-2 c^2 t)
 \end{aligned} \end{equation*} }
@@ -328,13 +321,13 @@ I_1 \left\{ S_2 \right\} = \frac{\rho^2 + R^2}{4 \pi \rho^2} \arccos
 { \sqrt{4 \rho^2 R^2 - (\rho^2 + R^2 - c^2t^2 + z^2)^2} }
 \end{aligned} \end{equation*} }
 %
-\textcolor{red}{ \begin{equation*} \begin{aligned}
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
 \partder{}{t} \arctan \sqrt{ \frac{x}{y} } = 
 \frac{1}{1 + \frac{x}{y}} \frac{1}{2} 
 \sqrt \frac{y}{x} \partder{}{t} \frac{x}{y}
 \end{aligned} \end{equation*} }
 %
-\textcolor{red}{ \begin{equation*} \begin{aligned}
+\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
 - \frac{1}{(\rho + R)^2} + \frac{1}{(\rho - R)^2} = 
 \frac{- (\rho-R)^2 + (\rho+R)^2 }{ (\rho^2 - R^2)^2 }
 \end{aligned} \end{equation*} }
@@ -385,18 +378,14 @@ I_1 \left\{ S_2 \right\} = \frac{\rho^2 + R^2}{4 \pi \rho^2} \arccos
 \sqrt{ \frac{c^2t^2 - z^2}{ (\rho - R)^2 } - 1} }
 \end{aligned} \end{equation*} }
 %
-\begin{equation*} \begin{aligned}
-\frac{1}{c} \partder{ I_1 \{ S_2 \} }{t} = \frac{ ct }{2 \pi \rho^2} 
-\frac{ (\rho^2 - R^2)^2  (c^2 t^2 - z^2)^{-1} } 
-{ \sqrt{ (\rho + R)^2 - c^2t^2 + z^2 } 
-\sqrt{ c^2t^2 - z^2 - (\rho - R)^2 } } - \\
-- \frac{ct}{2 \pi \rho^2} \frac{2 (\rho^2 + R^2) - (c^2 t^2 - z^2)}
-{ \sqrt{4 \rho^2 R^2 - (c^2t^2 - z^2 - \rho^2 - R^2)^2} }
-\end{aligned} \end{equation*}
-%
-\begin{equation*} \begin{aligned}
-\frac{1}{c} \partder{ I_1 \{ S_{1,3} \} }{t} = 0
-\end{aligned} \end{equation*}
+\begin{equation} \begin{aligned} \label{eq:i1_partder}
+\frac{1}{v} \partder{ I_1 \{ S_2 \} }{t} = \frac{ vt }{2 \pi \rho^2} 
+\frac{ (\rho^2 - R^2)^2  (v^2 t^2 - z^2)^{-1} } 
+{ \sqrt{ (\rho + R)^2 - v^2t^2 + z^2 } 
+\sqrt{ v^2t^2 - z^2 - (\rho - R)^2 } } - \\
+- \frac{vt}{2 \pi \rho^2} \frac{2 (\rho^2 + R^2) - (v^2 t^2 - z^2)}
+{ \sqrt{4 \rho^2 R^2 - (v^2t^2 - z^2 - \rho^2 - R^2)^2} };
+\end{aligned} \end{equation}
 %
 \textcolor{lightgray}{ \begin{equation*} \begin{aligned}
 \partder{ I_2 \{ S_2 \} }{t} = \frac{1}{\pi} \partder{}{t} \arccos 
@@ -423,137 +412,134 @@ I_1 \left\{ S_2 \right\} = \frac{\rho^2 + R^2}{4 \pi \rho^2} \arccos
 { \sqrt{ 4 \rho^2 (c^2t^2 - z^2) - (c^2t^2 - z^2 + \rho^2 - R^2)^2 } }
 \end{aligned} \end{equation*} }
 %
-\begin{equation*} \begin{aligned}
-\frac{1}{c} \partder{ I_2 \{ S_2 \} }{t} = 
-- \frac{ct}{\pi (c^2t^2 - z^2) } \frac{ c^2t^2 - z^2 -  \rho^2 + R^2 } 
-{ \sqrt{ 4 \rho^2 (c^2t^2 - z^2) - (c^2t^2 - z^2 + \rho^2 - R^2)^2 } }
-\end{aligned} \end{equation*}
-%
-\begin{equation*} \begin{aligned}
-\frac{1}{c} \partder{ I_2 \{ S_{1,3} \} }{t} = 0
-\end{aligned} \end{equation*}
-%
-Як було показано раніше, область значень $ I_1 $ та $ I_2 $ визначається 
-просторовими змінними та часом, отже похідні $ \partder{I_1}{t} $ та 
-$ \partder{I_1}{t} $ треба брати з урахуванням областей $ S_1 $, $ S_2 $ та
-$ S_3 $.
-%
-\begin{equation*} \begin{aligned}
-\partder{I_\alpha}{\tau} = \partder{ I_k \{ S_{2} \} }{\tau} \Big( 
-H \left( \tau^2 - z^2 - (\rho - R)^2 \right)  - 
-H \left( \tau^2 - z^2 - (\rho + R)^2 \right) \Big) + \\
-+ 2 \tau I_\alpha \{ S_{2} \} \Big( 
-\delta \left( \tau^2 - z^2 - (\rho - R)^2 \right)  - 
-\delta \left( \tau^2 - z^2 - (\rho + R)^2 \right) \Big) + \\
-+ \frac{2 \tau}{\alpha} \delta \left( \tau^2 - z^2 - (\rho + R)^2 \right)
-\end{aligned} \end{equation*}
-%
-Підставляючи $ I_\alpha \{ S_{2} \} $ до останього виразу бачимо, що другий доданок знакає.
-%
-\begin{equation*} \begin{aligned}
-\partder{I_\alpha}{\tau} = \frac{2 \tau}{\alpha} 
-\delta \left( \tau^2 - z^2 - (\rho + R)^2 \right) + \\
-+ \partder{ I_k \{ S_{2} \} }{\tau} \Big( 
-H \left( \tau^2 - z^2 - (\rho - R)^2 \right)  - 
-H \left( \tau^2 - z^2 - (\rho + R)^2 \right) \Big)
-\end{aligned} \end{equation*}
-%
-Тепер запишемо компоненти електричного струму, який є вторинним джерелом
-електромагнітного поля. З компонентою $ \vect{z_0} $ все просто - 
-поздовжне електричне поле дорівнює нулю.
-%
-\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
-\vect{P^\prime} \left( \vect{E} \right) = 
-\frac{ {A_0}^3 \xi_3 }{ 8 } \left( \frac{\mu_0 \mu}
-{\epsilon_0 \epsilon} \right)^{3/2} \left( {I_1}^2 \cos^2 \varphi + 
-\left( I_2 - I_1 \right)^2 \sin^2 \varphi \right) \cdot \\ 
-\cdot \Big( \vect{\rho_0} I_1 \cos \varphi - 
-\vect{ \varphi_0 } \left( I_2 - I_1 \right) \sin \varphi \Big)
-\end{aligned} \end{equation*} }
-%
-\textcolor{lightgray}{ \begin{equation*} \label{eq:linear_e_cyl}
-\vect{E} = \frac{A_0}{2} \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}}
-\Big( \vect{\rho_0} I_1 \cos \varphi - 
-\vect{ \varphi_0 } \left( I_2 - I_1 \right) \sin \varphi \Big)
-\end{equation*} }
-%
+\begin{equation} \begin{aligned} \label{eq:i2_partder}
+\frac{1}{v} \partder{ I_2 \{ S_2 \} }{t} = 
+- \frac{vt}{\pi (v^2t^2 - z^2) } \frac{ v^2t^2 - z^2 - \rho^2 + R^2 } 
+{ \sqrt{ 4 \rho^2 (v^2t^2 - z^2) - (v^2t^2 - z^2 + \rho^2 - R^2)^2 } }.
+\end{aligned} \end{equation}
+
+Графічно можемо визначити, що проекція вторинного струм обернена за знаком 
+відносно тієї ж проекції компоненти напруженості електричного поля.
+
+\begin{figure}[h] \begin{center}
+\includegraphics[scale=0.5]{Jperp_A1}
+\caption{Нелінійність амплітуди вторинного джерела}
+\label{fig:jx_secondary}
+\end{center} \end{figure}
+
+З виразів \eqref{eq:i1_partder}, \eqref{eq:i2_partder} очевидна нелінійна 
+залежність струму від $ A_0 $.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Енергетичний розподіл поля плаского диску в лінійному наближенні}
+
+Вторинний електричний струм розподілений в усьому напівпросторі $ z > 0 $,
+але за рахунок згасання енергії з відстанню в межах $ [1/R, 1/R^2] $ (в 
+залежності від напрямку спостереження) можемо обмежити область де треба 
+враховувати нелінійні ефекти за рахунок високої концентрації енергії. Для 
+визначення параметричних меж застосування введеної моделі нелінійності та 
+оцінки границі зони, де нелінійні ефекти треба враховувати, розглянемо 
+енергетичні характеристики поля в ближній зоні
+
+Тепер розглянемо енергетичний розподіл від поля плаского диску при різних
+часових залежностей $ f(t) $ стороннього струму. Побудова класичної 
+енергетичної діаграми спрямованості мало інформативне дослідження нелінійних
+ефектів - в даній роботі важливим є енергетичний розподіл в ближній зоні.
+
+Розглянемо густину енергії електромагнітного поля $ \vect{E} $ та 
+$ \vect{H} $, збудженого пласким диском електричного струму з довільною 
+часовою залежністю $ f(t) $
+
+\begin{equation}
+W \left( \vect{r} \right) = \int_0^\infty \dotprod{\vect{E}}{\vect{H}} dt.
+\end{equation}
+
+Значення напруженостей поля $ \vect{E} $ та $ \vect{H} $ можуть бути 
+враховані чисельно за допомогою інтегралу Дюамеля \eqref{eq:duhamel},
+використовуючи перехідну функцію знайдену в розділі \ref{sec:tranc_resp}.
+Запишемо енергетичний розподіл поля, користуючись шматочним визначенням 
+перехідної функції на області визначення:
+
+\begin{equation}
+W = \int_0^\infty 
+\dotprod{\vect{E}\left\{S_1 \cup S_2\right\}}
+{\vect{H}\left\{S_1 \cup S_2 \right\}} dt + 
+\int_0^\infty \dotprod{\vect{E}\{S_3\}}{\vect{H}\{S_3\}} dt.
+\end{equation}
+
+Так як, $ \vect{E}\left\{S_1 \cup S_2\right\} $ та  
+$ \vect{H}\left\{S_1 \cup S_2 \right\}$ пропорційні, 
+а $ \vect{E}\{S_3\} = 0 $ можемо звільнитись від магнітних компонент 
+поля, що спростить числові розрахунки:
+
+\begin{equation}
+W = \int_0^\infty \dotprod{\vect{E}}{\vect{H}} dt =
+\sqrt{\frac{\epsilon_0 \epsilon}{\mu_0 \mu}} \int_0^\infty \vect{E}^2 dt.
+\end{equation}
+
+Також, користуючись властивостями перехідної функції можемо обмежити
+область інтегрування за часом, а також спростити під-інтегральний вираз
+
+\begin{equation} \label{eq:energy}
+W = \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}}
+\int_{ct_1}^{c\tau_0+ct_3} \left( E_\rho^2 + E_\varphi^2 \right) dt
+\end{equation}
+
+Також оцінено енергію перехідної функції, а тобто \ref{eq:energy} при 
+часовій залежності сигналу у вигляді функції Гевісайда $ f(t) = H(t) $:
+
 \textcolor{lightgray}{ \begin{equation*} \begin{aligned}
 \vect{E}^2 = \frac{A_0^2}{4} \frac{\mu_0 \mu}{\epsilon_0 \epsilon}
 \Big( I_1^2 \cos^2 \varphi + \left( I_2 - I_1 \right)^2 \sin^2 \varphi \Big)
 \end{aligned} \end{equation*} }
 %
-\textcolor{lightgray}{ \begin{equation*} \begin{aligned}
-\partder{ \vect{E}^2 }{t} = \frac{A_0^2}{4} 
-\frac{\mu_0 \mu}{\epsilon_0 \epsilon}
-\left( 2 I_1 \partder{I_1}{t} \cos^2 \varphi + 
-2 ( I_2 - I_1 ) \left( \partder{I_2}{t} - \partder{I_1}{t} \right) 
-\sin^2 \varphi \right)
-\end{aligned} \end{equation*} }
+\begin{equation} \label{eq:energy_tr}
+W_{tr} = \frac{A_0^2}{4} \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}}
+\int_{ct_1}^{ct_3}  \Big( I_1^2 \cos^2 \varphi + 
+\left( I_2 - I_1 \right)^2 \sin^2 \varphi \Big) dt.
+\end{equation}
+
+Розглядаючи особливий випадок \ref{eq:energy_tr} для $ \rho = 0 $, помічаємо,
+що енергія випромінювання плаского диску, завжди лежить у наступних межах для 
+сигналів з часовою залежністю $ f(t) $ з областю значень 
+$ \left[ -1, 1 \right] $ та тривалістю $ \tau_0 $:
+
+\textcolor{lightgray}{ \begin{equation*}
+\left. W \right|^{\rho=0} = 
+\frac{A_0^2}{16} \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}}
+\Big( \sqrt{R^2+z^2} - z \Big)
+\end{equation*} }
 %
-\begin{equation*} \begin{aligned}
-\partder{P_z^\prime}{t} = 0
-\end{aligned} \end{equation*}
+\textcolor{lightgray}{ \begin{equation*}
+\int_{ct_1}^{c\tau_0+ct_3} 
+\left( \int_0^t f(\tau) d \tau < \tau_0 \right) dt < \tau_0 R
+\end{equation*} }
 %
-Вирази для поперечних компонентів поля стають шматочновизначиними,
-через свої залежності.
+\begin{equation}
+0 \leq W_{max} \left( \tau_0, f(t), \vect{r} \right) < 
+\frac{\tau_0 R A_0^2}{16} \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}},
+\end{equation}
 %
-\textcolor{lightgray} { \begin{equation*} \begin{aligned}
-\partder{P_\rho^\prime}{t}   = \frac{ {A_0}^3 \xi_3 }{ 8 } 
-\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} \left(
-\left( {I_1}^2 \cos^2 \varphi + ( I_2 - I_1 )^2 \sin^2 \varphi \right)
-\partder{I_1}{t} \cos \varphi + \right. \\
-\left. + I_1 \cos \varphi \left( 2 I_1 \partder{I_1}{t} \cos^2 \varphi + 
-2 ( I_2 - I_1 ) \left( \partder{I_2}{t} - \partder{I_1}{t} \right) 
-\sin^2 \varphi \right) \right) = \\ = \frac{ {A_0}^3 \xi_3^e }{ 8 } 
-\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} \left(
-\partder{I_1}{t} {I_1}^2 \cos^3 \varphi + \partder{I_1}{t} ( I_2 - I_1 )^2 
-\cos \varphi \sin^2 \varphi + \right. \\
-\left. + 2 {I_1}^2 \partder{I_1}{t} \cos^3 \varphi + 
-2 I_1 ( I_2 - I_1 ) \left( \partder{I_2}{t} - \partder{I_1}{t} \right) 
-\cos \varphi \sin^2 \varphi \right)
-\end{aligned} \end{equation*} }
-%
-\begin{equation*} \begin{aligned}
-\partder{P_\rho^\prime}{t} = \frac{ {A_0}^3 \xi_3 }{ 8 } 
-\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} \left(
-3 {I_1}^2 \partder{I_1}{t} \cos^3 \varphi + \right. \\
-+ \left. ( I_2 - I_1 ) \cos \varphi \sin^2 \varphi \left( 
-\partder{I_1}{t} ( I_2 - I_1 ) + 2 I_1 \left( \partder{I_2}{t} - 
-\partder{I_1}{t} \right) \right) \right)
-\end{aligned} \end{equation*}
-%
-\textcolor{lightgray} { \begin{equation*} \begin{aligned}
-\partder{P_\varphi^\prime}{t}   = - \frac{ {A_0}^3 \xi_3 }{ 8 } 
-\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} \left(
-\left( {I_1}^2 \cos^2 \varphi + ( I_2 - I_1 )^2 \sin^2 \varphi \right)
-\left( \partder{I_2}{t} - \partder{I_1}{t} \right) \sin \varphi + \right. \\
-\left. + (I_2 - I_1) \sin \varphi \left( 2 I_1 \partder{I_1}{t} \cos^2 \varphi + 
-2 ( I_2 - I_1 ) \left( \partder{I_2}{t} - \partder{I_1}{t} \right) 
-\sin^2 \varphi \right) \right) = \\ = - \frac{ {A_0}^3 \xi_3 }{ 8 } 
-\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} \left(
-{I_1}^2 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) 
-\sin \varphi \cos^2 \varphi + \right. \\ \left. 
-+ ( I_2 - I_1 )^2 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) 
-\sin^3 \varphi + 2 I_1 \partder{I_1}{t} (I_2 - I_1) 
-\sin \varphi \cos^2 \varphi + \right. \\ 
-+ \left. 2 ( I_2 - I_1 )^2 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) 
-\sin^3 \varphi \right)
-\end{aligned} \end{equation*} }
-%
-\begin{equation*} \begin{aligned}
-\partder{P_\varphi^\prime}{t} = - \frac{ {A_0}^3 \xi_3 }{ 8 } 
-\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} \left(
-3 ( I_2 - I_1 )^2 \left( \partder{I_2}{t} - \partder{I_1}{t} \right)
-\sin^3 \varphi \right. + \\
-+ \left. I_1 \sin \varphi \cos^2 \varphi \left( 
-I_1 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) + 
-2 \partder{I_1}{t} (I_2 - I_1) \right) \right)
-\end{aligned} \end{equation*}
-%
-Для запису модового струму використаємо формулу ..., що 
-є кратиним інтегралом по точкам випромінювання та має комплексну
-область значень.
-%
+де $ W_{max} $ - густина енергії, $ \tau_0 $ - ефективна тривалість імпульсу 
+за визначеною метрикою, $ A_0 $ - максимальна амплітуда сигналу, $ R $ - 
+радіус апертури, а вираз під коренем - імпеданс у середовищі розповсюдження 
+хвилі.
+
+Будуватимемо поперечні зрізи значень енергій
+для різних довжин імпульсів та для різних відстаней від джерела.
+Для збереження кутового розміру зрізів візьмемо його $ z + 2R $.
+
+\textcolor{red}{ TODO: можна строго порівняти діаграму спрямованості 
+отриману в часовій області з діаграмою Баума, а також оцінити її відхилення 
+в ближній зоні }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Модовий розподіл Керрівської поправки}
+
+Застосуємо метод еволюційних рівнянь для розв'язання задачі випромінювання 
+вторинним струмом \eqref{eq:j_kerr}. Для цього, спершу, запишемо модовий
+розподіл джерела, який є правою частиною рівняння Клейна-Гордона. 
+
 \textcolor{lightgray} { \begin{equation*}
 j_m \left( r, t; \nu \right) = \frac{\sqrt{\mu_0}}{2\pi} 
 \int \limits_{0}^{2\pi} d \varphi \int \limits_0^\infty \rho d \rho 
@@ -581,20 +567,24 @@ j_m \left( r, t; \nu \right) = \frac{\sqrt{\mu_0}}{2\pi}
 - \sqrt{\nu} e^{-im\varphi} \frac{J_{m-1} (\nu \rho) - J_{m+1} (\nu \rho)}{2}
 \partder{}{t} P_\varphi^\prime \right)
 \end{aligned} \end{equation*} }
-%
+
 \begin{equation*} \begin{aligned}
 j_m = - \frac{\sqrt{\mu_0}}{2\pi} 
 \int_{0}^{2\pi} d \varphi \int \limits_{0}^{\infty} \rho d \rho
 e^{-im\varphi} \left( i  m \frac{J_m (\nu \rho)}{\rho \sqrt{\nu}}
-\partder{P_\rho^\prime}{t} + \sqrt{\nu}
+\partder{j_\rho^\prime}{t} + \sqrt{\nu}
 \frac{J_{m-1} (\nu \rho) - J_{m+1} (\nu \rho)}{2}
-\partder{P_\varphi^\prime}{t} \right)
+\partder{j_\varphi^\prime}{t} \right)
 \end{aligned} \end{equation*}
-%
-Згрупувавши доданки за тригонометричними функціями, що вони містять,
-знайдемо інтеграли за зменним азимутальним кутом $ \varphi $. Самі інеграли
-взяті окремо в додатку ..., випишимо лише результати.
-%
+
+Спершу, перейдемо від комплексної області визначення модового розподілу 
+до уявної. Згрупувавши доданки за тригонометричними функціями,
+знайдемо інтеграли за азимутальним кутом $ \varphi $, користуючись 
+аналітичними інтегралами \eqref{eq:int_exp3}, \eqref{eq:int_exp4}, 
+\eqref{eq:int_exp5}, \eqref{eq:int_exp6}. Отримаємо вирази для інтегралів
+від компонентів вектору вторинного нелінійного струму з ядром інтегралу у 
+вигляді комплексної експоненти.
+
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
 \int_{0}^{2 \pi} d \varphi e^{-im \varphi} \partder{P_\rho^\prime}{t} = 
 \frac{ {A_0}^3 \xi_3 }{ 8 } \int_{0}^{2\pi} d \varphi
@@ -615,7 +605,7 @@ e^{-im\varphi} \left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2}
 %
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
 \int_{0}^{2\pi} e^{-i m \varphi} \cos^3 \varphi d \varphi = 
-\frac{\pi}{4} \delta_{m,-3} - \frac{\pi}{4} \delta_{m,3} + 
+\frac{\pi}{4} \delta_{m,-3} + \frac{\pi}{4} \delta_{m,3} + 
 \frac{3 \pi}{4} \delta_{m,-1} + \frac{3 \pi}{4} \delta_{m,1}
 \end{aligned} \end{equation*} }
 %
@@ -626,10 +616,11 @@ e^{-im\varphi} \left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2}
 \end{aligned} \end{equation*} }
 %
 \begin{equation*} \begin{aligned}
-\int_{0}^{2\pi} d \varphi e^{-im \varphi} \partder{P_\rho^\prime}{t} = 
-\frac{ {A_0}^3 \xi_3 \pi }{ 4 \cdot 8 } 
-\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2}
-\left( 3 {I_1}^2 \partder{I_1}{t} \left( \delta_{m,-3} - 
+\frac{\epsilon_0 \chi_e^{(3)}}{2 \pi} \int_{0}^{2\pi} d \varphi 
+e^{-im \varphi} \partder{P_\rho^\prime}{t} = 
+\frac{ {A_0}^3 \epsilon_0 \chi_e^{(3)}}{ 64 } 
+\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} \cdot \\ 
+\cdot \left( 3 {I_1}^2 \partder{I_1}{t} \left( \delta_{m,-3} - 
 \delta_{m,3} + 3 \delta_{m,-1} + 3 \delta_{m,1} \right) + \right. \\
 + \left. ( I_2 - I_1 ) \left( \delta_{m,1} - 
 \delta_{m,-3} + \delta_{m,-1} - \delta_{m,3} \right) \left( 
@@ -670,8 +661,9 @@ I_1 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) +
 \end{aligned} \end{equation*} }
 %
 \begin{equation*} \begin{aligned}
-\int_{0}^{2 \pi} d \varphi e^{-im \varphi} \partder{P_\varphi^\prime}{t} = 
-- \frac{ {A_0}^3 \xi_3  i \pi }{ 4 \cdot 8 }
+\frac{\epsilon_0 \chi_e^{(3)}}{2 \pi} \int_{0}^{2 \pi} d \varphi 
+e^{-im \varphi} \partder{P_\varphi^\prime}{t} = 
+- \frac{ {A_0}^3 \epsilon_0 \chi_e^{(3)}  i}{ 64 }
 \left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} \cdot \\ 
 \cdot \left( 3 ( I_2 - I_1 )^2 \left( \partder{I_2}{t} - 
 \partder{I_1}{t} \right) \left( 3 \delta_{m,-1} - 3 \delta_{m,1} - 
@@ -681,276 +673,28 @@ I_1 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) +
 I_1 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) + 
 2 \partder{I_1}{t} (I_2 - I_1) \right) \right)
 \end{aligned} \end{equation*}
-%
+
+Як видно з останніх виразів, інтригування за кутом $ \varphi $ дає дискретний 
+модовий розподіл вторинного струму.  Також помічаємо, що у розподілах присутні 
+лише моді з номерами $ \pm 1 $ та $ \pm 3 $ - вклад вторинного струму в інші
+моди відсутній. Випишемо окрему кожну з ненульових мод розподілу вторинного 
+струму.
+
 \textcolor{lightgray} { \begin{equation*} \begin{aligned}
-\int \limits_{0}^{2\pi} d \varphi \sin \varphi 
-\left( \cos m \varphi - i \sin m \varphi \right) = 
-i \pi \left( \delta_{m,-1} - \delta_{m,1} \right)
-\end{aligned} \end{equation*} }
-%
-\textcolor{lightgray} { \begin{equation*} \begin{aligned}
-\int \limits_{0}^{2\pi} d \varphi \cos \varphi 
-( \cos m \varphi - i \sin m \varphi) = \pi ( \delta_{m,-1} + \delta_{m,1} )
-\end{aligned} \end{equation*} }
-%
-Тепер введемо нові змінні для того, щоб записати струм в визначенні модового 
-базису, як інтеграл за радиалькою координатою $ \rho $. Тут з'являються змінні
-за штрихованими кординатами. Так ми означимо кординати джерела випромінювання,
-щоб уникнути плутанини з кординатами точки спостереження. Нехай ...
-%
-\textcolor{lightgray} { \begin{equation*} \begin{aligned}
-N_1 (m) =  \frac{3 m {A_0}^3 \xi_3 \sqrt{\mu_0}}{64 \sqrt{\nu}} \frac{\pi}{\pi}
-\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} 
-\int_{0}^{\infty} d \rho 
-J_m (\nu \rho) {I_1}^2 \partder{I_1}{t}
-\end{aligned} \end{equation*} }
-%
-\textcolor{lightgray} { \begin{equation*} \begin{aligned}
-N_1 (m) =  3 m J_m (\nu \rho) {I_1}^2 \partder{I_1}{t}
-\end{aligned} \end{equation*} }
-%
-\begin{equation*} \begin{aligned}
-N_1 (m) =  3 m J_m (\nu \rho') {I_1}^2 \partder{I_1}{t'}
-\end{aligned} \end{equation*}
-%
-\textcolor{lightgray} { \begin{equation*} \begin{aligned}
-N_1 (m) =  3 m J_m (\nu \rho') \begin{cases}
-0^2 \cdot 2 \tau' \delta_+ \\
-{f_1}^2 \left( \partder{f_1}{t'} + 2 \tau' \delta_+ \right) \\
-1^2 \cdot 2 \tau' \delta_+
-\end{cases} \end{aligned} \end{equation*} }
-%
-\textcolor{lightgray} { \begin{equation*} \begin{aligned}
-N_1 (m) =  3 m J_m (\nu \rho') \begin{cases} 0 \\
-2 \tau' \delta_+ {f_1}^2 + \partder{f_1}{t'} {f_1}^2 \\
-2 \tau' \delta_+
-\end{cases} \end{aligned} \end{equation*} }
-%
-\begin{equation*} \begin{aligned}
-N_1^\delta (m) = 3 m {I_1}^2 J_m (\nu \rho')
-\end{aligned} \end{equation*}
-%
-\begin{equation*} \begin{aligned}
-N_1^* (m) =  3 m J_m (\nu \rho') {I_1}^2 \partder{I_1}{t'}
-\end{aligned} \end{equation*}
-%
-\textcolor{lightgray} { \begin{equation*} \begin{aligned}
-N_2 (m) = \frac{m {A_0}^3 \xi_3 \sqrt{\mu_0}}{64 \sqrt{\nu}} \frac{\pi}{\pi}
-\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} 
-\int_{0}^{\infty} d \rho \\
-J_m (\nu \rho) (I_2 - I_1) \left( \partder{I_1}{t} (I_2 - I_1) + 
-2 I_1 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) \right)
-\end{aligned} \end{equation*} }
-%
-\textcolor{lightgray} { \begin{equation*} \begin{aligned}
-N_2 (m) = m J_m (\nu \rho) (I_2 - I_1) \left( \partder{I_1}{t} (I_2 - I_1) + 
-2 I_1 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) \right)
-\end{aligned} \end{equation*} }
-%
-\begin{equation*} \begin{aligned}
-N_2 (m) = m J_m (\nu \rho') (I_2 - I_1) \left( \partder{I_1}{t'} (I_2 - I_1) + 
-2 I_1 \left( \partder{I_2}{t'} - \partder{I_1}{t'} \right) \right)
-\end{aligned} \end{equation*}
-%
-\textcolor{lightgray} { \begin{equation*} \begin{aligned}
-N_2 (m) = m J_m (\nu \rho') \begin{cases}
-2 \tau' \delta_+ (0 - 0)^2 + 0 (0 - 0) (2 \tau' \delta_+ - 2 \tau' \delta_+) \\
-(f_2 - f_1)^2 (\partder{f_1}{t'} + 2 \tau' \delta_+) + 2 f_1 (f_2 - f_1) \left( 
-\partder{f_2}{t'} - \partder{f_1}{t'} \right) \\
-2 \tau' \delta_+ (0.5 - 1)^2 + 1 (0.5 - 1) (2 \tau' \delta_+ - 2 \tau' \delta_+)
-\end{cases} \end{aligned} \end{equation*} }
-%
-\textcolor{lightgray} { \begin{equation*} \begin{aligned}
-N_2 (m) = m J_m (\nu \rho') \begin{cases} 0 \\
-2 \tau' \delta_+ (f_2 - f_1)^2 + (f_2 - f_1) 
-\left( 2 f_1 \left( \partder{f_2}{t'} - \partder{f_1}{t'} \right) +
-(f_2 - f_1) \partder{f_1}{t'} \right) \\
-\tau' \delta_+ / 2
-\end{cases} \end{aligned} \end{equation*} }
-%
-\begin{equation*} \begin{aligned}
-N_2^\delta (m) = m J_m (\nu \rho') (I_2 - I_1)^2 
-\end{aligned} \end{equation*}
-%
-\begin{equation*} \begin{aligned}
-N_2^* (m) = m J_m (\nu \rho') (I_2 - I_1) \left( \partder{I_1}{t'} (I_2 - I_1) + 
-2 I_1 \left( \partder{I_2}{t'} - \partder{I_1}{t'} \right) \right)
-\end{aligned} \end{equation*}
-%
-\textcolor{lightgray} { \begin{equation*} \begin{aligned}
-N_3 (m) = - \frac{3 {A_0}^3 \xi_3 \sqrt{\mu_0}}{64} \sqrt{\nu} \frac{\pi}{\pi}
-\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} 
-\int_{0}^{\infty} \rho d \rho 
-\frac{J_{m-1} (\nu \rho) - J_{m+1} (\nu \rho)}{2} \\
-(I_2 - I_1)^2 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) 
-\end{aligned} \end{equation*} }
-%
-\textcolor{lightgray} { \begin{equation*} \begin{aligned}
-N_3 (m) = - 3 \nu \rho
+j_m = - \frac{\sqrt{\mu_0}}{2\pi} 
+\int_0^{2\pi} d \varphi \int \limits_0^\infty \rho d \rho
+e^{-im\varphi} \left( i m \frac{J_m (\nu \rho)}{\rho \sqrt{\nu}}
+\partder{j_\rho^\prime}{t} + \sqrt{\nu}
 \frac{J_{m-1} (\nu \rho) - J_{m+1} (\nu \rho)}{2}
-(I_2 - I_1)^2 \left( \partder{I_2}{t} - \partder{I_1}{t} \right)
+\partder{j_\varphi^\prime}{t} \right)
 \end{aligned} \end{equation*} }
-%
+
 \begin{equation*} \begin{aligned}
-N_3 (m) = - 3 \nu \rho'
-\frac{J_{m-1} (\nu \rho') - J_{m+1} (\nu \rho')}{2}
-(I_2 - I_1)^2 \left( \partder{I_2}{t'} - \partder{I_1}{t'} \right)
+j_1 = - \frac{i A_0^3 \sqrt{\mu_0} \epsilon_0 \chi_e^{(3)}}{64}
+\left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^{3/2}
+\int_0^\infty \rho d \rho
 \end{aligned} \end{equation*}
-%
-\textcolor{lightgray} { \begin{equation*} \begin{aligned}
-N_3 (m) = - 3 \nu \rho'
-\frac{J_{m-1} (\nu \rho') - J_{m+1} (\nu \rho')}{2} \begin{cases}
-(0-0)^2 (0 + 2 \tau' \delta_+ - 0 - 2 \tau' \delta_+) \\
-(f_2 - f_1)^2 \left( \partder{f_2}{t'} - \partder{f_1}{t'} \right) \\
-(0.5 - 1)^2 (0 + 2 \tau' \delta_+ - 0 - 2 \tau' \delta_+)
-\end{cases} \end{aligned} \end{equation*} }
-%
-\textcolor{lightgray} { \begin{equation*} \begin{aligned}
-N_3 (m) = - 3 \nu \rho'
-\frac{J_{m-1} (\nu \rho') - J_{m+1} (\nu \rho')}{2} \begin{cases} 0 \\
-(f_2 - f_1)^2 \left( \partder{f_2}{t'} - \partder{f_1}{t'} \right) \\ 0
-\end{cases} \end{aligned} \end{equation*} }
-%
-\textcolor{lightgray} { \begin{equation*} \begin{aligned}
-N_3 (m) = - 3 \nu \rho'
-\frac{J_{m-1} (\nu \rho') - J_{m+1} (\nu \rho')}{2} \begin{cases} 0 \\
-(f_2 - f_1)^2 \left( \partder{f_2}{t'} - \partder{f_1}{t'} \right) \\ 0
-\end{cases} \end{aligned} \end{equation*} }
-%
-\begin{equation*} \begin{aligned}
-N_3^\delta (m) = - 3 \nu \rho'
-\frac{J_{m-1} (\nu \rho') - J_{m+1} (\nu \rho')}{2}
-(I_2 - I_1)^2 \left( \partder{I_2}{t'} - \partder{I_1}{t'} \right)
-\end{aligned} \end{equation*}
-%
-\begin{equation*} \begin{aligned}
-N_3^* (m) = 0
-\end{aligned} \end{equation*}
-%
-\textcolor{lightgray} { \begin{equation*} \begin{aligned}
-N_4 (m) = - \frac{ {A_0}^3 \xi_3 \sqrt{\mu_0}}{64} \sqrt{\nu} \frac{\pi}{\pi}
-\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2}
-\int_{0}^{\infty} \rho d \rho 
-\frac{J_{m-1} (\nu \rho) - J_{m+1} (\nu \rho)}{2} \\
-I_1 \left( I_1 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) + 
-2 \partder{I_1}{t} \left( I_2 - I_1 \right) \right)
-\end{aligned} \end{equation*} }
-%
-\textcolor{lightgray} { \begin{equation*} \begin{aligned}
-N_4 (m) = - \nu \rho
-\frac{J_{m-1} (\nu \rho) - J_{m+1} (\nu \rho)}{2}
-\left( I_1 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) + 
-2 \partder{I_1}{t} \left( I_2 - I_1 \right) \right)
-\end{aligned} \end{equation*} }
-%
-\begin{equation*} \begin{aligned}
-N_4 (m) = - \nu \rho'
-\frac{J_{m-1} (\nu \rho') - J_{m+1} (\nu \rho')}{2} I_1
-\left( I_1 \left( \partder{I_2}{t'} - \partder{I_1}{t'} \right) + 
-2 \partder{I_1}{t'} \left( I_2 - I_1 \right) \right)
-\end{aligned} \end{equation*}
-%
-\textcolor{lightgray} { \begin{equation*} \begin{aligned}
-N_4 (m) \{ S_2 \} = {f_1}^2 
-\left( \partder{f_2}{t'} - \partder{f_1}{t'} \right) + 
-2 f_1 \left( \partder{f_1}{t'} + 2 \tau' \delta_+ \right) 
-\left( f_2 - f_1 \right) = \\
-= f_1^2 \left( \partder{f_2}{t'} - 3 \partder{f_1}{t'} \right) 
-+ 2 f_1 f_2 \partder{f_1}{t'} + 4 \tau' \delta_+ \left( f_2 - f_1 \right)
-\end{aligned} \end{equation*} }
-%
-\textcolor{lightgray} { \begin{equation*} \begin{aligned}
-N_4 (m) = - \nu \rho'
-\frac{J_{m-1} (\nu \rho') - J_{m+1} (\nu \rho')}{2} \begin{cases} 0 \\ 
-{f_1}^2 \left( \partder{f_2}{t'} - 3 \partder{f_1}{t'} \right) 
-+ 2 f_1 f_2 \partder{f_1}{t'} + 4 \tau' \delta_+ \left( f_2 - f_1 \right) \\
-- 2 \tau' \delta_+
-\end{cases} \end{aligned} \end{equation*} }
-%
-\begin{equation*} \begin{aligned}
-N_4^\delta (m) = - 2 \nu \rho' \left( I_2 - I_1 \right)
-\frac{J_{m-1} (\nu \rho') - J_{m+1} (\nu \rho')}{2}
-\end{aligned} \end{equation*}
-%
-\begin{equation*} \begin{aligned}
-N_4^* (m) = - \nu \rho'
-\frac{J_{m-1} (\nu \rho') - J_{m+1} (\nu \rho')}{2} {I_1}^2
-\left( \partder{I_2}{t'} - 3 \partder{I_1}{t'} \right) + 
-2 I_1 I_2 \partder{I_1}{t'}
-\end{aligned} \end{equation*}
-%
-Тоді їх сумми для кожної з кутових мод матимуть наступний вигляд. 
-%
-\textcolor{lightgray} { \begin{equation*} \begin{aligned}
-S_{-1} = i \delta_{m,-1} \left( 3 N_1 (m) + N_2 (m) + 
-3 N_3 (m) + N_4 (m) \right)
-\end{aligned} \end{equation*} }
-%
-\begin{equation} \begin{aligned} \label{eq:nm1sum}
-S_{-1} = 3 N_1 (-1) + N_2 (-1) + 3 N_3 (-1) + N_4 (-1)
-\end{aligned} \end{equation}
-%
-\textcolor{lightgray} { \begin{equation*} \begin{aligned}
-S_{1} = i \delta_{m,1} \left( 3 N_1 (m) + N_2 (m) - 
-3 N_3 (m) - N_4 (m) ) \right)
-\end{aligned} \end{equation*} }
-%
-\begin{equation} \begin{aligned} \label{eq:np1sum}
-S_{1} = 3 N_1 (1) + N_2 (1) - 3 N_3 (1) - N_4 (1)
-\end{aligned} \end{equation}
-%
-\textcolor{lightgray} { \begin{equation*} \begin{aligned}
-S_{-3} = i \delta_{m,-3} \left( N_1 (m) - N_2 (m) - 
-N_3 (m) + N_4 (m) \right)
-\end{aligned} \end{equation*} }
-%
-\begin{equation} \begin{aligned} \label{eq:nm3sum}
-S_{-3} = N_1 (-3) - N_2 (-3) - N_3 (-3) + N_4 (-3)
-\end{aligned} \end{equation}
-%
-\textcolor{lightgray} { \begin{equation*} \begin{aligned}
-S_{3} = i \delta_{m,3} \left( - N_1 (m) - N_2 (m) - 
-N_3 (m) + N_4 (m) \right)
-\end{aligned} \end{equation*} }
-%
-\begin{equation} \begin{aligned} \label{eq:np3sum}
-S_{3} = - N_1 (3) - N_2 (3) - N_3 (3) + N_4 (3)
-\end{aligned} \end{equation}
-%
-Також можна представити $ S_m $ через $ S_m^* $ та $ S_m^\delta $, 
-згрупувавши доданки за дельта-функцією. Це потрібно, щоб надалі 
-підготувати підінтегральну функцію для чисельного інтегрування.
-%
-\begin{equation*} \begin{aligned}
-S_m = S_m^* + 2 \tau' \delta 
-\left( {\tau'}^2 - {z'}^2 - (\rho' + R)^2 \right) S_m^\delta
-\end{aligned} \end{equation*}
-%
-Тепер запишимо модовий струм в нових зменних.
-%
-\begin{equation*} \begin{aligned}
-j'_m (t',z') = - \frac{i \xi_3 A_0^3 \sqrt{\mu_0}}{64 \sqrt{\nu}}
-\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2}
-\int_{0}^{\infty} S_{m} (\rho',t',z') d \rho'
-\end{aligned} \end{equation*}
-%
-Помічаємо деякі властивості нових змінних $ N_i(m) $
-%
-\begin{equation*} \begin{aligned}
-N_{1} (-m) = N_{1} (m)
-\end{aligned} \end{equation*}
-%
-\begin{equation*} \begin{aligned}
-N_{2} (-m) = N_{2} (m)
-\end{aligned} \end{equation*}
-%
-\begin{equation*} \begin{aligned}
-N_{3} (-m) = - N_{3} (m)
-\end{aligned} \end{equation*}
-%
-\begin{equation*} \begin{aligned}
-N_{4} (-m) = - N_{4} (m)
-\end{aligned} \end{equation*}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Чсловий розрахунок нелінійної поправки}

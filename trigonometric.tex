@@ -120,137 +120,67 @@ i \sin (m \varphi + \varphi) + i \sin (\varphi - m \varphi) \right) = \\
 \end{aligned} \end{equation*} }
 %
 \begin{equation} \begin{aligned} \label{eq:int_exp3}
-\int_{0}^{2\pi} e^{-i m \varphi} \cos \varphi \sin^2 \varphi d \varphi = 
-\frac{\pi \delta_{m,1} }{4}  - \frac{\pi \delta_{m,-3} }{4} + 
-\frac{\pi \delta_{m,-1} }{4}  - \frac{\pi \delta_{m,3} }{4}
+\int_0^{2\pi} e^{-i m \varphi} \cos \varphi \sin^2 \varphi d \varphi = 
+\frac{\pi \delta_{m,1} }{4} + \frac{\pi \delta_{m,-1} }{4} - 
+\frac{\pi \delta_{m,-3} }{4} - \frac{\pi \delta_{m,3} }{4}
 \end{aligned} \end{equation}
 %
 \textcolor{blue}{ \begin{equation*} \begin{aligned}
-e^{-i m \varphi} \sin^2 \varphi = \sin \varphi \left( 
-\sin \varphi \cos m \varphi - i \sin \varphi \sin m \varphi \right) = \\
-= \frac{\sin \varphi}{2} \left( \sin (\varphi + m \varphi) + 
-\sin (\varphi - m \varphi) - i \cos (\varphi - m \varphi) + 
-i \cos (\varphi + m \varphi) \right) = \\ 
-= \frac{i \sin \varphi}{2} \left( \cos (\varphi + m \varphi) - 
-\cos (\varphi - m \varphi) - i \sin (\varphi + m \varphi) - 
-i \sin (\varphi - m \varphi) \right) = \\
-= \frac{i \sin \varphi}{2} \left( e^{-i(1+m)\varphi} - e^{i(1-m)\varphi} \right)
-\end{aligned} \end{equation*} }
-%
-\textcolor{blue}{ \begin{equation*} \begin{aligned}
-e^{-i m \varphi} \cos \varphi \sin^2 \varphi = 
-\frac{i \sin \varphi \cos \varphi}{2} 
-\left( e^{-i(1+m)\varphi} - e^{i(1-m)\varphi} \right) = \\
-\frac{i \sin 2 \varphi}{4} \left( \cos (\varphi + m \varphi) - 
-\cos (\varphi - m \varphi) - i \sin (\varphi + m \varphi) - 
-i \sin (\varphi - m \varphi) \right) = \\
-= \frac{i}{8} \left( \sin (3 \varphi + m \varphi) + 
-\sin (\varphi - m \varphi) - \sin (3 \varphi - m \varphi) - 
-\sin (\varphi + m \varphi) - \right. \\ 
-- \left. i \cos (\varphi - m \varphi) + i \cos (3 \varphi + m \varphi)  -
-i \cos (\varphi + m \varphi) + i \cos (3 \varphi - m \varphi) \right) = \\
-= \frac{1}{8} \left( i \sin (3 \varphi + m \varphi) + 
-i \sin (\varphi - m \varphi) - i \sin (3 \varphi - m \varphi) - 
-i \sin (\varphi + m \varphi) + \right. \\ 
-+ \left.  \cos (\varphi - m \varphi) - \cos (3 \varphi + m \varphi)  +
-\cos (\varphi + m \varphi) - \cos (3 \varphi - m \varphi) \right) = \\
-= \frac{1}{8} \left( e^{i (1-m) \varphi} - e^{-i (3+m) \varphi} + 
-e^{-i (1+m) \varphi} - e^{i (3-m) \varphi} \right)
-\end{aligned} \end{equation*} }
-%
-\textcolor{blue}{ \begin{equation*} \begin{aligned}
-\int_{0}^{2\pi} e^{-i m \varphi} \cos \varphi \sin^2 \varphi d \varphi = 
-\frac{1}{8} \int_{0}^{2\pi} \left( e^{i (1-m) \varphi} - e^{-i (3+m) \varphi} + 
-e^{-i (1+m) \varphi} - e^{i (3-m) \varphi} \right) d \varphi = \\
-= \frac{\pi \delta_{m,1} }{4}  - \frac{\pi \delta_{m,-3} }{4} + 
-\frac{\pi \delta_{m,-1} }{4}  - \frac{\pi \delta_{m,3} }{4}  
+e^{-i m \varphi} \cos \varphi \sin^2 \varphi = e^{-i m \varphi} 
+\frac{e^{i\varphi} + e^{-i\varphi}}{2} \frac{1 - \cos 2\varphi}{2} = \\
+\frac{2e^{-i(m-1)\varphi} + 2e^{-i(m+1)\varphi}}{8} - 
+\frac{e^{2i\varphi} + e^{-2i\varphi}}{2} 
+\frac{2e^{-i(m-1)\varphi} + 2e^{-i(m+1)\varphi}}{8} = \\
+\frac{2e^{-i(m-1)\varphi} + 2e^{-i(m+1)\varphi}}{8} - 
+\frac{e^{-i(m-3)\varphi} + e^{-i(m+1)\varphi} + 
+e^{-i(m-1)\varphi} + e^{-i(m+3)\varphi}}{8} = \\
+= \frac{e^{-i(m-1)\varphi}}{8} + \frac{e^{-i(m+1)\varphi}}{8} -
+\frac{e^{-i(m-3)\varphi}}{8} - \frac{e^{-i(m+3)\varphi}}{8}
 \end{aligned} \end{equation*} }
 %
 \begin{equation} \begin{aligned} \label{eq:int_exp4}
 \int_{0}^{2\pi} e^{-i m \varphi} \sin^3 \varphi d \varphi = 
 \frac{3 \pi i}{4} \delta_{m,-1} - \frac{3 \pi i}{4} \delta_{m,1} - 
-\frac{\pi i}{4} \delta_{m,-3} - \frac{\pi i}{4} \delta_{m,3}
+\frac{\pi i}{4} \delta_{m,-3} + \frac{\pi i}{4} \delta_{m,3}
 \end{aligned} \end{equation}
 %
 \textcolor{blue}{ \begin{equation*} \begin{aligned}
-e^{-i m \varphi} \sin^3 \varphi = 
-i \frac{1 - \cos 2 \varphi}{4}
-\left( e^{-i(1+m)\varphi} - e^{i(1-m)\varphi} \right) = 
-\frac{i}{4} \left( e^{-i(1+m)\varphi} - e^{i(1-m)\varphi} \right) - \\
-\\ - \frac{i \cos 2 \varphi}{4} \left( 
-\cos (\varphi + m \varphi) - i \sin (\varphi + m \varphi) - 
-\cos (\varphi - m \varphi) - i \sin (\varphi - m \varphi) \right) = \\
-= \frac{i}{4} \left( e^{-i(1+m)\varphi} - e^{i(1-m)\varphi} \right) - 
-\frac{i}{8} \left( \cos (3 \varphi + m \varphi) +
-\cos (\varphi - m \varphi) - i \sin (3 \varphi + m \varphi) \right. - \\
-- \left. i \sin (m \varphi - \varphi) - \cos (3 \varphi - m \varphi) - 
-\cos (\varphi + m \varphi) - i \sin (3 \varphi - m \varphi) - 
-i \sin (- \varphi - m \varphi) \right) = \\
-= \frac{i}{4} \left( e^{-i(1+m)\varphi} - e^{i(1-m)\varphi} \right) - 
-\frac{i}{8} \left( e^{-i (3+m) \varphi} + e^{i (1-m) \varphi}
-- e^{i (3-m) \varphi} - e^{-i (1+m) \varphi} \right) = \\
-= \frac{i}{8} \left( 2 e^{-i(1+m)\varphi} - 2 e^{i(1-m)\varphi} - 
-e^{i(1-m)\varphi} + e^{-i(1+m)\varphi} \right) - 
-\frac{i}{8} \left( e^{-i (3+m) \varphi} - e^{i (3-m) \varphi} \right) = \\
-= \frac{3i}{8} \left( e^{-i(1+m)\varphi} - e^{i(1-m)\varphi} \right) - 
-\frac{i}{8} \left( e^{-i (3+m) \varphi} - e^{i (3-m) \varphi} \right)
+e^{-i m \varphi} \sin^3 \varphi = e^{-i m \varphi} 
+\frac{1 - \cos 2\varphi}{2} \frac{e^{i\varphi} - e^{-i\varphi}}{2i} = \\
+= \frac{e^{-i(m-1)\varphi} - e^{-i(m+1)\varphi}}{4i} - 
+\frac{e^{-i(m-3)\varphi} + e^{-i(m+1)\varphi} -
+e^{-i(m-1)\varphi} - e^{-i(m+3)\varphi}}{8i} = \\
+= \frac{3 e^{-i(m-1)\varphi}}{8i} - \frac{3 e^{-i(m+1)\varphi}}{8i} - 
+\frac{e^{-i(m-3)\varphi}}{8i} + \frac{e^{-i(m+3)\varphi}}{8i} = \\
+= \frac{3i e^{-i(m+1)\varphi}}{8} - \frac{3i e^{-i(m-1)\varphi}}{8} + 
+\frac{i e^{-i(m-3)\varphi}}{8} - \frac{i e^{-i(m+3)\varphi}}{8} 
 \end{aligned} \end{equation*} }
 %
 \textcolor{blue}{ \begin{equation*} \begin{aligned}
 \int_{0}^{2\pi} e^{-i m \varphi} \sin^3 \varphi d \varphi = 
-\frac{i}{8} \int_{0}^{2\pi} 
-\left( 3 e^{-i(1+m)\varphi} - 3 e^{i(1-m)\varphi} - 
-e^{-i (3+m) \varphi} - e^{i (3-m) \varphi} \right) d \varphi = \\
-= \frac{3 \pi i}{4} \delta_{m,-1} - \frac{3 \pi i}{4} \delta_{m,1} - 
-\frac{\pi i}{4} \delta_{m,-3} - \frac{\pi i}{4} \delta_{m,3}
+\frac{i\pi}{4} \left( 3 \delta_{m,-1} - 3 \delta_{m,1} + 
+\delta_{m,3} - \delta_{m,-3} \right)
 \end{aligned} \end{equation*} }
 %
 \begin{equation} \begin{aligned} \label{eq:int_exp5}
-\int_{0}^{2\pi} e^{-i m \varphi} \sin \varphi \cos^2 \varphi d \varphi = 
-\frac{\pi i }{4} \delta_{m,-3} - \frac{\pi i }{4} \delta_{m,1} + 
-\frac{\pi i }{4} \delta_{m,3} + \frac{\pi i }{4} \delta_{m,-1}
+\int_0^{2\pi} e^{-i m \varphi} \sin \varphi \cos^2 \varphi d \varphi = 
+\frac{\pi i }{4} \delta_{m,-1} - \frac{\pi i }{4} \delta_{m,1} -
+\frac{\pi i }{4} \delta_{m,3} + \frac{\pi i }{4} \delta_{m,-3}
 \end{aligned} \end{equation}
 %
 \textcolor{blue}{ \begin{equation*} \begin{aligned}
-e^{-i m \varphi} \sin \varphi \cos^2 \varphi = \cos^2 \varphi
-\left( \cos m \varphi - i \sin m \varphi \right) = \\ = \frac{\cos \varphi}{2} 
-\left( \cos (\varphi + m \varphi) + \cos (\varphi - m \varphi) - 
-i \sin (\varphi + m \varphi) + i \sin (\varphi - m \varphi) \right)
-\end{aligned} \end{equation*} }
-%
-\textcolor{blue}{ \begin{equation*} \begin{aligned}
-e^{-i m \varphi} \cos^2 \varphi = \cos^2 \varphi
-\left( \cos m \varphi - i \sin m \varphi \right) = \\ = \frac{\cos \varphi}{2} 
-\left( \cos (\varphi + m \varphi) + \cos (\varphi - m \varphi) - 
-i \sin (\varphi + m \varphi) + i \sin (\varphi - m \varphi) \right)
-\end{aligned} \end{equation*} }
-%
-\textcolor{blue}{ \begin{equation*} \begin{aligned}
 e^{-i m \varphi} \sin \varphi \cos^2 \varphi = 
-\frac{ \sin \varphi \cos \varphi } { 2 } 
-\left( e^{-i (1+m) \varphi} + e^{i (1-m) \varphi} \right) = \\
-= \frac{ \sin 2 \varphi } { 4 } 
-\left( \cos (\varphi + m \varphi) + \cos (\varphi - m \varphi) - 
-i \sin (\varphi + m \varphi) + i \sin (\varphi - m \varphi) \right) = \\
-= \frac{1}{8} \big( \sin (3 \varphi + m \varphi) + 
-\sin (\varphi - m \varphi) + \sin (3 \varphi - m \varphi) + 
-\sin (\varphi + m \varphi) \big. - \\ 
-- \big. i \cos (\varphi - m \varphi) + i \cos (3 \varphi + m \varphi) + 
-i \cos (\varphi + m \varphi) - i \cos (3 \varphi - m \varphi) \big) = \\
-= \frac{i}{8} \left( - i \sin (3 \varphi + m \varphi) - i 
-\sin (\varphi - m \varphi) - i \sin (3 \varphi - m \varphi) - i 
-\sin (\varphi + m \varphi) \right. - \\ 
-- \left. \cos (\varphi - m \varphi) + \cos (3 \varphi + m \varphi) + 
-\cos (\varphi + m \varphi) - \cos (3 \varphi - m \varphi) \right) = \\
-= \frac{i}{8} \big( e^{-i (3+m) \varphi} - e^{i (1-m) \varphi} + 
-e^{-i (3-m) \varphi} + e^{-i (1+m) \varphi} \big)
-\end{aligned} \end{equation*} }
-%
-\textcolor{blue}{ \begin{equation*} \begin{aligned}
-\frac{i}{8} \int_{0}^{2 \pi} d \varphi \big( e^{-i (3+m) \varphi} - 
-e^{i (1-m) \varphi} + e^{-i (3-m) \varphi} + e^{-i (1+m) \varphi} \big) = \\
-= \frac{\pi i }{4} \delta_{m,-3} - \frac{\pi i }{4} \delta_{m,1} + 
-\frac{\pi i }{4} \delta_{m,3} + \frac{\pi i }{4} \delta_{m,-1}
+\cos^2 \varphi e^{-i m \varphi} \frac{e^{i\varphi} - e^{-i\varphi}}{2i} = \\
+= \frac{1 + \cos 2\varphi}{2} 
+\frac{e^{i(1-m)\varphi} - e^{-i(1+m)\varphi}}{2i} = \\
+= \frac{e^{i(1-m)\varphi} - e^{-i(1+m)\varphi}}{4i} + 
+\frac{e^{2i\varphi} + e^{-2i\varphi}}{2} 
+\frac{e^{i(1-m)\varphi} - e^{-i(1+m)\varphi}}{4i} = \\
+\frac{ 2 e^{i(1-m)\varphi} - 2 e^{-i(1+m)\varphi}}{8i} +
+\frac{e^{i(3-m)\varphi} + e^{-i(1+m)\varphi} - 
+e^{-i(m-1)\varphi} - e^{-i(3+m)\varphi}}{8i} = \\
+= -\frac{ i e^{-i (m-1) \varphi} }{8} + \frac{ i e^{-i (m+1) \varphi} }{8} -
+\frac{ i e^{-i (m-3) \varphi} }{8} + \frac{ i e^{-i (m+3) \varphi} }{8}
 \end{aligned} \end{equation*} }
 %
 \begin{equation} \begin{aligned} \label{eq:int_exp6}
@@ -282,6 +212,4 @@ e^{i(3-m) \varphi} + e^{-i(1+m) \varphi} }{8} = \\
 \frac{ 3 e^{-i(1+m) \varphi} }{8} \right) = \\
 = \frac{\pi}{4} \delta_{m,-3} + \frac{\pi}{4} \delta_{m,3} + 
 \frac{3 \pi}{4} \delta_{m,-1} + \frac{3 \pi}{4} \delta_{m,1}
-\end{aligned} \end{equation*} }
-} + \frac{3 \pi}{4} \delta_{m,1}
 \end{aligned} \end{equation*} }

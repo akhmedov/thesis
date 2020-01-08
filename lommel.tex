@@ -216,20 +216,20 @@ I_5 = 2 i R \sum_{m=0}^{\infty} (-1)^m (-i)^{2m+1}
 \cdot \int_0^\infty d \nu J_1(\nu \rho) J_1(\nu R) 
 J_{2m+1} \left( \nu \sqrt{c^2t^2 - z^2} \right)
 \end{aligned}  \end{equation*} }
-
+%
 \textcolor{blue}{ \begin{equation*} \begin{aligned}
 i \cdot (-i)^{2m+1} \cdot (-1)^m = (-1) \cdot (-i)^{2m+2} \cdot (-1)^m = \\
 = \left( \frac{1}{i} \right)^{2m+2} \cdot (-1)^{m+1} = 
 (-1)^{m+1} \cdot (-1)^{m+1} = 1
 \end{aligned}  \end{equation*} }
-
+%
 \textcolor{blue}{ \begin{equation*} \begin{aligned}
 I_5 = 2 R \sum_{m=0}^{\infty}
 \left( \frac{ct-z}{\sqrt{c^2t^2-z^2}} \right)^{2m+1}
 \int_0^\infty d \nu J_1(\nu \rho) J_1(\nu R) 
 J_{2m+1} \left( \nu \sqrt{c^2t^2 - z^2} \right)
 \end{aligned}  \end{equation*} }
-
+%
 \textcolor{blue}{ \begin{equation*} \begin{aligned}
 \left( \frac{ct-z}{\sqrt{c^2t^2-z^2}} \right)^{2m+1} = 
 \left( \frac{ct-z}{ct+z} \right)^{m+1/2}
@@ -242,6 +242,9 @@ I_5 = 2 R \sum_{m=0}^{\infty}
 J_{2m+1} \left( \nu \sqrt{c^2t^2 - z^2} \right)
 \end{aligned}  \end{equation}
 
+Користуючись формулою 2.12.42.15 з \cite{imp:SpecFunc1983} можна отримати 
+аналітичний розвязок для першого доданку інтегралу \eqref{eq:i5series}.
+
 \textcolor{blue}{ \begin{equation*} \begin{aligned}
 I_5 = \frac{R}{\pi}
 \sqrt{\frac{ct-z}{ct+z}}
@@ -249,7 +252,7 @@ I_5 = \frac{R}{\pi}
 \sqrt{(\rho + R)^2 - (c^2t^2 - z^2)}}
 {\rho R \sqrt{c^2t^2 - z^2}}
 \end{aligned}  \end{equation*} }
-
+%
 \textcolor{blue}{ \begin{equation*} \begin{aligned}
 I_5 = \frac{1}{\pi}
 \sqrt{\frac{c^2t^2-z^2}{(ct+z)^2}}
@@ -259,10 +262,7 @@ I_5 = \frac{1}{\pi}
 \end{aligned}  \end{equation*} }
 
 \begin{equation} \begin{aligned} \label{eq:i50}
-\left. I_5 \right|^{m=0} = \frac{\sqrt{(c^2t^2 - z^2) - (\rho-R)^2} 
-\sqrt{(\rho+R)^2 - (c^2t^2 - z^2)}}
-{\pi \rho (ct+z)}
-\end{aligned}  \end{equation}
-ho+R)^2 - (c^2t^2 - z^2)}}
+\left. I_5 \right|^{m=0} = \frac
+{\sqrt{(c^2t^2 - z^2) - (\rho-R)^2}\sqrt{(\rho+R)^2 - (c^2t^2 - z^2)}}
 {\pi \rho (ct+z)}
 \end{aligned}  \end{equation}

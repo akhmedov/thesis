@@ -446,42 +446,20 @@ I_1 \left\{ S_2 \right\} = \frac{\rho^2 + R^2}{4 \pi \rho^2} \arccos
 енергетичної діаграми спрямованості мало інформативне дослідження нелінійних
 ефектів - в даній роботі важливим є енергетичний розподіл в ближній зоні.
 
-Розглянемо густину енергії електромагнітного поля $ \vect{E} $ та 
-$ \vect{H} $, збудженого пласким диском електричного струму з довільною 
-часовою залежністю $ f(t) $
-
-\begin{equation}
-W \left( \vect{r} \right) = \int_0^\infty \dotprod{\vect{E}}{\vect{H}} dt.
-\end{equation}
-
-Значення напруженостей поля $ \vect{E} $ та $ \vect{H} $ можуть бути 
-враховані чисельно за допомогою інтегралу Дюамеля \eqref{eq:duhamel},
-використовуючи перехідну функцію знайдену в розділі \ref{sec:tranc_resp}.
-Запишемо енергетичний розподіл поля, користуючись шматочним визначенням 
-перехідної функції на області визначення:
-
-\begin{equation}
-W = \int_0^\infty 
-\dotprod{\vect{E}\left\{S_1 \cup S_2\right\}}
-{\vect{H}\left\{S_1 \cup S_2 \right\}} dt + 
-\int_0^\infty \dotprod{\vect{E}\{S_3\}}{\vect{H}\{S_3\}} dt.
-\end{equation}
-
-Так як, $ \vect{E}\left\{S_1 \cup S_2\right\} $ та  
-$ \vect{H}\left\{S_1 \cup S_2 \right\}$ пропорційні, 
-а $ \vect{E}\{S_3\} = 0 $ можемо звільнитись від магнітних компонент 
-поля, що спростить числові розрахунки:
-
-\begin{equation}
-W = \int_0^\infty \dotprod{\vect{E}}{\vect{H}} dt =
-\sqrt{\frac{\epsilon_0 \epsilon}{\mu_0 \mu}} \int_0^\infty \vect{E}^2 dt.
-\end{equation}
-
-Також, користуючись властивостями перехідної функції можемо обмежити
-область інтегрування за часом, а також спростити під-інтегральний вираз
+Розглянемо густину енергії електромагнітного поля $ \vect{E} $, збудженого 
+пласким диском електричного струму з довільною часовою залежністю $ f(t) $ за 
+визначенням \cite{imp:Schantz2018}, нехтуючи при цьому енергетичним внеском 
+$ \vect{H} $ спираючись на відсутність нелінійного внеску останньої.
 
 \begin{equation} \label{eq:energy}
-W = \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}}
+W = \frac{\epsilon_0}{2} \int_0^\infty \vect{E}^2 dt
+\end{equation}
+
+Користуючись властивостями перехідної функції можемо обмежити
+область інтегрування за часом, а також спростити підінтегральний вираз
+
+\begin{equation} \label{eq:energy}
+W = \frac{\epsilon_0}{2} \frac{\mu_0 \mu}{\epsilon_0 \epsilon}
 \int_{ct_1}^{c\tau_0+ct_3} \left( E_\rho^2 + E_\varphi^2 \right) dt
 \end{equation}
 
@@ -494,7 +472,7 @@ W = \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}}
 \end{aligned} \end{equation*} }
 %
 \begin{equation} \label{eq:energy_tr}
-W_{tr} = \frac{A_0^2}{4} \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}}
+W_{tr} = \frac{\epsilon_0 A_0^2}{8} \frac{\mu_0 \mu}{\epsilon_0 \epsilon}
 \int_{ct_1}^{ct_3}  \Big( I_1^2 \cos^2 \varphi + 
 \left( I_2 - I_1 \right)^2 \sin^2 \varphi \Big) dt.
 \end{equation}
@@ -505,9 +483,8 @@ W_{tr} = \frac{A_0^2}{4} \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}}
 $ \left[ -1, 1 \right] $ та тривалістю $ \tau_0 $:
 
 \textcolor{blue}{ \begin{equation*}
-\left. W \right|^{\rho=0} = 
-\frac{A_0^2}{16} \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}}
-\Big( \sqrt{R^2+z^2} - z \Big)
+\left. W \right|^{\rho=0} = \frac{\epsilon_0 A_0^2}{32} 
+\frac{\mu_0 \mu}{\epsilon_0 \epsilon} \Big( \sqrt{R^2+z^2} - z \Big)
 \end{equation*} }
 %
 \textcolor{blue}{ \begin{equation*}
@@ -517,7 +494,7 @@ $ \left[ -1, 1 \right] $ та тривалістю $ \tau_0 $:
 %
 \begin{equation}
 0 \leq W_{max} \left( \tau_0, f(t), \vect{r} \right) < 
-\frac{\tau_0 R A_0^2}{16} \sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}},
+\frac{\epsilon_0 \tau_0 R A_0^2}{32} \frac{\mu_0 \mu}{\epsilon_0 \epsilon},
 \end{equation}
 %
 де $ W_{max} $ - густина енергії, $ \tau_0 $ - ефективна тривалість імпульсу 
@@ -528,6 +505,15 @@ $ \left[ -1, 1 \right] $ та тривалістю $ \tau_0 $:
 Будуватимемо поперечні зрізи значень енергій
 для різних довжин імпульсів та для різних відстаней від джерела.
 Для збереження кутового розміру зрізів візьмемо його $ z + 2R $.
+
+\textcolor{red}{ TODO: побудувати поздовжні та поперечні енергетичні зрізи
+для декількох $ f(t) $ }
+
+\textcolor{red}{ Як видно з рисунків, форма збудження має значний вплив на 
+розподіл енергії у ближній зоні, де вклад нелінійної поправки найбільший, а 
+отже обмежувати область врахування вторинного струму на основі енергетичних 
+характеристик породжувальної хвилі треба з урахуванням часової залежності 
+струму }
 
 \textcolor{red}{ TODO: можна строго порівняти діаграму спрямованості 
 отриману в часовій області з діаграмою Баума, а також оцінити її відхилення 
@@ -586,33 +572,33 @@ e^{-im\varphi} \left( i  m \frac{J_m (\nu \rho)}{\rho \sqrt{\nu}}
 вигляді комплексної експоненти.
 
 \textcolor{blue} { \begin{equation*} \begin{aligned}
-\int_{0}^{2 \pi} d \varphi e^{-im \varphi} \partder{P_\rho^\prime}{t} = 
-\frac{ {A_0}^3 \xi_3 }{ 8 } \int_{0}^{2\pi} d \varphi
-e^{-im\varphi} \left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} 
-\left( 3 {I_1}^2 \partder{I_1}{t} \cos^3 \varphi + \right. \\
-+ \left. ( I_2 - I_1 ) \cos \varphi \sin^2 \varphi \left( 
-\partder{I_1}{t} ( I_2 - I_1 ) + 2 I_1 \left( \partder{I_2}{t} - 
-\partder{I_1}{t} \right) \right) \right) = \\
-= \frac{ {A_0}^3 \xi_3 }{ 8 } 
-\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2}
-\left( \frac{3 \pi}{4} {I_1}^2 \partder{I_1}{t} \left( \delta_{m,-3} - 
-\delta_{m,3} + 3 \delta_{m,-1} + 3 \delta_{m,1} \right) + \right. \\
-+ \frac{\pi }{4} \left. ( I_2 - I_1 ) \left( \delta_{m,1} - 
-\delta_{m,-3} + \delta_{m,-1} - \delta_{m,3} \right) \left( 
-\partder{I_1}{t} ( I_2 - I_1 ) + 2 I_1 \left( \partder{I_2}{t} - 
-\partder{I_1}{t} \right) \right) \right)
-\end{aligned} \end{equation*} }
-%
-\textcolor{blue} { \begin{equation*} \begin{aligned}
-\int_{0}^{2\pi} e^{-i m \varphi} \cos^3 \varphi d \varphi = 
+\int_0^{2\pi} e^{-i m \varphi} \cos^3 \varphi d \varphi = 
 \frac{\pi}{4} \delta_{m,-3} + \frac{\pi}{4} \delta_{m,3} + 
 \frac{3 \pi}{4} \delta_{m,-1} + \frac{3 \pi}{4} \delta_{m,1}
 \end{aligned} \end{equation*} }
 %
 \textcolor{blue} { \begin{equation*} \begin{aligned}
-\int_{0}^{2\pi} e^{-i m \varphi} \cos \varphi \sin^2 \varphi d \varphi = 
-\frac{\pi \delta_{m,1} }{4} - \frac{\pi \delta_{m,-3} }{4} + 
-\frac{\pi \delta_{m,-1} }{4} - \frac{\pi \delta_{m,3} }{4}
+\int_0^{2\pi} e^{-i m \varphi} \cos \varphi \sin^2 \varphi d \varphi = 
+\frac{\pi \delta_{m,1} }{4} + \frac{\pi \delta_{m,-1} }{4} - 
+\frac{\pi \delta_{m,-3} }{4} - \frac{\pi \delta_{m,3} }{4}
+\end{aligned} \end{equation*} }
+%
+\textcolor{blue} { \begin{equation*} \begin{aligned}
+\int_{0}^{2 \pi} d \varphi e^{-im \varphi} \partder{P_\rho^\prime}{t} = 
+\frac{ {A_0}^3 \epsilon_0 \chi_e^{(3)} }{ 8 } \int_{0}^{2\pi} d \varphi
+e^{-im\varphi} \left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} 
+\left( 3 {I_1}^2 \partder{I_1}{t} \cos^3 \varphi + \right. \\
++ \left. ( I_2 - I_1 ) \cos \varphi \sin^2 \varphi \left( 
+\partder{I_1}{t} ( I_2 - I_1 ) + 2 I_1 \left( \partder{I_2}{t} - 
+\partder{I_1}{t} \right) \right) \right) = \\
+= \frac{ {A_0}^3 \epsilon_0 \chi_e^{(3)} }{ 8 } 
+\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2}
+\left( \frac{3 \pi}{4} {I_1}^2 \partder{I_1}{t} \left( \delta_{m,-3} + 
+\delta_{m,3} + 3 \delta_{m,-1} + 3 \delta_{m,1} \right) + \right. \\
++ \frac{\pi }{4} \left. ( I_2 - I_1 ) \left( \delta_{m,1} + 
+\delta_{m,-1} - \delta_{m,-3} - \delta_{m,3} \right) \left( 
+\partder{I_1}{t} ( I_2 - I_1 ) + 2 I_1 \left( \partder{I_2}{t} - 
+\partder{I_1}{t} \right) \right) \right)
 \end{aligned} \end{equation*} }
 %
 \begin{equation*} \begin{aligned}
@@ -620,10 +606,10 @@ e^{-im\varphi} \left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2}
 e^{-im \varphi} \partder{P_\rho^\prime}{t} = 
 \frac{ {A_0}^3 \epsilon_0 \chi_e^{(3)}}{ 64 } 
 \left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} \cdot \\ 
-\cdot \left( 3 {I_1}^2 \partder{I_1}{t} \left( \delta_{m,-3} - 
+\cdot \left( 3 {I_1}^2 \partder{I_1}{t} \left( \delta_{m,-3} + 
 \delta_{m,3} + 3 \delta_{m,-1} + 3 \delta_{m,1} \right) + \right. \\
-+ \left. ( I_2 - I_1 ) \left( \delta_{m,1} - 
-\delta_{m,-3} + \delta_{m,-1} - \delta_{m,3} \right) \left( 
++ \left. ( I_2 - I_1 ) \left( \delta_{m,1} + \delta_{m,-1} - 
+\delta_{m,-3} - \delta_{m,3} \right) \left( 
 \partder{I_1}{t} ( I_2 - I_1 ) + 2 I_1 \left( \partder{I_2}{t} - 
 \partder{I_1}{t} \right) \right) \right)
 \end{aligned} \end{equation*}
@@ -631,31 +617,32 @@ e^{-im \varphi} \partder{P_\rho^\prime}{t} =
 \textcolor{blue} { \begin{equation*} \begin{aligned}
 \int_{0}^{2\pi} e^{-i m \varphi} \sin^3 \varphi d \varphi = 
 \frac{3 \pi i}{4} \delta_{m,-1} - \frac{3 \pi i}{4} \delta_{m,1} - 
-\frac{\pi i}{4} \delta_{m,-3} - \frac{\pi i}{4} \delta_{m,3}
+\frac{\pi i}{4} \delta_{m,-3} + \frac{\pi i}{4} \delta_{m,3}
 \end{aligned} \end{equation*} }
 %
 \textcolor{blue} { \begin{equation*} \begin{aligned}
-\int_{0}^{2\pi} e^{-i m \varphi} \sin \varphi \cos^2 \varphi d \varphi = 
-\frac{\pi i }{4} \delta_{m,-3} - \frac{\pi i }{4} \delta_{m,1} + 
-\frac{\pi i }{4} \delta_{m,3} + \frac{\pi i }{4} \delta_{m,-1}
+\int_0^{2\pi} e^{-i m \varphi} \sin \varphi \cos^2 \varphi d \varphi = 
+\frac{\pi i }{4} \delta_{m,-1} - \frac{\pi i }{4} \delta_{m,1} -
+\frac{\pi i }{4} \delta_{m,3} + \frac{\pi i }{4} \delta_{m,-3}
 \end{aligned} \end{equation*} }
 %
 \textcolor{blue} { \begin{equation*} \begin{aligned}
 \int_{0}^{2 \pi} d \varphi e^{-im \varphi} \partder{P_\varphi^\prime}{t} = \\
-= - \frac{ {A_0}^3 \xi_3 }{ 8 } \int_{0}^{2 \pi} d \varphi e^{-im \varphi}
+= - \frac{ {A_0}^3 \epsilon_0 \chi_e^{(3)} }{ 8 } 
+\int_{0}^{2 \pi} d \varphi e^{-im \varphi}
 \left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} \left(
 3 ( I_2 - I_1 )^2 \left( \partder{I_2}{t} - \partder{I_1}{t} \right)
 \sin^3 \varphi \right. + \\
 + \left. I_1 \sin \varphi \cos^2 \varphi \left( 
 I_1 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) + 
 2 \partder{I_1}{t} (I_2 - I_1) \right) \right) = 
-- \frac{ {A_0}^3 \xi_3 }{ 8 V } \cdot \\ 
+- \frac{ {A_0}^3 \epsilon_0 \chi_e^{(3)} }{ 8 } \cdot \\ 
 \cdot \left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} \left(
 \frac{3 \pi i}{4} ( I_2 - I_1 )^2 \left( \partder{I_2}{t} - 
 \partder{I_1}{t} \right) \left( 3 \delta_{m,-1} - 3 \delta_{m,1} - 
-\delta_{m,-3} - \delta_{m,3} \right) \right. + \\
-+ \left. \frac{\pi i}{4} I_1 \left(  \delta_{m,-3} - \delta_{m,1} + 
-\delta_{m,3} + \delta_{m,-1} \right) \left( 
+\delta_{m,-3} + \delta_{m,3} \right) \right. + \\
++ \left. \frac{\pi i}{4} I_1 \left( \delta_{m,-1} - \delta_{m,1} - 
+\delta_{m,3} + \delta_{m,-3} \right) \left( 
 I_1 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) + 
 2 \partder{I_1}{t} (I_2 - I_1) \right) \right)
 \end{aligned} \end{equation*} }
@@ -667,9 +654,9 @@ e^{-im \varphi} \partder{P_\varphi^\prime}{t} =
 \left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2} \cdot \\ 
 \cdot \left( 3 ( I_2 - I_1 )^2 \left( \partder{I_2}{t} - 
 \partder{I_1}{t} \right) \left( 3 \delta_{m,-1} - 3 \delta_{m,1} - 
-\delta_{m,-3} - \delta_{m,3} \right) \right. + \\
-+ \left. I_1 \left(  \delta_{m,-3} - \delta_{m,1} + 
-\delta_{m,3} + \delta_{m,-1} \right) \left( 
+\delta_{m,-3} + \delta_{m,3} \right) \right. + \\
++ \left. I_1 \left( \delta_{m,-1} - \delta_{m,1} - 
+\delta_{m,3} + \delta_{m,-3} \right) \left( 
 I_1 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) + 
 2 \partder{I_1}{t} (I_2 - I_1) \right) \right)
 \end{aligned} \end{equation*}
@@ -678,114 +665,396 @@ I_1 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) +
 модовий розподіл вторинного струму.  Також помічаємо, що у розподілах присутні 
 лише моді з номерами $ \pm 1 $ та $ \pm 3 $ - вклад вторинного струму в інші
 моди відсутній. Випишемо окрему кожну з ненульових мод розподілу вторинного 
-струму.
+струму. Для цього введемо нові змінні:
+
+\begin{equation} \begin{aligned} \label{eq:alpha}
+\alpha = 3 {I_1}^2 \partder{I_1}{t}
+\end{aligned} \end{equation}
+
+\begin{equation} \begin{aligned} \label{eq:beta}
+\beta = ( I_2 - I_1 ) \left( \partder{I_1}{t} ( I_2 - I_1 ) + 
+2 I_1 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) \right)
+\end{aligned} \end{equation}
+
+\begin{equation} \begin{aligned} \label{eq:gamma}
+\gamma = 3 ( I_2 - I_1 )^2 \left( \partder{I_2}{t} - \partder{I_1}{t} \right)
+\end{aligned} \end{equation}
+
+\begin{equation} \begin{aligned} \label{eq:lambda}
+\lambda = I_1^2 \left( \partder{I_2}{t} - 
+\partder{I_1}{t} \right) + 2 I_1 \partder{I_1}{t} (I_2 - I_1)
+\end{aligned} \end{equation}
+
+Запишемо модовий розподіл струму через нові позначення, спростивши вираз 
+можна отримати:
 
 \textcolor{blue} { \begin{equation*} \begin{aligned}
 j_m = - \frac{\sqrt{\mu_0}}{2\pi} 
 \int_0^{2\pi} d \varphi \int \limits_0^\infty \rho d \rho
 e^{-im\varphi} \left( i m \frac{J_m (\nu \rho)}{\rho \sqrt{\nu}}
-\partder{j_\rho^\prime}{t} + \sqrt{\nu}
+j_\rho^\prime + \sqrt{\nu}
 \frac{J_{m-1} (\nu \rho) - J_{m+1} (\nu \rho)}{2}
-\partder{j_\varphi^\prime}{t} \right)
+j_\varphi^\prime \right)
 \end{aligned} \end{equation*} }
-
-\begin{equation*} \begin{aligned}
-j_1 = - \frac{i A_0^3 \sqrt{\mu_0} \epsilon_0 \chi_e^{(3)}}{64}
+%
+\textcolor{blue} { \begin{equation*} \begin{aligned}
+j_m = - \frac{\sqrt{\mu_0}}{2\pi} 
+\int_0^{2\pi} d \varphi \int \limits_0^\infty \rho d \rho 
+e^{-im\varphi} \cdot \\ \cdot 
+\left( i \sqrt{\nu} \frac{J_{m-1} (\nu \rho) + J_{m+1} (\nu \rho)}{2}
+j_\rho^\prime + \sqrt{\nu} 
+\frac{J_{m-1} (\nu \rho) - J_{m+1} (\nu \rho)}{2}
+j_\varphi^\prime \right)
+\end{aligned} \end{equation*} }
+%
+\textcolor{blue} { \begin{equation*} \begin{aligned}
+j_m = - \frac{\sqrt{\mu_0} \sqrt{\nu}}{4\pi} 
+\int_0^{2\pi} d \varphi \int \limits_0^\infty \rho d \rho 
+e^{-im\varphi} \Big(
+J_{m-1} (\nu \rho) ( i j_\rho^\prime + j_\varphi^\prime ) +
+J_{m+1} (\nu \rho) ( i j_\rho^\prime - j_\varphi^\prime ) \Big)
+\end{aligned} \end{equation*} }
+%
+\textcolor{red} { \begin{equation} \begin{aligned}
+j_1 = \frac{i A_0^3 \sqrt{\mu_0} \epsilon_0 \chi_e^{(3)} \sqrt{\nu}}{128}
 \left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^{3/2}
-\int_0^\infty \rho d \rho
-\end{aligned} \end{equation*}
+\int_0^\infty \rho d \rho \cdot \\ \cdot
+\Big( J_0 (\nu \rho) ( 3 \alpha + \beta + 3 \gamma + \lambda) - J_2 (\nu \rho)
+( 3 \alpha + \beta - 3 \gamma - \lambda ) \Big)
+\end{aligned} \end{equation} }
+%
+\textcolor{blue} { \begin{equation*} \begin{aligned}
+j_{-1} = \frac{i A_0^3 \sqrt{\mu_0} \epsilon_0 \chi_e^{(3)}}{64}
+\left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^{3/2}
+\int_0^\infty \rho d \rho \cdot \\ \cdot
+\Big( \frac{J_1 (\nu \rho)}{\rho \sqrt{\nu}}
+( 3 \alpha + \beta ) - \sqrt{\nu}
+\frac{J_0 (\nu \rho) - J_2 (\nu \rho)}{2}
+( 3 \gamma + \lambda ) \Big)
+\end{aligned} \end{equation*} }
+%
+\textcolor{blue} { \begin{equation*} \begin{aligned}
+j_{-1} = \frac{i A_0^3 \sqrt{\mu_0} \epsilon_0 \chi_e^{(3)} \sqrt{\nu}}{128}
+\left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^{3/2}
+\int_0^\infty \rho d \rho \cdot \\ \cdot
+\Big( J_0 (\nu \rho) ( 3 \alpha + \beta - 3 \gamma - \lambda ) + 
+J_2 (\nu \rho) ( 3 \alpha + \beta + 3 \gamma + \lambda ) \Big)
+\end{aligned} \end{equation*} }
+%
+\textcolor{red} { \begin{equation} \begin{aligned}
+j_{-1} = j_{1}
+\end{aligned} \end{equation} }
+%
+\textcolor{red} { \begin{equation} \begin{aligned}
+j_3 = \frac{i A_0^3 \sqrt{\mu_0} \epsilon_0 \chi_e^{(3)}}{64}
+\left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^{3/2}
+\int_0^\infty \rho d \rho \cdot \\ \cdot
+\left( 3 m \frac{J_3 (\nu \rho)}{\rho \sqrt{\nu}}
+( \alpha - \beta ) - \sqrt{\nu}
+\frac{J_2 (\nu \rho) - J_4 (\nu \rho)}{2}
+( \gamma - \lambda ) \right)
+\end{aligned} \end{equation} }
+%
+\textcolor{blue} { \begin{equation*} \begin{aligned}
+j_{-3} = - \frac{i A_0^3 \sqrt{\mu_0} \epsilon_0 \chi_e^{(3)}}{64}
+\left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^{3/2}
+\int_0^\infty \rho d \rho \cdot \\ \cdot
+\left( 3 m \frac{J_3 (\nu \rho)}{\rho \sqrt{\nu}}
+( \alpha - \beta ) - \sqrt{\nu}
+\frac{J_2 (\nu \rho) - J_4 (\nu \rho)}{2}
+( \gamma - \lambda ) \right)
+\end{aligned} \end{equation*} }
+%
+\textcolor{blue} { \begin{equation*} \begin{aligned}
+j_{-3} = - \frac{i A_0^3 \sqrt{\mu_0} \epsilon_0 \chi_e^{(3)} \sqrt{\nu}}{128}
+\left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^{3/2}
+\int_0^\infty \rho d \rho \cdot \\ \cdot
+\Big( J_2 (\nu \rho) ( \alpha - \beta - \gamma + \lambda) + 
+J_4 (\nu \rho) ( \alpha - \beta + \gamma - \lambda) \Big)
+\end{aligned} \end{equation*} }
+%
+\textcolor{red} { \begin{equation} \begin{aligned}
+j_{-3} = - j_{3}
+\end{aligned} \end{equation} }
 
+\textcolor{red}{ TODO: побудувати залежність $ j_m / vt $ від 
+$ v^2t^2 - z^2 $ та $ \nu $ для всіх $ m $ у вигляді heatmaps. }
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Чсловий розрахунок нелінійної поправки}
+Для чисельного розрахунку невласного інтегралу по $ \rho $, що містяться в 
+модових розподілах струму $ j_m $ зручно звузити межі інтегрування 
+користуючись областю визначення під-інтегральної функцій $ S_2 $:
 
-Тепер коли визначено джерело можна застосувати метод еволюційних рівнянь.
-Почнемо з розв'язку рівняння Клейна-Гордона.
+\textcolor{blue} { \begin{equation*} \begin{aligned}
+(\rho - R)^2 \leq v^2t^2 - z^2 \leq (\rho + R)^2
+\end{aligned} \end{equation*} }
 %
-\begin{equation*}
-\frac{\epsilon \mu}{ \sqrt{\epsilon_0 \mu_0}} 
-\frac{\partial^2 h_m}{\partial t^2} - \frac{\partial^2 h_m}{\partial z^2} + 
-\nu^2 h_m = j_m (t',z'; \nu)
-\end{equation*}
+\textcolor{blue} { \begin{equation*} \begin{aligned}
+| \rho - R | - \sqrt{v^2t^2 - z^2} \leq 0 \leq \rho + R - \sqrt{v^2t^2 - z^2}
+\end{aligned} \end{equation*} }
 %
-Коефіцієнт $ h_m $ доведеться розраховувати чисельно за формолою
+\textcolor{blue} { \begin{equation*} \begin{aligned}
+- R - \sqrt{v^2t^2 - z^2} \leq - \rho \leq R - \sqrt{v^2t^2 - z^2}
+\end{aligned} \end{equation*} }
 %
-\begin{equation*}
-h_m (z, t; \nu) = \int_{0}^{\infty} \int_{0}^{\infty}
-j_m (t',z'; \nu) G(t,t',z,z') dz' dt'
-\end{equation*}
+\textcolor{blue} { \begin{equation*} \begin{aligned}
+R + \sqrt{v^2t^2 - z^2} \geq \rho \geq - R + \sqrt{v^2t^2 - z^2}
+\end{aligned} \end{equation*} }
 %
-де 
-%
-\begin{equation*}
-G(t,t',z,z') = \frac{\mathit{V}}{2} H \left( \mathit{V} (t-t') - (z-z') \right)
-J_0 \left( \nu \sqrt{\mathit{V}^2 (t-t')^2 - (z-z')^2} \right)
-\end{equation*}
-%
-З $ h_m $ можна отримати інші магнітні коефіцієнти
-%
-\begin{equation*}
-I_m^h = \partial_z (h_m)
-\end{equation*}
-%
-\begin{equation*}
-V_m^h = - \mu \partial_{ct} (h_m)
-\end{equation*}
-%
-Аналогічно для продольного коєфіціенту електричного поля
-%
+\begin{equation} \begin{aligned}
+\left| \sqrt{v^2t^2 - z^2} - R \right| \leq \rho \leq \sqrt{v^2t^2 - z^2} + R.
+\end{aligned} \end{equation}
+
+Задля відокремлення розмірних коефіцієнтів перевизначимо модовий розподіл 
+струму:
+
+\begin{equation} \begin{aligned}
+j_m = - \frac{i A_0^3 \sqrt{\mu_0} \epsilon_0 \chi_e^{(3)} \sqrt{\nu}}{128}
+\left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^{3/2} \hat{j_m}.
+\end{aligned} \end{equation}
+
+Так як поздовжня компонента вторинного струму $ J_z $ відсутня, рівняння 
+Клейна-Гордона відносно поздовжнього електричного еволюційного коефіцієнту 
+є однорідним, що згідно методом функції Рімана дає нульовий розв'язок для
+цього коефіцієнту. Отже, як і у лінійному наближенні, електромагнітне поле 
+з урахуванням ефектів слабкої нелінійності залишається ТЕ типу:
+
 \textcolor{blue}{ \begin{equation*}
 - \partial_{ct}(\mu I_n^e) - \partial_z V_n^e + \chi^2 e_n = 0
 \end{equation*} }
 %
 \textcolor{blue}{ \begin{equation*}
-\epsilon \mu \partial_{ct} \left( \partial_{ct} e_n + 
-\frac{\sqrt{\mu_0}}{2 \pi} \int_0^{2\pi} d \varphi 
-\int_0^{\infty} \rho d \rho \Phi_n^* (\chi) J_z \right) - 
-\partial^2_z e_n + \chi^2 e_n = 0
-\end{equation*} }
-%
-\begin{equation*}
 \frac{\epsilon \mu}{ \sqrt{\epsilon_0 \mu_0}} 
 \frac{\partial^2 e_n}{\partial t^2} - 
 \frac{\partial^2 e_n}{\partial z^2} + \chi^2 e_n = 
 - \frac{\sqrt{\mu_0}}{2 \pi c} 
 \int_0^{2\pi} d \varphi 
-\int_0^{\infty} \rho d \rho \Phi_n^* (\chi) \partder{J_z}{t}
-\end{equation*}
-%
-Поздовжний вторинний електричний струм рівний нулю, тому рівняння 
-Клейна-Гордона для $ e_n (z, t; \chi) $ є однорідним та має нульовий розвязок.
-%
-\begin{equation*}
-e_n (z, t; \chi) = \iint_S j_n (t',z', \chi) G(t,t',z,z') dt' dz' = 0
-\end{equation*}
-%
-Також чисельно знайдемо розвязки еволюційних рівнянь, що залишились.
+\int_0^\infty \rho d \rho \Phi_n^* (\chi) \partder{J_z}{t} = 0
+\end{equation*} }
 %
 \textcolor{blue}{ \begin{equation*}
-\partial_{ct} (\epsilon e_n) = - I_n^e - 
+e_n (z, t; \chi) = \iint_S j_n (t',z', \chi) G(t,t',z,z') dt' dz' = 0
+\end{equation*} }
+%
+\textcolor{blue}{ \begin{equation*}
+I_n^e = - \partial_{ct} (\epsilon e_n) - 
 \frac{\sqrt{\mu_0}}{2 \pi} \int_0^{2\pi} d \varphi 
 \int_0^{\infty} \rho d \rho \Phi_n^* (\chi) J_z
 \end{equation*} }
 %
+\textcolor{blue}{ \begin{equation*}
+\partial_{z} e_n = V_n^e
+\end{equation*} }
+%
+\begin{equation} \label{eq:e_evolution}
+e_n (z, t; \nu) = V_n^e (z, t; \nu) = I_n^e (z, t; \nu) = 0
+\end{equation}
+
+Пошук виразів для еволюційних коефіцієнтів починаємо з поздовжнього 
+магнітного коефіцієнту $ h_m $. Для розглянутої фізичної моделі ізотропного
+та стаціонарного середовища без втрат коефіцієнт $ h_m $ є розв'язком 
+рівняння Клейна-Гордона. В лінійному випадку це рівняння містить електричну 
+і магнітну сприйнятливості; для нелінійної нотації скористаємось поняттям 
+ефективної сприйнятливості та методикою запропонованою R. Ziolkowski
+\cite{imp:Ziolkowski1993}.
+
+\begin{equation} \label{eq:klein_gordon_nl}
+\frac{(\epsilon + \chi_e^{(3)}) \mu}{c^2} 
+\frac{\partial^2 h_m}{\partial t^2} - 
+\frac{\partial^2 h_m}{\partial z^2} + 
+\nu^2 h_m = j_m (t',z'; \nu),
+\end{equation}
+%
+де $ j_m (t',z'; \nu) $ - мода $ m $ дискретного розподілу стороннього 
+джерела, $ \chi_e^{(3)} $ - відносна нелінійна електрична сприйнятливість 
+середовища третього порядку, а величина $ \epsilon + \chi_e^{(3)} $ в 
+літературі зустрічається, як ефективна нелінійна Керрівська сприйнятливість 
+\cite{imp:Ziolkowski1993}. Тоді, розв'язком \eqref{eq:klein_gordon_nl} за 
+методом функції Рімана буде \eqref{eq:klein_gordon_sol} з ядром у вигляді 
+функції Рімана
+
 \begin{equation*}
-I_n^e = - \partial_{ct} (\epsilon e_n) - 
-\frac{\sqrt{\mu_0}}{2 \pi} \int_0^{2\pi} d \varphi 
-\int_0^{\infty} \rho d \rho \Phi_n^* (\chi) J_z
+G(t,t',z,z') = \frac{v}{2} H \left( v (t-t') - (z-z') \right)
+J_0 \left( \nu \sqrt{v^2 (t-t')^2 - (z-z')^2} \right),
 \end{equation*}
 %
-\begin{equation*}
-\partial_{z} e_n = V_n^e
-\end{equation*}
+де $ v $ - швидкість світла в середовищі з урахуванням нелінійного 
+Керрівського сповільнення
+
+\begin{equation}
+v = \frac{c}{\sqrt{ \left(\epsilon + \chi_e^{(3)}\right) \mu}} = 
+\left( \epsilon_0 
+\left( \epsilon + \chi_e^{(3)} \right) \mu_0 \mu \right)^{-1/2}.
+\end{equation}
+
+Для отримання нелінійних поправок до напруженості електричного поля достатньо 
+поперечного модового коефіцієнту $ V_m^h $, який лінійно залежить від $ h_m $
+
+\textcolor{blue}{ \begin{equation*} 
+h_m (z, t; \nu) = \iint_S j_m (t',z') G(t,t',z,z') dt' dz',
+\end{equation*} }
+%
+\textcolor{blue}{ \begin{equation*}
+V_m^h = - \mu \partial_{ct} (h_m)
+\end{equation*} }
+%
+\textcolor{blue} { \begin{equation*} \begin{aligned} 
+V_m^h = - \mu \partial_{ct} \int_0^\infty \int_0^\infty j_m (t',z') G dz' dt'
+\end{aligned} \end{equation*} }
+%
+\textcolor{blue} { \begin{equation*} \begin{aligned} 
+V_m^h = - \frac{v \mu}{2c}
+\partder_{t} \int_0^\infty dz' \int_0^\infty 
+dt' H \left( v (t-t') - (z-z') \right) \cdot \\
+\cdot J_0 \left( \nu \sqrt{v^2 (t-t')^2 - (z-z')^2} \right) j_m (t',z')
+\end{aligned} \end{equation*} }
+%
+\textcolor{blue} { \begin{equation*} \begin{aligned} 
+V_m^h = - \frac{1}{2} \sqrt{\frac{\mu}{\epsilon + \chi_e^{(3)}}}
+\partder_{t} \int_0^\infty dz' \int_0^\infty 
+dt' H \left( v (t-t') - (z-z') \right) \cdot \\
+\cdot J_0 \left( \nu \sqrt{v^2 (t-t')^2 - (z-z')^2} \right) j_m (t',z')
+\end{aligned} \end{equation*} }
+%
+\textcolor{blue} { \begin{equation*} \begin{aligned} 
+H \left( v (t-t') - z + z' \right) = 
+H \left( - vt' - ( z - vt - z' ) \right) = \\
+= H \left( vt' + ( z - vt - z' ) \right) = 
+H \left( vt' - ( vt - z + z' ) \right)
+\end{aligned} \end{equation*} }
+%
+\begin{equation} \begin{aligned} 
+V_m^h = \frac{i A_0^3 \epsilon_0 \chi_e^{(3)}}{2^8}
+\sqrt{\frac{\mu_0 \mu}{\epsilon + \chi_e^{(3)}}} 
+\left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^{3/2} \sqrt{\nu} 
+\cdot \\ \cdot \partder{}{t} \int_0^\infty dz' \int_0^{vt - z + z'} dt'
+J_0 \left( \nu \sqrt{v(t-t')^2 - (z-z')^2} \right) \hat{j_m} (vt',z')
+\end{aligned} \end{equation}
+
+Тепер, користуючись правилом інтегрування Лейбніца, спростимо отриманий 
+вираз взявши аналітично похідну за часом:
 %
 \textcolor{blue} { \begin{equation*} \begin{aligned}
+\partder{}{\tau} 
+J_0 \left( \nu \sqrt{\Delta \tau^2 - \Delta z^2} \right) = 
+- \nu \Delta \tau 
+\frac{J_1 \left( \nu \sqrt{\Delta \tau^2 - \Delta z^2} \right)}
+{\sqrt{\Delta \tau^2 - \Delta z^2}}
+\end{aligned} \end{equation*} }
+%
+\textcolor{blue} { \begin{equation*} \begin{aligned}
+\partder{}{\theta} \int_{a(\theta)}^{b(\theta)} f(x,\theta) dx = 
+\int_{a(\theta)}^{b(\theta)} \partder{f}{\theta} dx + 
+f\big( b(\theta), \theta \big) \partder{b}{\theta} -
+f\big( a(\theta), \theta \big) \partder{a}{\theta}
+\end{aligned} \end{equation*} }
+%
+\textcolor{blue} { \begin{equation*} \begin{aligned}
+\partder_{t} \int_0^{vt - z + z'} dt'
+J_0 \left( \nu \sqrt{v(t-t')^2 - (z-z')^2} \right) \hat{j_m} (vt',z') = \\
+= \int_0^{vt - z + z'} dvt' \partder{J_0}{vt} \hat{j_m} (vt',z') + \\
++ \left. 
+J_0 \left( \nu \sqrt{v(t-t')^2 - (z-z')^2} \right) \hat{j_m} (vt',z')
+\right|^{vt' = vt - z + z'}
+\end{aligned} \end{equation*} }
+%
+\textcolor{blue} { \begin{equation*} \begin{aligned}
+\left. v(t-t')^2 - (z-z')^2 \right|^{vt' = vt - z + z'} = 
+vt^2 - (vt - z + z')^2 - (z-z')^2 = \\
+= vt^2 - (vt - z)^2 + 2 z' (vt - z) + z'^2 - (z-z')^2 = \\
+= 2 vt z - z^2 + 2 z' (vt - z) + z'^2 - z^2 + 2 z z' - z'^2 = \\
+= 2 vt z - 2 z^2 + 2 z' (vt - z) + 2 z z' = 
+2 \big( z (vt - z) + z' (vt - z) + z z' \big) = \\
+2 \big( z (vt - z) + z' (vt - z + z) \big) = 
+2 \big( z (vt - z) + vt z' \big) = \\
+= 2 \big( vt z - z^2 + vt z' \big) = 2 vt (z + z') - 2 z^2
+\end{aligned} \end{equation*} }
+%
+\textcolor{blue} { \begin{equation*} \begin{aligned}
+\partder_{t} \int_0^{vt - z + z'} dt'
+J_0 \left( \nu \sqrt{v(t-t')^2 - (z-z')^2} \right) \hat{j_m} (vt',z') = \\
+= - \nu v (t-t') 
+\frac{J_1 \left( \nu \sqrt{v(t-t')^2 - (z-z')^2} \right)}
+{\sqrt{v(t-t')^2 - (z-z')^2}} + \\
++ J_0 \left( \nu \sqrt{2 vt (z + z') - 2 z^2} \right) 
+\hat{j_m} (vt - z + z',z')
+\end{aligned} \end{equation*} }
+%
+\begin{equation} \begin{aligned} \label{eq:vmh_nl}
+V_m^h = \frac{i A_0^3 \epsilon_0 \chi_e^{(3)}}{2^8}
+\sqrt{\frac{\mu_0 \mu}{\epsilon + \chi_e^{(3)}}} 
+\left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^{3/2} \sqrt{\nu}
+\int_0^\infty dz' \cdot \\ \cdot 
+\left\{ J_0 \left( \nu \sqrt{2 vt (z + z') - 2 z^2} \right) 
+\hat{j_m} (vt - z + z',z') - \right. \\ 
+\left. - \nu \int_0^\infty v (t-t') 
+\frac{J_1 \left( \nu \sqrt{v(t-t')^2 - (z-z')^2} \right)}
+{\sqrt{v(t-t')^2 - (z-z')^2}} \hat{j_m} (vt',z') dt' \right\}
+\end{aligned} \end{equation}
+
+\begin{equation} \begin{aligned} \label{eq:vmh_norm}
+V_m^h = \frac{i A_0^3 \epsilon_0 \chi_e^{(3)}}{2^8}
+\sqrt{\frac{\mu_0 \mu}{\epsilon + \chi_e^{(3)}}} 
+\left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^{3/2} 
+\sqrt{\nu} \hat{V_m^h}
+\end{aligned} \end{equation}
+
+Як видно з \eqref{eq:vmh_nl}, властивості симетрії відносно номеру моди 
+$ m $ у еволюційних коефіцієнтів зберігаються відносно модового розподілу 
+струму, тому:
+
+\begin{equation} \begin{aligned} \label{eq:vp1_vm1}
+V_1^h = V_{-1}^h
+\end{aligned} \end{equation}
+
+\begin{equation} \begin{aligned} \label{eq:vp3_vm3}
+V_3^h = - V_{-3}^h
+\end{aligned} \end{equation}
+
+\textcolor{red} { \begin{equation*} \begin{aligned}
+\frac{J_1 \left( \nu \sqrt{\Delta \tau^2 - \Delta z^2} \right)}
+{\nu \sqrt{\Delta \tau^2 - \Delta z^2}} =
+\frac{J_0 \left( \nu \sqrt{\Delta \tau^2 - \Delta z^2} \right) +
+J_2 \left( \nu \sqrt{\Delta \tau^2 - \Delta z^2} \right)}{2}
+\end{aligned} \end{equation*} }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Числовий розрахунок нелінійної поправки}
+
+Для розв'язання задачі випромінювання у вільний простір, згідно методу 
+модового базису, необхідно підставити в розклад компонентів поля знайдені 
+методом еволюційних рівнянь коефіцієнти. Як було доведено в 
+\eqref{eq:e_evolution}, всі електричні еволюційні коефіцієнти нульові,
+а отже за визначенням \textcolor{red}{[ТРЕТЯКОВ]} поздовжня електрична
+компонента відсутня, як і у лінійному випадку:
+
+\begin{equation} \label{eq:ez_kerr}
+E'_z = \frac{1}{\sqrt{\epsilon_0}} \sum_{n=-\infty}^{\infty}
+\int_0^\infty \chi^2 d \chi e_n (\nu | vt, z) \Phi_n (\nu | \rho, \phi) = 0,
+\end{equation}
+%
+де $ \Phi_n $ - базисна функція розкладу \textcolor{red}{[ТРЕТЯКОВ]}.
+
+З \eqref{eq:ez_kerr} пласка TE хвиля залишається TE при розповсюдженні 
+крізь нелінійне середовище при слабких ефектах самодії, навіть при 
+нестаціонарному збудженні.
+
+Поперечні електричні компоненти поля, в свою чергу, визначені наступним 
+розкладом \textcolor{red}{[ТРЕТЯКОВ]}:
+
+\begin{equation} \begin{aligned}
 \vect{E_\perp} = \frac{1}{\sqrt{\epsilon_0}} \left( 
 \sum \limits_{m=-\infty}^{\infty} \int \limits_{0}^{\infty} 
 d \nu V_m^h \crossprod{ \nabla_\perp \Psi_m }{ \vect{z_0} } +
 \sum \limits_{n=-\infty}^{\infty} \int \limits_{0}^{\infty}
-d \chi V_n^e \nabla_\perp \Phi_n \right)
-\end{aligned} \end{equation*} }
+d \chi V_n^e \nabla_\perp \Phi_n \right),
+\end{aligned} \end{equation}
+%
+де $ \Psi_m $ та $ \Phi_n  $ є базисні функції розкладу поля, а $ V_m^h $
+та $ V_n^e $ - еволюційні коефіцієнти, відомі з виразів \eqref{eq:e_evolution}
+та \eqref{eq:vmh_nl}. Користуючись властивостями симетрії мод 
+\eqref{eq:vp1_vm1} та \eqref{eq:vp3_vm3}, не важко помітити, що
+
 %
 \textcolor{blue} { \begin{equation*} \begin{aligned}
 \crossprod{ \nabla_\perp \Psi_m }{ \vect{z_0} } = 
@@ -794,760 +1063,357 @@ d \chi V_n^e \nabla_\perp \Phi_n \right)
 i m \vect{\rho_0} \frac{J_m (\nu \rho)}{ \rho \sqrt{\nu}} \right)
 \end{aligned} \end{equation*} }
 %
-Останнам кроком для отримання результату мала стати чисельна оцінка 
-інтегралів по безперервному модовому спектру $ \nu $. Для кожної з п'яти
-компонентів поля.
-%
-\begin{equation*} \begin{aligned} \label{eq:KerrAmendErhoInit}
-E_\rho = \frac{1}{\sqrt{\epsilon_0}} \sum_{m=-\infty}^{\infty} 
-i m e^{im\varphi} \int_{0}^{\infty} \frac{d \nu}{\sqrt{\nu}} 
-V_m^h \frac{J_m(\nu \rho)}{\rho}
-\end{aligned} \end{equation*}
-%
-\begin{equation*} \begin{aligned}
-E_\varphi = - \frac{1}{2 \sqrt{\epsilon_0}} \sum_{m=-\infty}^{\infty} 
-e^{im\varphi} \int_{0}^{\infty} \sqrt{\nu} d \nu 
-V_m^h \left( J_{m-1} (\nu \rho) - J_{m+1} (\nu \rho) \right)
-\end{aligned} \end{equation*}
-%
-\begin{equation*} 
-E_z = \frac{1}{\sqrt{\epsilon_0}} \sum_{n=-\infty}^{\infty}
-\int_0^\infty \chi^2 d \chi e_n \Phi_n = 0
-\end{equation*}
-%
-\textcolor{blue} { \begin{equation*}
-\vect{H_\perp} = \frac{1}{\sqrt{\mu_0}} \left( 
-\sum \limits_{m=-\infty}^{\infty} \int \limits_{0}^{\infty} d \nu
-I_m^h \nabla_\perp \Psi_m + \sum \limits_{n=-\infty}^{\infty}
-\int \limits_{0}^{\infty} d \chi I_n^e 
-\crossprod{\vect{z_0}}{\nabla_\perp \Phi_n} \right)
-\end{equation*} }
-%
 \textcolor{blue} { \begin{equation*} \begin{aligned}
-\nabla_\perp \Psi_m = e^{i m \varphi} \left( \vect{\rho_0} 
-\sqrt{\nu} \frac{ J_{m-1}(\nu \rho) - J_{m+1}(\nu \rho) }{2} +
-i m \vect{\varphi_0} \frac{J_m(\nu \rho)}{\sqrt{\nu} \rho} \right)
-\end{aligned} \end{equation*} }
-%
-\begin{equation*}
-H_\rho = \frac{1}{2 \sqrt{\mu_0}} \sum_{m=-\infty}^{\infty} 
-e^{im\varphi} \int_{0}^{\infty} \sqrt{\nu} d \nu
-I_m^h \left( J_{m-1}(\nu \rho) - J_{m+1}(\nu \rho) \right)
-\end{equation*}
-%
-\begin{equation*}
-H_\varphi = \frac{1}{\sqrt{\mu_0}} \sum_{m=-\infty}^{\infty} 
-i m e^{im\varphi} \int_{0}^{\infty} \frac{d \nu}{\sqrt{\nu}}
-I_m^h \frac{J_m(\nu \rho)}{\rho}
-\end{equation*}
-%
-\textcolor{blue} { \begin{equation*} 
-H_z = \frac{1}{\sqrt{\mu_0}} \sum_{m=-\infty}^{\infty}
-\int_0^\infty \nu^2 d \nu h_m \Psi_m
-\end{equation*} }
-%
-\textcolor{blue} { \begin{equation*} 
-\Psi_m (\nu) = \frac{J_m(\nu \rho)}{\sqrt{\nu}} e^{i m \varphi}
-\end{equation*} }
-%
-\begin{equation*} 
-H_z = \frac{1}{\sqrt{\mu_0}} \sum_{m=-\infty}^{\infty}
-e^{i m \varphi} \int_0^\infty \nu^{3/2} d \nu h_m 
-J_m(\nu \rho)
-\end{equation*}
-
-Чисельний розрахунок нелінійних поправок в тому виді, що було отримано методом 
-еволюційних рівнянь, представляє собою нездійсненну чисельну задачу. Наприклад 
-розрахунок електрисної радиальної компоненти для однієї події з відностою 
-похибкою $ 5\% $ займає 21 рік на процессорі Intel Core i5-4670 3.40GHz, 
-при однопоточному виконнані. \textcolor{red} { Посилання на розділ про ПО. }
-
-Причина розрахункових проблем пояснюється відразу декількома факторами.
-Перш за все доводиться рахувати всі інтигралу двічі через комплексну область 
-визнаення функцій. Сумування за кутовими модами також суттево впливає на 
-швидкість розрахунків. Сам вираз містить 4 інтиграли і розрахунок всіх їх за 
-формулами чисельної оцінки кратного інтегралу спростило б задачу. Скорочення 
-кількості викликів функцій також позитивно вплине на розрахунковий час. 
-Аналітичний розрахунок похідної зменшить похибку в порівнянні з чисельною 
-оцінкою і також позитивно вплине на розрахунковий час. Ще помічаємо, що 
-наявність електродинамиічих констант в підінтегральних виразах зменшує точність 
-розрахунків зарахунок різниці порядків. Спробуємо максимально оптимізувати 
-вирази для компонентів поля.
-
-При дослідженні лінійного випромінювання плаского диску помічаємо ми 
-використовували правило Лейбніца для звільнення від одного інтегралу.
-Запишимо вираз $ V_m^h $ для нелінійного випадку та порівняємо.
-%
-\textcolor{blue} { \begin{equation*} \begin{aligned} 
-V_m^h = - \mu \partial_{ct} \int_0^\infty \int_0^\infty j'_m (t',z') G dz' dt'
-\end{aligned} \end{equation*} }
-%
-\textcolor{blue} { \begin{equation*} \begin{aligned} 
-V_m^h = - \frac{v \mu}{2} \frac{\sqrt{\epsilon \mu}}{\sqrt{\epsilon \mu}} 
-\partder{}{ct} \int_0^\infty dz' \int_0^\infty 
-dt' H \left( v (t-t') - (z-z') \right) \cdot \\
-\cdot J_0 \left( \nu \sqrt{v^2 (t-t')^2 - (z-z')^2} \right) j'_m (t',z')
-\end{aligned} \end{equation*} }
-%
-\textcolor{blue} { \begin{equation*} \begin{aligned} 
-V_m^h = - \frac{\mu}{2 \sqrt{\epsilon \mu}} \partder{}{vt} 
-\int_0^\infty dz' \int_0^\infty dvt' 
-H \left( v (t-t') - (z-z') \right) \cdot \\
-\cdot J_0 \left( \nu \sqrt{v^2 (t-t')^2 - (z-z')^2} \right) j'_m (t',z')
-\end{aligned} \end{equation*} }
-%
-\textcolor{blue} { \begin{equation*} \begin{aligned} 
-V_m^h = - \frac{1}{2} \sqrt{\frac{\mu}{\epsilon}} \partder{}{vt} 
-\int_0^\infty dz' \int_0^\infty dvt' 
-H \left( v (t-t') - (z-z') \right) \cdot \\
-\cdot J_0 \left( \nu \sqrt{v^2 (t-t')^2 - (z-z')^2} \right) j'_m (t',z')
-\end{aligned} \end{equation*} }
-%
-Також, для скорочення запису, введемо нові зменні $ \tau = vt $ та 
-$ \tau' = vt' $.
-%
-\begin{equation*} \begin{aligned} 
-V_m^h = - \frac{1}{2} \sqrt{\frac{\mu}{\epsilon}} \partder{}{\tau} 
-\int_0^\infty dz' \int_0^\infty d \tau'
-H \left( \tau - \tau' - z + z' \right) \cdot \\
-\cdot J_0 \left( \nu \sqrt{(\tau-\tau')^2 - (z-z')^2} \right) j'_m (\tau',z')
-\end{aligned} \end{equation*}
-%
-Користуючись властивістю функції Хевісайда \textcolor{red} {[ПОСИЛАННЯ]} 
-врахуємо її вплив змінивши межі інтегрування.
-%
-\textcolor{blue} { \begin{equation*} \begin{aligned} 
-H \left( \tau - \tau' - z + z' \right) = 
-H \left( - \tau' - ( z  - \tau - z' ) \right)
-\end{aligned} \end{equation*} }
-%
-\begin{equation*} \begin{aligned} 
-V_m^h = - \frac{1}{2} \sqrt{\frac{\mu}{\epsilon}} \partder{}{\tau} 
-\int_0^\infty dz' \int_0^{\tau - z + z'} d \tau'
-J_0 \left( \nu \sqrt{(\tau-\tau')^2 - (z-z')^2} \right) j'_m (\tau',z')
-\end{aligned} \end{equation*}
-%
-Як і в лінійному випадку випромінювання похідну можна внести під інтеграл, але 
-через складну залкжність $ j'_m $ аналітичне значення інтералу отримати не вдасться.
-%
-\begin{equation*} \begin{aligned} 
-\int_0^{\tau - z + z'} \partder{J_0}{\tau} j'_m (\tau',z') d \tau' =
-- \int_0^{\tau - z + z'} \partder{J_0}{\tau'} j'_m (\tau',z') d \tau'
-\end{aligned} \end{equation*}
-%
-Спробуємо інший підхід: внесемо похідну під інтеграл та розглянемо похідну функції
-Рімана, як складну функцію.
-%
-Радиальна компонента електричного поля може бути отримана підстановкою 
-еволюційних коефіцієнтів $ V_m^h $ до \eqref{eq:KerrAmendErhoInit}.
-%
-\textcolor{blue} {  \begin{equation*} \begin{aligned} 
 E'_\rho = \frac{1}{\sqrt{\epsilon_0}} \sum_{m=-\infty}^{\infty} 
 i m e^{im\varphi} \int_{0}^{\infty} \frac{d \nu}{\sqrt{\nu}} 
 V_m^h \frac{J_m(\nu \rho)}{\rho}
 \end{aligned} \end{equation*} }
-%
-\begin{equation*} \begin{aligned}
-E'_\rho = - \frac{1}{2}  \sqrt{\frac{\mu}{\epsilon_0 \epsilon}}
-\sum_{m=-\infty}^\infty i m e^{im\varphi} \int_0^\infty 
-\frac{d \nu}{\sqrt{\nu}} \frac{J_m(\nu \rho)}{\rho} \int_0^\infty dz' 
-\int_0^\infty d \tau' j'_m (\tau',z') \cdot \\
-\cdot \partder{}{\tau} \left( H(\Delta \tau - \Delta z) 
-J_0 \left( \nu \sqrt{(\Delta \tau^2 - \Delta z^2} \right) \right)
-\end{aligned} \end{equation*}
-%
-\textcolor{blue} {  \begin{equation*} \begin{aligned} 
-j'_m (\tau',z') = - \frac{i \xi_3 A_0^3 \sqrt{\mu}}{64 \sqrt{\nu}}
-\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2}
-\int_0^\infty S_m (\rho',t',z') d \rho'
-\end{aligned} \end{equation*} }
-%
-\textcolor{blue} {  \begin{equation*} \begin{aligned}
-E'_\rho = \frac{\xi_3 A_0^3}{128} 
-\left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^2
-\sum_{m=-\infty}^\infty i^2 m e^{im\varphi} \int_0^\infty d \nu 
-\frac{J_m(\nu \rho)}{\nu \rho} \int_0^\infty dz' 
-\int_0^\infty d \tau' \int_0^\infty d \rho' \cdot \\
-\cdot S_m (\rho',t',z') \partder{}{\tau} \left( H(\Delta \tau - \Delta z) 
-J_0 \left( \nu \sqrt{(\Delta \tau^2 - \Delta z^2} \right) \right)
-\end{aligned} \end{equation*} }
-%
-Тепер маємо змогу звільнитись від комплексності та внести похідну під 
-кратний інтеграл.
-%
-\begin{equation*} \begin{aligned}
-E'_\rho = - \frac{\xi_3 A_0^3}{128} 
-\left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^2
-\int_0^\infty d \nu \int_0^\infty dz' 
-\int_0^\infty d \tau' \int_0^\infty d \rho' \cdot \\
-\cdot \left[ H(\Delta \tau - \Delta z) 
-J_0 \left( \nu \sqrt{(\Delta \tau^2 - \Delta z^2} \right) \right]'_\tau
- \sum_{m=-\infty}^\infty m \frac{J_m(\nu \rho)}{\nu \rho} 
-S_m (\rho',t',z') \cos m \varphi
-\end{aligned} \end{equation*}
-%
-Функції Ріммана не залежить від номкру кутової моди $ m $, а отже її похідну 
-можна винести зпід знаку суми. Таким чином, пропонуєеться ввести інтегральний
-оператор згортки електричного поля по модовому базису в виді
-%
-\begin{equation*} \begin{aligned}
-E_4 = \int_0^\infty d\nu \int_0^\infty d \tau' \int_0^\infty dz' 
-\int_0^\infty d\rho' \left[ H(\Delta \tau - \Delta z) 
-J_0 \left( \nu \sqrt{(\Delta \tau^2 - \Delta z^2} \right) \right]'_\tau
-\end{aligned} \end{equation*}
-%
-Індекс $ 4 $ означає що інтегрування іде по чотиртом змінним, а залежність 
-від кутової моди будо знайдено аналітично. Аналізуючи власитвості похідної 
-функції Ріммана, яка має вигляд
-%
+
 \textcolor{blue} { \begin{equation*} \begin{aligned}
-\partder{}{\tau} J_0 \left( \nu \sqrt{\Delta \tau^2 - \Delta z^2} \right) = 
-- \nu \Delta \tau 
-\frac{J_1 \left( \nu \sqrt{\Delta \tau^2 - \Delta z^2} \right)}
-{\sqrt{\Delta \tau^2 - \Delta z^2}}
+\sum_{m=-\infty}^\infty m e^{im \varphi} V_m^h J_m(\nu \rho) = \\ =
+  e^{  i \varphi} V_{ 1}^h J_{ 1}(\nu \rho) - 
+  e^{- i \varphi} V_{-1}^h J_{-1}(\nu \rho) + \\ +
+3 e^{ 3i \varphi} V_{ 3}^h J_{ 3}(\nu \rho) - 
+3 e^{-3i \varphi} V_{-3}^h J_{-3}(\nu \rho) = \\ =
+\left( e^{ i\varphi} + e^{- i\varphi} \right) V_1^h J_1(\nu \rho) + 
+3 \left( e^{3i\varphi} + e^{-3i\varphi} \right) V_3^h J_3(\nu \rho) = \\
+= 2 \cos \varphi V_1^h J_1(\nu \rho) + 
+6 \cos 3 \varphi V_3^h J_3(\nu \rho)
+\end{aligned} \end{equation*} }
+
+\begin{equation} \begin{aligned}
+E'_\rho = \frac{2 i \cos \varphi}{\sqrt{\epsilon_0}}
+\int_0^\infty \sqrt{\nu} d \nu V_1^h \frac{J_1(\nu \rho)}{\nu \rho} +
+\frac{6 i \cos 3 \varphi}{\sqrt{\epsilon_0}}
+\int_0^\infty \sqrt{\nu} d \nu V_3^h \frac{J_3(\nu \rho)}{\nu \rho}.
+\end{aligned} \end{equation}
+
+Тепер, користуючись раніше введеним нормуванням еволюційного коефіцієнта 
+\eqref{eq:vmh_norm} запишемо вираз для нелінійної поправки до напруженості 
+електричного поля $ E'_\rho $ в зручному для порівняння з лінійним наближенням
+\eqref{eq:linear_e_cyl} вигляді:
+
+\textcolor{blue} { \begin{equation*} \begin{aligned}
+E'_\rho = - \frac{A_0^3 \epsilon_0 \chi_e^{(3)}}{2^7}
+\sqrt{\frac{\mu_0 \mu}{\epsilon_0 \left( \epsilon + \chi_e^{(3)} \right)}} 
+\left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^{3/2} \cdot \\
+\cdot \int_0^\infty \nu d \nu \left(
+\cos \varphi \hat{V_1^h} \frac{J_1(\nu \rho)}{\nu \rho} +
+3 \cos 3\varphi \hat{V_3^h} \frac{J_3(\nu \rho)}{\nu \rho} 
+\right)
+\end{aligned} \end{equation*} }
+
+\textcolor{blue} { \begin{equation*} \begin{aligned}
+\epsilon_0 \chi_e^{(3)}
+\sqrt{\frac{\mu_0 \mu}{\epsilon_0 \left( \epsilon + \chi_e^{(3)} \right)}} 
+\left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^{3/2} 
+\frac{\sqrt{\epsilon}}{\sqrt{\epsilon}} =
+\frac{\epsilon_0 \sqrt{\epsilon} \chi_e^{(3)}}
+{\sqrt{\epsilon + \chi_e^{(3)}}} 
+\left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^2
 \end{aligned} \end{equation*} }
 %
 \textcolor{blue} { \begin{equation*} \begin{aligned}
-\partder{}{\tau} \left( H \left( \Delta \tau - \Delta z \right)
-J_0 \left( \nu \sqrt{ \Delta \tau^2 - \Delta z^2 } \right) \right) = \\
-= \partder{H}{\tau} J_0 \left( \nu \sqrt{ \Delta \tau^2 - \Delta z^2 } \right) + 
-H \left( \Delta \tau - \Delta z \right) \partder{J_0}{\tau} = \\
-= \delta \left( \Delta \tau - \Delta z \right)
-J_0 \left( \nu \sqrt{ \Delta \tau^2 - \Delta z^2 } \right) - 
-\nu \Delta \tau H \left( \Delta \tau - \Delta z \right)
-\frac{J_1 \left( \nu \sqrt{\Delta \tau^2 - \Delta z^2} \right)}
-{\sqrt{\Delta \tau^2 - \Delta z^2}}
+\frac{\sqrt{\epsilon}}
+{\sqrt{\epsilon + \chi_e^{(3)}}} =
+\frac{\sqrt{\epsilon \mu}}{c} 
+\frac{c}{\sqrt{\mu \left( \epsilon + \chi_e^{(3)} \right)}} = 
+\frac{v_{NL}}{v_{LN}}
 \end{aligned} \end{equation*} }
+
+\begin{equation} \begin{aligned} \label{eq:erho_kerr}
+E'_\rho = - \frac{\epsilon_0 \chi_e^{(3)} A_0^3}{2^7}
+\frac{v_{NL}}{v_{LN}}
+\left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^2
+\left(\hat{E}_\rho^{(1)} \cos \varphi +
+\hat{E}_\rho^{(3)} \cos 3 \varphi \right),
+\end{aligned} \end{equation}
 %
+де відношення $ v_{NL} / v_{LN} < 1 $ є коефіцієнтом нелінійного 
+сповільнення породженої вторинної хвилі $ \vect{E'} $, а 
+$ \hat{E}_\rho^{(m)} $ - функція, подібна за змістом та значенням до 
+інтегральних виразів $ I_1 $ та $ I_2 $ з розв'язку у наближенні
+лінійного розповсюджування \eqref{eq:linear_e_cyl}:
+
+\begin{equation} \begin{aligned} \label{eq:erho_norm}
+\hat{E}_\rho^{(m)} = \hat{E}_\rho^{(m)} (vt,\rho,z) = 
+\int_0^\infty \nu d \nu \frac{m J_m(\nu \rho)}{\nu \rho} 
+\hat{V_m^h} (\nu | vt,\rho,z).
+\end{aligned} \end{equation}
+
+Також серед множників помічаємо імпеданс вільного простору 
+$ (\mu_0 \mu) / (\epsilon_0 \epsilon) $, куб максимальної амплітуди 
+нестаціонарного струму плаского диску $ A_0^3 $ та абсолютну нелінійну 
+сприйнятливість $ \epsilon_0 \chi_e^{(3)} $.
+
+\textcolor{red}{РИСУНОК, ЩО ІЛЮСТРУЄ АМПЛІТУДНИЙ ЕФЕКТ САМОДІЮ ПРИ ВАРІЦІЇ 
+ЛІНІЙНОГО КОЕФІЦІЄНТУ ВІДБИТТЯ}
+
+З виразу \eqref{eq:erho_kerr} добре видно один з проявів амплітудної
+самодії електромагнітного випромінювання. Як видно з лінійного розв'язку
+збільшення коефіцієнту заломлення середовища "розтягує" нестаціонарний 
+імпульс. Самодія цього ефекту у нелінійному середовищі зменшує 
+максимальну амплітуду поля-поправки в 
+$ \sqrt{\epsilon} / \sqrt{\epsilon} \chi_e^{(3)} $  разів, що відповідає 
+швидкості світла з урахуванням нелінійної сприйнятливості до швидкості 
+світла в середовищі у лінійному наближення. Варто зазначити, що цей ефект 
+мало-значущій та складає лише $ 0.01\% $ від поля поправки, а тому ним 
+можна знехтувати в цьому випадку. Варто перевірити його внесок при сильній 
+нелінійній самодії. Даний ефект можна сприймати, як поправку до імпедансу 
+вільного простору при врахуванні нелінійної сприйнятливості третього порядку:
+
 \begin{equation*} \begin{aligned}
-\partder{}{\tau} \left( H \left( \Delta \tau - \Delta z \right)
-J_0 \left( \nu \sqrt{ \Delta \tau^2 - \Delta z^2 } \right) \right) = \\
-= \delta \left( \Delta \tau - \Delta z \right)
-J_0 \left( \nu \sqrt{\Delta \tau^2 - \Delta z^2} \right) - 
-\Delta \tau H(\Delta \tau - \Delta z) 
-\frac{J_1 \left( \nu \sqrt{\Delta \tau^2 - \Delta z^2} \right)}
-{\sqrt{\Delta \tau^2 - \Delta z^2}}
+\frac{v_{NL}}{v_{LN}}
+\left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^2 = 
+\sqrt{\frac{\mu_0 \mu}{\epsilon_0 \left( \epsilon + \chi_e^{(3)} \right)}}
+\sqrt[3]{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}} 
 \end{aligned} \end{equation*}
+
+Розв'язок відносно нелінійної поправки \eqref{eq:erho_kerr} містить кутову 
+залежність та константні коефіцієнти в явному вигляді. Інші змінні, тобто
+$ vt, \rho, z $ представлені в $ \hat{E}_\rho^{(m)} $, що в свою чергу
+є невласним кратним інтегралом дійсної області значень:
+
+\textcolor{blue} { \begin{equation*} \begin{aligned}
+\hat{V_m^h} = \int_0^z dz' 
+\left\{ J_0 \left( \nu \sqrt{2 vt (z + z') - 2 z^2} \right) 
+\hat{j_m} (vt - z + z',z') - \right. \\ 
+\left. - \nu \int_0^{vt - z + z'} dvt' v (t-t') 
+\frac{J_1 \left( \nu \sqrt{v(t-t')^2 - (z-z')^2} \right)}
+{\sqrt{v(t-t')^2 - (z-z')^2}} \hat{j_m} (vt',z')  \right\}
+\end{aligned} \end{equation*} }
+
+\textcolor{red} { \begin{equation*} \begin{aligned}
+j_1 = \frac{i A_0^3 \sqrt{\mu_0} \epsilon_0 \chi_e^{(3)} \sqrt{\nu}}{128}
+\left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^{3/2}
+\int_0^\infty \rho d \rho \cdot \\ \cdot
+\Big( J_0 (\nu \rho) ( 3 \alpha + \beta + 3 \gamma + \lambda) - J_2 (\nu \rho)
+( 3 \alpha + \beta - 3 \gamma - \lambda ) \Big)
+\end{aligned} \end{equation*} }
+
+\begin{equation} \begin{aligned}
+\hat{V_m^h} = \int_{0}^{\infty} dz'
+\left\{ J_0 \left( \nu \sqrt{2 vt (z + z') - 2 z^2} \right) 
+\int_{0}^{\infty} \rho' d \rho'
+f (\rho',vt - z + z',z') - \right. \\ 
+\left. - \nu \int_{0}^{\infty} dvt' v (t-t') 
+\frac{J_1 \left( \nu \sqrt{v(t-t')^2 - (z-z')^2} \right)}
+{\sqrt{v(t-t')^2 - (z-z')^2}} 
+\int_{0}^{\infty} \rho' d\rho'
+f (\rho',vt',z')  \right\},
+\end{aligned} \end{equation}
 %
-Тепер можемо записати спрощений варіант 
-компоненти $ E'_\rho $.
+де $ f ( \nu | vt', \rho', z') $ - лінійна комбінація функцій виду
+$ I_\alpha I_\beta \partder{I_\alpha}{vt} $ введених раніше 
+\eqref{eq:alpha} - \eqref{eq:lambda}, як $ \alpha, \beta, \gamma, \lambda $:
+
+\textcolor{red} { \begin{equation} \begin{aligned}
+f ( \nu | vt', \rho', z') = 
+J_0 (\nu \rho') (3 \alpha + \beta + 3 \gamma + \lambda) - \\
+- J_2 (\nu \rho') (3 \alpha + \beta - 3 \gamma - \lambda).
+\end{aligned} \end{equation} }
+
+Інтегрування за штрихованими змінними є виконнанням принципу суперпозиції 
+відносно точкових джерел у вигляді яких можна представити плаский диск, та
+визначені відповідно у межах $ 0 \leq \rho' \leq \rho $,
+$ 0 \leq z' \leq z $ та $ 0 \leq t' \leq t $. Користуючись цим, а також 
+областю визначення під-інтегральних функцій та принципом причинності функції 
+Рімана $ v(t-t')-(z-z') > 0 $, можна обмежити область інтегрування в 
+останньому виразі:
+
+\begin{equation} \begin{aligned}
+0 \leq vt \leq vt - z + z';
+\end{aligned} \end{equation}
+
+\begin{equation} \begin{aligned}
+0 \leq z' \leq z;
+\end{aligned} \end{equation}
 %
-\begin{equation*} \begin{aligned}
-E'_\rho = - \frac{\xi_3 A_0^3}{4^3}
-\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^2
-E_4 \Big[ \sum_{m=-\infty}^\infty m \cos m \varphi 
-S_m (r') \frac{J_m(\nu \rho)}{\rho \nu} \Big]
-\end{aligned} \end{equation*}
+а для окремих інтегралів за змінними $ \rho' $ область інтегрування буде 
+різною. Для інтегралу в першому доданку
+
+\begin{equation} \begin{aligned}
+\left| \sqrt{v^2t^2 - z^2} - R \right| \leq \rho' \leq 
+\sqrt{v^2t^2 - z^2} + R,
+\end{aligned} \end{equation}
 %
-В останьому множнику помічаємо сингулярність, розкриємо її користуючись
-формулою \eqref{eq:bessel_order_change}.
-%
-\begin{equation*} \begin{aligned}
-E'_\rho = - \frac{\xi_3 A_0^3}{4^3}
-\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^2
-E_4 \Big[ \sum_{m=-\infty}^\infty \cos m \varphi 
-S_m (r') \frac{J_{m-1}(\nu \rho) + J_{m+1}(\nu \rho)}{2} \Big]
-\end{aligned} \end{equation*}
-%
-Аналогічно до компоненти $ E'_\rho $ запишимо формулу для $ E'_\varphi $
-%
+а в другому при $ vt' = vt - z + z' $, відповідно:
+
+\textcolor{blue} { \begin{equation*} \begin{aligned}
+\left. v^2 t'^2 - z'^2 \right|^{vt' = vt - z + z'} = 
+(vt - z + z')^2 - z'^2 = (vt - z)^2 + 2 z' (vt - z) = \\
+(vt - z) (vt - z + 2 z') = (vt - z) (vt + z') + (vt - z) (z + z')
+\end{aligned} \end{equation*} }
+
+\begin{equation} \begin{aligned}
+\left| \sqrt{(vt - z) (vt - z + 2 z')} - R \right| \leq \rho' \leq 
+\sqrt{(vt - z) (vt - z + 2 z')} + R.
+\end{aligned} \end{equation}
+
+Аналітичний розрахунок нормованого еволюційного коефіцієнту $ \hat{V_m^h} $
+є недоцільним та може виявитись взагалі неможливим, тому залишаються лише
+чисельні квадратурні методи розв'язку, які дадуть гарну точність в випадку,
+кратних визначених інтегралів. Зовнішнім інтегралом в \eqref{eq:erho_kerr} є 
+інтеграл за неперервним спектральним параметром $ \nu $. На жаль, фізичного
+обґрунтування для обмеження цієї області інтегрування немає, а отже,
+доцільно розділити чисельне розв'язання на два етапи:
+
+\begin{enumerate}
+	\item Чисельний розрахунок еволюційного коефіцієнту $ \hat{V_m^h} $ 
+	для деякої області значень по параметру $ \nu $;
+	\item Аналіз частотних характеристик під-інтегральної функції за $ \nu $ 
+	та обмеження області інтегрування на основі аналізу, що дозволить 
+	розрахувати абсолютну похибку чисельного методу.
+\end{enumerate}
+
+Аналогічно можна знайти поправку до $ \varphi $ проекції вектору 
+напруженості електричного поля:
+
 \textcolor{blue} { \begin{equation*} \begin{aligned}
 E_\varphi = - \frac{1}{2 \sqrt{\epsilon_0}} \sum_{m=-\infty}^{\infty} 
 e^{im\varphi} \int_{0}^{\infty} \sqrt{\nu} d \nu 
 V_m^h \left( J_{m-1} (\nu \rho) - J_{m+1} (\nu \rho) \right)
 \end{aligned} \end{equation*} }
-%
-\textcolor{blue} { \begin{equation*} \begin{aligned} 
-V_m^h = - \frac{1}{2} \sqrt{\frac{\mu}{\epsilon}} \partder{}{\tau} 
-\int_0^\infty dz' \int_0^\infty d \tau'
-H \left( \tau - \tau' - z + z' \right) \cdot \\
-\cdot J_0 \left( \nu \sqrt{(\tau-\tau')^2 - (z-z')^2} \right) j'_m (\tau',z')
-\end{aligned} \end{equation*} }
-%
+
 \textcolor{blue} { \begin{equation*} \begin{aligned}
-j'_m (t',z') =  - \frac{i \xi_3 A_0^3 \sqrt{\mu_0}}{64 \sqrt{\nu}}
-\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^{3/2}
-\int_{0}^{\infty} S_m (\rho',t',z') d \rho'
+\sum_{m=-\infty}^\infty e^{im \varphi}
+V_m^h \left( J_{m-1} (\nu \rho) - J_{m+1} (\nu \rho) \right) = \\
+e^{  i \varphi} V_{ 1}^h \left( J_0 (\nu \rho) - J_2 (\nu \rho) \right) +
+e^{- i \varphi} V_{-1}^h \left( J_2 (\nu \rho) - J_0 (\nu \rho) \right) + \\
+e^{ 3i \varphi} V_{ 3}^h \left( J_2 (\nu \rho) - J_4 (\nu \rho) \right) +
+e^{-3i \varphi} V_{-3}^h \left( J_4 (\nu \rho) - J_2 (\nu \rho) \right) = \\
+= \left( e^{  i \varphi} - e^{- i \varphi} \right)
+\left( J_0 (\nu \rho) - J_2 (\nu \rho) \right) +
+\left( e^{ 3i \varphi} - e^{-3i \varphi} \right) 
+\left( J_2 (\nu \rho) - J_4 (\nu \rho) \right) = \\
+= 2i \sin \varphi \left( J_0 (\nu \rho) - J_2 (\nu \rho) \right) +
+2i \sin 3 \varphi \left( J_2 (\nu \rho) - J_4 (\nu \rho) \right)
 \end{aligned} \end{equation*} }
+
+\textcolor{blue} { \begin{equation*} \begin{aligned}
+E_\varphi =
+- \frac{i \sin \varphi}{\sqrt{\epsilon_0}} \int_0^\infty d \nu
+\sqrt{\nu} V_1^h \left( J_0 (\nu \rho) - J_2 (\nu \rho) \right) - \\
+- \frac{i \sin 3 \varphi}{\sqrt{\epsilon_0}} \int_0^\infty d \nu
+\sqrt{\nu} V_3^h \left( J_2 (\nu \rho) - J_4 (\nu \rho) \right)
+\end{aligned} \end{equation*} }
+
+\begin{equation} \begin{aligned} \label{eq:ephi_kerr}
+E'_\varphi = \frac{\epsilon_0 \chi_e^{(3)} A_0^3}{2^7}
+\frac{v_{NL}}{v_{LN}}
+\left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^2
+\left(\hat{E}_\varphi^{(1)} \sin \varphi +
+\hat{E}_\varphi^{(3)} \sin 3 \varphi \right)
+\end{aligned} \end{equation}
 %
-\begin{equation*} \begin{aligned}
-E'_\varphi = \frac{\xi_3 A_0^3}{4^3}
-\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^2
-E_4 \Big[ \sum_{m=-\infty}^\infty 
-\sin m \varphi S_m (r')
-\frac{J_{m-1}(\nu \rho) - J_{m+1}(\nu \rho)}{2} \Big]
-\end{aligned} \end{equation*}
-%
-Для чисельних розрахунків краще перевантажити функцію знаходження компоненти 
-$ E'_x $, що скоротить розрахунки вдвоє.
-%
+де 
+
+\begin{equation} \begin{aligned} \label{eq:ephi_norm}
+\hat{E}_\varphi^{(m)} (vt, \rho, z) = 
+\int_0^\infty \nu d \nu V_m^h (\nu | vt, \rho, z)
+\left( J_{m-1} (\nu \rho) - J_{m+1} (\nu \rho) \right)
+\end{aligned} \end{equation}
+
+В виразах \eqref{eq:erho_kerr} та \eqref{eq:ephi_kerr} спостерігається
+утворення поля з тригонометричною кутовою залежністю кратних порядків.
+Схожий ефект спостерігається, також, в задачах розповсюджування пласкої 
+хвилі в частотних характеристиках при гармонійних часових залежностях.
+
+
+Для аналізу та порівняння з лінійним розв'язком, зручно перейти до 
+декартових проекцій вектору напруженості, тоді
+
 \textcolor{blue} { \begin{equation*} \begin{aligned}
 E'_x = E'_\rho \cos \varphi - E'_\varphi \sin \varphi
 \end{aligned} \end{equation*} }
 %
-\begin{equation*} \begin{aligned}
-E'_x = - \frac{\xi_3 A_0^3}{2 \cdot 4^3}
-\left( \frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^2
-E_4 \left[ \sum_{m=-\infty}^\infty
-\Big( \cos \varphi \cos m \varphi 
-\big( J_{m-1}(\nu \rho) + J_{m+1}(\nu \rho) \big) \Big. \right. + \\
-+ \left. \Big. \sin \varphi \sin m \varphi 
-\big( J_{m-1}(\nu \rho) - J_{m+1}(\nu \rho) \big) \Big) 
-S_m (\nu | r') \right]
-\end{aligned} \end{equation*}
+\textcolor{blue} { \begin{equation*} \begin{aligned}
+E'_x = - \frac{\epsilon_0 \chi_e^{(3)} A_0^3}{2^7} \frac{v_{NL}}{v_{LN}}
+\left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^2 \cdot \\ \cdot
+\left(\hat{E}_\rho^{(1)} \cos^2 \varphi +
+\hat{E}_\rho^{(3)} \cos \varphi \cos 3 \varphi - 
+\hat{E}_\varphi^{(1)} \sin^2 \varphi -
+\hat{E}_\varphi^{(3)} \sin \varphi \sin 3 \varphi \right)
+\end{aligned} \end{equation*} }
 %
-\begin{equation*} \begin{aligned}
-E'_x = - \frac{\xi_3 A_0^3}{2 \cdot 4^3} \left(
-\frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^2
-\left( E_4 \left[ \sum_{m=-\infty}^\infty 
-e_m^x (\nu | r) S_m^* (\nu | r') \right] \right. + \\
-+ \left. E_4 \left[ \sum_{m=-\infty}^\infty 
-e_m^x (\nu | r) 2 \tau' \delta \left( {\tau'}^2 - {z'}^2 - (\rho'+R)^2 \right) 
-S_m^\delta (\nu | r') \right] \right)
-\end{aligned} \end{equation*}
+\textcolor{blue} { \begin{equation*} \begin{aligned}
+E'_x = - \frac{\epsilon_0 \chi_e^{(3)} A_0^3}{2^7} \frac{v_{NL}}{v_{LN}}
+\left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^2 \cdot \\ \cdot
+\int_0^\infty \nu d \nu V_1^h \left( 
+\left( J_0 (\nu \rho) + J_2 (\nu \rho) \right) \cos^2 \varphi -
+\left( J_0 (\nu \rho) - J_2 (\nu \rho) \right) \sin^2 \varphi \right) - \\
+- \frac{\epsilon_0 \chi_e^{(3)} A_0^3}{2^7} \frac{v_{NL}}{v_{LN}}
+\left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^2 \cdot \\ \cdot
+\int_0^\infty \nu d \nu V_3^h \left( 
+\left( J_2 (\nu \rho) + J_4 (\nu \rho) \right) \cos \varphi \cos 3 \varphi -
+\left( J_2 (\nu \rho) - J_4 (\nu \rho) \right) \sin \varphi \sin 3 \varphi 
+\right)
+\end{aligned} \end{equation*} }
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Властивості оператора електричного поля}
+\section{Розповсюдження прямокутного імпульсу в нелінійному середовищі}
 
-помічаємо, що для уникненя сингкляроності в виді дельта-функції треба 
-брати два кратних інтеграли окремо. Один за чотирьма змінними (доданок 
-з функцією Хевісайда), а другий за трьома (доданок, що містить дельта-функцію).
-Інтеграл по часу або по поздовжній кординаті можна взяти аналітично, для
-другого доданку, користуючить наступною формулою, що може бути отримана з 
-властивостей дельта-функції.
-%
-\textcolor{blue} { \begin{equation*} \begin{aligned}
-\int_{-\infty}^{\infty} \delta(x-a) f(x) dx = f(a) 
-\end{aligned} \end{equation*} }
-%
-\textcolor{blue} { \begin{equation*} \begin{aligned}
-\int_0^\infty \int_0^\infty \delta(x-y-a) f(x,y) dx dy = 
-\int_0^\infty f(y+a,y) dy
-\end{aligned} \end{equation*} }
-%
-\textcolor{red} { \begin{equation*} \begin{aligned}
-\int_0^\infty \int_0^\infty \delta(-x-y-a) f(x,y) dx dy = 
-\int_0^\infty f(-y-a,y) dy
-\end{aligned} \end{equation*} }
-%
-Для інтегралу за чотирма змінними застосуєм властивість функції Хевісайда.
-%
-\textcolor{blue} { \begin{equation*} \begin{aligned}
-\int_{-\infty}^\infty H(-x+a) f(x) dx = 
-\int_{-\infty}^{a} f(x) dx
-\end{aligned} \end{equation*} }
-%
-\textcolor{red} { \begin{equation*} \begin{aligned}
-\int_0^\infty \int_0^\infty H(-x+y-a) f(x,y) dx dy = 
-\int_0^\infty \int_0^{y-a} f(x,y) dx dy
-\end{aligned} \end{equation*} }
-%
-Таким чином ітеграл від похідної функції Ріманна матиме вигляд:
-%
-\textcolor{blue} { \begin{equation*} \begin{aligned}
-\int_0^\infty \int_0^\infty \left[ H(\Delta \tau - \Delta z) 
-J_0 \left( \nu \sqrt{(\Delta \tau^2 - \Delta z^2} \right) 
-\right]'_\tau f(\tau',z') d \tau' dz' = \\
-= \int_0^\infty \left( \int_0^\infty 
-\delta \left( \Delta \tau - \Delta z \right)
-J_0 \left( \nu \sqrt{\Delta \tau^2 - \Delta z^2} \right) 
-f(\tau',z') d \tau' \right. - \\
-- \left. \int_0^\infty \nu \Delta \tau H(\Delta \tau - \Delta z) 
-\frac{J_1 \left( \nu \sqrt{\Delta \tau^2 - \Delta z^2} \right)}
-{\sqrt{\Delta \tau^2 - \Delta z^2}} f(\tau',z') d \tau' \right) dz' = \\
-= \int_0^\infty \left( f(\tau - \Delta z,z') - \int_0^{\tau - \Delta z} 
-\nu \Delta \tau \frac{J_1 \left( \nu \sqrt{\Delta \tau^2 - \Delta z^2} \right)}
-{\sqrt{\Delta \tau^2 - \Delta z^2}} f(\tau',z') d \tau' \right) dz'
-\end{aligned} \end{equation*} }
-%
-\begin{equation*} \begin{aligned}
-\int_0^\infty \int_0^\infty \left[ H(\Delta \tau - \Delta z) 
-J_0 \left( \nu \sqrt{(\Delta \tau^2 - \Delta z^2} \right) 
-\right]'_\tau f(\nu | \tau',z',\rho') d \tau' dz' = \\
-= \int_0^\infty \left( f(\nu | \tau - \Delta z,z',\rho') - 
-\int_0^{\tau - \Delta z} \nu \Delta \tau 
-\frac{J_1 \left( \nu \sqrt{\Delta \tau^2 - \Delta z^2} \right)}
-{\sqrt{\Delta \tau^2 - \Delta z^2}} 
-f(\nu | \tau',z',\rho') d \tau' \right) dz'
-\end{aligned} \end{equation*}
-%
-Разом з можливістю змінювати порядок інтегремання цю формулу можна 
-використати для чисельної оцінки інтегралу. Спочатку викоричтаєто метод 
-Сімпсона для оцінки значення інтегралу за $ \tau' $, а потім оцінемо 
-кратний інтеграл медодом Сімпсона, що оптимізовано для кратних інтигралів.
-%
-\textcolor{red} { Всенаправленій излучатель єто тот что имеет только 4 
-аргумента под оператором. }
-%
-\begin{equation*} \begin{aligned}
-\int_0^\infty \int_0^\infty \int_0^\infty \int_0^\infty 
-\sum_{m=-\infty}^\infty \left[ H(\Delta \tau - \Delta z) 
-J_0 \left( \nu \sqrt{(\Delta \tau^2 - \Delta z^2} \right) 
-\right]'_\tau f_m (\nu | \tau',z',\rho') d \tau' dz' d \rho' d \nu = \\
-= \int_0^\infty \int_0^\infty \int_0^\infty
-\left( \sum_{m=-\infty}^\infty f_m (\alpha) - 
-\int_0^{\tau - z + z'} \nu^2 \Delta \tau 
-\frac{J_1 \left( \nu \sqrt{\Delta \tau^2 - \Delta z^2} \right)}
-{\nu \sqrt{\Delta \tau^2 - \Delta z^2}} 
-\sum_{m=-\infty}^\infty f_m (\beta) d \tau' \right) dz' d \rho' d \nu
-\end{aligned} \end{equation*}
-%
-де набір параметрив $ \alpha = \{ \nu | \tau-z+z', z', \rho' \} $ та 
-$ \beta = \{ \nu | \tau', z', \rho' \} $
-%
-\begin{equation*} \begin{aligned}
-\frac{J_1 \left( \nu \sqrt{\Delta \tau^2 - \Delta z^2} \right)}
-{\nu \sqrt{\Delta \tau^2 - \Delta z^2}} =
-\frac{J_0 \left( \nu \sqrt{\Delta \tau^2 - \Delta z^2} \right) +
-J_2 \left( \nu \sqrt{\Delta \tau^2 - \Delta z^2} \right)}{2}
-\end{aligned} \end{equation*}
-%
-\begin{equation*} \begin{aligned}
-\nu J_m (\nu) J_m (\nu) \approx \frac{1}{2\pi} 
-e^{\pm i \left( \nu - \frac{m\pi}{2} - \frac{\pi}{4} \right)}
-\end{aligned} \end{equation*}
-%
-\begin{tabular}{ | l | l | l | }
-\hline Номер & Призначення змінної               & Співідношення             \\ \hline
-1 & Відстань, що проходить сигнал за час $t$     & $ 0 \le vt' \le vt $      \\ \hline
-2 & Відстань, від точки спостереження до джерела & $ 0 \le z' \le z $        \\ \hline
-3 & Принцип причинності                          & $ vt - z > 0 $            \\ \hline
-4 & Принцип причинності для проміжних подій      & $ vt - vt' - z + z' > 0 $ \\ \hline
-5 & Наслідок з 4 та 1                            & $ vt - z + z' > vt' > 0 $ \\ \hline
-\end{tabular}
+\textcolor{red} {TODO: Порушення закону збереження та принципу суперпозиції}
 
-Дослідимо вплив інтегрльного опреатора $ E_4 $ на добуток  дельта-функції 
-з агрументом $ {\tau'}^2 - {z'}^2 - (\rho'+R)^2 $ на довільну функцію 
-відповідних аргументів. Користуючись властивістю дельта-функції звільнемось 
-від одного інтегралу. Простіше за все вибрати інтеграл по $ \rho' $. 
-Спочатку скористоємось властивістю симетрії дельта-функції.
-%
-\begin{equation*} \begin{aligned}
-\delta \left( a - x \right) = \delta \left( - (x - a) \right) = 
-\delta \left( x - a \right)
-\end{aligned} \end{equation*}
-%
-Далі скористаємось методом заміни змінної, як показано далі.
-%
-\begin{equation*} \begin{aligned}
-\int_0^\infty f(x) \delta \left( (x-a)^2 - b \right) dx = 
-\left[ \begin{array}{l}
-u = (x-a)^2 \\
-du = 2 (x-a) dx \\
-x = \pm \sqrt{u} + a
-\end{array} \right] = \\  
-= \int_0^\infty \frac{f(\pm \sqrt{u}+a)}{2 \sqrt{u}} 
-\delta \left( u - b \right) du = 
-\frac{f(\pm \sqrt{b}+a)}{2 \sqrt{b}}
-\end{aligned} \end{equation*}
-%
-З огляду на фізику задачі $ \pm $ в останій формулі зникає, так як 
-$ 0 \leq \pm \sqrt{b}+a $ та $ 0 < a $. Тоді, оператор $ E_4 $
-спрощується 
-%
-\begin{equation*} \begin{aligned}
-2 E_4 \left[ f(\nu,\tau',\rho',z') \delta 
-\left( {\tau'}^2 - {z'}^2 - (\rho'+R)^2 \right) \right] = \\
-= \int_0^\infty \int_0^\infty \int_0^\infty
-\left( \frac{f (\gamma)}{\sqrt{{\tau'}^2 - {z'}^2}} - 
-\int_0^{\tau - z + z'} \nu^2 \Delta \tau 
-\frac{J_1 \left( \nu \sqrt{\Delta \tau^2 - \Delta z^2} \right)}
-{\nu \sqrt{\Delta \tau^2 - \Delta z^2}} 
-\frac{f (\lambda)}{\sqrt{{\tau'}^2 - {z'}^2}} 
-d \tau' \right) dz' d \rho' d \nu
-\end{aligned} \end{equation*}
-%
-де набір параматрів 
-$ \gamma = \{\nu, \tau-z+z', \sqrt{(\tau-z+z')^2 - {z'}^2} + R, z'\} $ та
-$ \lambda = \{\nu, \tau', \sqrt{{\tau'}^2 - {z'}^2} + R, z'\} $ 
-%
-Тепер запишимо остаточний вираз для чисельного розрахунку.
-%
-\textcolor{blue} { \begin{equation*} \begin{aligned}
-E'_x = - \frac{\xi_3 A_0^3}{2 \cdot 4^3} \left(
-\frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^2
-\left( E_4 \left[ \sum_{m=-\infty}^\infty 
-e_m^x (\nu | r) S_m^* (\nu | r') \right] \right. + \\
-+ \left. E_4 \left[ \sum_{m=-\infty}^\infty 
-e_m^x (\nu | r) 2 \tau' \delta \left( {\tau'}^2 - {z'}^2 - (\rho'+R)^2 \right) 
-S_m^\delta (\nu | r') \right] \right) = \\
-= - \frac{\xi_3 A_0^3}{2 \cdot 4^3} \left(
-\frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^2
-\int_0^\infty \int_0^\infty \left( \sum_{m=-\infty}^\infty f_m (\gamma) - 
-\int_0^{\tau - z + z'} g(\Delta \tau, \Delta z)
-\sum_{m=-\infty}^\infty f_m (\lambda) d \tau' + \right. \\ 
-\left. + \int_0^\infty \left( \sum_{m=-\infty}^\infty f_m (\alpha) - 
-\int_0^{\tau - z + z'} g(\Delta \tau, \Delta z)
-\sum_{m=-\infty}^\infty f_m (\beta) d \tau' \right) d \rho' \right) dz' d \nu
-\end{aligned} \end{equation*} }
-%
-де
-%
-\begin{equation*} \begin{aligned}
-g(\tau, \tau', z, z') = \nu^2 (\tau - \tau') 
-\frac{J_1 \left( \nu \sqrt{(\tau - \tau')^2 - (z - z')^2} \right)}
-{\nu \sqrt{(\tau - \tau')^2 - (z - z')^2}}
-\end{aligned} \end{equation*}
-%
-\begin{equation*} \begin{aligned}
-f_m (\alpha) = e_m^x (\tau,\rho,\varphi,z) S_m^* (\tau-z+z',\rho',z')
-\end{aligned} \end{equation*}
-%
-\begin{equation*} \begin{aligned}
-f_m (\beta) = e_m^x (\tau,\rho,\varphi,z) S_m^* (\tau',\rho',z')
-\end{aligned} \end{equation*}
-%
-\textcolor{blue} { \begin{equation*} \begin{aligned}
-f_m (\gamma) = \frac{\tau'}{\sqrt{{\tau'}^2 - {z'}^2}} 
-e_m^x (\tau,\rho,\varphi,z) S_m^\delta 
-\left( \tau-z+z',\sqrt{(\tau-\Delta z)^2 - {z'}^2}+R,z' \right)
-\end{aligned} \end{equation*} }
-%
-\textcolor{blue} { \begin{equation*} \begin{aligned}
-f_m (\lambda) = \frac{\tau'}{\sqrt{{\tau'}^2 - {z'}^2}}
-e_m^x (\tau,\rho,\varphi,z) S_m^\delta 
-\left( \tau',\sqrt{(\tau-\Delta z)^2 - {z'}^2}+R,z' \right)
-\end{aligned} \end{equation*} }
+\textcolor{red} {TODO: Може вдається якось виділити залежність від 
+тривалості імпульсу аналітично???}
 
-Для чисельного розрахунку краще перейти до власних інтегралів, обмежевши
-вкрхню межу інтегруваня кінцевим значенням. Також необхідно визначитись з 
-мінімально не обхідною кількістю вузлів для квадратурного чисельного методу.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Узагальнення для слабкої нелінійності}
 
-Верхню межу для просторових інтегралів вибрати просто. На графічних 
-зображеннях електричного поля видно, що на віддалені від диску амплітуда
-імпульсу затухає швидше ніж в близу до нього, що впливає на збудження 
-вториннго джерела нелінійного електричного струму. Користуючись цим фізичним
-обмеженням обмежимо просторові інтеграли межою в $ 2R $. 
+Опираючись на геометрію джерела та на властивості модового базису можна 
+довести, що 
 
-Кількість точнок для $ z $ та $ \rho $ необхідно вибрати відповідно до поведінки 
-функції $ I_\alpha I_\beta {I_\alpha}' $.
+\textcolor{red} { \begin{equation} \begin{aligned} \label{eq:erho_norm}
+\hat{E}_\rho^{(1)} = \int_0^\infty \nu d \nu 
+\frac{J_1(\nu \rho)}{\nu \rho} \hat{V_1^h} \approx
+\int_0^\infty \nu d \nu \frac{J_1(\nu \rho)}{\nu \rho} 
+\frac{J_1(\nu R) J_0(\nu \sqrt{v^2t^2-z^2})}{\nu} = I_1,
+\end{aligned} \end{equation} }
+%
+отже компонент з лінійною залежністю від кута, повторює за формою 
+імпульс отриманий у лінійному наближенні та менший за амплітудою на 
+декілька порядків, а отже його внеском можна знехтувати.
 
-З інтегралом по безперервному спектральному параметру $ \nu $ складніще.
-Нема фізичних передумов, що дозволяють обмежити його верхньої межі, але сам 
-інтеграл сходиться, що дозволяє обмежити його область визначення відповідно 
-до необхідної тоності. Оцінемо осцелятивні властивості через аналіз 
-асимптотики частини підінтегральної функції, що залежить від $ \nu $.
-%
-\textcolor{blue} { \begin{equation*} \begin{aligned}
-f_m (\nu) = J_1 \left( \nu \sqrt{\Delta t^2 - \Delta z^2} \right) \cdot \\ 
-\cdot \Big( J_{m-1} (\nu \rho) \pm J_{m+1} (\nu \rho) \Big) 
-\Big( J_{m-1} (\nu \rho') \pm J_{m+1} (\nu \rho') \Big)
-\end{aligned} \end{equation*} }
-%
-\textcolor{blue} { \begin{equation*} \begin{aligned}
-f_1 (\nu) = J_1 \left( \nu \sqrt{\Delta t^2 - \Delta z^2} \right) \cdot \\ 
-\cdot \Big( J_{0} (\nu \rho) \pm J_{2} (\nu \rho) \Big) 
-\Big( J_{0} (\nu \rho') \pm J_{2} (\nu \rho') \Big)
-\end{aligned} \end{equation*} }
-%
-\textcolor{blue} { \begin{equation*} \begin{aligned}
-f_3 (\nu) = J_1 \left( \nu \sqrt{\Delta t^2 - \Delta z^2} \right) \cdot \\ 
-\cdot \Big( J_{2} (\nu \rho) \pm J_{4} (\nu \rho) \Big) 
-\Big( J_{2} (\nu \rho') \pm J_{4} (\nu \rho') \Big)
-\end{aligned} \end{equation*} }
-%
-\textcolor{blue} { \begin{equation*} \begin{aligned}
-\cos \left( \nu \rho - \frac{3 \pi}{4} \right)
-\cos \left( \nu \rho' - \frac{3 \pi}{4} \right)
-\cos \left( \nu \sqrt{\Delta t^2 - \Delta z^2} - \frac{3\pi}{4} \right)
-\end{aligned} \end{equation*} }
-%
-\textcolor{blue} { \begin{equation*} \begin{aligned}
-\cos \left( \nu \rho - \frac{3 \pi}{4} \right)
-\cos \left( \nu \rho' - \frac{5 \pi}{4} \right)
-\cos \left( \nu \sqrt{\Delta t^2 - \Delta z^2} - \frac{3\pi}{4} \right)
-\end{aligned} \end{equation*} }
-%
-\textcolor{blue} { \begin{equation*} \begin{aligned}
-\cos \left( \nu \rho - \frac{5 \pi}{4} \right)
-\cos \left( \nu \rho' - \frac{5 \pi}{4} \right)
-\cos \left( \nu \sqrt{\Delta t^2 - \Delta z^2} - \frac{3\pi}{4} \right)
-\end{aligned} \end{equation*} }
-%
-\textcolor{blue} { \begin{equation*} \begin{aligned}
-\cos \left( \nu \rho - \frac{5 \pi}{4} \right)
-\cos \left( \nu \rho' - \frac{9 \pi}{4} \right)
-\cos \left( \nu \sqrt{\Delta t^2 - \Delta z^2} - \frac{3\pi}{4} \right)
-\end{aligned} \end{equation*} }
-%
-\textcolor{blue} { \begin{equation*} \begin{aligned}
-\cos \left( \nu \rho - \frac{9 \pi}{4} \right)
-\cos \left( \nu \rho' - \frac{9 \pi}{4} \right)
-\cos \left( \nu \sqrt{\Delta t^2 - \Delta z^2} - \frac{3\pi}{4} \right)
-\end{aligned} \end{equation*} }
-%
-\textcolor{blue} { \begin{equation*} \begin{aligned}
-f (\nu) \sim \cos \left( \nu \rho \right) \cos \left( \nu \rho' \right)
-\cos \left( \nu \sqrt{\Delta t^2 - \Delta z^2} \right)
-\end{aligned} \end{equation*} }
-%
-\textcolor{blue} { \begin{equation*} \begin{aligned}
-f (\nu) \sim \cos \left( \nu \sqrt{\Delta t^2 - \Delta z^2} \right) \Big( 
-\cos \left( \nu \left( \rho - \rho' \right) \right) +
-\cos \left( \nu \left( \rho + \rho' \right) \right) \Big) \sim \\
-\sim \cos \left( \nu \left( \rho - \rho' - 
-\sqrt{\Delta t^2 - \Delta z^2} \right) \right) + 
-\cos \left( \nu \left( \rho - \rho' + 
-\sqrt{\Delta t^2 - \Delta z^2} \right) \right) + \\
-+ \cos \left( \nu \left( \rho + \rho' - 
-\sqrt{\Delta t^2 - \Delta z^2} \right) \right) +
-\cos \left( \nu \left( \rho - \rho' + 
-\sqrt{\Delta t^2 - \Delta z^2} \right) \right)
-\end{aligned} \end{equation*} }
-%
 \begin{equation*} \begin{aligned}
-f (\nu) \sim \sum_i \alpha_i (\nu) 
-\cos \big( \left| \omega_i \right| \nu \big)
-\end{aligned} \end{equation*}
-%
-Підінтегральна функція $ f(\nu) $ пропорцяйна до деякої лінійної комбінації
-парних тригонометричних функцій. Частоти осциляцій $ \omega_i $ залежать, 
-як від змінних інтегрування, так і від кординат токи спостереження.
-%
-\begin{equation*} \begin{aligned}
-\omega_1 = \rho - \rho' - \sqrt{(\tau-\tau')^2 - (z-z')^2}
-\end{aligned} \end{equation*}
-%
-\begin{equation*} \begin{aligned}
-\omega_2 = \rho - \rho' + \sqrt{(\tau-\tau')^2 - (z-z')^2}
-\end{aligned} \end{equation*}
-%
-\begin{equation*} \begin{aligned}
-\omega_3 = \rho + \rho' - \sqrt{(\tau-\tau')^2 - (z-z')^2}
-\end{aligned} \end{equation*}
-%
-\begin{equation*} \begin{aligned}
-\omega_4 = \rho + \rho' + \sqrt{(\tau-\tau')^2 - (z-z')^2}
-\end{aligned} \end{equation*}
-%
-Найменше значення частоти визначає період зміни підінтегральної функції.
-Для $ \rho = 0 $ найменше значення періоду є $ \omega_1 $ чи $ \omega_2 $.
-Для чисельного інтегрування візьмемо деяку кількісь таких періодів, що 
-забеспечить фіксовану точність. Найбільше значення частоти $ \omega_4 $ вкаже 
-на необхідну кількість вузлів на період при необхідній точності.
-%
-\begin{equation*} \begin{aligned}
-E'_x = - \frac{\xi_3 A_0^3}{2 \cdot 4^3} \left(
-\frac{\mu_0 \mu} {\epsilon_0 \epsilon} \right)^2
-\int_0^{2R} \int_0^{2R}
-\left( \int_0^{N_\alpha} \sum_{m=-\infty}^\infty f_m (\alpha) d \nu \right. - \\ 
-\left. - \int_0^{\tau - z + z'} \int_0^{N_\beta} g(\Delta \tau, \Delta z)
-\sum_{m=-\infty}^\infty f_m (\beta) d \nu d \tau' \right) d \rho' dz'
-\end{aligned} \end{equation*}
-%
-\begin{equation*} \begin{aligned}
-N_\alpha = \left| \rho - \rho' \right|
-\end{aligned} \end{equation*}
-%
-\begin{equation*} \begin{aligned}
-N_\beta = \left| \rho - \rho' + \sqrt{(\tau-\tau')^2 - (z-z')^2} \right|
+\lim_{n \to \infty} 
+\sqrt{ \frac{\epsilon}{ \epsilon + \chi_e^{(2n+1)}} } = 1
 \end{aligned} \end{equation*}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Врахування провідності середовища}
+\textcolor{blue} { \begin{equation*} \begin{aligned}
+E'_\rho = - \frac{\epsilon_0 \chi_e^{(3)} A_0^3}{2^7}
+\frac{v_{NL}}{v_{LN}}
+\left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^2
+\left(\hat{E}_\rho^{(1)} \cos \varphi +
+\hat{E}_\rho^{(3)} \cos 3 \varphi \right)
+\end{aligned} \end{equation*} }
 
-Для нестаціонарного випромінювання
+\textcolor{blue} { \begin{equation*} \begin{aligned}
+E'_\rho = - \frac{\epsilon_0 \chi_e^{(3)} A_0^3}{2^7}
+\frac{v_{NL}}{v_{LN}}
+\left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^2 
+\hat{E}_\rho^{(3)} \cos 3 \varphi
+\end{aligned} \end{equation*} }
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\textcolor{red} {\section{Лінійне поле від прямокутного збуджуючого імпульсу}}
-%
-\begin{equation}
-\vect{j} \left( r, t \right) = \vect{x_0} A_0 \delta(z) 
-\left(  H(\rho) - H(\rho - R) \right) \left( H(t) - H(t-\tau) \right)
-\end{equation}
-%
-\begin{equation}
-\vect{j} \left( r, t \right) = \vect{j_0} \left( r, t \right) -
-\vect{j_0} \left( r, t - \tau \right)
-\end{equation}
-%
-\textcolor{blue} { \begin{equation*}
-\vect{j_0} \left( r, t \right) = \vect{x_0} A_0 H(t) \delta(z) 
-\left(  H(\rho) - H(\rho - R) \right)
-\end{equation*} }
-%
-\begin{equation}
-\vect{E} \left( r, t \right) = \vect{E_0} \left( r, t \right) -
-\vect{E_0} \left( r, t - \tau \right)
-\end{equation}
-%
-\begin{equation}
-\vect{E} \left( r, t, A_0, \tau \right) = \frac{A_0}{2} 
-\sqrt{\frac{\mu_0 \mu}{\epsilon_0 \epsilon}}
-\Big( \vect{\rho_0} I_1 \cos \varphi - 
-\vect{\varphi_0} \left( I_2 - I_1 \right) \sin \varphi \Big)
-\end{equation}
-%
-\textcolor{red} { Переходячи до термінології теорії довгих ліній помічаємо, 
-що область $ S_{11} $ відповідає коефіцієнту відбиття чотириполюсника.}
-%
-\begin{equation}
-S = \left\{ S_{11}, S_{12}, S_{22}, S_{23}, S_{33} \right\}
-\end{equation}
-%
-\begin{equation}
-I'_m \{S_{ij}\} = I_m (t) \{S_i\} - I_m (t-\tau) \{S_j\}
-\end{equation}
-%
-\textcolor{blue} { \begin{equation*}
-S_1: 0 < v^2 t^2 - z^2 < \left( \rho - R \right)^2
-\end{equation*}
-%
-\begin{equation*}
-S_2: \left( \rho - R \right)^2 < v^2 t^2 - z^2 < \left( \rho + R \right)^2
-\end{equation*}
-%
-\begin{equation*}
-S_3: v^2 t^2 - z^2 > \left( \rho + R \right)^2
-\end{equation*} }
-%
-Для лінійного розв'язку кінець сигналу не може упередити його початок, 
-тому будуть присутні тільки наступні області, а при нелінійному розвязку 
-можлива поява областей де початок сигналу опиняється після його кінця.
-%
-\begin{equation*}
-S_{11}: 0 < v^2 (t-\tau)^2 - z^2 < v^2 t^2 - z^2 < 
-\left( \rho - R \right)^2 < \left( \rho + R \right)^2
-\end{equation*}
-%
-\begin{equation*}
-S_{12}: 0 < v^2 (t-\tau)^2 - z^2 < \left( \rho - R \right)^2 < 
-v^2 t^2 - z^2 < \left( \rho + R \right)^2
-\end{equation*}
-%
-\begin{equation*}
-S_{22}: 0 < \left( \rho - R \right)^2 < v^2 (t-\tau)^2 - z^2 < 
-v^2 t^2 - z^2 < \left( \rho + R \right)^2
-\end{equation*}
-%
-\begin{equation*}
-S_{23}: 0 < \left( \rho - R \right)^2 < v^2 (t-\tau)^2 - z^2 < 
-\left( \rho + R \right)^2 < v^2 t^2 - z^2 
-\end{equation*}
-%
-\begin{equation*}
-S_{33}: 0 < \left( \rho - R \right)^2 < \left( \rho + R \right)^2 <
-v^2 (t-\tau)^2 - z^2 < v^2 t^2 - z^2
-\end{equation*}
-%
-\begin{equation*}
-S_{13}: 0 < v^2 (t-\tau)^2 - z^2 < \left( \rho - R \right)^2 < 
-\left( \rho + R \right)^2 < v^2 t^2 - z^2
-\end{equation*}
+\begin{equation*} \begin{aligned}
+E'_\rho = - \frac{1}{2} \sum_{n=1}^{\infty} 
+\frac{\epsilon_0 \chi_e^{(2n+1)} A_0^{2n+1} }{ 4^{2n+1} }
+\left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^{n+1}
+\hat{E}_\rho^{(2n+1)} \cos \left( 2n \varphi + \varphi \right)
+\end{aligned} \end{equation*}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Вторинне поле від прямокутного збуджуючого імпульсу}
-
-
-u)^2 - z^2 < v^2 t^2 - z^2
-\end{equation*}
-%
-\begin{equation*}
-S_{13}: 0 < v^2 (t-\tau)^2 - z^2 < \left( \rho - R \right)^2 < 
-\left( \rho + R \right)^2 < v^2 t^2 - z^2
-\end{equation*}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Вторинне поле від прямокутного збуджуючого імпульсу}
-
-
+% \begin{tabular}{ | l | l | }
+% \hline 
+% Призначення змінної                          & Область визначенням       \\ 
+% \hline
+% Відстань, що проходить сигнал за час $t$     & $ 0 \le vt' \le vt $      \\ 
+% \hline
+% Відстань, від точки спостереження до джерела & $ 0 \le z' \le z $        \\  
+% \hline
+% Принцип причинності для проміжних подій      & $ 0 < vt - vt' - z + z' $ \\ 
+% \hline
+% Наслідок з 3 та 1                            & $ 0 < vt' < vt - z + z' $ \\ 
+% \hline
+% \end{tabular}

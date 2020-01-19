@@ -179,6 +179,18 @@ bidirectional lstm -> можна використати знання про си
 \label{fig:mp_radio}
 \end{center} \end{figure}
 
+\begin{figure}[htbp] \begin{center}
+\includegraphics[scale=0.7]{lstm_radio}
+\caption{Імпульсне радіо на основі нейронної мережі 
+довго-короткотривалої пам'яті} \label{fig:lstm_radio}
+\end{center} \end{figure}
+
+\begin{figure}[htbp] \begin{center}
+\includegraphics[scale=0.5]{CoreLSTM}
+\caption{Архітектура модуля, що складають 
+ланцюжок LSTM} \label{fig:lstm_core}
+\end{center} \end{figure}
+
 Для використання всіх переваг винаходу необхідно ускладнити принцип 
 роботи вбудованої нейронної мережі на Рис. 3. Перед усім, досвід 
 машинного навчання в сфері обробки часових послідовностей стверджує що, 
@@ -218,12 +230,6 @@ NDA можна накопичити минулі вікна спостереже
 підвищує інформаційну ємність каналу, за рахунок відсутності 
 стробоскопічних повторювань імпульсів для відтворення форми сигналу.
 
-\begin{figure}[htbp] \begin{center}
-\includegraphics[scale=0.45]{netarch}
-\caption{Імпульсне радіо на основі рекурентної нейронної мережі} 
-\label{fig:rnn_radio}
-\end{center} \end{figure}
-
 Використання методології переносу навчання підвищує гнучкість 
 застосування пристрою. Один і той самий прилад можна застосовувати для 
 телекомунікаційних та радарних задач, встановленням різних 
@@ -232,25 +238,55 @@ NDA можна накопичити минулі вікна спостереже
 що дозволяє одночасно вирішувати радарну задачу та задачу дистанційного 
 зондування одним приладом.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Переваги нейронної мережі, як засобу розвязання задач телекомунікації}
 
-\begin{figure}[htbp] \begin{center}
-\includegraphics[scale=0.7]{channel_capacity}
-\caption{Інформаційна емність імпульсного випромінювання} \label{fig:info_cap}
-\end{center} \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Задача телекомунікації для надширокоспугового каналу з завадами}
 
 \begin{equation}
-C = \frac{1}{N_{smp}} \frac{\log_2 \left( 1 + SNR \right)}{1/B + \tau_{RMS}} 
+f_{rx} (t) = \int_0^{t} d \tau \partder{f_{tx}(\tau)}{\tau} 
+\dotprod{\vect{E}_{rx}(t - \tau)}{\vect{E}_{tx} (t - \tau)}
 \end{equation}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Оцінка стійкості апаратних нейронних мереж до шумів}
+\begin{figure}[htbp] \begin{center}
+\includegraphics[scale=0.4]{P4AWGN}
+\caption{Енергія моделі білого шуму в звлежності від параметру} \label{fig:P4AWGN}
+\end{center} \end{figure}
 
-Розповсюдження сигналу через 
+\begin{figure}[htbp] \begin{center}
+\includegraphics[scale=0.9]{Dataset_SNR}
+\caption{Зашумленість набору тренувальних даних} \label{fig:SNR}
+\end{center} \end{figure}
+
+\begin{figure}[htbp] \begin{center}
+\includegraphics[scale=0.9]{FC_S2L_loss}
+\caption{Зміна значення цільової функції повнозв'язної моделі  
+в процессі тренування} \label{fig:fcnn_loss}
+\end{center} \end{figure}
+
+\begin{figure}[htbp] \begin{center}
+\includegraphics[scale=0.35]{LSTM_S2L_loss}
+\caption{Зміна значення цільової функції моделі LSTM1 
+в процессі тренування} \label{fig:lstm_loss}
+\end{center} \end{figure}
+
+\begin{figure}[htbp] \begin{center}
+\includegraphics[scale=0.9]{lstm-seq2seq-loss}
+\caption{Зміна значення цільової функції моделі LSTM2 
+в процессі тренування} \label{fig:lstm_seq2seq_loss}
+\end{center} \end{figure}
+
+\begin{figure}[htbp] \begin{center}
+\includegraphics[scale=0.9]{seq2seq_example}
+\caption{Приклад правильного аналізу} \label{fig:seq2seq_example}
+\end{center} \end{figure}
+
+\begin{figure}[htbp] \begin{center}
+\includegraphics[scale=0.9]{lstm_seq2seq_bad}
+\caption{Приклад не правильного аналізу} \label{fig:lstm_seq2seq_bad}
+\end{center} \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Задача визначення кута за формую імпульсу}
+\section{Радарна задача з визначенням типу об'єкту, що спостерігається}
 
 Станом на сьогодні зокалізація за допомогою надширокосмугових імпульсних 
 системвідбувається через вимірювання часу надходження відбитого 
@@ -264,13 +300,20 @@ C = \frac{1}{N_{smp}} \frac{\log_2 \left( 1 + SNR \right)}{1/B + \tau_{RMS}}
 імпульсу, яка залежить від точки спостереження.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Задача классифікації імпульсу в лінійному просторі}
+\section{Оцінка стійкості апаратних нейронних мереж до внутрішніх шумів}
+
+Розповсюдження сигналу через 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Задача классифікації імпульсу в нелінійному просторі}
+\section{Теоретичні перевоги нейронного радіо над класичною схемою}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Задача клвсифікації в умовах детермінованого шуму}
+\textcolor{red}{TODO: Задача радіовимірювань при нелінійних спотворенях сигналу}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Радарна задача з системою антен типу LIRA та багатосмговою LSTM}
+\begin{equation}
+C = \frac{1}{N_{smp}} \frac{\log_2 \left( 1 + SNR \right)}{1/B + \tau_{RMS}} 
+\end{equation}
+
+\begin{figure}[htbp] \begin{center}
+\includegraphics[scale=0.7]{channel_capacity}
+\caption{Інформаційна емність імпульсного випромінювання} \label{fig:info_cap}
+\end{center} \end{figure}

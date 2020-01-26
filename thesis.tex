@@ -1,4 +1,4 @@
-\documentclass{vakthesis}
+\documentclass[type=phd,guide=mon2017dev.karazin]{mon2017dev}[2019/11/16]
 
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -19,7 +19,7 @@
 \graphicspath{ {Application/} }
 
 \usepackage{eqparbox} 
-\usepackage[x11names]{xcolor} 
+\usepackage[x11names]{xcolor}
 
 % нумкрация теорем/лемм
 \theoremstyle{plain}
@@ -34,32 +34,42 @@
 
 \include{alias} % Локальние определения
 
-%\includeonly{ch1,bib,app3,app1}
-
-% информация о подключенных пакетах в логах
-%\listfiles
-
 \begin{document}
 
-% \title{Випромінювання нестаціонарних полів та їх розповсюдження в нелінійному просторі}
-\title{Лінійні та нелінійні властивості поля ближньої зони імпульсних антен}
+% Випромінювання нестаціонарних полів та їх розповсюдження в нелінійному просторі
+\title(uk){Лінійні та нелінійні властивості поля імпульсних антен в ближній зоні}
+\title(en){NO TRANSLATION}
 
-\author{Ахмедов Ролан Джавадович}
+\author(uk){Ахмедов Ролан Джавадович}
+\author(en){Akhmedov Rolan Dhavadovich}
 
 \supervisor{Думін Олександр Миколайович}
 {кандидат фізико-математичних наук, доцент}
 
-\speciality{01.04.03}
+\speciality(uk)
+[specialityname=Радіофізика і електроніка, degreefield=Радіофізика, 
+specialityfile=specsci20150406n394.uk.csv]
+{01.04.03}
+
+\speciality(en)
+[specialityname=Radiophisics and electronics, degreefield=Radiophisics,
+specialityfile=specsci20150406n394.en.csv]
+{01.04.03}
 
 \udc{537.87}
 
-\institution
-{Харкивський національний університет імені В. Н. Каразіна}
+\institution(uk)[altname=ХНУ імені В. Н. Каразіна]
+{Харківський національний університет імені В. Н. Каразіна}
 {Харків}
+\institution(en)[altname=Karazin KNU]
+{V. N. Karazin Kharkiv National University}
+{Kharkiv}
 
 \date{2020}
 
 \maketitle
+
+% \include{abstract}
 
 \tableofcontents
 

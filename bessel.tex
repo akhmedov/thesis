@@ -1,9 +1,8 @@
-\chapter{Циліндрична функція Бесселя першого роду}
+\chapter{Інтеграли від циліндричної функція Бесселя першого роду}
 \label{ch:bessel}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Визначення на лінійні властивості}
-%
+% Визначення на лінійні властивості
 \begin{equation}
 J_{-n} \left( z \right) = \left( -1 \right)^n J_n \left( z \right)
 \end{equation}
@@ -12,41 +11,37 @@ J_{-n} \left( z \right) = \left( -1 \right)^n J_n \left( z \right)
 J_{n+1} \left( z \right) + J_{n-1} \left( z \right) = 
 \frac{2n}{z} J_n \left( z \right)
 \end{equation}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Асимптотичні властивості}
-%
+% Асимптотичні властивості
 \begin{equation} \label{eq:limJ1toZ}
 \lim_{z \to 0} \left. \frac{J_1 \left( z \right)}{z} \right. = \frac{1}{2}
 \end{equation}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Інтегродиференціальні властивості}
-%
-\begin{equation}
+% Інтегродиференціальні властивості
+\textcolor{blue}{
+\begin{equation*}
 2 \derivat{}{z} J_n \left( z \right) = 
 J_{n-1} \left( z \right) - J_{n+1} \left( z \right) 
-\end{equation}
+\end{equation*}
 %
-\begin{equation}
+\begin{equation*}
 \derivat{}{z} J_n \left( z \right) = 
 J_{n-1} \left( z \right) - \frac{n}{z} J_{n} \left( z \right) 
-\end{equation}
+\end{equation*}
 %
-\begin{equation}
+\begin{equation*}
 \derivat{}{z} J_n \left( z \right) = 
 \frac{n}{z} J_{n} \left( z \right) - J_{n+1} \left( z \right) 
-\end{equation}
+\end{equation*}
 %
-\begin{equation}
+\begin{equation*}
 \derivat{}{z} \frac{ J_n \left( z \right) }{ z^n }  = 
 - \frac{ J_{n+1} \left( z \right) }{ z^n }
-\end{equation}
+\end{equation*}
 %
-\begin{equation}
+\begin{equation*}
 \derivat{}{z} \left( z^n J_n \left( z \right) \right)  = 
 z^n J_{n-1} \left( z \right)
-\end{equation}
+\end{equation*}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Інтеграл 1} \label{sec:i1anal}

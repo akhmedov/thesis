@@ -1,33 +1,54 @@
-\chapter{Властивості тригонометричних функцій}
+\chapter{Дякі властивості тригонометричних функції}
 \label{ch:trigonometric}
 
-\section{Наслідки з формули Ейлера}
+\textcolor{blue}{
+\begin{equation*}
+\derivat{}{\varphi} \arccos \varphi = - \frac{1}{ \sqrt{1 - \varphi^2} }
+\end{equation*}
 %
-\begin{equation}
+\begin{equation*}
+\derivat{}{\varphi} \arctan \varphi = \frac{1}{1 + \varphi^2}
+\end{equation*}
+%
+\begin{equation*}
+\cos \alpha \cos \beta = \frac{1}{2} 
+\left(  \cos (\alpha + \beta) + \cos (\alpha - \beta) \right)
+\end{equation*}
+%
+\begin{equation*}
+\sin \alpha \cos \beta = \frac{1}{2} 
+\left( \sin (\alpha + \beta) + \sin (\alpha - \beta) \right)
+\end{equation*}
+%
+\begin{equation*}
+\sin \alpha \sin \beta = \frac{1}{2} 
+\left( \cos (\alpha - \beta) - \cos (\alpha + \beta) \right)
+\end{equation*}
+%
+\begin{equation*}
 e^{im \varphi} = \cos m \varphi + i \sin m \varphi
-\end{equation}
+\end{equation*}
 %
-\begin{equation}
+\begin{equation*}
 e^{-im \varphi} = \cos m \varphi - i \sin m \varphi
-\end{equation}
+\end{equation*}
 %
-\begin{equation}
+\begin{equation*}
 \sin \varphi = \frac{e^{i \varphi} - e^{- i \varphi}}{2i}
-\end{equation}
+\end{equation*}
 %
-\begin{equation}
+\begin{equation*}
 \cos \varphi = \frac{e^{i \varphi} + e^{- i \varphi}}{2}
-\end{equation}
+\end{equation*}
 %
-\section{Обернені тригонометричні функції}
-%
-\begin{equation}
+\begin{equation*}
 \arctan \frac{1}{x} = \frac{\pi}{2} - \arctan x
-\end{equation}
+\end{equation*}
 %
-\begin{equation}
+\begin{equation*}
 \pi - \arccos x = \arccos (-x)
-\end{equation}
+\end{equation*}
+} % textcolor blue
 %
 \begin{equation}
 \arccos x - \arccos y = \mp \arccos \left( 
@@ -44,35 +65,8 @@ xy + \sqrt{(1-x^2)(1-y^2)} \right),
 \arctan x - \arctan y = \pm \pi + \arctan \frac{x-y}{1+xy}, 
 \left\{ \begin{array}{c} x > 0 \\ x < 0  \end{array} \right\}, xy < -1 
 \end{equation}
-%
-\section{Диференціальні властивості}
-%
-\begin{equation}
-\derivat{}{\varphi} \arccos \varphi = - \frac{1}{ \sqrt{1 - \varphi^2} }
-\end{equation}
-%
-\begin{equation}
-\derivat{}{\varphi} \arctan \varphi = \frac{1}{1 + \varphi^2}
-\end{equation}
-%
-\section{Добуток тригонометричних функцій}
-%
-\begin{equation}
-\cos \alpha \cos \beta = \frac{1}{2} 
-\left(  \cos (\alpha + \beta) + \cos (\alpha - \beta) \right)
-\end{equation}
-%
-\begin{equation}
-\sin \alpha \cos \beta = \frac{1}{2} 
-\left( \sin (\alpha + \beta) + \sin (\alpha - \beta) \right)
-\end{equation}
-%
-\begin{equation}
-\sin \alpha \sin \beta = \frac{1}{2} 
-\left( \cos (\alpha - \beta) - \cos (\alpha + \beta) \right)
-\end{equation}
-%
-\section{Інтеграли, що містять гармонійні функції}
+
+\section{Визначення дельта-функції, через інтеграли}
 %
 \begin{equation} \begin{aligned} \label{eq:int_exp0}
 \int_{0}^{2\pi} e^{\pm i (m-n) \varphi} d \varphi = 2 \pi \delta_{m,n} 

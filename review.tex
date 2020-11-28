@@ -393,16 +393,16 @@ $ \epsilon_0 $ та $ \mu_0 $ - фундаментальні константи 
 \eqref{eq:e_current} і \eqref{eq:m_current} дозволяють записати роторні 
 рівняння \eqref{eq:AmpereLow} і \eqref{eq:FaradayInduction} наступним чином:
 
-\textcolor{blue}{ \begin{equation*} \begin{aligned}
-\crossprod{\nabla}{\vect{H}} = \epsilon_0 \partder{}{t} \left[ 
-\vect{E} + \left( \epsilon - 1 \right) \vect{E} \right] + 
-\partder{\vect{P^\prime}}{t} + \vect{J^\sigma} + \vect{J^e}= \\
-= \epsilon_0 \partder{}{t} \left( \epsilon \vect{E} \right) +
-\partder{\vect{P^\prime}}{t} + \vect{J^\sigma} + \vect{J^e} = 
-\epsilon_0 \left( \partder{\epsilon}{t} 
-\vect{E} + \epsilon \partder{\vect{E}}{t} \right) + 
-\partder{\vect{P^\prime}}{t} + \vect{J^\sigma} + \vect{J^e}
-\end{aligned} \end{equation*} }
+%\textcolor{blue}{ \begin{equation*} \begin{aligned}
+%\crossprod{\nabla}{\vect{H}} = \epsilon_0 \partder{}{t} \left[ 
+%\vect{E} + \left( \epsilon - 1 \right) \vect{E} \right] + 
+%\partder{\vect{P^\prime}}{t} + \vect{J^\sigma} + \vect{J^e}= \\
+%= \epsilon_0 \partder{}{t} \left( \epsilon \vect{E} \right) +
+%\partder{\vect{P^\prime}}{t} + \vect{J^\sigma} + \vect{J^e} = 
+%\epsilon_0 \left( \partder{\epsilon}{t} 
+%\vect{E} + \epsilon \partder{\vect{E}}{t} \right) + 
+%\partder{\vect{P^\prime}}{t} + \vect{J^\sigma} + \vect{J^e}
+%\end{aligned} \end{equation*} }
 %
 \begin{equation} \label{eq:rotHfromE}
 \crossprod{\nabla}{\vect{H}} = 
@@ -419,12 +419,12 @@ $ \epsilon_0 $ та $ \mu_0 $ - фундаментальні константи 
 магнітного заряду до $ g $. Тоді, підставляючи матеріальні рівняння до теореми 
 Гауса отримаємо:
 
-\textcolor{blue}{ \begin{equation*} \begin{aligned}
-\dotprod{\nabla}{ \left( \epsilon_0 \epsilon \vect{E} + 
-\vect{P^\prime} \right) } = \rho^\sigma + \rho^e \\
-\dotprod{\nabla}{ \epsilon_0 \epsilon \vect{E} } = \rho^\sigma + \rho^e -
-\dotprod{\nabla}{ \vect{P^\prime} }
-\end{aligned} \end{equation*} }
+%\textcolor{blue}{ \begin{equation*} \begin{aligned}
+%\dotprod{\nabla}{ \left( \epsilon_0 \epsilon \vect{E} + 
+%\vect{P^\prime} \right) } = \rho^\sigma + \rho^e \\
+%\dotprod{\nabla}{ \epsilon_0 \epsilon \vect{E} } = \rho^\sigma + \rho^e -
+%\dotprod{\nabla}{ \vect{P^\prime} }
+%\end{aligned} \end{equation*} }
 %
 \begin{equation} \label{eq:divE} 
 \epsilon_0 \dotprod{\nabla}{ \epsilon(z,t) \vect{E} } = \varrho,
@@ -481,27 +481,27 @@ $ \vect{A} $, як $ \vect{A_\perp} + \vect{z_0} A_z $. Розписавши в�
 добутку лінійної комбінації векторів, кожне з роторних рівнянь розпадеться 
 на два:
 
-\textcolor{blue}{ \begin{equation*} \begin{aligned}
-\rot{\vect{A}} = \crossprod{\nabla}{\vect{A}} = \crossprod
-{\left( \nabla_\perp + \vect{z_0} \partder{}{z} \right)}
-{\left( \vect{A_\perp} + \vect{z_0} A_z \right)} = \\
-= \crossprod{\nabla_\perp}{\vect{A_\perp}} + 
-\crossprod{\nabla_\perp}{\vect{z_0} A_z} +
-\crossprod{\vect{z_0} \partder{}{z}}{\vect{A_\perp}} +
-\crossprod{ \vect{z_0} \partder{}{z} }{ \vect{z_0} A_z } = \\
-= \crossprod{\nabla_\perp}{\vect{A_\perp}} + 
-\crossprod{\nabla_\perp}{\vect{z_0}} A_z +
-\partder{}{z} \crossprod{\vect{z_0}}{\vect{A_\perp}}
-\end{aligned} \end{equation*} }
+%\textcolor{blue}{ \begin{equation*} \begin{aligned}
+%\rot{\vect{A}} = \crossprod{\nabla}{\vect{A}} = \crossprod
+%{\left( \nabla_\perp + \vect{z_0} \partder{}{z} \right)}
+%{\left( \vect{A_\perp} + \vect{z_0} A_z \right)} = \\
+%= \crossprod{\nabla_\perp}{\vect{A_\perp}} + 
+%\crossprod{\nabla_\perp}{\vect{z_0} A_z} +
+%\crossprod{\vect{z_0} \partder{}{z}}{\vect{A_\perp}} +
+%\crossprod{ \vect{z_0} \partder{}{z} }{ \vect{z_0} A_z } = \\
+%= \crossprod{\nabla_\perp}{\vect{A_\perp}} + 
+%\crossprod{\nabla_\perp}{\vect{z_0}} A_z +
+%\partder{}{z} \crossprod{\vect{z_0}}{\vect{A_\perp}}
+%\end{aligned} \end{equation*} }
 %
-\textcolor{blue}{ \begin{equation*} \begin{aligned}
-\crossprod{\nabla}{\vect{H}} = 
-\crossprod{\nabla_\perp}{\vect{H_\perp}} + 
-\crossprod{\nabla_\perp}{\vect{z_0}} H_z +
-\partder{}{z} \crossprod{\vect{z_0}}{\vect{H_\perp}} = \\
-= \epsilon_0 \partder{}{t} \left( \epsilon  \vect{E_\perp} + 
-\epsilon \vect{z_0} E_z \right) + \vect{J_\perp} + \vect{z_0} J_z
-\end{aligned} \end{equation*} }
+%\textcolor{blue}{ \begin{equation*} \begin{aligned}
+%\crossprod{\nabla}{\vect{H}} = 
+%\crossprod{\nabla_\perp}{\vect{H_\perp}} + 
+%\crossprod{\nabla_\perp}{\vect{z_0}} H_z +
+%\partder{}{z} \crossprod{\vect{z_0}}{\vect{H_\perp}} = \\
+%= \epsilon_0 \partder{}{t} \left( \epsilon  \vect{E_\perp} + 
+%\epsilon \vect{z_0} E_z \right) + \vect{J_\perp} + \vect{z_0} J_z
+%\end{aligned} \end{equation*} }
 %
 \begin{equation} \label{eq:rotHt} 
 \crossprod{\nabla_\perp}{\vect{z_0}} H_z +
@@ -510,24 +510,24 @@ $ \vect{A} $, як $ \vect{A_\perp} + \vect{z_0} A_z $. Розписавши в�
 \vect{J_\perp},
 \end{equation}
 %
-\textcolor{blue}{ \begin{equation*} \begin{aligned}
-\dotprod{\vect{z_0}}{\crossprod{\nabla_\perp}{\vect{H_\perp}}} =
-\triple{\vect{z_0}}{\nabla_\perp}{\vect{H_\perp}}
-\end{aligned} \end{equation*} }
+%\textcolor{blue}{ \begin{equation*} \begin{aligned}
+%\dotprod{\vect{z_0}}{\crossprod{\nabla_\perp}{\vect{H_\perp}}} =
+%\triple{\vect{z_0}}{\nabla_\perp}{\vect{H_\perp}}
+%\end{aligned} \end{equation*} }
 %
 \begin{equation} \label{eq:rotHz}
 \triple{\vect{z_0}}{\nabla_\perp}{\vect{H_\perp}} = 
 \epsilon_0 \partder{}{t} \left( \epsilon  E_z \right) + J_z,
 \end{equation}
 %
-\textcolor{blue}{ \begin{equation*} \begin{aligned}
-- \crossprod{\nabla}{\vect{E}} = 
-- \crossprod{\nabla_\perp}{\vect{E_\perp}} - 
-\crossprod{\nabla_\perp}{\vect{z_0}} E_z -
-\partder{}{z} \crossprod{\vect{z_0}}{\vect{E_\perp}} = \\
-= \mu_0 \partder{}{t} \left( \mu  \vect{H_\perp} + 
-\mu \vect{z_0} H_z \right) + \vect{I_\perp} + \vect{z_0} I_z
-\end{aligned} \end{equation*} }
+%\textcolor{blue}{ \begin{equation*} \begin{aligned}
+%- \crossprod{\nabla}{\vect{E}} = 
+%- \crossprod{\nabla_\perp}{\vect{E_\perp}} - 
+%\crossprod{\nabla_\perp}{\vect{z_0}} E_z -
+%\partder{}{z} \crossprod{\vect{z_0}}{\vect{E_\perp}} = \\
+%= \mu_0 \partder{}{t} \left( \mu  \vect{H_\perp} + 
+%\mu \vect{z_0} H_z \right) + \vect{I_\perp} + \vect{z_0} I_z
+%\end{aligned} \end{equation*} }
 %
 \begin{equation} \label{eq:rotEt} 
 - \crossprod{\nabla_\perp}{\vect{z_0}} E_z -
@@ -535,10 +535,10 @@ $ \vect{A} $, як $ \vect{A_\perp} + \vect{z_0} A_z $. Розписавши в�
 \mu_0 \partder{}{t} \left( \mu  \vect{H_\perp} \right) + \vect{I_\perp},
 \end{equation}
 %
-\textcolor{blue}{ \begin{equation*} \begin{aligned}
-- \dotprod{\vect{z_0}}{\crossprod{\nabla_\perp}{\vect{E_\perp}}} = 
-- \triple{\vect{z_0}}{\nabla_\perp}{\vect{E_\perp}}
-\end{aligned} \end{equation*} }
+%\textcolor{blue}{ \begin{equation*} \begin{aligned}
+%- \dotprod{\vect{z_0}}{\crossprod{\nabla_\perp}{\vect{E_\perp}}} = 
+%- \triple{\vect{z_0}}{\nabla_\perp}{\vect{E_\perp}}
+%\end{aligned} \end{equation*} }
 %
 \begin{equation} \label{eq:rotEz}
 - \triple{\vect{z_0}}{\nabla_\perp}{\vect{E_\perp}} =
@@ -549,20 +549,20 @@ $ \vect{A} $, як $ \vect{A_\perp} + \vect{z_0} A_z $. Розписавши в�
 поздовжню компоненту $ \vect{z_0} $, користуючись комутативними та 
 асоціативними властивостями скалярного добутку векторів.
 %
-\textcolor{blue}{ \begin{equation*} \begin{aligned}
-\dotprod{\nabla}{\vect{A}} = \dotprod
-{\left( \nabla_\perp + \vect{z_0} \partder{}{z} \right)}
-{\left( \vect{A_\perp} + \vect{z_0} A_z \right)} = \\
-= \dotprod{\nabla_\perp}{\vect{A_\perp}} + 
-\dotprod{\nabla_\perp}{\vect{z_0} A_z}  +
-\dotprod{\vect{z_0} \partder{}{z}}{\vect{A_\perp}} +
-\dotprod{\vect{z_0} \partder{}{z}}{\vect{z_0} A_z} = \\
-= \dotprod{\nabla_\perp}{\vect{A_\perp}} +
-\dotprod{\nabla_\perp}{\vect{z_0}} A_z +
-\dotprod{\vect{z_0}}{\partder{\vect{A_\perp}}{z}} +
-\dotprod{\vect{z_0}}{\vect{z_0}} \partder{A_z}{z} = \\
-= \dotprod{\nabla_\perp}{\vect{A_\perp}} + \partder{A_z}{z}
-\end{aligned} \end{equation*} }
+%\textcolor{blue}{ \begin{equation*} \begin{aligned}
+%\dotprod{\nabla}{\vect{A}} = \dotprod
+%{\left( \nabla_\perp + \vect{z_0} \partder{}{z} \right)}
+%{\left( \vect{A_\perp} + \vect{z_0} A_z \right)} = \\
+%= \dotprod{\nabla_\perp}{\vect{A_\perp}} + 
+%\dotprod{\nabla_\perp}{\vect{z_0} A_z}  +
+%\dotprod{\vect{z_0} \partder{}{z}}{\vect{A_\perp}} +
+%\dotprod{\vect{z_0} \partder{}{z}}{\vect{z_0} A_z} = \\
+%= \dotprod{\nabla_\perp}{\vect{A_\perp}} +
+%\dotprod{\nabla_\perp}{\vect{z_0}} A_z +
+%\dotprod{\vect{z_0}}{\partder{\vect{A_\perp}}{z}} +
+%\dotprod{\vect{z_0}}{\vect{z_0}} \partder{A_z}{z} = \\
+%= \dotprod{\nabla_\perp}{\vect{A_\perp}} + \partder{A_z}{z}
+%\end{aligned} \end{equation*} }
 %
 \begin{equation} \label{eq:divEt} 
 \epsilon_0 \partder{}{z} \left( \epsilon E_z \right) = 
@@ -587,85 +587,85 @@ g - \mu_0 \mu \dotprod{\nabla_\perp}{\vect{H_\perp}}
 не з трьох рівнянь, а вже з двох відносно поперечних компонент поля. 
 Результат зашипимо не в вигляді системи, а як чотиривимірне векторне рівняння:
 
-\textcolor{blue}{ \begin{equation*} \begin{aligned}
-\begin{cases} 
-\crossprod{\nabla_\perp}{\vect{z_0}} H_z =
-\epsilon_0 \partder{}{t} \left( \epsilon \vect{E_\perp} \right) -
-\partder{}{z} \crossprod{\vect{z_0}}{\vect{H_\perp}} + \vect{J_\perp} \\
-- \triple{\vect{z_0}}{\nabla_\perp}{\vect{E_\perp}} =
-\mu_0 \partder{}{t} \left(\mu H_z \right) + I_z \\ 
-\mu_0 \partder{}{z} \left( \mu H_z \right) = 
-g - \mu_0 \mu \dotprod{\nabla_\perp}{\vect{H_\perp}}
-\end{cases}
-\end{aligned} \end{equation*} }
+%\textcolor{blue}{ \begin{equation*} \begin{aligned}
+%\begin{cases} 
+%\crossprod{\nabla_\perp}{\vect{z_0}} H_z =
+%\epsilon_0 \partder{}{t} \left( \epsilon \vect{E_\perp} \right) -
+%\partder{}{z} \crossprod{\vect{z_0}}{\vect{H_\perp}} + \vect{J_\perp} \\
+%- \triple{\vect{z_0}}{\nabla_\perp}{\vect{E_\perp}} =
+%\mu_0 \partder{}{t} \left(\mu H_z \right) + I_z \\ 
+%\mu_0 \partder{}{z} \left( \mu H_z \right) = 
+%g - \mu_0 \mu \dotprod{\nabla_\perp}{\vect{H_\perp}}
+%\end{cases}
+%\end{aligned} \end{equation*} }
 %
-\textcolor{blue}{ \begin{equation*} \begin{aligned}
-\begin{cases} 
-\left. \crossprod{\nabla_\perp}{\vect{z_0}} H_z = \vect{F_H} 
-\right| \cdot \mu_0 \partder{}{z} \mu \\
-\left. \crossprod{\nabla_\perp}{\vect{z_0}} H_z = \vect{F_H} 
-\right| \cdot \mu_0 \partder{}{t} \mu \\
-\mu_0 \partder{}{z} \left( \mu H_z \right) = 
-g - \mu_0 \mu \dotprod{\nabla_\perp}{\vect{H_\perp}} \\
-\mu_0 \partder{}{t} \left(\mu H_z \right) =
-\triple{\nabla_\perp}{\vect{z_0}}{\vect{E_\perp}} - I_z
-\end{cases}
-\end{aligned} \end{equation*} }
+%\textcolor{blue}{ \begin{equation*} \begin{aligned}
+%\begin{cases} 
+%\left. \crossprod{\nabla_\perp}{\vect{z_0}} H_z = \vect{F_H} 
+%\right| \cdot \mu_0 \partder{}{z} \mu \\
+%\left. \crossprod{\nabla_\perp}{\vect{z_0}} H_z = \vect{F_H} 
+%\right| \cdot \mu_0 \partder{}{t} \mu \\
+%\mu_0 \partder{}{z} \left( \mu H_z \right) = 
+%g - \mu_0 \mu \dotprod{\nabla_\perp}{\vect{H_\perp}} \\
+%\mu_0 \partder{}{t} \left(\mu H_z \right) =
+%\triple{\nabla_\perp}{\vect{z_0}}{\vect{E_\perp}} - I_z
+%\end{cases}
+%\end{aligned} \end{equation*} }
 %
-\textcolor{blue}{ \begin{equation*} \begin{aligned}
-\begin{cases} 
-\crossprod{\nabla_\perp}{\vect{z_0}} \left(
-g - \mu_0 \mu \dotprod{\nabla_\perp}{\vect{H_\perp}} \right) =
-\mu_0 \partder{}{z} \left( \mu \vect{F_H} \right) \\
-\crossprod{\nabla_\perp}{\vect{z_0}} \left(
-\triple{\nabla_\perp}{\vect{z_0}}{\vect{E_\perp}} - I_z \right) = 
-\mu_0 \partder{}{t} \left( \mu \vect{F_H} \right)
-\end{cases}
-\end{aligned} \end{equation*} }
+%\textcolor{blue}{ \begin{equation*} \begin{aligned}
+%\begin{cases} 
+%\crossprod{\nabla_\perp}{\vect{z_0}} \left(
+%g - \mu_0 \mu \dotprod{\nabla_\perp}{\vect{H_\perp}} \right) =
+%\mu_0 \partder{}{z} \left( \mu \vect{F_H} \right) \\
+%\crossprod{\nabla_\perp}{\vect{z_0}} \left(
+%\triple{\nabla_\perp}{\vect{z_0}}{\vect{E_\perp}} - I_z \right) = 
+%\mu_0 \partder{}{t} \left( \mu \vect{F_H} \right)
+%\end{cases}
+%\end{aligned} \end{equation*} }
 %
-\textcolor{blue}{ \begin{equation*} \begin{aligned}
-\begin{cases} 
-- \mu_0 \mu \dotprod{\crossprod{\nabla_\perp}{\vect{z_0}} \nabla_\perp}
-{\vect{H_\perp}} = \mu_0 \partder{}{z} \left( \mu \vect{F_H} \right) -
-\crossprod{\nabla_\perp}{\vect{z_0}} g \\
-\left. \crossprod{\nabla_\perp 
-\triple{\nabla_\perp}{\vect{z_0}}{\vect{E_\perp}}
-}{\vect{z_0}} = \mu_0 \partder{}{t} \left( \mu \vect{F_H} \right) +
-\crossprod{\nabla_\perp}{\vect{z_0}} I_z \right| \times \vect{z_0}
-\end{cases}
-\end{aligned} \end{equation*} }
+%\textcolor{blue}{ \begin{equation*} \begin{aligned}
+%\begin{cases} 
+%- \mu_0 \mu \dotprod{\crossprod{\nabla_\perp}{\vect{z_0}} \nabla_\perp}
+%{\vect{H_\perp}} = \mu_0 \partder{}{z} \left( \mu \vect{F_H} \right) -
+%\crossprod{\nabla_\perp}{\vect{z_0}} g \\
+%\left. \crossprod{\nabla_\perp 
+%\triple{\nabla_\perp}{\vect{z_0}}{\vect{E_\perp}}
+%}{\vect{z_0}} = \mu_0 \partder{}{t} \left( \mu \vect{F_H} \right) +
+%\crossprod{\nabla_\perp}{\vect{z_0}} I_z \right| \times \vect{z_0}
+%\end{cases}
+%\end{aligned} \end{equation*} }
 %
-\textcolor{blue}{ \begin{equation*} \begin{aligned}
-\crossprod{ \crossprod
-{\nabla_\perp \triple{\nabla_\perp}{\vect{z_0}}{\vect{E_\perp}}}
-{\vect{z_0}} }{ \vect{z_0} } = \crossprod{ \crossprod{\nabla_\perp \phi}
-{\vect{z_0}} }{\vect{z_0}} = \\ = - \crossprod{ \vect{z_0} }{ 
-\crossprod{\nabla_\perp \phi}{\vect{z_0}} } = - \dotprod{\nabla_\perp \phi}
-{ \dotprod{\vect{z_0}}{\vect{z_0}} } + \dotprod{\vect{z_0}}
-{ \dotprod{\vect{z_0}}{\nabla_\perp \phi} } = \\ = - \nabla_\perp \phi = 
-- \nabla_\perp 
-\dotprod{\crossprod{\nabla_\perp}{\vect{z_0}}}{\vect{E_\perp}} = 
-\dotprod{\nabla_\perp \crossprod{\vect{z_0}}{\nabla_\perp}}{\vect{E_\perp}}
-\end{aligned} \end{equation*} }
+%\textcolor{blue}{ \begin{equation*} \begin{aligned}
+%\crossprod{ \crossprod
+%{\nabla_\perp \triple{\nabla_\perp}{\vect{z_0}}{\vect{E_\perp}}}
+%{\vect{z_0}} }{ \vect{z_0} } = \crossprod{ \crossprod{\nabla_\perp \phi}
+%{\vect{z_0}} }{\vect{z_0}} = \\ = - \crossprod{ \vect{z_0} }{ 
+%\crossprod{\nabla_\perp \phi}{\vect{z_0}} } = - \dotprod{\nabla_\perp \phi}
+%{ \dotprod{\vect{z_0}}{\vect{z_0}} } + \dotprod{\vect{z_0}}
+%{ \dotprod{\vect{z_0}}{\nabla_\perp \phi} } = \\ = - \nabla_\perp \phi = 
+%- \nabla_\perp 
+%\dotprod{\crossprod{\nabla_\perp}{\vect{z_0}}}{\vect{E_\perp}} = 
+%\dotprod{\nabla_\perp \crossprod{\vect{z_0}}{\nabla_\perp}}{\vect{E_\perp}}
+%\end{aligned} \end{equation*} }
 %
-\textcolor{blue}{ \begin{equation*} \begin{aligned}
-\crossprod {\crossprod{\nabla_\perp}{\vect{z_0}} I_z}{\vect{z_0}} = 
-- \crossprod {\vect{z_0}}{\crossprod{\nabla_\perp}{\vect{z_0}} I_z} = \\
-= - \dotprod{{\nabla_\perp}}{\dotprod{\vect{z_0}}{\vect{z_0}}} I_z + 
-\dotprod{\vect{z_0}}{\dotprod{\vect{z_0}}{{\nabla_\perp}}} I_z = 
-- \nabla_\perp I_z 
-\end{aligned} \end{equation*} }
+%\textcolor{blue}{ \begin{equation*} \begin{aligned}
+%\crossprod {\crossprod{\nabla_\perp}{\vect{z_0}} I_z}{\vect{z_0}} = 
+%- \crossprod {\vect{z_0}}{\crossprod{\nabla_\perp}{\vect{z_0}} I_z} = \\
+%= - \dotprod{{\nabla_\perp}}{\dotprod{\vect{z_0}}{\vect{z_0}}} I_z + 
+%\dotprod{\vect{z_0}}{\dotprod{\vect{z_0}}{{\nabla_\perp}}} I_z = 
+%- \nabla_\perp I_z 
+%\end{aligned} \end{equation*} }
 %
-\textcolor{blue}{ \begin{equation*} \begin{aligned}
-\begin{cases} 
-\dotprod{\crossprod{\vect{z_0}}{\nabla_\perp} \nabla_\perp} {\vect{H_\perp}} = 
-\mu^{-1} \partder{}{z} \left( \mu \vect{F_H} \right) +
-\left( \mu_0 \mu \right)^{-1} \crossprod{\vect{z_0}}{\nabla_\perp} g \\
-\dotprod{\nabla_\perp \crossprod{\vect{z_0}}{\nabla_\perp}}{\vect{E_\perp}}
-= - \mu_0 \partder{}{t} \left( \mu \crossprod{\vect{z_0}}{\vect{F_H}} \right) -
-\nabla_\perp I_z 
-\end{cases}
-\end{aligned} \end{equation*} }
+%\textcolor{blue}{ \begin{equation*} \begin{aligned}
+%\begin{cases} 
+%\dotprod{\crossprod{\vect{z_0}}{\nabla_\perp} \nabla_\perp} {\vect{H_\perp}} = 
+%\mu^{-1} \partder{}{z} \left( \mu \vect{F_H} \right) +
+%\left( \mu_0 \mu \right)^{-1} \crossprod{\vect{z_0}}{\nabla_\perp} g \\
+%\dotprod{\nabla_\perp \crossprod{\vect{z_0}}{\nabla_\perp}}{\vect{E_\perp}}
+%= - \mu_0 \partder{}{t} \left( \mu \crossprod{\vect{z_0}}{\vect{F_H}} \right) -
+%\nabla_\perp I_z 
+%\end{cases}
+%\end{aligned} \end{equation*} }
 %
 \begin{equation} \label{eq:wboHinit}
 \left( \begin{array}{c} 

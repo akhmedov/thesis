@@ -199,8 +199,8 @@ $ \vect{H} + \vect{H}^\prime $.
 %\end{aligned} \end{equation*} }
 
 Користуючись виразом для вторинного струму Керра \eqref{eq:j_kerr} та 
-напруженістю електричного поля \eqref{eq:linear_e_cyl}, запишемо компоненти 
-струму:
+напруженістю електричного поля \eqref{eq:linear_e_cyl}, знайдемо 
+компоненти струму в часовій області. 
 
 %\textcolor{blue} { \begin{equation*} \begin{aligned}
 %\partder{P_\rho^\prime}{t}   = \frac{ {A_0}^3 \epsilon_0 \chi_e^{(3)} }{ 8 } 
@@ -259,7 +259,8 @@ $ \vect{H} + \vect{H}^\prime $.
 %2 \partder{I_1}{t} (I_2 - I_1) \right) \right).
 %\end{aligned} \end{equation*}
 
-Так як поздовжня напруженість електричного поля відсутня, то
+Поздовжна компонента вторинного нелінійного електричного струму тривіальна, так як поздовжня напруженість електричного поля 
+відсутня:
 
 \begin{equation*} \begin{aligned}
 \partder{P_z^\prime}{t} = 0.
@@ -432,7 +433,7 @@ S^\prime \in S_2 \subset (\rho-R)^2 < vt^2 - z^2 < (\rho+R)^2.
 { \sqrt{ 4 \rho^2 (v^2t^2 - z^2) - (v^2t^2 - z^2 + \rho^2 - R^2)^2 } }.
 \end{aligned} \end{equation}
 
-З рис.~\ref{fig:jx_secondary} випливає, що проекція вторинного струму обернена 
+З Рис.~\ref{fig:jx_secondary} випливає, що проекція вторинного струму обернена 
 за знаком відносно тієї ж проекції компоненти напруженості електричного поля.
 
 \begin{figure}[h] \begin{center}
@@ -528,12 +529,14 @@ $ \left[ -1, 1 \right] $ та тривалістю $ \tau_0 $:
 \label{fig:trans_dist}
 \end{figure}
 
-На рис.~\ref{fig:trans_dist} зображено поперечні розподіли густини енергії на 
-відстані $ R $ від апертури LIRA при різній часовій залежності збуджувального 
-струму. Сторони квадратних зрізів рівні та мають розмір $ 2R $. Як видно з 
-рисунків, форма збудження має значний вплив на розподіл густини енергії у 
-ближній зоні, де вклад нелінійної поправки найбільший, а отже поширення хвилі 
-у нелінійному середовищі залежить від форми збуджувального сигналу.
+На Рис.~\ref{fig:trans_dist} зображено епюри поперечних розподілів 
+густини енергії на відстані $ R $ від апертури LIRA при різній часовій 
+залежності збуджувального струму. Сторони квадратних зрізів рівні 
+та мають розмір $ 2R $. Як видно з рисунків, форма збудження має 
+значний вплив на розподіл густини енергії у ближній зоні, де вклад 
+нелінійної поправки найбільший, а отже поширення хвилі в 
+нелінійному середовищі залежить від форми збуджувального 
+сигналу.
 
 % обмежувати область врахування вторинного струму на основі енергетичних 
 % характеристик породжувальної хвилі треба з урахуванням часової залежності 
@@ -550,7 +553,7 @@ $ \left[ -1, 1 \right] $ та тривалістю $ \tau_0 $:
 \label{fig:long_dist}
 \end{figure}
 
-На рис.~\ref{fig:long_dist} зображено поздовжній розподіл густини енергії 
+На Рис.~\ref{fig:long_dist} зображено поздовжній розподіл густини енергії 
 поля LIRA при часовій залежності збудження у вигляді $ H(t) $ та фокальним 
 радіусом 1 метр. Густину енергії побудовано в двох ортогональних площинах.
 З рисунків видно, що більша частина енергії зосереджена в прожекторній зоні 
@@ -561,7 +564,7 @@ $ \left[ -1, 1 \right] $ та тривалістю $ \tau_0 $:
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Перетворення мод Керрівською нелінійністю}
+\section{Перетворення мод керрівською нелінійністю}
 
 Застосуємо метод еволюційних рівнянь для розв'язання задачі випромінювання 
 вторинним струмом \eqref{eq:j_kerr}. Для цього, спершу, запишемо модовий
@@ -606,7 +609,7 @@ e^{-im\varphi} \left( i  m \frac{J_m (\nu \rho)}{\rho \sqrt{\nu}}
 
 Спершу, спростимо вираз $ j_m $ отримавши уявну область 
 значень замість комплексної. Згрупувавши доданки за тригонометричними 
-функціями,знайдемо інтеграли за азимутальним кутом $ \varphi $, 
+функціями, знайдемо інтеграли за азимутальним кутом $ \varphi $, 
 користуючись аналітичними інтегралами \eqref{eq:int_exp3}, 
 \eqref{eq:int_exp4}, \eqref{eq:int_exp5}, \eqref{eq:int_exp6}. Отримаємо 
 вирази для інтегралів від компонентів вектору вторинного нелінійного струму 
@@ -641,8 +644,8 @@ e^{-im\varphi} \left( i  m \frac{J_m (\nu \rho)}{\rho \sqrt{\nu}}
 %\partder{I_1}{t} ( I_2 - I_1 ) + 2 I_1 \left( \partder{I_2}{t} - 
 %\partder{I_1}{t} \right) \right) \right)
 %\end{aligned} \end{equation*} }
-%
-\begin{equation*} \begin{aligned}
+
+\begin{equation*} \begin{gathered}
 \frac{\epsilon_0 \chi_e^{(3)}}{2 \pi} \int_{0}^{2\pi} d \varphi 
 e^{-im \varphi} \partder{P_\rho^\prime}{t} = 
 \frac{ {A_0}^3 \epsilon_0 \chi_e^{(3)}}{ 64 } 
@@ -653,8 +656,8 @@ e^{-im \varphi} \partder{P_\rho^\prime}{t} =
 \delta_{m,-3} - \delta_{m,3} \right) \left( 
 \partder{I_1}{t} ( I_2 - I_1 ) + 2 I_1 \left( \partder{I_2}{t} - 
 \partder{I_1}{t} \right) \right) \right)
-\end{aligned} \end{equation*}
-%
+\end{gathered}   \end{equation*}
+
 %\textcolor{blue} { \begin{equation*} \begin{aligned}
 %\int_{0}^{2\pi} e^{-i m \varphi} \sin^3 \varphi d \varphi = 
 %\frac{3 \pi i}{4} \delta_{m,-1} - \frac{3 \pi i}{4} \delta_{m,1} - 
@@ -687,8 +690,8 @@ e^{-im \varphi} \partder{P_\rho^\prime}{t} =
 %I_1 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) + 
 %2 \partder{I_1}{t} (I_2 - I_1) \right) \right)
 %\end{aligned} \end{equation*} }
-%
-\begin{equation*} \begin{aligned}
+
+\begin{equation*} \begin{gathered}
 \frac{\epsilon_0 \chi_e^{(3)}}{2 \pi} \int_{0}^{2 \pi} d \varphi 
 e^{-im \varphi} \partder{P_\varphi^\prime}{t} = 
 - \frac{ {A_0}^3 \epsilon_0 \chi_e^{(3)}  i}{ 64 }
@@ -700,7 +703,7 @@ e^{-im \varphi} \partder{P_\varphi^\prime}{t} =
 \delta_{m,3} + \delta_{m,-3} \right) \left( 
 I_1 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) + 
 2 \partder{I_1}{t} (I_2 - I_1) \right) \right)
-\end{aligned} \end{equation*}
+\end{gathered} \end{equation*}
 
 Як видно з останніх виразів, інтегрування за кутом $ \varphi $ дає дискретний 
 модовий розподіл вторинного струму.  Також помічаємо, що у розподілах присутні 
@@ -756,13 +759,13 @@ I_1 \left( \partder{I_2}{t} - \partder{I_1}{t} \right) +
 %J_{m+1} (\nu \rho) ( i j_\rho^\prime - j_\varphi^\prime ) \Big)
 %\end{aligned} \end{equation*} }
 %
-\begin{equation} \begin{aligned}
+\begin{equation} \begin{gathered}
 j_1 = \frac{i A_0^3 \sqrt{\mu_0} \epsilon_0 \chi_e^{(3)} \sqrt{\nu}}{128}
 \left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^{3/2}
 \int_0^\infty \rho d \rho \cdot \\ \cdot
 \Big( J_0 (\nu \rho) ( 3 \alpha + \beta + 3 \gamma + \lambda) + 
 J_2 (\nu \rho) ( 3 \alpha + \beta - 3 \gamma - \lambda ) \Big)
-\end{aligned} \end{equation}
+\end{gathered} \end{equation}
 %
 %\textcolor{blue} { \begin{equation*} \begin{aligned}
 %j_{-1} = \frac{i A_0^3 \sqrt{\mu_0} \epsilon_0 \chi_e^{(3)} \sqrt{\nu}}{128}
@@ -784,29 +787,29 @@ j_{-1} = j_{1}
 %J_4 (\nu \rho) ( \alpha - \beta + \gamma - \lambda) \Big)
 %\end{aligned} \end{equation*} }
 %
-\begin{equation*} \begin{aligned}
+\begin{equation} \begin{gathered}
 j_{-3} = - \frac{i A_0^3 \sqrt{\mu_0} \epsilon_0 \chi_e^{(3)} \sqrt{\nu}}{128}
 \left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^{3/2}
 \int_0^\infty \rho d \rho \cdot \\ \cdot
 \Big( J_4 (\nu \rho) ( \alpha - \beta + \gamma - \lambda) + 
 J_2 (\nu \rho) ( \alpha - \beta - \gamma + \lambda) \Big)
-\end{aligned} \end{equation*}
+\end{gathered} \end{equation}
 %
 \begin{equation} \begin{aligned}
 j_{-3} = j_{3}
 \end{aligned} \end{equation}
 
 \begin{figure}[htbp] \begin{center}
-\includegraphics[scale=1.0]{normed_j1}
+\includegraphics[scale=0.8]{normed_j1}
 \caption{Нормована швидкість зміни моди $ j_1 $ у часі} \label{fig:mode1}
 \end{center} \end{figure}
 
 \begin{figure}[htbp] \begin{center}
-\includegraphics[scale=1.0]{normed_j3}
+\includegraphics[scale=0.8]{normed_j3}
 \caption{Нормована швидкість зміни моди $ j_3 $ у часі} \label{fig:mode3}
 \end{center} \end{figure}
 
-На рис.~\ref{fig:mode1} і на рис.~\ref{fig:mode3} зображено величину модового 
+На Рис.~\ref{fig:mode1} і на Рис.~\ref{fig:mode3} зображено величину модового 
 струму, нормовану на час $ j_m / ct $ для різних значень $ ct-z $ та $ \nu $.
 $ j_m / ct $ нормування вибрано задля того, щоб зручно показати модовий 
 струм, як функцію всіх його змінних на одному графіку. Якщо розглянути вторинне
@@ -954,13 +957,13 @@ v' = \frac{c}{\sqrt{ \left(\epsilon + \chi_e^{(3)}\right) \mu}} =
 %H \left( v't' - ( vt - z + z' ) \right)
 %\end{aligned} \end{equation*} }
 %
-\begin{equation} \begin{aligned} 
+\begin{equation} \begin{gathered} 
 V_m^h = \frac{i A_0^3 \epsilon_0 \chi_e^{(3)}}{2^8}
 \sqrt{\frac{\mu_0 \mu}{\epsilon + \chi_e^{(3)}}} 
 \left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^{3/2} \sqrt{\nu} 
 \cdot \\ \cdot \partder{}{t} \int_0^\infty dz' \int_0^{v't - z + z'} dt'
 J_0 \left( \nu \sqrt{v'(t-t')^2 - (z-z')^2} \right) \hat{j_m} (vt',z')
-\end{aligned} \end{equation}
+\end{gathered} \end{equation}
 
 Тепер, користуючись правилом інтегрування Лейбніца \cite{imp:NumRecipes2007}, 
 спростимо отриманий вираз, взявши аналітично похідну за часом:
@@ -1011,7 +1014,7 @@ J_0 \left( \nu \sqrt{v'(t-t')^2 - (z-z')^2} \right) \hat{j_m} (vt',z')
 %\hat{j_m} (v't - z + z',z')
 %\end{aligned} \end{equation*} }
 %
-\begin{equation} \begin{aligned} \label{eq:vmh_nl}
+\begin{equation} \begin{gathered} \label{eq:vmh_nl}
 V_m^h = \frac{i A_0^3 \epsilon_0 \chi_e^{(3)}}{2^8}
 \sqrt{\frac{\mu_0 \mu}{\epsilon + \chi_e^{(3)}}} 
 \left( \frac{\mu_0 \mu}{\epsilon_0 \epsilon} \right)^{3/2} \sqrt{\nu}
@@ -1021,7 +1024,7 @@ V_m^h = \frac{i A_0^3 \epsilon_0 \chi_e^{(3)}}{2^8}
 \left. - \nu \int_0^\infty v'(t-t') 
 \frac{J_1 \left( \nu \sqrt{v'(t-t')^2 - (z-z')^2} \right)}
 {\sqrt{v'(t-t')^2 - (z-z')^2}} \hat{j_m} (v't',z') dt' \right\}
-\end{aligned} \end{equation}
+\end{gathered} \end{equation}
 
 \begin{equation} \begin{aligned} \label{eq:vmh_norm}
 V_m^h = \frac{i A_0^3 \epsilon_0 \chi_e^{(3)}}{2^8}
@@ -1082,7 +1085,7 @@ d \chi V_n^e \nabla_\perp \Phi_n \right),
 %
 де $ \Psi_m $ та $ \Phi_n  $ є базисні функції розкладу поля, а $ V_m^h $
 та $ V_n^e $ - еволюційні коефіцієнти, відомі з виразів \eqref{eq:e_evolution}
-та \eqref{ eq:vmh_nl}. Користуючись властивостями симетрії 
+та \eqref{eq:vmh_nl}. Користуючись властивостями симетрії 
 \eqref{eq:vp1_vm1} та \eqref{eq:vp3_vm3}, не важко помітити, що
 %
 %\textcolor{blue} { \begin{equation*} \begin{aligned}
@@ -1239,17 +1242,17 @@ f_m (\rho',v't',z')  \right\},
 $ I_i I_j \partder{I_i}{vt} $ введених раніше \eqref{eq:alpha} - 
 \eqref{eq:lambda}, як $ \alpha, \beta, \gamma, \lambda $:
 
-\begin{equation} \begin{aligned}
+\begin{equation} \begin{gathered}
 f_1 ( \nu | v't', \rho', z') = 
 J_0 (\nu \rho') (3 \alpha + \beta + 3 \gamma + \lambda) + \\
 + J_2 (\nu \rho') (3 \alpha + \beta - 3 \gamma - \lambda);
-\end{aligned} \end{equation}
+\end{gathered} \end{equation}
 
-\begin{equation} \begin{aligned}
+\begin{equation} \begin{gathered}
 f_3 ( \nu | v't', \rho', z') = 
 J_2 (\nu \rho') (\alpha + \beta + \gamma - \lambda) + \\
 + J_4 (\nu \rho') (\alpha - \beta - \gamma + \lambda).
-\end{aligned} \end{equation}
+\end{gathered} \end{equation}
 
 Інтегрування за штрихованими змінними є математичною формалізацією 
 суперпозиції поля точкових джерел розподілених по ближній зоні апертури
@@ -1312,34 +1315,34 @@ $ 0 \leq \rho' \leq \rho $, $ 0 \leq z' \leq z $ та $ 0 \leq t' \leq t $.
 шляхом мінімізації відхилень значень інтегралу на сусідніх ітераціях.
 
 \begin{figure}[htbp] \begin{center}
-\includegraphics[scale=0.99]{KerrEvo205}
+\includegraphics[scale=0.8]{KerrEvo205}
 \caption{Нормований еволюційний коефіцієнт $ \hat{V_m^h} $ для 
 різних $ m $ при $ v't' = 2.05, z' = 2 $.} 
 \label{fig:KerrEvo205}
 \end{center} \end{figure}
 
 \begin{figure}[htbp] \begin{center}
-\includegraphics[scale=0.99]{KerrEvo215}
+\includegraphics[scale=0.8]{KerrEvo215}
 \caption{Нормований еволюційний коефіцієнт $ \hat{V_m^h} $ для 
 різних $ m $ при $ v't' = 2.15, z' = 2 $.} 
 \label{fig:KerrEvo215}
 \end{center} \end{figure}
 
 \begin{figure}[htbp] \begin{center}
-\includegraphics[scale=0.99]{KerrEvo220}
+\includegraphics[scale=0.8]{KerrEvo220}
 \caption{Нормований еволюційний коефіцієнт $ \hat{V_m^h} $ для 
 різних $ m $ при $ v't' = 2.20, z' = 2 $.} 
 \label{fig:KerrEvo220}
 \end{center} \end{figure}
 
 \begin{figure}[htbp] \begin{center}
-\includegraphics[scale=0.99]{KerrEvo225}
+\includegraphics[scale=0.8]{KerrEvo225}
 \caption{Нормований еволюційний коефіцієнт $ \hat{V_m^h} $ для 
 різних $ m $ при $ v't' = 2.25, z' = 2 $.} 
 \label{fig:KerrEvo225}
 \end{center} \end{figure}
 
-На рис.~\ref{fig:KerrEvo205}--\ref{fig:KerrEvo225} зображено чисельно 
+На Рис.~\ref{fig:KerrEvo205}--\ref{fig:KerrEvo225} зображено чисельно 
 розрахований нормований еволюційний коефіцієнт $ \hat{V_m^h} $ як функцію 
 спектрального параметру $ \nu $ для окремих точок модового розкладу розподілу 
 вторинно струму. Енергія отриманого поля-поправки для перехідної функції 
@@ -1438,7 +1441,7 @@ E'_\varphi = \frac{\epsilon_0 \chi_e^{(3)} A_0^3}{2^7}
 %\end{aligned} \end{equation*} }
 
 
-\textcolor{red} {TODO: Які показники нелінійного середовища використано та яку амплітуду струму застосовано}
+% \textcolor{red} {TODO: Які показники нелінійного середовища використано та яку амплітуду струму застосовано}
 
 \begin{figure}[htbp] \begin{center}
 \includegraphics[scale=0.99]{KerrTRz2}
@@ -1452,15 +1455,15 @@ E'_\varphi = \frac{\epsilon_0 \chi_e^{(3)} A_0^3}{2^7}
 \label{fig:KerrTRz3}
 \end{center} \end{figure}
 
-На рис.~\ref{fig:KerrTRz2}--\ref{fig:KerrTRz3} зображено поправку
+На Рис.~\ref{fig:KerrTRz2}--\ref{fig:KerrTRz3} зображено поправку
 до перехідної функції плаского диску, що враховує слабку нелінійну взаємодію 
 поля з середовищем в двох точках на осі випромінювання $ z = 2R $ та $ z = 3R $.
 З графіків видно, що дисперсія імпульсу зменшується, а крутизна його фронтів і
 максимальна амплітуда зростають. Цей ефект відомий в літературі, як ефект 
 нелінійного самофокусування імпульсу.
 
-На графіках поправки до лінійного поля (рис.~\ref{fig:KerrTRz2} та 
-рис.~\ref{fig:KerrTRz3}) можна помітити, що амплітуда зростає з віддаленням 
+На графіках поправки до лінійного поля (Рис.~\ref{fig:KerrTRz2} та 
+Рис.~\ref{fig:KerrTRz3}) можна помітити, що амплітуда зростає з віддаленням 
 точки спостереження від плаского диску електричного струму. Це можна 
 пояснити нехтуванням дисипативними і дисперсійними властивостями 
 середовища. Також, важливим фактором стало те, що джерело поля не диск, 

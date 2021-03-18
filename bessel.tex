@@ -53,13 +53,23 @@ J_{n+1} \left( z \right) + J_{n-1} \left( z \right) =
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Отримання інтегралу $ I_1 $ в явному виді} \label{sec:i1anal}
 %
+
+Отриманий інтеграл є азимутально-симетричним амплітудним 
+коефіцієнтом для компонентів векторів напруженості поля, 
+породженого антенами імпульсного випромінювання. Очевидно,
+що значення інтегралу -- функція часу, лінійних просторових 
+координат та радіусу апертури.
+
 \begin{equation} \label{eq:int1start}
 I_1 = R \int\limits_{0}^{\infty} \frac{d\nu}{\rho \nu} 
 J_1 \left( \nu R \right) J_1 \left( \nu \rho \right) 
 J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right)
 \end{equation}
 
-Інтеграли такого виду зустрічаються в \cite[ст. 398]{imp:Watson1922}.
+Спробуємо знайти аналітичне значення виразу \eqref{eq:int1start}, 
+притупивши, що він сходиться. Інтеграли такого виду 
+зустрічаються в \cite[ст. 398]{imp:Watson1922}.
+
 \begin{equation} \begin{aligned} \label{eq:intJJJtable}
 \int\limits_{0}^{\infty} \frac{d t}{t^{\lambda + \nu}} 
 J_\mu \left( at \right) J_\nu \left( bt \right) J_\nu \left( ct \right) =
@@ -72,7 +82,7 @@ J_\mu \left( at \right) J_\nu \left( bt \right) J_\nu \left( ct \right) =
 \Re \left( \nu \right) > - \frac{1}{2};
 \Re \left( \mu + \nu + 2 \right) > \Re \left( \lambda + 1 \right) > 0
 \end{aligned} \end{equation}
-%
+
 %\textcolor{blue}{ \begin{equation*} \begin{aligned}
 %a = \sqrt{c^2 t^2 - z^2}; b = R; c = \rho; \lambda = 0 \\
 %\nu = 1; \mu = 0; \omega = \sqrt{R^2 + \rho^2 - 2 \rho R \cos \phi} \\
@@ -101,7 +111,7 @@ J_\mu \left( at \right) J_\nu \left( bt \right) J_\nu \left( ct \right) =
 Використання формули \eqref{eq:intJJJtable} дозволяє спростити $ I_1 $ до 
 інтегралу по двом функціям Бесселя в ядрі замість трьох. Використаємо наступну 
 формулу з \cite{imp:Golubovic2013} для пошуку рішення нового інтегралу. 
-%
+
 \begin{equation} \begin{aligned} \label{eq:intJJtable}
 \int\limits_{0}^{\infty} d \nu
 J_n \left( a \nu \right) J_{n-1} \left( b \nu \right) = \begin{cases} 
@@ -110,7 +120,7 @@ b^{n-1} / a^n , 0 < b < a \\
 0 , 0 < a < b
 \end{cases} 
 \end{aligned} \end{equation}
-%
+
 %\textcolor{blue}{ \begin{equation*} \begin{aligned}
 %\int\limits_{0}^{\infty} d \nu J_1 \left( \nu \omega \right) 
 %J_0 \left( \nu \sqrt{c^2 t^2 - z^2} \right) = \begin{cases}
@@ -158,7 +168,7 @@ b^{n-1} / a^n , 0 < b < a \\
 %R \geq \left| f_-(r,t) \right|
 %\end{cases} 
 %\end{aligned} \end{equation*} }
-%
+
 \begin{equation*} \begin{aligned}
 I_1 \in \begin{cases}
 S_1: \{ 0 \leq \phi \leq \psi \}, 0 < R < 
@@ -168,11 +178,11 @@ R \leq \rho + \sqrt{c^2 t^2 - z^2} \\
 S_3: \{ 0 \leq \phi \leq \pi \}, R > \rho + \sqrt{c^2 t^2 - z^2}
 \end{cases} 
 \end{aligned} \end{equation*}
-%
+
 \begin{equation*} \begin{aligned}
 I_1 \{ S_1 \} = 0
 \end{aligned} \end{equation*}
-%
+
 %\textcolor{blue}{ \begin{equation*} \begin{aligned}
 %I_1 = \frac{R^2}{\pi} \int\limits_{0}^{\pi} 
 %\frac{\sin^2{\phi}}{\sqrt{R^2 + \rho^2 - 2 \rho R \cos \phi}}
@@ -190,7 +200,7 @@ I_1 \{ S_1 \} = 0
 Згідно властивістю адитивності при розбиттях для інтегралів Рімана, 
 значення інтегралу в одній точці не впливає на значення інтегралу у 
 визначених межах, а отже:
-%
+
 \begin{equation*} \begin{aligned}
 I_1 = \frac{1}{\pi} \int_{\psi}^{\pi}
 \frac{\sin^2{\phi}}{1 + \frac{\rho^2}{R^2} - 
@@ -198,7 +208,7 @@ I_1 = \frac{1}{\pi} \int_{\psi}^{\pi}
 \psi = \arccos \left( \frac{\rho^2 + R^2}{2 \rho R} - 
 \frac{c^2 t^2 - z^2}{2 \rho R} \right)
 \end{aligned} \end{equation*}
-%
+
 %\textcolor{blue}{ \begin{equation*} \begin{aligned}
 %\int \frac{\sin^2{\phi}}{a + b \cos \phi} d \phi = 
 %\int \frac{1 - \cos^2{\phi}}{a + b \cos \phi} d \phi = 
@@ -269,14 +279,14 @@ I_1 = \frac{1}{\pi} \int_{\psi}^{\pi}
 
 Тригонометричними перетвореннями зведемо поточний вид $ I_1 $ до табличного 
 інтегралу.
-%
+
 \begin{equation*} \begin{aligned}
 I_{1} \{ S_2 \} = - \frac{\left( \rho^2 - R^2 \right)^2}{4 \pi \rho^2} 
 \int_{\psi}^{\pi} \frac{d \phi}{R^2 + \rho^2 - 2 \rho R \cos \phi} - 
 \frac{R}{\rho} \frac{\sin \psi}{2 \pi} +  
 \frac{\rho^2 + R^2}{4 \rho^2} \frac{\pi - \psi}{\pi}
 \end{aligned} \end{equation*}
-%
+
 %\textcolor{blue}{ \begin{equation*} \begin{aligned}
 %\int_{0}^{\pi} \frac{\sin^2{\phi}}{a + b \cos \phi} d \phi =  
 %\left( 1 - \frac{a^2}{b^2} \right)
@@ -286,7 +296,7 @@ I_{1} \{ S_2 \} = - \frac{\left( \rho^2 - R^2 \right)^2}{4 \pi \rho^2}
 %\int_{0}^{\pi} \frac{d \phi}{a + b \cos \phi} +
 %\frac{a}{b^2} \pi
 %\end{aligned} \end{equation*} }
-%
+
 \begin{equation*} \begin{aligned}
 I_{1} \{ S_3 \} = - \frac{\left( \rho^2 - R^2 \right)^2}{4 \pi \rho^2} 
 \int_{0}^{\pi} \frac{d \phi}{R^2 + \rho^2 - 2 \rho R \cos \phi} + 
@@ -295,7 +305,7 @@ I_{1} \{ S_3 \} = - \frac{\left( \rho^2 - R^2 \right)^2}{4 \pi \rho^2}
 
 Таблична формула для неозначеного випадку інтегралу може буде знайдена в 
 \cite[ст. 181]{imp:ElementFunc1983}.
-%
+
 \begin{equation} \label{eq:caseTableIntegral}
 \int \frac{d x}{a + b \cos{x}} = \begin{cases}
 \frac{2}{\sqrt{a^2-b^2}} \arctan \frac{\sqrt{a^2-b^2} \tan \frac{x}{2}}
@@ -345,7 +355,7 @@ $ a^2 < b^2 $, навпаки, для прожекторної зони випр
 %\right|_{\psi}^{\pi} = \\ = \frac{2}{ |\rho^2 - R^2| } \left( \frac{\pi}{2} -
 %\arctan \left( \frac{\rho + R}{ |\rho - R| } \tan \frac{\psi}{2} \right) \right)
 %\end{aligned} \end{equation*} }
-%
+
 \begin{equation*} \begin{aligned}
 I_1 \{ S_2 \} = \frac{ | \rho^2 - R^2 | }{2 \pi \rho^2} \left(
 \arctan \left( \frac{\rho + R}{ | \rho - R | } \tan \frac{\psi}{2} \right) -  
@@ -361,7 +371,7 @@ I_1 \{ S_2 \} = \frac{ | \rho^2 - R^2 | }{2 \pi \rho^2} \left(
 %\arctan \left( \frac{\rho + R}{ | \rho - R | } \tan \frac{\phi}{2} \right)
 %\right|_{0}^{\pi} = \frac{2}{ | \rho^2 - R^2 | } \frac{\pi}{2}
 %\end{aligned} \end{equation*} }
-%
+
 \begin{equation*} \begin{aligned}
 I_1 \{ S_3 \} = \frac{\rho^2 + R^2}{4 \rho^2} - 
 \frac{ |\rho^2 - R^2| }{4 \rho^2} = \begin{cases}
@@ -369,7 +379,7 @@ I_1 \{ S_3 \} = \frac{\rho^2 + R^2}{4 \rho^2} -
 R^2 / 2 \rho^2, \rho > R
 \end{cases}
 \end{aligned} \end{equation*}
-%
+
 Для того щоб отримати значення інтегралу на осі аплікат повернемось до 
 початкового виду $ I_1 $ з \eqref{eq:int1start}. Користуючись асимптотичною 
 властивістю функції Бесселя \eqref{eq:limJ1toZ} побачимо що інтеграл 
@@ -391,7 +401,7 @@ R^2 / 2 \rho^2, \rho > R
 %1, 0 < \sqrt{c^2t^2 - z^2} < R 
 %\end{cases}
 %\end{equation*} }
-%
+
 \begin{equation}
 \left. I_1 \right|_{\rho = 0} = \frac{1}{2} \begin{cases}
 0, 0 < R < \sqrt{c^2t^2 - z^2} \\
@@ -404,13 +414,13 @@ R^2 / 2 \rho^2, \rho > R
 $ \psi = \arccos f(r,t) $, де $ f(r,t) $ задовільна функція координат. 
 Тоді $ f(r,t) = \cos \psi $. Зазначимо, що з означення відомо, що 
 $ \psi \in \left[ 0, \pi \right] $, тому $ \sin \psi \geq 0 $. Таким чином:
-%
+
 \begin{equation*} \begin{aligned}
 \sin \psi = \sqrt{1 - \cos^2 \psi } = \sqrt{1 - f^2(r,t)}
 \end{aligned} \end{equation*}
 
 Згадуючи введене означення для $ \psi $ зашипимо, що
-%
+
 %\textcolor{blue}{ \begin{equation*} \begin{aligned}
 %\psi = \arccos \left( \frac{\rho^2 + R^2}{2 \rho R} - 
 %\frac{c^2 t^2 - z^2}{2 \rho R} \right)
@@ -443,12 +453,12 @@ $ \psi \in \left[ 0, \pi \right] $, тому $ \sin \psi \geq 0 $. Таким ч
 %= 4 R^2 (c^2 t^2 - z^2) - (\rho^2 - R^2)^2 - (c^2 t^2 - z^2)^2 +
 %2 (\rho^2 - R^2) (c^2 t^2 - z^2) = ?
 %\end{aligned} \end{equation*} }
-%
+
 \begin{equation*} \begin{aligned}
 \frac{R}{\rho} \frac{\sin \psi}{2 \pi} = 
 \frac{\sqrt{4 \rho^2 R^2 - (\rho^2 + R^2 - c^2t^2 + z^2)^2}}{4 \pi \rho^2}
 \end{aligned} \end{equation*}
-%
+
 %\textcolor{blue}{ \begin{equation*} \begin{aligned}
 %\tan \frac{\psi}{2} = \pm \sqrt{ \frac{1 - \cos \psi}{1 + \cos \psi} } = 
 %\sqrt{ \frac{1- \frac{\rho^2 + R^2}{2 \rho R} + \frac{c^2 t^2 - z^2}{2 \rho R}}
@@ -465,21 +475,21 @@ $ \psi \in \left[ 0, \pi \right] $, тому $ \sin \psi \geq 0 $. Таким ч
 %\frac{c^2t^2 - z^2 - \left( \rho - R \right)^2}
 %{\left( \rho + R \right)^2 - \left( c^2t^2 - z^2 \right)} }
 %\end{aligned} \end{equation*} }
-%
+
 \begin{equation*} \begin{aligned}
 \arctan \left( \frac{\rho + R}{ |\rho - R| } \tan \frac{\psi}{2} \right) - 
 \frac{\pi}{2} = - \arctan \sqrt{ \left( \frac{\rho - R}{\rho + R} \right)^2
 \frac{\left( \rho + R \right)^2 - \left( c^2t^2 - z^2 \right)} 
 {\left( c^2t^2 - z^2 \right) - \left( \rho - R \right)^2} }
 \end{aligned} \end{equation*}
-%
+
 \begin{equation*} \begin{aligned}
 \pi - \psi = \arccos \left( \frac{c^2 t^2 - z^2 - \rho^2 - R^2}{2 \rho R} \right)
 \end{aligned} \end{equation*}
-%
+
 Користуючись такими спрощеннями, можемо записати вираз в явному вигляді для 
 області $ S_2 $
-%
+
 \begin{equation*} \begin{aligned}
 I_1 \{ S_2 \} = \frac{\rho^2 + R^2}{4 \pi \rho^2} \arccos 
 \left( \frac{c^2 t^2 - z^2 - \rho^2 - R^2}{2 \rho R} \right) - \\
@@ -492,7 +502,7 @@ I_1 \{ S_2 \} = \frac{\rho^2 + R^2}{4 \pi \rho^2} \arccos
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Отримання інтегралу $ I_2 $ в явному виді} \label{sec:i2anal}
-%
+
 \begin{equation} \label{eq:int2start}
 I_2 = R \int \limits_{0}^{\infty} d \nu J_1 \left( \nu R \right) 
 J_0 \left( \nu \rho \right) J_0 \left( \nu \sqrt{c^2t^2 - z^2} \right)
@@ -500,7 +510,7 @@ J_0 \left( \nu \rho \right) J_0 \left( \nu \sqrt{c^2t^2 - z^2} \right)
 
 Це табличний інтеграл, що може бути знайдений в 
 \cite[ст. 228]{imp:SpecFunc1983}.
-%
+
 \begin{equation} \begin{aligned} \label{eq:intJ0J0J1tabel}
 \int \limits_{0}^{\infty} d x J_0 \left( ax \right) 
 J_0 \left( bx \right) J_1 \left( cx \right) = \begin{cases}
@@ -513,7 +523,7 @@ J_0 \left( bx \right) J_1 \left( cx \right) = \begin{cases}
 
 Фізичні властивості змінних в \eqref{eq:int2start} відповідають умові 
 $ a,b,c > 0 $. Запишемо значення інтегралу відносно інших умов.
-%
+
 \begin{equation}
 I_2 = \begin{cases}
 0, 0 < R < | f_{-} \left( r, t \right) | \\
@@ -524,7 +534,7 @@ f_{+} \left( r, t \right) \\ 1, f_{+} \left( r, t \right) < R \\
 \end{equation}
 
 Тут для спрощення введено наступні переозначення:
-%
+
 \begin{equation*} \begin{aligned}
 f_{-} \left( r, t \right) = \rho - \sqrt{c^2t^2 - z^2} \\
 f_{+} \left( r, t \right) = \rho + \sqrt{c^2t^2 - z^2}
@@ -533,7 +543,7 @@ f_{+} \left( r, t \right) = \rho + \sqrt{c^2t^2 - z^2}
 Якщо $ \rho = 0 $, то область визначення інтегралу $ I_2 $ по формулі 
 \eqref{eq:int2start} схропується і інтеграл стає невизначеним. У цьому випадку 
 розглянемо інтеграл за допомогою формули \eqref{eq:intJJtable}.
-%
+
 %\textcolor{blue}{ \begin{equation*}
 %I_2 \left( \rho = 0 \right) = \begin{cases}
 %0, 0 < R < \sqrt{c^2t^2 - z^2} \\
@@ -541,7 +551,7 @@ f_{+} \left( r, t \right) = \rho + \sqrt{c^2t^2 - z^2}
 %1, 0 < \sqrt{c^2t^2 - z^2} < R 
 %\end{cases}
 %\end{equation*} }
-%
+
 \begin{equation}
 I_2 \left( \rho = 0 \right) = \begin{cases}
 0, 0 < R < \sqrt{c^2t^2 - z^2} \\
